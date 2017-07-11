@@ -186,12 +186,12 @@ note of the Client IP Address on the web page as highlighted below:
    -  Edit the URL in your browser to
       `*ftp://10.128.10.223* <ftp://10.128.10.223>`__
 
-      -  NOTE: There is no need to login, a prompt will eventually be
+      .. NOTE:: There is no need to login, a prompt will eventually be
          displayed.
 
    -  Open Putty (SSH) and access 10.128.10.223
 
-      -  NOTE: you do not need to login, getting a prompt is sufficient
+      .. NOTE:: you do not need to login, getting a prompt is sufficient
          for this test
 
    -  All of these connections should be successful through the BIG-IP,

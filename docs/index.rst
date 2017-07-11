@@ -52,6 +52,6 @@ solutions:**      
    intro*
    class*/class*
 
-.. |image1| image:: /_static/image1.jpg
+.. |image1| image:: /_static/image2.gif
    :width: 3.27778in
    :height: 1.14444in

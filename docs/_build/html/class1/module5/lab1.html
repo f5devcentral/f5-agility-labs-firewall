@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.5.1. Managing AFM from BIG-IQ &#8212; F5 Firewall Solutions  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.5.2. Service Policies and Timer Policies from BIG-IQ" href="lab2.html" />
+    <link rel="prev" title="2.5. Network Security (AFM) Management Workflows" href="module5.html" />
+<!--
+# Copyright 2017 F5 Networks
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+-->
+<link href="https://cdn.f5.com/favicon.ico" rel="icon">
+<script src="https://use.fontawesome.com/21fb8a09c3.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  </head>
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row corp-header">
+      <div class="container corp-header">
+        <div class="container corp-menu">
+          <ul>
+            <li><a href="https://f5.com" class="internalLink">F5.com</a></li>
+            <li><a href="https://support.f5.com">Support</a></li>
+            <li><a href="https://devcentral.f5.com">Community</a></li>
+            <li><a href="https://github.com/F5Networks">GitHub</a></li>
+            <li><a href="https://f5.com/about-us/careers">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pageHeader">
+      <div class="container stat">
+        <div class="col-xs-12 stat">
+          <a class="internalLink" href="https://f5.com">
+            <img class="logo" src="https://cdn.f5.com/websites/support/assets/images/logo.svg" width="50" height="44" alt="F5 Networks" title="F5 Networks" border="0">
+          </a>
+            <ul id="MainMenu" class="main-menu">
+              <li>
+                <a href="#">Products
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="ProductsSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Connectors</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/marathon-bigip-ctlr/latest" data-link-type="Nav: Mega">F5 Marathon BIG-IP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/marathon-asp-ctlr/latest" data-link-type="Nav: Mega">F5 Marathon ASP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest" data-link-type="Nav: Mega">F5 Kubernetes BIG-IP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/f5-kube-proxy/latest" data-link-type="Nav: Mega">F5 Kubernetes Proxy</a></li>
+                        </ul>
+                        <!--span class="seemore"><a data-link-type="Nav: Mega" href="/products/connectors">See all </a></--span-->
+                      </li>
+                      <li class="divider"></li>
+                      <li class="third"><span class="a-mm-h">Application Service Proxy</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/products/asp/latest" data-link-type="Nav: Mega">F5 Application Service Proxy</a></li>
+                        </ul>
+                        <!--span class="seemore"><a href="/products/">See all </a></span-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Container Integrations
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="ContainersSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Container Integrations</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/marathon/" data-link-type="Nav: Mega">Mesos Marathon</a></li>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/kubernetes/" data-link-type="Nav: Mega">Kubernetes</a></li>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/openshift/" data-link-type="Nav: Mega">RedHat OpenShift</a></li>
+                        </ul>
+                        <span class="seemore"><a data-link-type="Nav: Mega" href="http://clouddocs.f5.com/containers/latest">View details </a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Clouds
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="CloudsSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Cloud Integrations</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/cloud/openstack/" data-link-type="Nav: Mega">OpenStack</a></li>
+                        </ul>
+                        <!--span class="seemore"><a data-link-type="Nav: Mega" href="/cloud/">See all </a></span-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Resources
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+                <div class="menu-panel soft-hide" id="UPCProgramSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third">
+                        <span class="a-mm-h">Downloads</span>
+                        <ul>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://hub.docker.com/r/f5networks/" class="internalLink">Docker Hub</a></li>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://store.docker.com/images/f5networks" class="internalLink">Docker Store</a></li>
+                        </ul>
+                      </li>
+                      <li class="divider"></li>
+
+                      <li class="third">
+                        <span class="a-mm-h">OpenSource</span>
+                        <ul>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://github.com/F5Networks" class="internalLink">GitHub</a></li>
+                        </ul>
+                      </li>
+                      <li class="divider"></li>
+
+                      <li class="third">
+                        <a href="//university.f5.com" class="a-mm-h internalLink" target="_blank" data-link-type="Nav: Mega">F5 University</a>
+                        <ul>
+                          <li>
+                            <p>Get up to speed with free self-paced courses</p>
+                          </li>
+                        </ul>
+                        <a data-ng-href="https://devcentral.f5.com" class="a-mm-h internalLink" target="_blank" data-link-type="Nav: Mega" href="https://devcentral.f5.com">DevCentral</a>
+                        <ul>
+                          <li>
+                            <p>Join the community of 250,000+ technical peers</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container-fluid -->
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 sidebar">
+         <h4><a href="../../">F5 Firewall Solutions </a></h4>
+<div id="searchbox" style="display: none" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <div>
+      <input type="text" name="q" placeholder="Search" style="padding-left: 6px;"/>
+      <!-- <input type="submit" value="Go" style="margin-top: 4px;"/> -->
+      <button type="submit" class="btn btn-primary btn-xs">Go</button>
+    </div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <p class="caption">
+   <span class="caption-text">Current Page</span>
+  </p>
+  <ul>
+<li><a class="reference internal" href="#">2.5.1. Managing AFM from BIG-IQ</a><ul>
+<li><a class="reference internal" href="#workflow-1-managing-afm-from-big-iq">2.5.1.1. WORKFLOW 1: Managing AFM from BIG-IQ</a><ul>
+<li><a class="reference internal" href="#task-1-create-port-list">2.5.1.1.1. Task 1 – Create Port List</a></li>
+<li><a class="reference internal" href="#task-2-create-address-list">2.5.1.1.2. Task 2 – Create Address List</a></li>
+<li><a class="reference internal" href="#task-3-create-rule-list">2.5.1.1.3. Task 3 – Create Rule List</a></li>
+<li><a class="reference internal" href="#task-4-create-firewall-policy">2.5.1.1.4. Task 4 – Create Firewall Policy</a></li>
+<li><a class="reference internal" href="#task-6-deploy-the-firewall-policy-and-related-configuration-objects">2.5.1.1.5. Task 6 – Deploy the Firewall Policy and related configuration objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-access-to-the-wildcard-virtual-server">2.5.1.2. Test Access to the Wildcard Virtual Server</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Advanced Firewall Manager, the ENTERPRISE Firewall</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Advanced Firewall Manager (AFM) Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">2.2. AFM Packet Tester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">2.3. DDoS Protection with AFM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">2.4. Device Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module5.html">2.5. Network Security (AFM) Management Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. External Logging Devices (SevOne)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="module5.html"
+                        title="previous chapter">2.5. Network Security (AFM) Management Workflows</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lab2.html"
+                        title="next chapter">2.5.2. Service Policies and Timer Policies from BIG-IQ</a></p>
+        
+      </div>
+      <div class="col-md-offset-3 col-sm-offset-3 main">
+        <h4>
+          <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 Firewall Solutions</a>
+          <span class="right"><a href="../../genindex.html">Index</a></span>
+        </h4>
+        
+  <div class="section" id="managing-afm-from-big-iq">
+<h1>2.5.1. Managing AFM from BIG-IQ<a class="headerlink" href="#managing-afm-from-big-iq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="workflow-1-managing-afm-from-big-iq">
+<h2>2.5.1.1. WORKFLOW 1: Managing AFM from BIG-IQ<a class="headerlink" href="#workflow-1-managing-afm-from-big-iq" title="Permalink to this headline">¶</a></h2>
+<p>In this lab, you will create all the components of a firewall policy.
+Port lists and address lists are the building blocks of firewall
+policies. They can be nested inside of each other to make address and
+port management easier, or policies can be created without using the
+lists at all. In this example, you’ll use the lists to see how they
+work. Once created, you will deploy the configuration to two BIG-IP
+units.</p>
+<p><strong>Objective</strong></p>
+<ul class="simple">
+<li>Create a simple firewall policy and dependent objects (address and
+port list)</li>
+<li>Deploy new firewall configuration to BIG-IP</li>
+</ul>
+<p><strong>Lab Requirements</strong></p>
+<ul class="simple">
+<li>Web UI access to BIG-IQ</li>
+</ul>
+<div class="section" id="task-1-create-port-list">
+<h3>2.5.1.1.1. Task 1 – Create Port List<a class="headerlink" href="#task-1-create-port-list" title="Permalink to this headline">¶</a></h3>
+<p>On <strong>BIGIQ1</strong>: (<a class="reference external" href="about:blank">*https://10.0.0.200)*</a></p>
+<p>Navigate to the <strong>Configuration</strong> tab from the top menu of <strong>BIG-IQ</strong>
+then to <strong>Security → Network Security</strong>.</p>
+<p><a class="reference internal" href="../../_images/image102.png"><img alt="image108" src="../../_images/image102.png" style="width: 3.38542in; height: 4.42708in;" /></a></p>
+<p>Click <strong>Port Lists</strong> from the left side navigation menu.</p>
+<p>Click the <strong>Create</strong> button.</p>
+<p>On the <strong>Propertie</strong>s tab, type in <strong>HTTP_HTTPS</strong> for <strong>Name.</strong></p>
+<p>Click the <strong>Ports</strong> tab.</p>
+<p>Create the port list with the below information.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="28%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Type</td>
+<td>Ports</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>Port</td>
+<td>80</td>
+<td>HTTP</td>
+</tr>
+<tr class="row-odd"><td>Port</td>
+<td>443</td>
+<td>HTTPS</td>
+</tr>
+</tbody>
+</table>
+<p>Click on the <strong>+</strong> to add additional ports</p>
+<p><a class="reference internal" href="../../_images/image103.png"><img alt="image109" src="../../_images/image103.png" style="width: 6.50000in; height: 1.10000in;" /></a></p>
+<p>Click <strong>Save &amp; Close</strong> when finished.</p>
+<p>To create a port list via the API, follow the POSTMan Collection
+“Service Provider Specialist Event - Lab 5”, using Step 1 – Create New
+Port List. It is important to note the value returned within the
+self-link as shown below:</p>
+<p><a class="reference internal" href="../../_images/image104.png"><img alt="image110" src="../../_images/image104.png" style="width: 6.50000in; height: 2.76042in;" /></a></p>
+<p>This value will be assigned to the environment variable AFM_Port_ID.</p>
+<p>To modify the environment variables, click on the “eye” icon located
+in the top right section of POSTMan and select edit. The screen shot
+following shows an example of this screen:</p>
+<p><a class="reference internal" href="../../_images/image105.png"><img alt="image111" src="../../_images/image105.png" style="width: 4.56250in; height: 5.16667in;" /></a></p>
+</div>
+<div class="section" id="task-2-create-address-list">
+<h3>2.5.1.1.2. Task 2 – Create Address List<a class="headerlink" href="#task-2-create-address-list" title="Permalink to this headline">¶</a></h3>
+<p>Click on the <strong>Address Lists</strong> from the left navigation menu</p>
+<p>Click the <strong>Create</strong> button</p>
+<p>In Properties, type in <strong>Trusted_Clients</strong> for Name</p>
+<p>The ability to Pin address to a device is also new in 5.2. This feature
+allows objects to remain on a device even if they are orphaned and/or
+not currently in use in a policy on the “pinned” device.</p>
+<p>Click the <strong>Addresses</strong> tab</p>
+<p>Create a new address list with the below information</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="33%" />
+<col width="39%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Type</strong></td>
+<td><strong>Addresses</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td><strong>Address</strong></td>
+<td>10.128.10.0/24</td>
+<td>Internal Network</td>
+</tr>
+<tr class="row-odd"><td><strong>Address</strong></td>
+<td>172.16.16.99</td>
+<td>Internal Client 2</td>
+</tr>
+</tbody>
+</table>
+<p>Click on the <strong>+</strong> to add additional addresses</p>
+<p><a class="reference internal" href="../../_images/image106.png"><img alt="image112" src="../../_images/image106.png" style="width: 6.50000in; height: 1.10000in;" /></a></p>
+<p>Click <strong>Save and Close</strong> when finished.</p>
+<p>To create an address list via the API, follow the POSTMan Collection
+“Service Provider Specialist Event - Lab 5”, using Step 2 – Create New
+Address List. It is important to note the value returned within the
+self-link as shown below:</p>
+<p><a class="reference internal" href="../../_images/image107.png"><img alt="image113" src="../../_images/image107.png" style="width: 6.50000in; height: 2.66667in;" /></a></p>
+<p>This value will be assigned to the environment variable
+AFM_Address_ID.</p>
+</div>
+<div class="section" id="task-3-create-rule-list">
+<h3>2.5.1.1.3. Task 3 – Create Rule List<a class="headerlink" href="#task-3-create-rule-list" title="Permalink to this headline">¶</a></h3>
+<p>Click on the <strong>Rule Lists</strong> from the left navigation menu.</p>
+<p>Click the <strong>Create</strong> button.</p>
+<p>On the Properties tab, type in <strong>Rule_List_Allow_Trusted</strong> for Name.</p>
+<p>Click the <strong>Rules</strong> tab.</p>
+<p>Click <strong>Create Rule</strong> button.</p>
+<p>Click on the pencil (edit rule) of the newly created rule listed with
+<strong>Id</strong> of <strong>1.</strong></p>
+<p>Create a new rule with the below information.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="28%" />
+<col width="34%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td>&#160;</td>
+<td>Rule_Allow_Trusted</td>
+</tr>
+<tr class="row-even"><td><a href="#id1"><span class="problematic" id="id2">**</span></a>Source Address **</td>
+<td><strong>Address List</strong></td>
+<td>Trusted_Clients</td>
+</tr>
+<tr class="row-odd"><td><strong>Source Port</strong></td>
+<td><a href="#id3"><span class="problematic" id="id4">**</span></a>Port **</td>
+<td>Any</td>
+</tr>
+<tr class="row-even"><td><strong>Source VLAN</strong></td>
+<td>&#160;</td>
+<td>Any</td>
+</tr>
+<tr class="row-odd"><td><strong>Destination Address</strong></td>
+<td><strong>Address</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-even"><td><strong>Destination Port</strong></td>
+<td><strong>Port List</strong></td>
+<td>HTTP_HTTPS</td>
+</tr>
+<tr class="row-odd"><td><strong>Action</strong></td>
+<td><strong>Accept</strong></td>
+<td>Accept</td>
+</tr>
+<tr class="row-even"><td><strong>Protocol</strong></td>
+<td><strong>TCP</strong></td>
+<td>TCP</td>
+</tr>
+<tr class="row-odd"><td><strong>State</strong></td>
+<td>&#160;</td>
+<td>enabled</td>
+</tr>
+<tr class="row-even"><td><strong>Log</strong></td>
+<td>&#160;</td>
+<td>checked</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image108.png"><img alt="image114" src="../../_images/image108.png" style="width: 6.48958in; height: 0.67708in;" /></a></p>
+<p>Click <strong>Save &amp; Close</strong> when finished.</p>
+<p>To create a rule list via the API, follow the POSTMan Collection
+“Service Provider Specialist Event - Lab 5”, using Step 3 – Create New
+Rule. It is important to note the value returned within the self-link as
+shown below:</p>
+<p><a class="reference internal" href="../../_images/image109.png"><img alt="image115" src="../../_images/image109.png" style="width: 6.50000in; height: 2.00000in;" /></a></p>
+<p>This value will be assigned to the environment variable AFM_Rule_ID.</p>
+<p>To create a rule within the rule list via the API, follow the
+POSTMan Collection “Service Provider Specialist Event - Lab 5”,
+using Step 4 – Create New Rule List.</p>
+</div>
+<div class="section" id="task-4-create-firewall-policy">
+<h3>2.5.1.1.4. Task 4 – Create Firewall Policy<a class="headerlink" href="#task-4-create-firewall-policy" title="Permalink to this headline">¶</a></h3>
+<p>Click on <strong>Firewall Policies</strong> from the left navigation menu.</p>
+<p>Click the <strong>Create</strong> button.</p>
+<p>On the Properties tab, type in <strong>Policy_Forward</strong> for Name.</p>
+<p>On Pin Policy to Device(s), move bigip1.agility.f5.com to Selected.</p>
+<p>Click the Rules tab.</p>
+<p>Click the <strong>Add Rule List</strong> button.</p>
+<p>Select the checkbox for <strong>Rule_Allowed_Trusted.</strong></p>
+<p>Click <strong>Add</strong> button.</p>
+<p>You will see the new policy listed as shown below.</p>
+<p><a class="reference internal" href="../../_images/image110.png"><img alt="image116" src="../../_images/image110.png" style="width: 6.48958in; height: 3.98958in;" /></a></p>
+<p>Click on drop down arrow to verify our rule within the rule list is
+there.</p>
+<p><a class="reference internal" href="../../_images/image111.png"><img alt="image117" src="../../_images/image111.png" style="width: 6.50000in; height: 0.87500in;" /></a></p>
+<p>Click <strong>Create Rule</strong> button</p>
+<p>Click on the pencil (edit rule) of the newly created rule listed with
+<strong>Id</strong> of <strong>2.</strong></p>
+<p>Create a new rule with the below information.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="25%" />
+<col width="41%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Name</strong></td>
+<td>&#160;</td>
+<td>Rule_Drop_Everything_Else</td>
+</tr>
+<tr class="row-even"><td><a href="#id5"><span class="problematic" id="id6">**</span></a>Source Address **</td>
+<td><strong>Address</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-odd"><td><strong>Source Port</strong></td>
+<td><a href="#id7"><span class="problematic" id="id8">**</span></a>Port **</td>
+<td>Any</td>
+</tr>
+<tr class="row-even"><td><strong>Source VLAN</strong></td>
+<td>&#160;</td>
+<td>Any</td>
+</tr>
+<tr class="row-odd"><td><strong>Destination Address</strong></td>
+<td><strong>Address List</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-even"><td><strong>Destination Port</strong></td>
+<td><strong>Port List</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-odd"><td><strong>Action</strong></td>
+<td>&#160;</td>
+<td><em>drop</em></td>
+</tr>
+<tr class="row-even"><td><strong>Protocol</strong></td>
+<td>&#160;</td>
+<td><em>any</em></td>
+</tr>
+<tr class="row-odd"><td><strong>State</strong></td>
+<td>&#160;</td>
+<td><em>enabled</em></td>
+</tr>
+<tr class="row-even"><td><strong>Log</strong></td>
+<td>&#160;</td>
+<td><em>checked</em></td>
+</tr>
+</tbody>
+</table>
+<p>Click the <strong>Save and Close</strong> button at the top.</p>
+<p>You should see the policy with the new rule as shown below.</p>
+<p><a class="reference internal" href="../../_images/image112.png"><img alt="image118" src="../../_images/image112.png" style="width: 6.47917in; height: 0.84375in;" /></a></p>
+<p>To create a policy via the API, follow the POSTMan Collection “Service
+Provider Specialist Event - Lab 5”, using Step 5 – Create New Policy. It
+is important to note the value returned within the self-link as shown
+below:</p>
+<p><a class="reference internal" href="../../_images/image113.png"><img alt="image119" src="../../_images/image113.png" style="width: 6.50000in; height: 2.09375in;" /></a></p>
+<p>This value will be assigned to the environment variable AFM_Policy_ID.</p>
+<p>To reference a rule within the policy via the API, follow the
+POSTMan Collection “Service Provider Specialist Event - Lab 5”,
+using Step 6 – Create New Rule Reference.</p>
+<p>To create a drop rule within the policy via the API, follow the
+POSTMan Collection “Service Provider Specialist Event - Lab 5”,
+using Step 7 – Create Drop Rule in Policy.
+<em>Task 5 – Assign the Firewall Policy to a Context.</em></p>
+<p>In this task, you will take the policy you created above and apply
+it to a route domain on a BIG-IP. Typically, the route domain you
+apply firewall policies to has a wildcard virtual server that you
+forward all traffic through (as opposed to a standard single port
+virtual server that only allows specific traffic). This type of
+configuration is like the more classic firewall deployment.</p>
+<p>In the left navigation menu, click <strong>contexts</strong>, then chose 0 for device
+bigip1.agility.f5.com</p>
+<p><a class="reference internal" href="../../_images/image114.png"><img alt="image120" src="../../_images/image114.png" style="width: 6.48958in; height: 3.20833in;" /></a></p>
+<p>From the <strong>Shared Objects</strong> panel at the bottom of the screen, <em>grab</em>
+the <strong>Policy_Forward</strong> and <em>drag</em> it to the <strong>Enforced Firewall
+Policy</strong> shaded area. The policy should then appear in the <strong>Enforced
+Firewall Policy</strong> section. Alternatively, delete the existing policy
+(Common/rd_0_policy) by clicking the x, then select <strong>Add Enforce
+Firewall Policy</strong> and select <strong>Policy_Forward</strong> and click <strong>Add.</strong></p>
+<p><a class="reference internal" href="../../_images/image115.png"><img alt="image121" src="../../_images/image115.png" style="width: 6.48958in; height: 3.67708in;" /></a></p>
+<p>Click the <strong>Save &amp; Close</strong> button.</p>
+<p>At this point, the policy is assigned to the route domain in the BIG-IQ
+configuration, but the configuration has <strong>not</strong> been deployed/pushed to
+the BIG-IP units yet.</p>
+<p>To assign a policy via the API, follow the POSTMan Collection “Service
+Provider Specialist Event - Lab 5”, using Step 8: Get bigip02 Contexts.
+This call will list all the firewall contexts using a filter for just
+route-domains. You will need to copy the “id” assigned to bigip02
+route-domain as exampled by the following:</p>
+<p><a class="reference internal" href="../../_images/image116.png"><img alt="image122" src="../../_images/image116.png" style="width: 6.81719in; height: 1.78363in;" /></a></p>
+<p>This value will be assigned to the environment variable bigip02-rd0id.</p>
+<p>To assign the policy to RD0 via the API, follow the POSTMan
+Collection “Service Provider Specialist Event - Lab 5”, using Step
+9: Apply Policy to RD0.</p>
+</div>
+<div class="section" id="task-6-deploy-the-firewall-policy-and-related-configuration-objects">
+<h3>2.5.1.1.5. Task 6 – Deploy the Firewall Policy and related configuration objects<a class="headerlink" href="#task-6-deploy-the-firewall-policy-and-related-configuration-objects" title="Permalink to this headline">¶</a></h3>
+<p>Now that the desired firewall configuration has been created on the
+BIG-IQ, you need to deploy it to the BIG-IP. In this task, you create
+the deployment, verify it, and deploy it.</p>
+<p>From the top navigation bar, click on <strong>Deployments</strong>.</p>
+<p>Click on the <strong>EVALUATE &amp; DEPLOY</strong> section on the left to expand it.</p>
+<p>Click on <strong>Network Security</strong> in the expansion.</p>
+<p><a class="reference internal" href="../../_images/image117.png"><img alt="image123" src="../../_images/image117.png" style="width: 6.50000in; height: 4.09375in;" /></a></p>
+<p>Click on the top Create button under Evaluations</p>
+<p>Give your evaluation a name (ex: <strong>deploy_afm1</strong>).</p>
+<p>Evaluation <strong>Source</strong> should be <strong>Current Changes</strong> (default).</p>
+<p>Source Scope should be <strong>All Changes</strong> (default)</p>
+<p>Target Device(s) should be <strong>Device</strong>.</p>
+<p>Select bigip1.agility.f5.com from the list of Available devices and move
+it to Selected.</p>
+<p><a class="reference internal" href="../../_images/image118.png"><img alt="image124" src="../../_images/image118.png" style="width: 6.50000in; height: 4.87500in;" /></a></p>
+<p>Click the <strong>Create</strong> button at the bottom right of the page.</p>
+<p>You should be redirected to the main <strong>Evaluate and Deploy</strong> page.</p>
+<ul class="simple">
+<li>This will start the evaluation process in which BIG-IQ compares its
+working configuration to the configuration active on each BIG-IP.
+This can take a few moments to complete.</li>
+</ul>
+<p>The <strong>Status</strong> section should be dynamically updating… (What states do
+you see?)</p>
+<p>Once the status shows <strong>Evaluation Complete</strong> you can view the
+evaluation results.</p>
+<ul class="simple">
+<li>Before selecting to deploy, feel free to select the differences
+indicated to see the proposed deployment changes. This is your check
+before making changes on a BIG-IP.</li>
+</ul>
+<p>Click the number listed under <strong>Differences – Firewall</strong>.</p>
+<p>Scroll through the list of changes to be deployed.</p>
+<p>Click on a few to review in more detail.</p>
+<p><a class="reference internal" href="../../_images/image119.png"><img alt="image125" src="../../_images/image119.png" style="width: 6.70833in; height: 3.37500in;" /></a></p>
+<p>What differences do you see from the <strong>Deployed on BIG-IP</strong> section
+and on <strong>BIG-IQ</strong>?</p>
+<p>Click <strong>Cancel</strong>.</p>
+<p>Deploy your changes by checking the box next to your evaluation
+<strong>deploy_afm1</strong>.</p>
+<p>With the box checked, click the <strong>Deploy</strong> button.</p>
+<p>Your evaluation should move to the <strong>Deployments</strong> section.</p>
+<p>After deploying, the status should change to <strong>Deployment Complete</strong>.</p>
+<ul class="simple">
+<li>This will take a moment to complete. Once completed, log in to the
+BIG-IP and verify that the changes have been deployed to the AFM
+configuration.</li>
+</ul>
+<p>To deploy the changes via the API, follow the POSTMan Collection
+“Service Provider Specialist Event - Lab 5”, using Step 10: Deploy
+Policy to bigip02. This call will deploy only the changes made to
+bigip02</p>
+<p>Congratulations, you just deployed your first AFM policy via BIG-IQ!</p>
+<p>Review the configuration deployed to the BIG-IP units.</p>
+<p>On <strong>BIGIP1</strong>: (<a class="reference external" href="about:blank">*https://10.0.04)*</a></p>
+<p>Navigate to Security &gt; Network Firewall &gt; Policies.</p>
+<p>Click on Policy_Forward.</p>
+<p>Are the two rules you created in BIG-IQ listed for this newly deployed
+firewall policy?</p>
+<p><a class="reference internal" href="../../_images/image120.png"><img alt="image126" src="../../_images/image120.png" style="width: 5.31250in; height: 1.65625in;" /></a></p>
+<p>Navigate to Network &gt; Route Domains</p>
+<p>Click on route domain 0.</p>
+<p>Click on the <strong>Security</strong> tab, click on <strong>Policies</strong> in the drop down.</p>
+<p>What policy is deployed to this route domain?</p>
+<p>Are the correct firewall rules applied to this route domain from the
+policy you associated to it?</p>
+<p><a class="reference internal" href="../../_images/image121.png"><img alt="image127" src="../../_images/image121.png" style="width: 4.34028in; height: 2.38194in;" /></a></p>
+</div>
+</div>
+<div class="section" id="test-access-to-the-wildcard-virtual-server">
+<h2>2.5.1.2. Test Access to the Wildcard Virtual Server<a class="headerlink" href="#test-access-to-the-wildcard-virtual-server" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Open a new Web browser and access
+<a class="reference external" href="http://10.128.10.223:8081">*http://10.128.10.223:8081*</a> (this is
+expected to fail as are some others)</li>
+<li>Edit the URL to <a class="reference external" href="https://10.128.10.223">*https://10.128.10.223*</a></li>
+<li>Edit the URL to <a class="reference external" href="http://10.128.10.223">*http://10.128.10.223*</a></li>
+<li>Open either Chrome or Firefox and access
+<a class="reference external" href="ftp://10.128.10.223">*ftp://10.128.10.223*</a></li>
+<li>Open Putty and access 10.128.10.223</li>
+<li>Close all Web browsers and Putty sessions.</li>
+</ul>
+</div>
+</div>
+
+
+        
+		     <div class="row next-prev-btn-row">
+           <div class="col-lg-12">
+           
+		        <a href="module5.html" title="2.5. Network Security (AFM) Management Workflows" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+           
+           
+              <a href="lab2.html" title="2.5.2. Service Policies and Timer Policies from BIG-IQ" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+           
+		     </div>
+         </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="content-fluid pre-footer">
+            <div class="blocks-container">
+              <div class="block">
+                <h3>Support Programs</h3>
+                <p>Regionally located support centers enable F5 to provide support in a number of languages through native-speaking support engineers.</p>
+                <a class="btn internalLink" data-ng-href="https://f5.com/support/support-offerings" target="_blank" href="https://f5.com/support/support-offerings">See more
+                  <span class="icon-1x-right icon-new-window" data-icon="new-window">​</span>
+                </a>
+              </div>
+              <div class="block">
+                <h3>Contact Support</h3>
+                <p>
+                  North America: 1-888-882-7535<br>
+                  Outside North America: 800-11-275-435
+                </p>
+                <a class="btn internalLink" data-ng-href="https://f5.com/about-us/contact#regional-support" target="_blank" href="https://f5.com/about-us/contact#regional-support">Local Support Numbers
+                  <span class="icon-1x-right icon-new-window" data-icon="new-window">​</span>
+                </a>
+              </div>
+              <div class="block">
+                <h3>Feedback and Help</h3>
+                <p>Have questions, suggestions, or just want to get something off your chest? Let us know.</p>
+                <a class="btn" data-ui-sref="siteFeedback" target="_blank" href="https://support.f5.com/csp/siteFeedback">Leave feedback</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="footer">
+            <div class="container">
+              <div class="col-sm-3 col-md-2">
+                <h4>About F5</h4>
+                <ul>
+                  <li><a data-ng-href="https://f5.com/about-us/contact" target="_blank" data-link-type="footer" href="https://f5.com/about-us/contact" class="internalLink">Contact F5</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/about-us/careers" target="_blank" data-link-type="footer" href="https://f5.com/about-us/careers" class="internalLink">Careers</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-3 col-md-2">
+                <h4>Education</h4>
+                <ul>
+                  <li><a data-ng-href="https://f5.com/education/training" target="_blank" data-link-type="footer" href="https://f5.com/education/training" class="internalLink">Training</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/education/certification" target="_blank" data-link-type="footer" href="https://f5.com/education/certification" class="internalLink">Certification</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/education/training/free-courses" target="_blank" data-link-type="footer" href="https://f5.com/education/training/free-courses" class="internalLink">Free Online Training</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <h4>F5 sites</h4>
+                <ul>
+                <li><a data-ng-href="https://f5.com" target="_blank" data-link-type="footer" href="https://f5.com" class="internalLink">F5.com</a>
+                </li>
+                <li><a data-ng-href="https://devcentral.f5.com" target="_blank" data-link-type="footer" href="https://devcentral.f5.com" class="internalLink">Community</a>
+                </li>
+                <li><a data-ng-href="https://partners.f5.com" target="_blank" data-link-type="footer" href="https://partners.f5.com" class="internalLink">Partners</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <h4>Support Tasks</h4>
+            <ul>
+                <li><a data-ui-sref="mySupport.createServiceRequest" data-link-type="footer" href="https://support.f5.com/csp/my-support/service-request">Create Service Request </a>
+                </li>
+                <li><a data-ng-href="https://f5.com/about-us/contact#regional-support" target="_blank" data-link-type="footer" href="https://f5.com/about-us/contact#regional-support" class="internalLink">Contact Support</a>
+                </li>
+                <li><a data-ui-sref="siteFeedback" target="_blank" data-link-type="footer" href="https://support.f5.com/csp/siteFeedback">Leave feedback [+]</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-3 right">
+            <h4>Connect with us</h4>
+            <ul class="social_icons">
+                <li><a href="//twitter.com/f5networks" target="_blank" data-name="twitter" data-type="" data-prefix="social" data-utf="E032" title="Twitter" class="externalLink"><i class="icon-1x icon-twitter icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.linkedin.com/companies/f5-networks" target="_blank" class="linkedin externalLink" title="LinkedIn"><i class="icon-1x icon-linkedin icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.facebook.com/f5networksinc" target="_blank" class="facebook externalLink" title="Facebook"><i class="icon-1x icon-facebook icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.youtube.com/f5networksinc" target="_blank" class="youtube externalLink" title="YouTube"><i class="icon-1x icon-youtube icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a data-ng-href="https://devcentral.f5.com" target="_blank" class="devcentral internalLink" title="DevCentral" href="https://devcentral.f5.com"><i class="icon-1x icon-dc-pos icon-inverse-circle" data-link-type="footer"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="content-fluid left">
+            <div class="col-xs-12">
+                <p>
+                    © Copyright <span class="ng-binding">2017</span> by F5 Networks, Inc. |
+                    <a data-ng-href="https://f5.com/about-us/policies" target="_blank" data-link-type="footer" href="https://f5.com/about-us/policies" class="internalLink">Policies</a> |
+                    <a data-ng-href="https://f5.com/about-us/policies/trademarks" target="_blank" data-link-type="footer" href="https://f5.com/about-us/policies/trademarks" class="internalLink">Trademarks</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  </body>
+</html>

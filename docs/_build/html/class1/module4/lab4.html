@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.4.4. BIG-IQ Statistics Dashboards &#8212; F5 Firewall Solutions  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.4.7. BIG-IQ Global Search and Related to Search" href="lab5.html" />
+    <link rel="prev" title="2.4.3. Changes to BIG-IQ User Interface" href="lab3.html" />
+<!--
+# Copyright 2017 F5 Networks
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+-->
+<link href="https://cdn.f5.com/favicon.ico" rel="icon">
+<script src="https://use.fontawesome.com/21fb8a09c3.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  </head>
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row corp-header">
+      <div class="container corp-header">
+        <div class="container corp-menu">
+          <ul>
+            <li><a href="https://f5.com" class="internalLink">F5.com</a></li>
+            <li><a href="https://support.f5.com">Support</a></li>
+            <li><a href="https://devcentral.f5.com">Community</a></li>
+            <li><a href="https://github.com/F5Networks">GitHub</a></li>
+            <li><a href="https://f5.com/about-us/careers">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pageHeader">
+      <div class="container stat">
+        <div class="col-xs-12 stat">
+          <a class="internalLink" href="https://f5.com">
+            <img class="logo" src="https://cdn.f5.com/websites/support/assets/images/logo.svg" width="50" height="44" alt="F5 Networks" title="F5 Networks" border="0">
+          </a>
+            <ul id="MainMenu" class="main-menu">
+              <li>
+                <a href="#">Products
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="ProductsSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Connectors</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/marathon-bigip-ctlr/latest" data-link-type="Nav: Mega">F5 Marathon BIG-IP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/marathon-asp-ctlr/latest" data-link-type="Nav: Mega">F5 Marathon ASP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest" data-link-type="Nav: Mega">F5 Kubernetes BIG-IP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/f5-kube-proxy/latest" data-link-type="Nav: Mega">F5 Kubernetes Proxy</a></li>
+                        </ul>
+                        <!--span class="seemore"><a data-link-type="Nav: Mega" href="/products/connectors">See all </a></--span-->
+                      </li>
+                      <li class="divider"></li>
+                      <li class="third"><span class="a-mm-h">Application Service Proxy</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/products/asp/latest" data-link-type="Nav: Mega">F5 Application Service Proxy</a></li>
+                        </ul>
+                        <!--span class="seemore"><a href="/products/">See all </a></span-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Container Integrations
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="ContainersSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Container Integrations</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/marathon/" data-link-type="Nav: Mega">Mesos Marathon</a></li>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/kubernetes/" data-link-type="Nav: Mega">Kubernetes</a></li>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/openshift/" data-link-type="Nav: Mega">RedHat OpenShift</a></li>
+                        </ul>
+                        <span class="seemore"><a data-link-type="Nav: Mega" href="http://clouddocs.f5.com/containers/latest">View details </a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Clouds
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="CloudsSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Cloud Integrations</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/cloud/openstack/" data-link-type="Nav: Mega">OpenStack</a></li>
+                        </ul>
+                        <!--span class="seemore"><a data-link-type="Nav: Mega" href="/cloud/">See all </a></span-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Resources
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+                <div class="menu-panel soft-hide" id="UPCProgramSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third">
+                        <span class="a-mm-h">Downloads</span>
+                        <ul>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://hub.docker.com/r/f5networks/" class="internalLink">Docker Hub</a></li>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://store.docker.com/images/f5networks" class="internalLink">Docker Store</a></li>
+                        </ul>
+                      </li>
+                      <li class="divider"></li>
+
+                      <li class="third">
+                        <span class="a-mm-h">OpenSource</span>
+                        <ul>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://github.com/F5Networks" class="internalLink">GitHub</a></li>
+                        </ul>
+                      </li>
+                      <li class="divider"></li>
+
+                      <li class="third">
+                        <a href="//university.f5.com" class="a-mm-h internalLink" target="_blank" data-link-type="Nav: Mega">F5 University</a>
+                        <ul>
+                          <li>
+                            <p>Get up to speed with free self-paced courses</p>
+                          </li>
+                        </ul>
+                        <a data-ng-href="https://devcentral.f5.com" class="a-mm-h internalLink" target="_blank" data-link-type="Nav: Mega" href="https://devcentral.f5.com">DevCentral</a>
+                        <ul>
+                          <li>
+                            <p>Join the community of 250,000+ technical peers</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container-fluid -->
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 sidebar">
+         <h4><a href="../../">F5 Firewall Solutions </a></h4>
+<div id="searchbox" style="display: none" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <div>
+      <input type="text" name="q" placeholder="Search" style="padding-left: 6px;"/>
+      <!-- <input type="submit" value="Go" style="margin-top: 4px;"/> -->
+      <button type="submit" class="btn btn-primary btn-xs">Go</button>
+    </div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <p class="caption">
+   <span class="caption-text">Current Page</span>
+  </p>
+  <ul>
+<li><a class="reference internal" href="#">2.4.4. BIG-IQ Statistics Dashboards</a><ul>
+<li><a class="reference internal" href="#workflow-1-setting-up-of-big-iq-data-collection-devices-dcd-and-establishing-connectivity-to-big-iq-console-required">2.4.4.1. WORKFLOW 1: Setting up of BIG-IQ Data Collection Devices (DCD) and establishing connectivity to BIG-IQ console. (REQUIRED)</a><ul>
+<li><a class="reference internal" href="#objective">2.4.4.1.1. Objective</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#workflow-2-creating-a-backup-schedule">2.4.5. WORKFLOW 2: Creating a Backup Schedule</a></li>
+<li><a class="reference internal" href="#workflow-3-uploading-qkviews-to-ihealth-for-a-support-case">2.4.6. WORKFLOW 3: Uploading QKViews to iHealth for a support case</a></li>
+</ul>
+
+
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Advanced Firewall Manager, the ENTERPRISE Firewall</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Advanced Firewall Manager (AFM) Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">2.2. AFM Packet Tester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">2.3. DDoS Protection with AFM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module4.html">2.4. Device Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">2.5. Network Security (AFM) Management Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. External Logging Devices (SevOne)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="lab3.html"
+                        title="previous chapter">2.4.3. Changes to BIG-IQ User Interface</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lab5.html"
+                        title="next chapter">2.4.7. BIG-IQ Global Search and Related to Search</a></p>
+        
+      </div>
+      <div class="col-md-offset-3 col-sm-offset-3 main">
+        <h4>
+          <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 Firewall Solutions</a>
+          <span class="right"><a href="../../genindex.html">Index</a></span>
+        </h4>
+        
+  <div class="section" id="big-iq-statistics-dashboards">
+<h1>2.4.4. BIG-IQ Statistics Dashboards<a class="headerlink" href="#big-iq-statistics-dashboards" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="workflow-1-setting-up-of-big-iq-data-collection-devices-dcd-and-establishing-connectivity-to-big-iq-console-required">
+<h2>2.4.4.1. WORKFLOW 1: Setting up of BIG-IQ Data Collection Devices (DCD) and establishing connectivity to BIG-IQ console. (REQUIRED)<a class="headerlink" href="#workflow-1-setting-up-of-big-iq-data-collection-devices-dcd-and-establishing-connectivity-to-big-iq-console-required" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="objective">
+<h3>2.4.4.1.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h3>
+<p>To introduce the user to a DCD, establish connectivity with BIG-IQ
+console node to begin data collection task. For the purposes of this lab
+the Data Collection Device has already been deployed and licensed with
+the appropriate license key (F5-BIQ-LOGNOD101010E-LIC).</p>
+<p>Click Add to add a DCD to the BIG-IQ console node.</p>
+<ul>
+<li><p class="first">Log in to the BIG-IQ Console Node (10.0.0.200 admin/401elliottW!)</p>
+</li>
+<li><p class="first">Under System→BIG-IQ DATA COLLECTION</p>
+</li>
+<li><p class="first">Select BIG-IQ Data Collection Devices</p>
+</li>
+<li><p class="first">Click the Add button</p>
+<p><a class="reference internal" href="../../_images/image64.png"><img alt="image68" src="../../_images/image64.png" style="width: 6.48958in; height: 5.20833in;" /></a></p>
+</li>
+<li><p class="first">Add the DCD Management IP Address (10.0.0.201), Username: admin,
+Password: 401elliottW! and the Data Collection IP Address (self-IP:
+10.128.10.201). Data collection port default is 9300. Click the Add
+button in the lower right of the screen.</p>
+<p><a class="reference internal" href="../../_images/image65.png"><img alt="image69" src="../../_images/image65.png" style="width: 5.44792in; height: 3.73958in;" /></a></p>
+</li>
+<li><p class="first">Adding the DCD will take a minute or two:</p>
+<p><a class="reference internal" href="../../_images/image66.png"><img alt="image70" src="../../_images/image66.png" style="width: 6.50000in; height: 2.03125in;" /></a></p>
+</li>
+<li><p class="first">DCD item in UI displayed.</p>
+<ul class="simple">
+<li>Status – State indicator. Green (UP) | Yellow (Unhealthy) | Red
+(Down)</li>
+<li>Device name – Hostname of DCD (data collection device)</li>
+<li>IP Address – IP Address of interface used for data collection.</li>
+<li>Version – Software version of BIG-IQ DCD (data collection device)</li>
+</ul>
+</li>
+</ul>
+<p>Add device to inventory after DCD has been added to see the user experience around statistics.</p>
+<p>We will discover devices 10.0.0.4 using the UI and 10.0.0.5 using REST
+and enable statistic collection for these BIG-IP’s.</p>
+<p>Click Add to add a device to the BIG-IQ console.</p>
+<ul>
+<li><p class="first">Log in to the BIG-IQ Console Node (10.0.0.200 admin/401elliottW!)</p>
+</li>
+<li><p class="first">Under Device→Add Device</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image67.png"><img alt="image71" src="../../_images/image67.png" style="width: 5.85291in; height: 2.35171in;" /></a></p>
+<p>-Complete the form for the device add using IP 10.0.0.4, username:
+admin, password: 401elliottW!</p>
+<p><a class="reference internal" href="../../_images/image68.png"><img alt="image72" src="../../_images/image68.png" style="width: 5.90178in; height: 2.97140in;" /></a></p>
+</div></blockquote>
+</li>
+</ul>
+<p><a class="reference internal" href="../../_images/image69.png"><img alt="image73" src="../../_images/image69.png" style="width: 5.51646in; height: 4.65893in;" /></a></p>
+<p>To discover 10.0.0.5, use the POSTMan collection labeled “Service Provider Specialist Event - Lab 4”. Please note you may have to manually import the ADC service due to a conflict. Conflict resolution is capable via the API however; outside of the scope of this lab. For additional details please reference the API documentation located here:</p>
+<p><a class="reference external" href="http://bigiq-cm-restapi-reference.readthedocs.io/en/latest/HowToGuides/Trust/Trust.html">http://bigiq-cm-restapi-reference.readthedocs.io/en/latest/HowToGuides/Trust/Trust.html</a></p>
+<ul>
+<li><p class="first">Complete the Import (current-configuration copy to
+working-configuration on BIG-IQ) for LTM and AFM for both BIG-IP’s.
+For any conflict resolution use BIG-IP as the source of truth</p>
+<p><a class="reference internal" href="../../_images/image70.png"><img alt="image74" src="../../_images/image70.png" style="width: 2.57055in; height: 1.69135in;" /></a></p>
+</li>
+</ul>
+<p>Navigate to the monitoring dashboards to validate that statistics are being collected and displayed for the BIG-IP devices.</p>
+<ul>
+<li><p class="first">Navigate to Monitoring→Dashboards→ Device→ Health to verify that the
+graphs are populated.</p>
+<p><a class="reference internal" href="../../_images/image71.png"><img alt="image75" src="../../_images/image71.png" style="width: 5.84302in; height: 4.64525in;" /></a></p>
+</li>
+<li><p class="first">If you don’t see data, raise your hand to get some help.</p>
+</li>
+<li><p class="first">We are going to move on to other parts of the lab while we collect
+some stats and then we will circle back when we have more data to
+work with.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="workflow-2-creating-a-backup-schedule">
+<h1>2.4.5. WORKFLOW 2: Creating a Backup Schedule<a class="headerlink" href="#workflow-2-creating-a-backup-schedule" title="Permalink to this headline">¶</a></h1>
+<p>BIG-IQ is capable of centrally backing up and restoring all of the
+BIG-IP devices it manages. To create a simple backup schedule, follow
+the following steps.</p>
+<ol class="arabic">
+<li><p class="first">Click on the <strong>Back Up &amp; Restore</strong> submenu in the Devices header.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image72.png"><img alt="image76" src="../../_images/image72.png" style="width: 6.50000in; height: 2.80208in;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Expand the <strong>Back Up and Restore</strong> menu item found on the left and
+click on <strong>Backup Schedules</strong><a class="reference internal" href="../../_images/image73.png"><img alt="image77" src="../../_images/image73.png" style="width: 2.28056in; height: 1.23889in;" /></a></p>
+</li>
+<li><p class="first">Click the <strong>Create</strong> button</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image74.png"><img alt="image78" src="../../_images/image74.png" style="width: 2.00000in; height: 1.47917in;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Fill out the Backup Schedule using the following settings:</p>
+<ul>
+<li><p class="first"><strong>Name:</strong> Nightly</p>
+</li>
+<li><p class="first"><strong>Local Retention Policy:</strong> Delete local backup copy 1 day after creation</p>
+</li>
+<li><p class="first"><strong>Backup Frequency:</strong> Daily</p>
+</li>
+<li><p class="first"><strong>Start Time:</strong> 00:00 Eastern Daylight Time</p>
+</li>
+<li><p class="first"><strong>Devices: Groups:</strong> All BIG-IP Devices</p>
+</li>
+<li><p class="first">Your screen should look similar to the one below.</p>
+<p><a class="reference internal" href="../../_images/image75.png"><img alt="image79" src="../../_images/image75.png" style="width: 6.50000in; height: 4.85417in;" /></a></p>
+</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Save</strong> to save the scheduled backup job.</p>
+</li>
+<li><p class="first">Optionally feel free to select the newly created schedule and select
+“Back Up Now” to immediately backup the devices.</p>
+<ol class="loweralpha simple">
+<li>When completed the backups will be listed under the Backup Files
+section</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="workflow-3-uploading-qkviews-to-ihealth-for-a-support-case">
+<h1>2.4.6. WORKFLOW 3: Uploading QKViews to iHealth for a support case<a class="headerlink" href="#workflow-3-uploading-qkviews-to-ihealth-for-a-support-case" title="Permalink to this headline">¶</a></h1>
+<p>BIG-IQ can now push QKViews from managed devices to ihealth.f5.com and
+provide a link to the report of heuristic hits based on the QKView.
+These QKView uploads can be performed ad-hoc or as part of a F5 support
+case. If a support case is specified in the upload job, the QKView(s)
+will automatically be associated/linked to the support case. In addition
+to the link to the report, the QKView data is accessible at
+ihealth.f5.com to take advantage of other iHealth features like the
+upgrade advisor.</p>
+<ol class="arabic">
+<li><p class="first">Navigate to <strong>Monitoring</strong> <strong>→ Reports</strong> → <strong>Device</strong> → <strong>iHealth →
+Configuration</strong></p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image76.png"><img alt="image80" src="../../_images/image76.png" style="width: 6.50000in; height: 2.70000in;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Add Credentials to be used for the QKView upload and report
+retrieval. Click the Add button under Credentials.</p>
+<p><a class="reference internal" href="../../_images/image77.png"><img alt="image81" src="../../_images/image77.png" style="width: 1.88472in; height: 0.92639in;" /></a></p>
+</li>
+<li><p class="first">Fill in the credentials that you used to access <a class="reference external" href="https://ihealth.f5.com">https://ihealth.f5.com</a>:</p>
+<ul class="simple">
+<li>Name: Give the credentials a name to be referenced in BIG-IQ</li>
+<li>Username: &lt;Username you use to access iHealth.f5.com&gt;</li>
+<li>Password: &lt;Password you use to access iHealth.f5.com&gt;</li>
+</ul>
+<p><a class="reference internal" href="../../_images/image78.png"><img alt="image82" src="../../_images/image78.png" style="width: 4.50000in; height: 2.85417in;" /></a></p>
+</li>
+<li><p class="first">Click the Test button to validate that your credentials work.</p>
+</li>
+<li><p class="first">Click the Save &amp; Close button in the lower right.</p>
+</li>
+<li><p class="first">Click the Uploads button in the BIG-IP iHealth menu.</p>
+</li>
+<li><p class="first">Click the Upload button to select which devices we need to upload
+QKViews from Case123456</p>
+</li>
+<li><p class="first">Fill in the fields to upload the QKViews to iHealth.</p>
+<ul class="simple">
+<li>Name: CaseC123456</li>
+<li>F5 Support Case Number: C123456</li>
+<li>Credentials: &lt;Select the credentials you just stored in step 5&gt;</li>
+<li>Devices: Move all devices from Available to Selected</li>
+</ul>
+<p><a class="reference internal" href="../../_images/image79.png"><img alt="image83" src="../../_images/image79.png" style="width: 6.50000in; height: 3.10000in;" /></a></p>
+</li>
+<li><p class="first">Click the Upload button in the lower right.</p>
+</li>
+<li><p class="first">Click on the name of your upload job to get more details</p>
+<p><a class="reference internal" href="../../_images/image80.png"><img alt="image84" src="../../_images/image80.png" style="width: 2.82222in; height: 0.74931in;" /></a></p>
+</li>
+<li><p class="first">Observe the progress of the QKView creation, retrieval, upload,
+processing, and reporting. This operation can take some time, so you
+may want to move on to the next exercise and come back.</p>
+</li>
+<li><p class="first">Once a job reaches the Finished status, click on the Reports menu to
+review the report.</p>
+</li>
+<li><p class="first">Click on the Download PDF link to view each of the reports.</p>
+<p><a class="reference internal" href="../../_images/image81.png"><img alt="image85" src="../../_images/image81.png" style="width: 6.50000in; height: 2.89583in;" /></a></p>
+</li>
+<li><p class="first">Open a browser window/tab to <a class="reference external" href="https://ihealth.f5.com">https://ihealth.f5.com</a></p>
+</li>
+<li><p class="first">Log in with the same credentials that you saved in step 5.</p>
+</li>
+<li><p class="first">Observe the full QKViews that are available in iHealth for further
+use with items like the Upgrade Advisor.</p>
+<p><a class="reference internal" href="../../_images/image82.png"><img alt="image86" src="../../_images/image82.png" style="width: 6.47361in; height: 0.84236in;" /></a></p>
+</li>
+</ol>
+</div>
+
+
+        
+		     <div class="row next-prev-btn-row">
+           <div class="col-lg-12">
+           
+		        <a href="lab3.html" title="2.4.3. Changes to BIG-IQ User Interface" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+           
+           
+              <a href="lab5.html" title="2.4.7. BIG-IQ Global Search and Related to Search" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+           
+		     </div>
+         </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="content-fluid pre-footer">
+            <div class="blocks-container">
+              <div class="block">
+                <h3>Support Programs</h3>
+                <p>Regionally located support centers enable F5 to provide support in a number of languages through native-speaking support engineers.</p>
+                <a class="btn internalLink" data-ng-href="https://f5.com/support/support-offerings" target="_blank" href="https://f5.com/support/support-offerings">See more
+                  <span class="icon-1x-right icon-new-window" data-icon="new-window">​</span>
+                </a>
+              </div>
+              <div class="block">
+                <h3>Contact Support</h3>
+                <p>
+                  North America: 1-888-882-7535<br>
+                  Outside North America: 800-11-275-435
+                </p>
+                <a class="btn internalLink" data-ng-href="https://f5.com/about-us/contact#regional-support" target="_blank" href="https://f5.com/about-us/contact#regional-support">Local Support Numbers
+                  <span class="icon-1x-right icon-new-window" data-icon="new-window">​</span>
+                </a>
+              </div>
+              <div class="block">
+                <h3>Feedback and Help</h3>
+                <p>Have questions, suggestions, or just want to get something off your chest? Let us know.</p>
+                <a class="btn" data-ui-sref="siteFeedback" target="_blank" href="https://support.f5.com/csp/siteFeedback">Leave feedback</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="footer">
+            <div class="container">
+              <div class="col-sm-3 col-md-2">
+                <h4>About F5</h4>
+                <ul>
+                  <li><a data-ng-href="https://f5.com/about-us/contact" target="_blank" data-link-type="footer" href="https://f5.com/about-us/contact" class="internalLink">Contact F5</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/about-us/careers" target="_blank" data-link-type="footer" href="https://f5.com/about-us/careers" class="internalLink">Careers</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-3 col-md-2">
+                <h4>Education</h4>
+                <ul>
+                  <li><a data-ng-href="https://f5.com/education/training" target="_blank" data-link-type="footer" href="https://f5.com/education/training" class="internalLink">Training</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/education/certification" target="_blank" data-link-type="footer" href="https://f5.com/education/certification" class="internalLink">Certification</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/education/training/free-courses" target="_blank" data-link-type="footer" href="https://f5.com/education/training/free-courses" class="internalLink">Free Online Training</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <h4>F5 sites</h4>
+                <ul>
+                <li><a data-ng-href="https://f5.com" target="_blank" data-link-type="footer" href="https://f5.com" class="internalLink">F5.com</a>
+                </li>
+                <li><a data-ng-href="https://devcentral.f5.com" target="_blank" data-link-type="footer" href="https://devcentral.f5.com" class="internalLink">Community</a>
+                </li>
+                <li><a data-ng-href="https://partners.f5.com" target="_blank" data-link-type="footer" href="https://partners.f5.com" class="internalLink">Partners</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <h4>Support Tasks</h4>
+            <ul>
+                <li><a data-ui-sref="mySupport.createServiceRequest" data-link-type="footer" href="https://support.f5.com/csp/my-support/service-request">Create Service Request </a>
+                </li>
+                <li><a data-ng-href="https://f5.com/about-us/contact#regional-support" target="_blank" data-link-type="footer" href="https://f5.com/about-us/contact#regional-support" class="internalLink">Contact Support</a>
+                </li>
+                <li><a data-ui-sref="siteFeedback" target="_blank" data-link-type="footer" href="https://support.f5.com/csp/siteFeedback">Leave feedback [+]</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-3 right">
+            <h4>Connect with us</h4>
+            <ul class="social_icons">
+                <li><a href="//twitter.com/f5networks" target="_blank" data-name="twitter" data-type="" data-prefix="social" data-utf="E032" title="Twitter" class="externalLink"><i class="icon-1x icon-twitter icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.linkedin.com/companies/f5-networks" target="_blank" class="linkedin externalLink" title="LinkedIn"><i class="icon-1x icon-linkedin icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.facebook.com/f5networksinc" target="_blank" class="facebook externalLink" title="Facebook"><i class="icon-1x icon-facebook icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.youtube.com/f5networksinc" target="_blank" class="youtube externalLink" title="YouTube"><i class="icon-1x icon-youtube icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a data-ng-href="https://devcentral.f5.com" target="_blank" class="devcentral internalLink" title="DevCentral" href="https://devcentral.f5.com"><i class="icon-1x icon-dc-pos icon-inverse-circle" data-link-type="footer"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="content-fluid left">
+            <div class="col-xs-12">
+                <p>
+                    © Copyright <span class="ng-binding">2017</span> by F5 Networks, Inc. |
+                    <a data-ng-href="https://f5.com/about-us/policies" target="_blank" data-link-type="footer" href="https://f5.com/about-us/policies" class="internalLink">Policies</a> |
+                    <a data-ng-href="https://f5.com/about-us/policies/trademarks" target="_blank" data-link-type="footer" href="https://f5.com/about-us/policies/trademarks" class="internalLink">Trademarks</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  </body>
+</html>

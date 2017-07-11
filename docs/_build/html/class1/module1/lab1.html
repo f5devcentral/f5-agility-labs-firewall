@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.1. Create a Pool and Virtual Server using REST API &#8212; F5 Firewall Solutions  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1.2. Advanced Firewall Manager (AFM)" href="lab2.html" />
+    <link rel="prev" title="2.1. Advanced Firewall Manager (AFM) Introduction" href="module1.html" />
+<!--
+# Copyright 2017 F5 Networks
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+-->
+<link href="https://cdn.f5.com/favicon.ico" rel="icon">
+<script src="https://use.fontawesome.com/21fb8a09c3.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  </head>
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row corp-header">
+      <div class="container corp-header">
+        <div class="container corp-menu">
+          <ul>
+            <li><a href="https://f5.com" class="internalLink">F5.com</a></li>
+            <li><a href="https://support.f5.com">Support</a></li>
+            <li><a href="https://devcentral.f5.com">Community</a></li>
+            <li><a href="https://github.com/F5Networks">GitHub</a></li>
+            <li><a href="https://f5.com/about-us/careers">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pageHeader">
+      <div class="container stat">
+        <div class="col-xs-12 stat">
+          <a class="internalLink" href="https://f5.com">
+            <img class="logo" src="https://cdn.f5.com/websites/support/assets/images/logo.svg" width="50" height="44" alt="F5 Networks" title="F5 Networks" border="0">
+          </a>
+            <ul id="MainMenu" class="main-menu">
+              <li>
+                <a href="#">Products
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="ProductsSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Connectors</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/marathon-bigip-ctlr/latest" data-link-type="Nav: Mega">F5 Marathon BIG-IP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/marathon-asp-ctlr/latest" data-link-type="Nav: Mega">F5 Marathon ASP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest" data-link-type="Nav: Mega">F5 Kubernetes BIG-IP Controller</a></li>
+                          <li><a href="http://clouddocs.f5.com/products/connectors/f5-kube-proxy/latest" data-link-type="Nav: Mega">F5 Kubernetes Proxy</a></li>
+                        </ul>
+                        <!--span class="seemore"><a data-link-type="Nav: Mega" href="/products/connectors">See all </a></--span-->
+                      </li>
+                      <li class="divider"></li>
+                      <li class="third"><span class="a-mm-h">Application Service Proxy</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/products/asp/latest" data-link-type="Nav: Mega">F5 Application Service Proxy</a></li>
+                        </ul>
+                        <!--span class="seemore"><a href="/products/">See all </a></span-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Container Integrations
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="ContainersSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Container Integrations</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/marathon/" data-link-type="Nav: Mega">Mesos Marathon</a></li>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/kubernetes/" data-link-type="Nav: Mega">Kubernetes</a></li>
+                          <li><a href="http://clouddocs.f5.com/containers/latest/openshift/" data-link-type="Nav: Mega">RedHat OpenShift</a></li>
+                        </ul>
+                        <span class="seemore"><a data-link-type="Nav: Mega" href="http://clouddocs.f5.com/containers/latest">View details </a></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Clouds
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+
+                <div class="menu-panel soft-hide" id="CloudsSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third"><span class="a-mm-h">Cloud Integrations</span>
+                        <ul>
+                          <li><a href="http://clouddocs.f5.com/cloud/openstack/" data-link-type="Nav: Mega">OpenStack</a></li>
+                        </ul>
+                        <!--span class="seemore"><a data-link-type="Nav: Mega" href="/cloud/">See all </a></span-->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="#">Resources
+                  <span class="indicator"><span class="arrow-up"></span></span>
+                </a>
+                <div class="menu-panel soft-hide" id="UPCProgramSubmenu">
+                  <div class="container">
+                    <ul class="submenu col-sm-11">
+                      <li class="third">
+                        <span class="a-mm-h">Downloads</span>
+                        <ul>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://hub.docker.com/r/f5networks/" class="internalLink">Docker Hub</a></li>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://store.docker.com/images/f5networks" class="internalLink">Docker Store</a></li>
+                        </ul>
+                      </li>
+                      <li class="divider"></li>
+
+                      <li class="third">
+                        <span class="a-mm-h">OpenSource</span>
+                        <ul>
+                          <li><a target="_blank" data-link-type="Nav: Mega" href="https://github.com/F5Networks" class="internalLink">GitHub</a></li>
+                        </ul>
+                      </li>
+                      <li class="divider"></li>
+
+                      <li class="third">
+                        <a href="//university.f5.com" class="a-mm-h internalLink" target="_blank" data-link-type="Nav: Mega">F5 University</a>
+                        <ul>
+                          <li>
+                            <p>Get up to speed with free self-paced courses</p>
+                          </li>
+                        </ul>
+                        <a data-ng-href="https://devcentral.f5.com" class="a-mm-h internalLink" target="_blank" data-link-type="Nav: Mega" href="https://devcentral.f5.com">DevCentral</a>
+                        <ul>
+                          <li>
+                            <p>Join the community of 250,000+ technical peers</p>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container-fluid -->
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 sidebar">
+         <h4><a href="../../">F5 Firewall Solutions </a></h4>
+<div id="searchbox" style="display: none" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <div>
+      <input type="text" name="q" placeholder="Search" style="padding-left: 6px;"/>
+      <!-- <input type="submit" value="Go" style="margin-top: 4px;"/> -->
+      <button type="submit" class="btn btn-primary btn-xs">Go</button>
+    </div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Advanced Firewall Manager, the ENTERPRISE Firewall</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Advanced Firewall Manager (AFM) Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">2.2. AFM Packet Tester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">2.3. DDoS Protection with AFM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">2.4. Device Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">2.5. Network Security (AFM) Management Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module6/module6.html">2.6. External Logging Devices (SevOne)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="module1.html"
+                        title="previous chapter">2.1. Advanced Firewall Manager (AFM) Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lab2.html"
+                        title="next chapter">2.1.2. Advanced Firewall Manager (AFM)</a></p>
+        
+      </div>
+      <div class="col-md-offset-3 col-sm-offset-3 main">
+        <h4>
+          <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 Firewall Solutions</a>
+          <span class="right"><a href="../../genindex.html">Index</a></span>
+        </h4>
+        
+  <div class="section" id="create-a-pool-and-virtual-server-using-rest-api">
+<h1>2.1.1. Create a Pool and Virtual Server using REST API<a class="headerlink" href="#create-a-pool-and-virtual-server-using-rest-api" title="Permalink to this headline">¶</a></h1>
+<p><strong>About Representational State Transfer</strong></p>
+<p>Representational State Transfer (REST) describes an architectural style
+of web services where clients and servers exchange representations of
+resources. The REST model defines a resource as a source of information,
+and defines a representation as the data that describes the state of a
+resource. REST web services use the HTTP protocol to communicate between
+a client and a server, specifically by means of the POST, GET, PUT, and
+DELETE methods to create, read, update, and delete elements or
+collections. In general terms, REST queries resources for the
+configuration objects of a BIG-IP® system, and creates, deletes, or
+modifies the representations of those configuration objects. The
+iControl® REST implementation follows the REST model by:</p>
+<ul class="simple">
+<li>Using REST as a resource-based interface, and creating API methods
+based on nouns.</li>
+<li>Employing a stateless protocol and MIME data types, as well astaking advantage
+of the authentication mechanisms and caching built into the HTTP protocol.</li>
+<li>Supporting the JSON format for document encoding.</li>
+<li>Representing the hierarchy of resources and collections with a Uniform
+Resource Identifier (URI) structure.</li>
+<li>Returning HTTP response codes to indicate success or failure of an
+operation.</li>
+<li>Including links in resource references to accommodate discovery.</li>
+</ul>
+<p><strong>About URI format</strong></p>
+<p>The iControl® REST API enables the management of a BIG-IP® device by
+using web service requests. A principle of the REST architecture
+describes the identification of a resource by means of a Uniform
+Resource Identifier (URI). You can specify a URI with a web service
+request to create, read, update, or delete some component or module of a
+BIG-IP system configuration. In the context of REST architecture, the
+system configuration is the representation of a resource. A URI
+identifies the name of a web resource; in this case, the URI also
+represents the tree structure of modules and components in TMSH.</p>
+<p>In iControl REST, the URI structure for all requests includes the string
+/mgmt/tm/ to identify the namespace for traffic management. Any
+identifiers that follow the endpoint are resource collections.</p>
+<p>Tip: Use the default administrative account, admin, for requests to
+iControl REST. Once you are familiar with the API, you can create user
+accounts for iControl REST users with various permissions.</p>
+<p><a class="reference external" href="https://management-ip/mgmt/tm/module">https://management-ip/mgmt/tm/module</a></p>
+<p>The URI in the previous example designates all of the TMSH subordinate
+modules and components in the specified module. iControl REST refers to
+this entity as an organizing collection. An organizing collection
+contains links to other resources. The management-ip component of the
+URI is the fully qualified domain name (FQDN) or IP address of a BIG-IP
+device.</p>
+<p>Important: iControl REST only supports secure access through HTTPS, so
+you must include credentials with each REST call. Use the same
+credentials you use for the BIG-IP device manager interface.</p>
+<p>For example, use the following URI to access all the components and
+subordinate modules in the LTM module:</p>
+<p><a class="reference external" href="https://192.168.25.42/mgmt/tm/ltm">https://192.168.25.42/mgmt/tm/ltm</a></p>
+<p>The URI in the following example designates all of the subordinate
+modules and components in the specified sub-module. iControl REST refers
+to this entity as a collection; a collection contains resources.</p>
+<p><a class="reference external" href="https://management-ip/mgmt/tm/module/sub-module">https://management-ip/mgmt/tm/module/sub-module</a></p>
+<p>The URI in the following example designates the details of the specified
+component. The Traffic Management Shell (TMSH) Reference documents the
+hierarchy of modules and components, and identifies details of each
+component. iControl REST refers to this entity as a resource. A resource
+may contain links to sub-collections.</p>
+<p><a class="reference external" href="https://management-ip/mgmt/tm/module%5b/sub-module%5d/component">https://management-ip/mgmt/tm/module[/sub-module]/component</a></p>
+<p><strong>About reserved ASCII characters</strong></p>
+<p>To accommodate the BIG-IP® configuration objects that use characters,
+which are not part of the unreserved ASCII character set, use a percent
+sign (%) and two hexadecimal digits to represent them in a URI. The
+unreserved character set consists of: [A - Z] [a - z] [0 - 9] dash (-),
+underscore (_), period (.), and tilde (~).</p>
+<p>You must encode any characters that are not part of the unreserved
+character set for inclusion in a URI scheme. For example, an IP address
+in a non-default route domain that contains a percent sign to indicate
+an address in a specific route domain, such as 192.168.25.90%3, should
+be encoded to replace the %character with %25.</p>
+<p><strong>About REST resource identifiers</strong></p>
+<p>A URI is the representation of a resource that consists of a protocol,
+an address, and a path structure to identify a resource and optional
+query parameters. Because the representation of folder and partition
+names in TMSH often includes a forward slash (/), URI encoding of folder
+and partition names must use a different character to represent a
+forward slash in iControl®</p>
+<p>To accommodate the forward slash in a resource name, iControl REST maps
+the forward slash to a tilde (~) character. When a resource name
+includes a forward slash (/) in its name, substitute a tilde (~) for the
+forward slash in the path. For example, a resource name, such as
+/Common/plist1, should be modified to the format shown here:</p>
+<p><a class="reference external" href="https://management-ip/mgmt/tm/security/firewall/port-list/~Common~plist1">https://management-ip/mgmt/tm/security/firewall/port-list/~Common~plist1</a></p>
+<p><strong>About Postman – REST Client</strong></p>
+<p>Postman helps you be more efficient while working with APIs. Postman is
+a scratch-your-own-itch project. The need for it arose while one of the
+developers was creating an API for his project. After looking around for
+a number of tools, nothing felt just right. The primary features added
+initially were a history of sent requests and collections. You can find
+Postman here: <a class="reference external" href="http://www.getpostman.com">www.getpostman.com</a></p>
+<p>A PostMAN collection has been created to simplify building the pools and
+virtuals necessary for the remainder of this course. The collection is
+called “Service Provider Specialist Event – Lab 1a”. You can
+sequentially execute all twelve steps by pressing the send button after
+clicking on each call.</p>
+<p><a class="reference internal" href="../../_images/image5.png"><img alt="image4" src="../../_images/image5.png" style="width: 6.50000in; height: 0.55208in;" /></a></p>
+<p>Alternatively, you can run all commands at once using the “Runner”
+feature. To use the Runner feature locate the Runner Icon at the top of
+POSTMan. Select the appropriate collection and click “Start Test” as
+exampled below:</p>
+<p><a class="reference internal" href="../../_images/image6.png"><img alt="image5" src="../../_images/image6.png" style="width: 6.50000in; height: 5.02569in;" /></a></p>
+<p>Once completed, all the necessary nodes, pools, and virtuals for the lab
+will have been created. As a general POSTMan rule, you should close the
+tabs you’ve opened when you are finished working with them (after each
+section). POSTMan has a known bug and will crash when there are too many
+tabs opened at once.</p>
+<p>Now let’s test the virtual server to ensure it works. On your
+workstation open a browser and enter the address of your virtual servers
+that you just created (<a class="reference external" href="http://10.128.10.223">*http://10.128.10.223*</a>
+and <a class="reference external" href="http://10.128.10.224">*http://10.128.10.224*</a>). Refresh the
+browser screen several times (use “&lt;ctrl&gt;” F5 to ensure you are not
+displaying cached objects). Note the <strong>*Server IP address*</strong> should be
+alternating between the three destination servers in your pool
+(10.128.20.150, 10.128.20.160, 10.128.20.170). The BIG-IP is load
+balancing requests in a round-robin fashion.</p>
+<p>Go to bigip1.agility.com (10.0.0.4) and view the statistics for the
+<strong>wildcard_vs</strong> virtual server and the <strong>wildcard_vs_pool</strong> pool
+and its associated members. Go to <strong>Statistics</strong> &gt; <strong>Module
+Statistics</strong> &gt; <strong>Local Traffic</strong>. In the <strong>Statistics Type</strong> drop
+down item select <strong>Pools</strong>.</p>
+<p><a class="reference internal" href="../../_images/image7.png"><img alt="image6" src="../../_images/image7.png" style="width: 6.49514in; height: 1.64583in;" /></a></p>
+<ul class="simple">
+<li>You may also go to <strong>Local Traffic &gt; Pools &gt; Statistics</strong><ul>
+<li>Did each pool member receive the same number of connections?</li>
+<li>Did each pool member receive approximately the same number of
+bytes?</li>
+</ul>
+</li>
+</ul>
+<p>Try connecting directly to the IP addresses of the servers in the pool
+from your browser, and through the virtual server on the BIG-IP and take
+note of the Client IP Address on the web page as highlighted below:</p>
+<p><a class="reference internal" href="../../_images/image8.png"><img alt="image7" src="../../_images/image8.png" style="width: 3.91181in; height: 1.96389in;" /></a></p>
+<ul class="simple">
+<li>Why does the Source IP address change when going through BIG-IP?<ul>
+<li>What address is it changing to?</li>
+</ul>
+</li>
+<li>Verify that you can connect through the wildcard virtual server using
+various ports:<ul>
+<li>Edit the URL in your browser to
+<a class="reference external" href="http://10.128.10.223:8081">*http://10.128.10.223:8081*</a></li>
+<li>Edit the URL in your browser to
+<a class="reference external" href="https://10.128.10.223">*https://10.128.10.223*</a></li>
+<li>Edit the URL in your browser to
+<a class="reference external" href="ftp://10.128.10.223">*ftp://10.128.10.223*</a><ul>
+<li>NOTE: There is no need to login, a prompt will eventually be
+displayed.</li>
+</ul>
+</li>
+<li>Open Putty (SSH) and access 10.128.10.223<ul>
+<li>NOTE: you do not need to login, getting a prompt is sufficient
+for this test</li>
+</ul>
+</li>
+<li>All of these connections should be successful through the BIG-IP,
+and should be load balanced to the servers in the pool. Since the
+BIG-IP is configured for a wildcard port on the virtual server and
+pool, these connections are allowed through.</li>
+<li>Close the Web Browsers and Putty.</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+        
+		     <div class="row next-prev-btn-row">
+           <div class="col-lg-12">
+           
+		        <a href="module1.html" title="2.1. Advanced Firewall Manager (AFM) Introduction" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+           
+           
+              <a href="lab2.html" title="2.1.2. Advanced Firewall Manager (AFM)" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+           
+		     </div>
+         </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="content-fluid pre-footer">
+            <div class="blocks-container">
+              <div class="block">
+                <h3>Support Programs</h3>
+                <p>Regionally located support centers enable F5 to provide support in a number of languages through native-speaking support engineers.</p>
+                <a class="btn internalLink" data-ng-href="https://f5.com/support/support-offerings" target="_blank" href="https://f5.com/support/support-offerings">See more
+                  <span class="icon-1x-right icon-new-window" data-icon="new-window">​</span>
+                </a>
+              </div>
+              <div class="block">
+                <h3>Contact Support</h3>
+                <p>
+                  North America: 1-888-882-7535<br>
+                  Outside North America: 800-11-275-435
+                </p>
+                <a class="btn internalLink" data-ng-href="https://f5.com/about-us/contact#regional-support" target="_blank" href="https://f5.com/about-us/contact#regional-support">Local Support Numbers
+                  <span class="icon-1x-right icon-new-window" data-icon="new-window">​</span>
+                </a>
+              </div>
+              <div class="block">
+                <h3>Feedback and Help</h3>
+                <p>Have questions, suggestions, or just want to get something off your chest? Let us know.</p>
+                <a class="btn" data-ui-sref="siteFeedback" target="_blank" href="https://support.f5.com/csp/siteFeedback">Leave feedback</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="footer">
+            <div class="container">
+              <div class="col-sm-3 col-md-2">
+                <h4>About F5</h4>
+                <ul>
+                  <li><a data-ng-href="https://f5.com/about-us/contact" target="_blank" data-link-type="footer" href="https://f5.com/about-us/contact" class="internalLink">Contact F5</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/about-us/careers" target="_blank" data-link-type="footer" href="https://f5.com/about-us/careers" class="internalLink">Careers</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-3 col-md-2">
+                <h4>Education</h4>
+                <ul>
+                  <li><a data-ng-href="https://f5.com/education/training" target="_blank" data-link-type="footer" href="https://f5.com/education/training" class="internalLink">Training</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/education/certification" target="_blank" data-link-type="footer" href="https://f5.com/education/certification" class="internalLink">Certification</a>
+                  </li>
+                  <li><a data-ng-href="https://f5.com/education/training/free-courses" target="_blank" data-link-type="footer" href="https://f5.com/education/training/free-courses" class="internalLink">Free Online Training</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <h4>F5 sites</h4>
+                <ul>
+                <li><a data-ng-href="https://f5.com" target="_blank" data-link-type="footer" href="https://f5.com" class="internalLink">F5.com</a>
+                </li>
+                <li><a data-ng-href="https://devcentral.f5.com" target="_blank" data-link-type="footer" href="https://devcentral.f5.com" class="internalLink">Community</a>
+                </li>
+                <li><a data-ng-href="https://partners.f5.com" target="_blank" data-link-type="footer" href="https://partners.f5.com" class="internalLink">Partners</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <h4>Support Tasks</h4>
+            <ul>
+                <li><a data-ui-sref="mySupport.createServiceRequest" data-link-type="footer" href="https://support.f5.com/csp/my-support/service-request">Create Service Request </a>
+                </li>
+                <li><a data-ng-href="https://f5.com/about-us/contact#regional-support" target="_blank" data-link-type="footer" href="https://f5.com/about-us/contact#regional-support" class="internalLink">Contact Support</a>
+                </li>
+                <li><a data-ui-sref="siteFeedback" target="_blank" data-link-type="footer" href="https://support.f5.com/csp/siteFeedback">Leave feedback [+]</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-3 right">
+            <h4>Connect with us</h4>
+            <ul class="social_icons">
+                <li><a href="//twitter.com/f5networks" target="_blank" data-name="twitter" data-type="" data-prefix="social" data-utf="E032" title="Twitter" class="externalLink"><i class="icon-1x icon-twitter icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.linkedin.com/companies/f5-networks" target="_blank" class="linkedin externalLink" title="LinkedIn"><i class="icon-1x icon-linkedin icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.facebook.com/f5networksinc" target="_blank" class="facebook externalLink" title="Facebook"><i class="icon-1x icon-facebook icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a href="//www.youtube.com/f5networksinc" target="_blank" class="youtube externalLink" title="YouTube"><i class="icon-1x icon-youtube icon-inverse-circle" data-link-type="footer"></i></a></li>
+                <li><a data-ng-href="https://devcentral.f5.com" target="_blank" class="devcentral internalLink" title="DevCentral" href="https://devcentral.f5.com"><i class="icon-1x icon-dc-pos icon-inverse-circle" data-link-type="footer"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="content-fluid left">
+            <div class="col-xs-12">
+                <p>
+                    © Copyright <span class="ng-binding">2017</span> by F5 Networks, Inc. |
+                    <a data-ng-href="https://f5.com/about-us/policies" target="_blank" data-link-type="footer" href="https://f5.com/about-us/policies" class="internalLink">Policies</a> |
+                    <a data-ng-href="https://f5.com/about-us/policies/trademarks" target="_blank" data-link-type="footer" href="https://f5.com/about-us/policies/trademarks" class="internalLink">Trademarks</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  </body>
+</html>

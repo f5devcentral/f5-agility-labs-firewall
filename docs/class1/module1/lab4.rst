@@ -62,19 +62,19 @@ Rules Lists*** page. Select ***web\_rule\_list*** and click the
 
 Click ***Update***.
 
-.. |image25| image:: /_static/image26.png
+.. |image25| image:: /_static/class1/image26.png
    :width: 6.50000in
    :height: 5.02569in
-.. |image26| image:: /_static/image27.png
+.. |image26| image:: /_static/class1/image27.png
    :width: 6.50000in
    :height: 1.46111in
-.. |image27| image:: /_static/image28.png
+.. |image27| image:: /_static/class1/image28.png
    :width: 6.50000in
    :height: 1.71319in
-.. |image28| image:: /_static/image29.png
+.. |image28| image:: /_static/class1/image29.png
    :width: 6.50000in
    :height: 1.50000in
-.. |image29| image:: /_static/image30.png
+.. |image29| image:: /_static/class1/image30.png
    :width: 6.50000in
    :height: 0.88958in
 

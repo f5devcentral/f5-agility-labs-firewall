@@ -58,9 +58,9 @@ You should now see a report of rules that do not have **Hit Counts**.
 You can also export CSV for further processing of data by selecting
 **CSV Report.**
 
-.. |image132| image:: /_static/image126.png
+.. |image132| image:: /_static/class1/image126.png
    :width: 4.25000in
    :height: 4.43750in
-.. |image133| image:: /_static/image127.png
+.. |image133| image:: /_static/class1/image127.png
    :width: 6.48958in
    :height: 3.71875in

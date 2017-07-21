@@ -42,12 +42,12 @@ alerts on the ***Alerts*** tab as shown:
 Now whenever a new Source or Destination IP is processed by the PLA an
 alert will be created.
 
-.. |image145| image:: /_static/image135.png
+.. |image145| image:: /_static/class1/image135.png
    :width: 2.02736in
    :height: 4.50618in
-.. |image146| image:: /_static/image136.png
+.. |image146| image:: /_static/class1/image136.png
    :width: 6.50000in
    :height: 1.38194in
-.. |image147| image:: /_static/image137.png
+.. |image147| image:: /_static/class1/image137.png
    :width: 6.50000in
    :height: 1.04167in

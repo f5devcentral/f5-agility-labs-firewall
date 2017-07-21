@@ -107,16 +107,16 @@ Drop","7":"Drop (Flow Miss)","8":"Not Applicable","9":"Prior Reject"};``
 
 acl\_device\_is\_default\_rule = could be true or false.
 
-.. |image43| image:: /_static/image43.png
+.. |image43| image:: /_static/class1/image43.png
    :width: 6.48958in
    :height: 3.44792in
-.. |image44| image:: /_static/image44.png
+.. |image44| image:: /_static/class1/image44.png
    :width: 6.48958in
    :height: 2.60417in
-.. |image45| image:: /_static/image45.png
+.. |image45| image:: /_static/class1/image45.png
    :width: 6.49514in
    :height: 3.71389in
-.. |image46| image:: /_static/image46.png
+.. |image46| image:: /_static/class1/image46.png
    :width: 6.48958in
    :height: 1.61458in
 

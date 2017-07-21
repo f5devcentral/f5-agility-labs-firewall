@@ -294,51 +294,51 @@ Your rule set should look similar to the screenshot below:
 
 |image24|
 
-.. |image9| image:: /_static/image10.png
+.. |image9| image:: /_static/class1/image10.png
    :width: 4.74410in
    :height: 5.21054in
-.. |image10| image:: /_static/image11.png
+.. |image10| image:: /_static/class1/image11.png
    :width: 7.25069in
    :height: 1.99792in
-.. |image11| image:: /_static/image12.png
+.. |image11| image:: /_static/class1/image12.png
    :width: 6.50000in
    :height: 1.86458in
-.. |image12| image:: /_static/image13.png
+.. |image12| image:: /_static/class1/image13.png
    :width: 6.50000in
    :height: 1.46319in
-.. |image13| image:: /_static/image14.png
+.. |image13| image:: /_static/class1/image14.png
    :width: 6.50000in
    :height: 0.80278in
-.. |image14| image:: /_static/image15.png
+.. |image14| image:: /_static/class1/image15.png
    :width: 3.26105in
    :height: 1.47052in
-.. |image15| image:: /_static/image16.png
+.. |image15| image:: /_static/class1/image16.png
    :width: 6.30515in
    :height: 1.66925in
-.. |image16| image:: /_static/image17.png
+.. |image16| image:: /_static/class1/image17.png
    :width: 3.34926in
    :height: 3.60993in
-.. |image17| image:: /_static/image18.png
+.. |image17| image:: /_static/class1/image18.png
    :width: 6.50000in
    :height: 0.48681in
-.. |image18| image:: /_static/image19.png
+.. |image18| image:: /_static/class1/image19.png
    :width: 4.92847in
    :height: 1.35694in
-.. |image19| image:: /_static/image20.png
+.. |image19| image:: /_static/class1/image20.png
    :width: 4.04722in
    :height: 1.93264in
-.. |image20| image:: /_static/image21.png
+.. |image20| image:: /_static/class1/image21.png
    :width: 6.47361in
    :height: 1.78958in
-.. |image21| image:: /_static/image22.png
+.. |image21| image:: /_static/class1/image22.png
    :width: 6.49514in
    :height: 2.50556in
-.. |image22| image:: /_static/image23.png
+.. |image22| image:: /_static/class1/image23.png
    :width: 6.50000in
    :height: 0.78750in
-.. |image23| image:: /_static/image24.png
+.. |image23| image:: /_static/class1/image24.png
    :width: 2.49327in
    :height: 2.28456in
-.. |image24| image:: /_static/image25.png
+.. |image24| image:: /_static/class1/image25.png
    :width: 6.50000in
    :height: 0.91667in

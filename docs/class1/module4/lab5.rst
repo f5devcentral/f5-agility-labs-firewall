@@ -49,21 +49,21 @@ Global Search
 
 |image92|
 
-.. |image87| image:: /_static/image83.png
+.. |image87| image:: /_static/class1/image83.png
    :width: 4.06250in
    :height: 1.11458in
-.. |image88| image:: /_static/image84.png
+.. |image88| image:: /_static/class1/image84.png
    :width: 6.50000in
    :height: 0.64583in
-.. |image89| image:: /_static/image85.png
+.. |image89| image:: /_static/class1/image85.png
    :width: 6.48958in
    :height: 3.41667in
-.. |image90| image:: /_static/image86.png
+.. |image90| image:: /_static/class1/image86.png
    :width: 6.50000in
    :height: 3.05208in
-.. |image91| image:: /_static/image87.png
+.. |image91| image:: /_static/class1/image87.png
    :width: 6.72676in
    :height: 1.88954in
-.. |image92| image:: /_static/image88.png
+.. |image92| image:: /_static/class1/image88.png
    :width: 6.50000in
    :height: 1.00000in

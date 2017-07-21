@@ -1,5 +1,5 @@
-External Logging Devices (SevOne)
-=================================
+Module 6: External Logging Devices (SevOne)
+===========================================
 
 BIG-IQ Central Management Version - 5.1 has introduced the ability to
 integrate with SevOne’s Performance Logging Appliance (PLA) for high

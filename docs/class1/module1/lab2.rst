@@ -68,7 +68,7 @@ Some facts below about AFM, and its functionality:
    Express and GTM + DNSSEC. These modules make up the entire
    application delivery firewall (ADF) solution.
 
-.. |image8| image:: /_static/image9.png
+.. |image8| image:: /_static/class1/image9.png
    :width: 6.50000in
    :height: 1.87222in
 

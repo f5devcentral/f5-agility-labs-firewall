@@ -416,69 +416,69 @@ Test Access to the Wildcard Virtual Server
 
 -  Close all Web browsers and Putty sessions.
 
-.. |image106| image:: /_static/image1.jpg
+.. |image106| image:: /_static/class1/image1.jpg
    :width: 3.27778in
    :height: 1.14444in
-.. |image107| image:: /_static/image41.jpg
+.. |image107| image:: /_static/class1/image41.jpg
    :width: 1.95031in
    :height: 1.01251in
-.. |image108| image:: /_static/image102.png
+.. |image108| image:: /_static/class1/image102.png
    :width: 3.38542in
    :height: 4.42708in
-.. |image109| image:: /_static/image103.png
+.. |image109| image:: /_static/class1/image103.png
    :width: 6.50000in
    :height: 1.10000in
-.. |image110| image:: /_static/image104.png
+.. |image110| image:: /_static/class1/image104.png
    :width: 6.50000in
    :height: 2.76042in
-.. |image111| image:: /_static/image105.png
+.. |image111| image:: /_static/class1/image105.png
    :width: 4.56250in
    :height: 5.16667in
-.. |image112| image:: /_static/image106.png
+.. |image112| image:: /_static/class1/image106.png
    :width: 6.50000in
    :height: 1.10000in
-.. |image113| image:: /_static/image107.png
+.. |image113| image:: /_static/class1/image107.png
    :width: 6.50000in
    :height: 2.66667in
-.. |image114| image:: /_static/image108.png
+.. |image114| image:: /_static/class1/image108.png
    :width: 6.48958in
    :height: 0.67708in
-.. |image115| image:: /_static/image109.png
+.. |image115| image:: /_static/class1/image109.png
    :width: 6.50000in
    :height: 2.00000in
-.. |image116| image:: /_static/image110.png
+.. |image116| image:: /_static/class1/image110.png
    :width: 6.48958in
    :height: 3.98958in
-.. |image117| image:: /_static/image111.png
+.. |image117| image:: /_static/class1/image111.png
    :width: 6.50000in
    :height: 0.87500in
-.. |image118| image:: /_static/image112.png
+.. |image118| image:: /_static/class1/image112.png
    :width: 6.47917in
    :height: 0.84375in
-.. |image119| image:: /_static/image113.png
+.. |image119| image:: /_static/class1/image113.png
    :width: 6.50000in
    :height: 2.09375in
-.. |image120| image:: /_static/image114.png
+.. |image120| image:: /_static/class1/image114.png
    :width: 6.48958in
    :height: 3.20833in
-.. |image121| image:: /_static/image115.png
+.. |image121| image:: /_static/class1/image115.png
    :width: 6.48958in
    :height: 3.67708in
-.. |image122| image:: /_static/image116.png
+.. |image122| image:: /_static/class1/image116.png
    :width: 6.81719in
    :height: 1.78363in
-.. |image123| image:: /_static/image117.png
+.. |image123| image:: /_static/class1/image117.png
    :width: 6.50000in
    :height: 4.09375in
-.. |image124| image:: /_static/image118.png
+.. |image124| image:: /_static/class1/image118.png
    :width: 6.50000in
    :height: 4.87500in
-.. |image125| image:: /_static/image119.png
+.. |image125| image:: /_static/class1/image119.png
    :width: 6.70833in
    :height: 3.37500in
-.. |image126| image:: /_static/image120.png
+.. |image126| image:: /_static/class1/image120.png
    :width: 5.31250in
    :height: 1.65625in
-.. |image127| image:: /_static/image121.png
+.. |image127| image:: /_static/class1/image121.png
    :width: 4.34028in
    :height: 2.38194in

@@ -108,22 +108,22 @@ i.e. https://10.128.10.202
 
 The login information for your PLA is ***admin/SevOne***
 
-.. |image136| image:: /_static/image128.png
+.. |image136| image:: /_static/class1/image128.png
    :width: 5.80000in
    :height: 5.40000in
-.. |image137| image:: /_static/image129.png
+.. |image137| image:: /_static/class1/image129.png
    :width: 6.50000in
    :height: 6.73958in
-.. |image138| image:: /_static/image130.png
+.. |image138| image:: /_static/class1/image130.png
    :width: 5.69444in
    :height: 4.95139in
-.. |image139| image:: /_static/image131.png
+.. |image139| image:: /_static/class1/image131.png
    :width: 6.50000in
    :height: 3.33333in
-.. |image140| image:: /_static/image132.png
+.. |image140| image:: /_static/class1/image132.png
    :width: 5.13889in
    :height: 2.33333in
-.. |image141| image:: /_static/image133.png
+.. |image141| image:: /_static/class1/image133.png
    :width: 5.13889in
    :height: 2.36806in
 

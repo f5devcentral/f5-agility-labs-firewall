@@ -95,43 +95,43 @@ WORKFLOW 3: Getting to the statistics from the configuration/property pages for 
 
    |image105|
 
-.. |image93| image:: /_static/image89.png
+.. |image93| image:: /_static/class1/image89.png
    :width: 2.19764in
    :height: 2.38512in
-.. |image94| image:: /_static/image90.png
+.. |image94| image:: /_static/class1/image90.png
    :width: 2.40653in
    :height: 3.14682in
-.. |image95| image:: /_static/image91.png
+.. |image95| image:: /_static/class1/image91.png
    :width: 4.91605in
    :height: 1.91643in
-.. |image96| image:: /_static/image92.png
+.. |image96| image:: /_static/class1/image92.png
    :width: 4.48902in
    :height: 0.91655in
-.. |image97| image:: /_static/image93.png
+.. |image97| image:: /_static/class1/image93.png
    :width: 2.40595in
    :height: 2.81215in
-.. |image98| image:: /_static/image94.png
+.. |image98| image:: /_static/class1/image94.png
    :width: 2.54135in
    :height: 2.19764in
-.. |image99| image:: /_static/image95.png
+.. |image99| image:: /_static/class1/image95.png
    :width: 6.39503in
    :height: 3.32250in
-.. |image100| image:: /_static/image96.png
+.. |image100| image:: /_static/class1/image96.png
    :width: 2.35387in
    :height: 1.03112in
-.. |image101| image:: /_static/image97.png
+.. |image101| image:: /_static/class1/image97.png
    :width: 6.50000in
    :height: 1.65486in
-.. |image102| image:: /_static/image98.png
+.. |image102| image:: /_static/class1/image98.png
    :width: 4.09324in
    :height: 2.54135in
-.. |image103| image:: /_static/image99.png
+.. |image103| image:: /_static/class1/image99.png
    :width: 4.78065in
    :height: 2.06224in
-.. |image104| image:: /_static/image100.png
+.. |image104| image:: /_static/class1/image100.png
    :width: 1.37483in
    :height: 0.87489in
-.. |image105| image:: /_static/image101.png
+.. |image105| image:: /_static/class1/image101.png
    :width: 2.65592in
    :height: 2.01017in
 

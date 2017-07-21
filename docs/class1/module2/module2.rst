@@ -1,5 +1,5 @@
-AFM Packet Tester
-=================
+Module 2: AFM Packet Tester
+===========================
 
 New in the v13 release of the BIG-IP Advanced Firewall Manager is the capability to insert a packet trace into the internal flow so you can analyze what component within the system is allowing or blocking packets based on your configuration of features and rule sets.
 
@@ -19,6 +19,6 @@ set of (appropriate to each protocol) attributes for each.
 
    lab*
 
-.. |image42| image:: /_static/image42.png
+.. |image42| image:: /_static/class1/image42.png
    :width: 6.50000in
    :height: 3.44792in

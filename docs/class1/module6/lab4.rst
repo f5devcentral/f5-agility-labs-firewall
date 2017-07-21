@@ -79,33 +79,33 @@ Tuples can be viewed from the ***Investigate*** page under tuple tags
 
 |image157|
 
-.. |image148| image:: /_static/image138.png
+.. |image148| image:: /_static/class1/image138.png
    :width: 6.50000in
    :height: 1.14583in
-.. |image149| image:: /_static/image139.png
+.. |image149| image:: /_static/class1/image139.png
    :width: 2.07153in
    :height: 1.92847in
-.. |image150| image:: /_static/image140.png
+.. |image150| image:: /_static/class1/image140.png
    :width: 2.24306in
    :height: 1.29167in
-.. |image151| image:: /_static/image141.png
+.. |image151| image:: /_static/class1/image141.png
    :width: 6.50000in
    :height: 1.55556in
-.. |image152| image:: /_static/image142.png
+.. |image152| image:: /_static/class1/image142.png
    :width: 6.49306in
    :height: 1.69444in
-.. |image153| image:: /_static/image143.png
+.. |image153| image:: /_static/class1/image143.png
    :width: 6.49306in
    :height: 2.78472in
-.. |image154| image:: /_static/image144.png
+.. |image154| image:: /_static/class1/image144.png
    :width: 5.56875in
    :height: 2.25278in
-.. |image155| image:: /_static/image145.png
+.. |image155| image:: /_static/class1/image145.png
    :width: 4.28472in
    :height: 4.00000in
-.. |image156| image:: /_static/image146.png
+.. |image156| image:: /_static/class1/image146.png
    :width: 4.72222in
    :height: 4.25000in
-.. |image157| image:: /_static/image147.png
+.. |image157| image:: /_static/class1/image147.png
    :width: 2.03472in
    :height: 0.77083in

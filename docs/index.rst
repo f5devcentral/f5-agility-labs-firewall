@@ -1,5 +1,5 @@
-F5 Agility Labs - Index
-=======================
+|classname|
+===========
 
 Welcome
 -------
@@ -52,4 +52,4 @@ solutions:**      
    intro*
    class*/class*
 
-.. |image1| image:: /_static/image2.gif
+.. |image1| image:: /_static/class1/image2.gif

@@ -44,6 +44,6 @@ refer back to this page and use the IP addresses assigned to your site.
 | Lampserver   | 10.128.20.150, 10.128.20.160, 10.128.20.170   |
 +--------------+-----------------------------------------------+
 
-.. |image2| image:: /_static/image3.png
+.. |image2| image:: /_static/class1/image3.png
    :width: 6.47917in
    :height: 3.31250in

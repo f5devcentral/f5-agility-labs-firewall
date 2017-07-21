@@ -1,5 +1,5 @@
-|afm| (AFM) Introduction
-========================
+Module 1: |afm| (AFM) Introduction
+==================================
 
 In this lab, you will create a pool of servers to be load balanced
 behind the BIG-IP. You will then experiment with AFM policies to permit
@@ -24,6 +24,6 @@ of AFM.
 
    lab*
 
-.. |image3| image:: /_static/image4.png
+.. |image3| image:: /_static/class1/image4.png
    :width: 3.54122in
    :height: 2.67675in

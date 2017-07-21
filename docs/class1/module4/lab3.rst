@@ -56,18 +56,18 @@ icon, a menu appears to allow a user to logout of BIG-IQ.
 
 |image67|
 
-.. |image63| image:: /_static/image59.png
+.. |image63| image:: /_static/class1/image59.png
    :width: 6.50000in
    :height: 1.44792in
-.. |image64| image:: /_static/image60.png
+.. |image64| image:: /_static/class1/image60.png
    :width: 6.48958in
    :height: 2.40625in
-.. |image65| image:: /_static/image61.png
+.. |image65| image:: /_static/class1/image61.png
    :width: 6.49028in
    :height: 6.33819in
-.. |image66| image:: /_static/image62.png
+.. |image66| image:: /_static/class1/image62.png
    :width: 6.50000in
    :height: 0.55208in
-.. |image67| image:: /_static/image63.png
+.. |image67| image:: /_static/class1/image63.png
    :width: 6.50000in
    :height: 0.56250in

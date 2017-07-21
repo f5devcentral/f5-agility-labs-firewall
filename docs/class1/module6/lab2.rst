@@ -43,6 +43,6 @@ Licensing – Manage the license associated with the PLA
 
 Software Update – Check for software updates.
 
-.. |image144| image:: /_static/image134.png
+.. |image144| image:: /_static/class1/image134.png
    :width: 3.08333in
    :height: 0.62500in

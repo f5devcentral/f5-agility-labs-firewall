@@ -201,16 +201,16 @@ note of the Client IP Address on the web page as highlighted below:
 
    -  Close the Web Browsers and Putty.
 
-.. |image4| image:: /_static/image5.png
+.. |image4| image:: /_static/class1/image5.png
    :width: 6.50000in
    :height: 0.55208in
-.. |image5| image:: /_static/image6.png
+.. |image5| image:: /_static/class1/image6.png
    :width: 6.50000in
    :height: 5.02569in
-.. |image6| image:: /_static/image7.png
+.. |image6| image:: /_static/class1/image7.png
    :width: 6.49514in
    :height: 1.64583in
-.. |image7| image:: /_static/image8.png
+.. |image7| image:: /_static/class1/image8.png
    :width: 3.91181in
    :height: 1.96389in
 

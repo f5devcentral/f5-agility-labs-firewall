@@ -41,30 +41,30 @@ The appropriate chart selected will be displayed
 
 |image166|
 
-.. |image158| image:: /_static/image148.png
+.. |image158| image:: /_static/class1/image148.png
    :width: 4.77778in
    :height: 0.33738in
-.. |image159| image:: /_static/image149.png
+.. |image159| image:: /_static/class1/image149.png
    :width: 2.36875in
    :height: 2.11458in
-.. |image160| image:: /_static/image150.png
+.. |image160| image:: /_static/class1/image150.png
    :width: 4.18627in
    :height: 0.90821in
-.. |image161| image:: /_static/image151.png
+.. |image161| image:: /_static/class1/image151.png
    :width: 6.50000in
    :height: 4.30000in
-.. |image162| image:: /_static/image152.png
+.. |image162| image:: /_static/class1/image152.png
    :width: 6.50000in
    :height: 3.00000in
-.. |image163| image:: /_static/image153.png
+.. |image163| image:: /_static/class1/image153.png
    :width: 6.50000in
    :height: 2.01042in
-.. |image164| image:: /_static/image154.png
+.. |image164| image:: /_static/class1/image154.png
    :width: 5.91990in
    :height: 2.63426in
-.. |image165| image:: /_static/image155.png
+.. |image165| image:: /_static/class1/image155.png
    :width: 6.50000in
    :height: 3.30000in
-.. |image166| image:: /_static/image156.png
+.. |image166| image:: /_static/class1/image156.png
    :width: 5.59375in
    :height: 5.05208in

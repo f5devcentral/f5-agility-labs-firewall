@@ -105,31 +105,31 @@ Modify the Log Publisher to ***Log-Publisher-Network-DOS-Protection***
 
 Click Commit Changes to System
 
-.. |image52| image:: /_static/image50.png
+.. |image52| image:: /_static/class1/image50.png
    :width: 6.50000in
    :height: 1.60000in
-.. |image53| image:: /_static/image51.png
+.. |image53| image:: /_static/class1/image51.png
    :width: 6.50000in
    :height: 0.84514in
-.. |image54| image:: /_static/image52.png
+.. |image54| image:: /_static/class1/image52.png
    :width: 6.50000in
    :height: 1.45486in
-.. |image55| image:: /_static/image53.png
+.. |image55| image:: /_static/class1/image53.png
    :width: 6.50000in
    :height: 3.01597in
-.. |image56| image:: /_static/image54.png
+.. |image56| image:: /_static/class1/image54.png
    :width: 6.47361in
    :height: 3.52639in
-.. |image57| image:: /_static/image55.png
+.. |image57| image:: /_static/class1/image55.png
    :width: 6.47361in
    :height: 3.21042in
-.. |image58| image:: /_static/image56.png
+.. |image58| image:: /_static/class1/image56.png
    :width: 6.49514in
    :height: 3.53681in
-.. |image59| image:: /_static/image57.png
+.. |image59| image:: /_static/class1/image57.png
    :width: 3.61111in
    :height: 2.40972in
-.. |image60| image:: /_static/image58.png
+.. |image60| image:: /_static/class1/image58.png
    :width: 3.74306in
    :height: 1.51389in
 

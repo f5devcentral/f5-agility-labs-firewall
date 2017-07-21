@@ -1,5 +1,5 @@
-DDoS Protection with AFM
-========================
+Module 3: DDoS Protection with AFM
+==================================
 
 During this lab, you will configure the BIG-IP system to detect and
 report on various network level Denial of Service events. You will then

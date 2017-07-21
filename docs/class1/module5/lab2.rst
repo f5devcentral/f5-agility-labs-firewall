@@ -173,15 +173,15 @@ With the box checked, click the **Deploy** button.
 
 Congratulations, you just deployed your second AFM policy via BIG-IQ!
 
-.. |image128| image:: /_static/image122.png
+.. |image128| image:: /_static/class1/image122.png
    :width: 3.53125in
    :height: 6.69792in
-.. |image129| image:: /_static/image123.png
+.. |image129| image:: /_static/class1/image123.png
    :width: 2.30000in
    :height: 3.20000in
-.. |image130| image:: /_static/image124.png
+.. |image130| image:: /_static/class1/image124.png
    :width: 5.60000in
    :height: 5.50000in
-.. |image131| image:: /_static/image125.png
+.. |image131| image:: /_static/class1/image125.png
    :width: 6.48958in
    :height: 3.45833in

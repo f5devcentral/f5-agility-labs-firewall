@@ -1,5 +1,5 @@
-Network Security (AFM) Management Workflows
-===========================================
+Module 5: Network Security (AFM) Management Workflows
+=====================================================
 
 .. toctree::
    :maxdepth: 1

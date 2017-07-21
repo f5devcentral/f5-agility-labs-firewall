@@ -145,15 +145,15 @@ be set:
 
 Close the PuTTY session to disconnect from the BIG-IP.
 
-.. |image47| image:: /_static/image1.jpg
+.. |image47| image:: /_static/class1/image1.jpg
    :width: 3.27778in
    :height: 1.14444in
-.. |image48| image:: /_static/image41.jpg
+.. |image48| image:: /_static/class1/image41.jpg
    :width: 1.95031in
    :height: 1.01251in
-.. |image49| image:: /_static/image47.png
+.. |image49| image:: /_static/class1/image47.png
    :width: 6.50000in
    :height: 2.14583in
-.. |image50| image:: /_static/image48.png
+.. |image50| image:: /_static/class1/image48.png
    :width: 6.50000in
    :height: 3.44792in

@@ -33,15 +33,15 @@ AFM Reference Material
 
 -  `AFM Operations Guide <https://support.f5.com/content/kb/en-us/products/big-ip-afm/manuals/product/f5-afm-operations-guide/_jcr_content/pdfAttach/download/file.res/f5-afm-operations-guide.pdf>`__
 
-.. |image36| image:: /_static/image37.png
+.. |image36| image:: /_static/class1/image37.png
    :width: 6.49514in
    :height: 3.31250in
-.. |image37| image:: /_static/image38.png
+.. |image37| image:: /_static/class1/image38.png
    :width: 2.65075in
    :height: 1.53934in
-.. |image38| image:: /_static/image39.png
+.. |image38| image:: /_static/class1/image39.png
    :width: 6.47361in
    :height: 3.42083in
-.. |image39| image:: /_static/image40.png
+.. |image39| image:: /_static/class1/image40.png
    :width: 6.47361in
    :height: 3.21042in

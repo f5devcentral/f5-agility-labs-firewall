@@ -200,60 +200,60 @@ upgrade advisor.
 
    |image86|
 
-.. |image68| image:: /_static/image64.png
+.. |image68| image:: /_static/class1/image64.png
    :width: 6.48958in
    :height: 5.20833in
-.. |image69| image:: /_static/image65.png
+.. |image69| image:: /_static/class1/image65.png
    :width: 5.44792in
    :height: 3.73958in
-.. |image70| image:: /_static/image66.png
+.. |image70| image:: /_static/class1/image66.png
    :width: 6.50000in
    :height: 2.03125in
-.. |image71| image:: /_static/image67.png
+.. |image71| image:: /_static/class1/image67.png
    :width: 5.85291in
    :height: 2.35171in
-.. |image72| image:: /_static/image68.png
+.. |image72| image:: /_static/class1/image68.png
    :width: 5.90178in
    :height: 2.97140in
-.. |image73| image:: /_static/image69.png
+.. |image73| image:: /_static/class1/image69.png
    :width: 5.51646in
    :height: 4.65893in
-.. |image74| image:: /_static/image70.png
+.. |image74| image:: /_static/class1/image70.png
    :width: 2.57055in
    :height: 1.69135in
-.. |image75| image:: /_static/image71.png
+.. |image75| image:: /_static/class1/image71.png
    :width: 5.84302in
    :height: 4.64525in
-.. |image76| image:: /_static/image72.png
+.. |image76| image:: /_static/class1/image72.png
    :width: 6.50000in
    :height: 2.80208in
-.. |image77| image:: /_static/image73.png
+.. |image77| image:: /_static/class1/image73.png
    :width: 2.28056in
    :height: 1.23889in
-.. |image78| image:: /_static/image74.png
+.. |image78| image:: /_static/class1/image74.png
    :width: 2.00000in
    :height: 1.47917in
-.. |image79| image:: /_static/image75.png
+.. |image79| image:: /_static/class1/image75.png
    :width: 6.50000in
    :height: 4.85417in
-.. |image80| image:: /_static/image76.png
+.. |image80| image:: /_static/class1/image76.png
    :width: 6.50000in
    :height: 2.70000in
-.. |image81| image:: /_static/image77.png
+.. |image81| image:: /_static/class1/image77.png
    :width: 1.88472in
    :height: 0.92639in
-.. |image82| image:: /_static/image78.png
+.. |image82| image:: /_static/class1/image78.png
    :width: 4.50000in
    :height: 2.85417in
-.. |image83| image:: /_static/image79.png
+.. |image83| image:: /_static/class1/image79.png
    :width: 6.50000in
    :height: 3.10000in
-.. |image84| image:: /_static/image80.png
+.. |image84| image:: /_static/class1/image80.png
    :width: 2.82222in
    :height: 0.74931in
-.. |image85| image:: /_static/image81.png
+.. |image85| image:: /_static/class1/image81.png
    :width: 6.50000in
    :height: 2.89583in
-.. |image86| image:: /_static/image82.png
+.. |image86| image:: /_static/class1/image82.png
    :width: 6.47361in
    :height: 0.84236in

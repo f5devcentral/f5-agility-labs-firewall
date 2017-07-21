@@ -41,6 +41,6 @@ dots move across the screen indicating that the attack is being sent.
 -  This attack will launch 4000 packets that are configured to send IP
    requests with a TTL value of 0
 
-.. |image51| image:: /_static/image49.png
+.. |image51| image:: /_static/class1/image49.png
    :width: 3.62599in
    :height: 2.28716in

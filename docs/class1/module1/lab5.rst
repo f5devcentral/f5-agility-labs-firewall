@@ -73,22 +73,22 @@ search area.
 Click ***Search***. This will filter the logs so that it just displays
 all rejected entries.
 
-.. |image30| image:: /_static/image31.png
+.. |image30| image:: /_static/class1/image31.png
    :width: 3.40998in
    :height: 1.25178in
-.. |image31| image:: /_static/image32.png
+.. |image31| image:: /_static/class1/image32.png
    :width: 3.40031in
    :height: 1.18502in
-.. |image32| image:: /_static/image33.png
+.. |image32| image:: /_static/class1/image33.png
    :width: 6.50000in
    :height: 0.66806in
-.. |image33| image:: /_static/image34.png
+.. |image33| image:: /_static/class1/image34.png
    :width: 3.43330in
    :height: 1.36973in
-.. |image34| image:: /_static/image35.png
+.. |image34| image:: /_static/class1/image35.png
    :width: 6.50000in
    :height: 1.08264in
-.. |image35| image:: /_static/image36.png
+.. |image35| image:: /_static/class1/image36.png
    :width: 3.29252in
    :height: 1.23036in
 

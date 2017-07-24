@@ -50,11 +50,6 @@ enables node.js on the BIG-IP platform. The lab uses Tcl iRules and
 JavaScript code to make a MySQL call to look up a client IP address
 providing access control in the Multi-Layered Firewall. 
 
-**Lab 4**
-
-This lab highlights the Advanced Firewall Manager SSH proxy for securing
-SSH traffic. You will configure an SSH Profile to control the command
-users can execute in an SSH channel.
 
 .. NOTE:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP

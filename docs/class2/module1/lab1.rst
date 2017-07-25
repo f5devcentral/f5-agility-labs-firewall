@@ -31,7 +31,7 @@ Objective:
 
 -  Configure HTTP protocol security; test
 
--  Configure DNS protocol security; test
+-  Configure Clone Pool; test
 
 Lab Requirements:
 
@@ -912,118 +912,102 @@ URL: https://www.mysite.com/dvwa
 
 .. NOTE:: This is the end of task 6.
 
-TASK 7 – Configure DNS security
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 7 – Configure Clone Pool for SSL Visibility to IDS Sensors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-DNS security profiles are used to filter DNS requests by query type.
-This is useful for allowing specific DNS query types to pass through AFM
-to the authoritative DNS infrastructure, while blocking the reminder.
-Additional DNS security such as DNS Request Policy Zones (aka DNS
-Firewall), DNS DDoS mitigation, DNSSEC & more is available in GTM
-(Global Traffic Manager). In this lab, DNS resolution is provided by
-GTM, which is already preconfigured.
+Since the BIG-IP is terminating SSL on the external virtual server, when
+we forward the traffic to the secondary virtual server in clear-text we
+have an opportunity to make an unencrypted copy of the application
+traffic and send it to an external sensor such as an IDS for further
+security assessment.
 
 On BIG-IP
 
-Configure a DNS profile.
+Configure a new Pool.
 
-**Navigation:** DNS > Delivery > Profiles > DNS, Click Create.
+**Navigation:** Local Traffic > Pools > Pool List > Click Create.
 
-+------------+----------------------+
-| **Name**   | demo\_dns\_profile   |
-+------------+----------------------+
++-------------+----------------------+---------------+--------------------+
+| **Name**    | **Health Monitor**   | **Members**   | **Service Port**   |
++=============+======================+===============+====================+
+| IDS\_Pool   | gateway\_icmp        | 172.1.1.11    | \*                 |
++-------------+----------------------+---------------+--------------------+
 
 |image58|
 
 .. NOTE:: Leave all other fields using the default values.
-
 **Navigation:** Click Finished.
 
-Configure a DNS listener.
+Attach the *IDS\_Pool* as a clone pool to the server side of the
+external virtual server
 
-**Navigation:** DNS > Delivery > Listeners > Listener List, Click Create.
+**Navigation:** Local Traffic > Virtual Servers > Virtual Server List >
+EXT\_VIP\_10.10.99.30.
 
-+-------------------+-----------------------+
-| **Name**          | demo\_dns\_listener   |
-+-------------------+-----------------------+
-| **Destination**   | 10.10.99.30           |
-+-------------------+-----------------------+
-| **DNS Profile**   | demo\_dns\_profile    |
-+-------------------+-----------------------+
+**Navigation:** Configuration > Advanced.
 
 |image59|
 
-.. NOTE:: Leave all other fields using the default values.
+**Navigation:** Scroll to the configuration for Clone Pools and select the
+IDS\_Pool
 
-**Navigation:** Click Finished.
 
-On Windows jumpbox
-
-Using the nslookup utility, test DNS resolution for dvwa.f5demo.com.
-
-**Navigation:** Click the Command Prompt icon on the Windows Taskbar. Type
-nslookup and hit Enter.
-
-**Navigation:** Type in nslookup> server 10.10.99.30.
 
 |image60|
 
-.. NOTE:: A DNS response of “Address: 192.168.1.50” shows that
-   resolution for A records is working properly.
+**Navigation: Click on update at the bottom of the page.**
 
-**Navigation:** Close the Windows Command Prompt.
+    **→NOTE:** Leave all other fields using the default values.
 
-On BIG-IP
 
-Configure a DNS Security Profile to filter resolution for A records.
+Navigation: SSH in to the Syslog/Webserver or open the console
 
-**Navigation:** Security > Protocol Security > Security Profiles > DNS,
-Click Create.
+Run ``tcpdump –i eth2 port 80``
 
-+---------------------------------+-----------------------+
-| **DNS Security**                | Enabled               |
-+---------------------------------+-----------------------+
-| **DNS Security Profile Name**   | demo\_dns\_security   |
-+---------------------------------+-----------------------+
+.. code-block:: console
+root@syslogWebserver:~# tcpdump -i eth2 port 80
 
-|image61|
+Initiate another attempt to connect to the website via curl or your web
+browser on the Windows host.
 
-.. NOTE:: Leave all other fields using the default values.
+``curl -k https://10.10.99.30 -H 'Host:www.mysite.com'``
 
-**Navigation:** Click Finished.
+.. code-block:: html
+<H1> MYSITE.COM </H1>
 
-Apply the DNS Security Profile to the DNS Profile.
+.. code-block:: console
+tcpdump: verbose output suppressed, use -v or -vv for full protocol
+decode
+listening on eth2, link-type EN10MB (Ethernet), capture size 262144
+bytes
+17:25:42.585675 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [S], seq
+912073522, win 4380, options [mss 1460,sackOK,eol], length 0
+17:25:42.585905 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [S.], seq
+1263282834, ack 912073523, win 4380, options [mss 1460,sackOK,eol],
+length 0
+17:25:42.585918 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [.], ack 1,
+win 4380, length 0
+17:25:42.585926 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [P.], seq
+1:79, ack 1, win 4380, length 78
+17:25:42.586750 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [.], ack 79,
+win 4458, length 0
+17:25:42.673178 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [P.], seq
+1:252, ack 79, win 4458, length 251
+17:25:42.673231 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [.], ack
+252, win 4631, length 0
+17:25:42.676360 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [F.], seq
+79, ack 252, win 4631, length 0
+17:25:42.676972 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [.], ack 80,
+win 4458, length 0
+17:25:42.688028 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [F.], seq
+252, ack 80, win 4458, length 0
 
-**Navigation:** DNS > Delivery > Profiles > DNS, Click demo\_dns\_profile.
+.. NOTE:: A copy of the web traffic destined for the internal virtual
+server is received by the monitoring device on 172.1.1.11. Alternatively
+you could attach the clone pool to the client side of the internal
+virtual server to see traffic destined for a single site.
 
-+---------------------------------+-----------------------+
-| **DNS Security**                | Enabled               |
-+---------------------------------+-----------------------+
-| **DNS Security Profile Name**   | demo\_dns\_security   |
-+---------------------------------+-----------------------+
-
-|image62|
-
-.. NOTE:: Leave all other fields using the default values.
-
-**Navigation:** Click Update.
-
-On Windows jumpbox
-
-Using the nslookup utility, test DNS resolution for dvwa.f5demo.com.
-
-**Navigation:** Click the Command Prompt icon on the Windows Taskbar. Type
-nslookup and hit Enter.
-
-|image63|
-
-**Navigation:** Close the Windows Command Prompt.
-
-.. NOTE:: A “DNS request timed out.” error shows that resolution for A
-records is now being filtered based on the newly applied DNS security
-profile.
-
-.. NOTE:: This is the end of task 6.
+.. NOTE:: This is the end of task 7.
 
 .. |image1| image:: /_static/class2/image3.png
    :width: 7.04167in

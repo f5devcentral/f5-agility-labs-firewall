@@ -214,48 +214,48 @@ URL: https://www.mysite.com/api
 
 .. NOTE:: This concludes Module 1 - Lab 4
 
-.. |image30| image:: media/image32.png
+.. |image30| image:: /_static/class2/image32.png
    :width: 7.04167in
    :height: 1.70833in
-.. |image31| image:: media/image33.png
+.. |image31| image:: /_static/class2/image33.png
    :width: 7.04167in
    :height: 2.33333in
-.. |image32| image:: media/image34.png
+.. |image32| image:: /_static/class2/image34.png
    :width: 7.05556in
    :height: 6.47222in
-.. |image33| image:: media/image35.png
+.. |image33| image:: /_static/class2/image35.png
    :width: 7.04167in
    :height: 5.02778in
-.. |image34| image:: media/image36.png
+.. |image34| image:: /_static/class2/image36.png
    :width: 7.04167in
    :height: 2.45833in
-.. |image35| image:: media/image37.png
+.. |image35| image:: /_static/class2/image37.png
    :width: 7.05556in
    :height: 3.30556in
-.. |image36| image:: media/image38.png
+.. |image36| image:: /_static/class2/image38.png
    :width: 7.05556in
    :height: 6.91667in
-.. |image37| image:: media/image37.png
+.. |image37| image:: /_static/class2/image37.png
    :width: 7.05000in
    :height: 3.30295in
-.. |image38| image:: media/image39.png
+.. |image38| image:: /_static/class2/image39.png
    :width: 7.04167in
    :height: 1.75000in
-.. |image39| image:: media/image40.png
+.. |image39| image:: /_static/class2/image40.png
    :width: 7.04167in
    :height: 2.50000in
-.. |image40| image:: media/image41.png
+.. |image40| image:: /_static/class2/image41.png
    :width: 7.05556in
    :height: 6.86111in
-.. |image41| image:: media/image42.png
+.. |image41| image:: /_static/class2/image42.png
    :width: 7.04167in
    :height: 5.04167in
-.. |image42| image:: media/image43.png
+.. |image42| image:: /_static/class2/image43.png
    :width: 7.04167in
    :height: 6.33333in
-.. |image43| image:: media/image44.png
+.. |image43| image:: /_static/class2/image44.png
    :width: 7.04167in
    :height: 4.19444in
-.. |image44| image:: media/image45.png
+.. |image44| image:: /_static/class2/image45.png
    :width: 7.04167in
    :height: 0.63889in

@@ -147,21 +147,21 @@ URL: https://www.mysite.com
 
 .. NOTE:: View new network firewall log entries. Examine the data collected there.
 
-.. |image24| image:: media/image26.png
+.. |image24| image:: /_static/class2/image26.png
    :width: 7.05278in
    :height: 2.93819in
-.. |image25| image:: media/image27.png
+.. |image25| image:: /_static/class2/image27.png
    :width: 7.04444in
    :height: 2.53958in
-.. |image26| image:: media/image28.png
+.. |image26| image:: /_static/class2/image28.png
    :width: 4.83169in
    :height: 5.41497in
-.. |image27| image:: media/image29.png
+.. |image27| image:: /_static/class2/image29.png
    :width: 7.04167in
    :height: 5.88889in
-.. |image28| image:: media/image30.png
+.. |image28| image:: /_static/class2/image30.png
    :width: 7.25278in
    :height: 1.01170in
-.. |image29| image:: media/image31.jpeg
+.. |image29| image:: /_static/class2/image31.jpeg
    :width: 6.73811in
    :height: 1.69444in

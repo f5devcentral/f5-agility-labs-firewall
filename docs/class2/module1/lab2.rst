@@ -136,6 +136,7 @@ validate your configuration.
 .. NOTE:: You may have to edit the hosts file on your Win7 Client to add:
 
 .. code-block:: console
+
    10.10.99.30 www.mysite.com
 
    10.10.99.30 www.yoursite.com
@@ -164,6 +165,7 @@ let us do some of the additional testing in later sections.
    curl -k https://10.10.99.30/api -H 'Host:www.mysite.com'
 
 .. code-block:: console
+
    {
       "web-app": {
         "servlet": [
@@ -191,48 +193,48 @@ let us do some of the additional testing in later sections.
 
 .. NOTE:: This completes Module 1 - Lab 2
 
-.. |image9| image:: media/image11.png
+.. |image9| image:: /_static/class2/image11.png
    :width: 7.05556in
    :height: 6.20833in
-.. |image10| image:: media/image12.png
+.. |image10| image:: /_static/class2/image12.png
    :width: 7.05556in
    :height: 3.45833in
-.. |image11| image:: media/image13.png
+.. |image11| image:: /_static/class2/image13.png
    :width: 7.08611in
    :height: 1.97069in
-.. |image12| image:: media/image14.png
+.. |image12| image:: /_static/class2/image14.png
    :width: 7.04167in
    :height: 2.62500in
-.. |image13| image:: media/image15.png
+.. |image13| image:: /_static/class2/image15.png
    :width: 7.05000in
    :height: 2.63403in
-.. |image14| image:: media/image16.png
+.. |image14| image:: /_static/class2/image16.png
    :width: 7.05000in
    :height: 3.29861in
-.. |image15| image:: media/image17.png
+.. |image15| image:: /_static/class2/image17.png
    :width: 7.05556in
    :height: 1.68056in
-.. |image16| image:: media/image18.png
+.. |image16| image:: /_static/class2/image18.png
    :width: 7.05000in
    :height: 2.35764in
-.. |image17| image:: media/image19.png
+.. |image17| image:: /_static/class2/image19.png
    :width: 7.04167in
    :height: 2.25000in
-.. |image18| image:: media/image20.png
+.. |image18| image:: /_static/class2/image20.png
    :width: 7.05556in
    :height: 0.80556in
-.. |image19| image:: media/image21.png
+.. |image19| image:: /_static/class2/image21.png
    :width: 7.05556in
    :height: 3.34722in
-.. |image20| image:: media/image22.png
+.. |image20| image:: /_static/class2/image22.png
    :width: 7.04167in
    :height: 2.56944in
-.. |image21| image:: media/image23.png
+.. |image21| image:: /_static/class2/image23.png
    :width: 7.04167in
    :height: 2.59722in
-.. |image22| image:: media/image24.png
+.. |image22| image:: /_static/class2/image24.png
    :width: 7.04167in
    :height: 4.31944in
-.. |image23| image:: media/image25.png
+.. |image23| image:: /_static/class2/image25.png
    :width: 7.05000in
    :height: 1.60208in

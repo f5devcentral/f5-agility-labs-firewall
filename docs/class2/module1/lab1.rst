@@ -119,27 +119,27 @@ click **Create**
 
 .. NOTE:: This completes Module 1 - Lab 1
 
-.. |image1| image:: media/image3.png
+.. |image1| image:: /_static/class2/image3.png
    :width: 7.04167in
    :height: 3.51389in
-.. |image2| image:: media/image4.png
+.. |image2| image:: /_static/class2/image4.png
    :width: 6.74931in
    :height: 5.88401in
-.. |image3| image:: media/image5.png
+.. |image3| image:: /_static/class2/image5.png
    :width: 7.05556in
    :height: 1.33333in
-.. |image4| image:: media/image6.png
+.. |image4| image:: /_static/class2/image6.png
    :width: 7.05556in
    :height: 3.22222in
-.. |image5| image:: media/image7.png
+.. |image5| image:: /_static/class2/image7.png
    :width: 7.05556in
    :height: 7.31944in
-.. |image6| image:: media/image8.png
+.. |image6| image:: /_static/class2/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: media/image9.png
+.. |image7| image:: /_static/class2/image9.png
    :width: 7.05000in
    :height: 1.50278in
-.. |image8| image:: media/image10.png
+.. |image8| image:: /_static/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in

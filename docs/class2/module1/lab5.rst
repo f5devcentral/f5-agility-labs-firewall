@@ -6,19 +6,20 @@ Many enterprise sites have some or all of their content served up by Content Del
 In this case we are going to leverage iRules to modify the traffic coming from the CDN networks so we can apply a firewall policy to it. The iRule to accomplish this is already installed on your BIG-IP. We need to apply it the External Virtual Server. Here is a sample of the iRule.
 
 .. code-block:: tcl
-   when HTTP\_REQUEST {
-      if {[HTTP::header exists "X-Forwarded-For"]} {
+
+   when HTTP_REQUEST {
+      if { [HTTP::header exists "X-Forwarded-For"] } {
          snat [HTTP::header X-Forwarded-For]
          log local0. '[HTTP::header X-Forwarded-For]'
-         }
+      }
    }
 
-Examminig the iRule we find that it is called when an HTTP request happens. It then checks to see if the _X\-Forwarded\-For_ header exists (We wouldn't want to SNAT to a non-existent IP address) and if it does it modifies the source IP address of the request to the IP address provided in the header.
+Examminig the iRule we find that it is called when an HTTP request happens. It then checks to see if the ``X-Forwarded-For`` header exists (We wouldn't want to SNAT to a non-existent IP address) and if it does it modifies the source IP address of the request to the IP address provided in the header.
 
 Apply the iRule to the Virtual Server
 -------------------------------------
 
-**Navigation:** *Click on the* EXT\_VIP\_10.10.99.30 *virtual server *
+**Navigation:** Click on the ``EXT_VIP_10.10.99.30`` virtual server
 
 |image45|
 
@@ -35,11 +36,13 @@ Validate
 To test functionality, we will need to leverage curl from the CLI to insert the X-Forwarded-For header in to the request.
 
 .. code-block:: console
+
    curl -k https://10.10.99.30/downloads/ -H 'Host: www.mysite.com'
 
 Expected Result Snippet:
 
 .. code-block:: html
+
    <html>
       <head>
         <title>Index of /downloads</title>
@@ -49,6 +52,7 @@ Expected Result Snippet:
 Validate that IP addresses sourced from China are blocked:
 
 .. code-block:: console
+
    curl -k https://10.10.99.30/downloads/ -H 'Host: www.mysite.com' -H 'X-Forwarded-For: 1.202.2.1'
 
 **Expected Result:** The site should now be blocked and eventually timeout
@@ -56,12 +60,15 @@ Validate that IP addresses sourced from China are blocked:
 Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 are now allowed.
 
 .. code-block:: console
+
    curl -k https://10.10.99.30/api -H 'Host:www.mysite.com' -H 'X-Forwarded-For: 172.16.99.5'
 
 **Expected Result:**
 
 .. code-block:: console
-   {"web-app": {
+
+   {
+     "web-app": {
        "servlet": [ {
        "servlet-name": "cofaxCDS",
        "servlet-class": "org.cofax.cds.CDSServlet",
@@ -78,12 +85,14 @@ The next step is to solve for the TCP connection issue with CDN providers. While
 Validate that denied requests are now responded with a Layer 7 **403 Error** Page.
 
 .. code-block:: console
-curl -k https://10.10.99.30/downloads -H 'Host: www.mysite.com' -H 'X-Forwarded-For: 1.202.2.1'
+
+   curl -k https://10.10.99.30/downloads -H 'Host: www.mysite.com' -H 'X-Forwarded-For: 1.202.2.1'
 
 Expected Result: Instead of the traffic getting dropped, a 403 error
 should be returned.
 
 .. code-block:: html
+
    <html>
    <head>
       <title>403 Forbidden</title>
@@ -97,12 +106,12 @@ should be returned.
 
 .. NOTE:: This concludes Module 1 - Lab 5
 
-.. |image45| image:: media/image46.png
+.. |image45| image:: /_static/class2/image46.png
    :width: 7.04167in
    :height: 4.25000in
-.. |image46| image:: media/image47.png
+.. |image46| image:: /_static/class2/image47.png
    :width: 7.04167in
    :height: 2.81944in
-.. |image47| image:: media/image48.png
+.. |image47| image:: /_static/class2/image48.png
    :width: 7.04167in
    :height: 6.97222in

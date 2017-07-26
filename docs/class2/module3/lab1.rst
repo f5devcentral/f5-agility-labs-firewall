@@ -63,12 +63,12 @@ and setting the iRule back to None.
 
 Also look at ``/var/log/ltm`` on the AFM301 BIG-IP.
 
-.. |image98| image:: media/image146.png
+.. |image98| image:: /_static/class2/image146.png
    :width: 7.05000in
    :height: 5.28750in
-.. |image99| image:: media/image147.png
+.. |image99| image:: /_static/class2/image147.png
    :width: 4.00000in
    :height: 1.93056in
-.. |image100| image:: media/image148.png
+.. |image100| image:: /_static/class2/image148.png
    :width: 6.00000in
    :height: 6.83333in

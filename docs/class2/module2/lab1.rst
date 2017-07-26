@@ -359,105 +359,105 @@ domain are you in?**
 
 .. NOTE:: This completes Lab2
 
-.. |image64| image:: media/image30.png
+.. |image64| image:: /_static/class2/image30.png
    :width: 4.64158in
    :height: 3.37569in
-.. |image65| image:: media/image31.jpeg
+.. |image65| image:: /_static/class2/image31.jpeg
    :width: 6.23089in
    :height: 4.63403in
-.. |image66| image:: media/image136.png
+.. |image66| image:: /_static/class2/image136.png
    :width: 6.00000in
    :height: 5.85646in
-.. |image67| image:: media/image33.png
+.. |image67| image:: /_static/class2/image33.png
    :width: 5.60895in
    :height: 3.61152in
-.. |image68| image:: media/image137.png
+.. |image68| image:: /_static/class2/image137.png
    :width: 6.00000in
    :height: 3.73611in
-.. |image69| image:: media/image35.png
+.. |image69| image:: /_static/class2/image35.png
    :width: 4.87536in
    :height: 3.64653in
-.. |image70| image:: media/image36.png
+.. |image70| image:: /_static/class2/image36.png
    :width: 5.00858in
    :height: 6.75069in
-.. |image71| image:: media/image37.png
+.. |image71| image:: /_static/class2/image37.png
    :width: 5.38758in
    :height: 0.75763in
-.. |image72| image:: media/image38.png
+.. |image72| image:: /_static/class2/image38.png
    :width: 5.35372in
    :height: 3.95520in
-.. |image73| image:: media/image39.png
+.. |image73| image:: /_static/class2/image39.png
    :width: 5.50419in
    :height: 7.58104in
-.. |image74| image:: media/image37.png
+.. |image74| image:: /_static/class2/image37.png
    :width: 5.38758in
    :height: 0.75763in
-.. |image75| image:: media/image138.png
+.. |image75| image:: /_static/class2/image138.png
    :width: 6.98662in
    :height: 1.58879in
-.. |image76| image:: media/image41.png
+.. |image76| image:: /_static/class2/image41.png
    :width: 7.05000in
    :height: 2.29778in
-.. |image77| image:: media/image42.png
+.. |image77| image:: /_static/class2/image42.png
    :width: 7.05000in
    :height: 0.92316in
-.. |image78| image:: media/image43.png
+.. |image78| image:: /_static/class2/image43.png
    :width: 2.91088in
    :height: 0.79236in
-.. |image79| image:: media/image44.png
+.. |image79| image:: /_static/class2/image44.png
    :width: 4.38610in
    :height: 1.06597in
-.. |image80| image:: media/image45.png
+.. |image80| image:: /_static/class2/image45.png
    :width: 5.49755in
    :height: 1.43333in
-.. |image81| image:: media/image46.png
+.. |image81| image:: /_static/class2/image46.png
    :width: 3.40534in
    :height: 1.01389in
-.. |image82| image:: media/image47.png
+.. |image82| image:: /_static/class2/image47.png
    :width: 4.24056in
    :height: 1.51448in
-.. |image83| image:: media/image48.png
+.. |image83| image:: /_static/class2/image48.png
    :width: 4.16906in
    :height: 2.13333in
-.. |image84| image:: media/image49.png
+.. |image84| image:: /_static/class2/image49.png
    :width: 4.34192in
    :height: 3.10903in
-.. |image85| image:: media/image50.png
+.. |image85| image:: /_static/class2/image50.png
    :width: 3.90610in
    :height: 1.86597in
-.. |image86| image:: media/image51.png
+.. |image86| image:: /_static/class2/image51.png
    :width: 4.67794in
    :height: 3.70069in
-.. |image87| image:: media/image52.png
+.. |image87| image:: /_static/class2/image52.png
    :width: 7.05000in
    :height: 1.90385in
-.. |image88| image:: media/image53.png
+.. |image88| image:: /_static/class2/image53.png
    :width: 4.66754in
    :height: 3.26528in
-.. |image89| image:: media/image54.png
+.. |image89| image:: /_static/class2/image54.png
    :width: 6.09340in
    :height: 5.59287in
-.. |image90| image:: media/image55.png
+.. |image90| image:: /_static/class2/image55.png
    :width: 4.72323in
    :height: 2.81241in
-.. |image91| image:: media/image139.png
+.. |image91| image:: /_static/class2/image139.png
    :width: 4.79853in
    :height: 5.60620in
-.. |image92| image:: media/image140.png
+.. |image92| image:: /_static/class2/image140.png
    :width: 5.06591in
    :height: 6.81758in
-.. |image93| image:: media/image141.png
+.. |image93| image:: /_static/class2/image141.png
    :width: 5.14788in
    :height: 7.25486in
-.. |image94| image:: media/image142.png
+.. |image94| image:: /_static/class2/image142.png
    :width: 5.11930in
    :height: 6.63730in
-.. |image95| image:: media/image143.png
+.. |image95| image:: /_static/class2/image143.png
    :width: 4.25278in
    :height: 0.77495in
-.. |image96| image:: media/image144.png
+.. |image96| image:: /_static/class2/image144.png
    :width: 5.50467in
    :height: 2.58403in
-.. |image97| image:: media/image145.png
+.. |image97| image:: /_static/class2/image145.png
    :width: 6.13439in
    :height: 4.05248in

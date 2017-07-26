@@ -16,8 +16,8 @@ Use the following network diagram
 
 |image98|
 
-TASK 1 – Copy LX Code and Test
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Copy LX Code and Test
+~~~~~~~~~~~~~~~~~~~~~
 
 On the Win7 client, open the index.js file located in the Desktop
 folder, copy its entire contents.
@@ -42,7 +42,7 @@ Workspace dropdown) irules\_lx\_mysql\_workspace. Click “Finished”
 
 |image99|
 
-Navigate to Security->Network
+**Navigate:** to Security->Network
 Firewall->Policies->afmmysql\_pol->afmmysql\_rule (this rule already
 exists) and click iRule to assign the “mysql\_Irulelx” iRule. Click
 “Update”

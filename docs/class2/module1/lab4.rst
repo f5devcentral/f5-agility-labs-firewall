@@ -8,16 +8,15 @@ applied to the appropriate virtual servers and tested.
 
 On BIG-IP
 
-Create The __downloads\_policy__ Firewall Policy And Rules
+Create The downloads\_policy Firewall Policy And Rules
 ----------------------------------------------------------
 
-This example provides a firewall policy to the www.mysite.com\/downloads **portion** of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the __\/downloads__ portion of the application, while access to **www** remains unaffected.
+This example provides a firewall policy to the **www.mysite.com\/downloads** portion of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the /downloads portion of the application, while access to **www** remains unaffected.
 
 **Navigation:** Security > Network Firewall > Policies, then click Create
 
 +------------+---------------------+
 | **Name**   | downloads\_policy   |
-+============+=====================+
 +------------+---------------------+
 
 |image30|

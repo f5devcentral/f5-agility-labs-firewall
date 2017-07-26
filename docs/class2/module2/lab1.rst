@@ -19,8 +19,9 @@ and from the tunnel
 
 For example, in this exercise ``afm_cp`` is the name of the connectivity
 profile therefore the tcpdump syntax would look like
-
+```console
 ``tcpdump –ni afm_cp``
+```
 
 |image64|
 

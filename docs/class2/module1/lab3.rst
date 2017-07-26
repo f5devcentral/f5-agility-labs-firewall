@@ -61,12 +61,12 @@ Modify The Log Profile To Collect Protocol Security Events
 
 Edit log profile protocol security tab using the following information:
 
-**Navigation:** Click on the Protocol Security tab
+**Navigation:** Click on the Protocol Security tab and select the firewall_log_publisher
 
-+----+----------------------------+
-|    | firewall\_log\_publisher   |
-+====+============================+
-+----+----------------------------+
++----------------------------+
+| firewall\_log\_publisher   |
++============================+
++----------------------------+
 
 |image25|
 
@@ -116,8 +116,8 @@ Apply the newly created log profile to the external virtual server created in th
 
 +-------------------+--------------------------+
 | **Log Profile**   | firewall\_log\_profile   |
-+===================+==========================+
 +-------------------+--------------------------+
+
 
 |image27|
 
@@ -139,7 +139,7 @@ curl statements from the previous sections.
 
 URL: https://www.mysite.com
 
-.. NOTE:: This test creates network firewall log entries.
+.. NOTE:: This test generates traffic that creates network firewall log entries.
 
 **Navigation:** Security > Event Logs > Network > Firewall
 

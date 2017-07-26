@@ -1,74 +1,167 @@
-Lab 3: AFM with iRules LX
-=========================
+Configure Local Logging For Firewall Events
+===========================================
 
-Estimated completion time: 15 minutes
+Security logging needs to be configured separately from LTM logging. 
 
-Overview
-~~~~~~~~
+High Speed Logging for modules such as the firewall module requires three componenets.
 
-Beginning in TMOS 12.1 BIGIP offers iRules LX which is a node.js
-extension to iRules IRules LX does not replace iRules, rather allows
-iRules to offer additional functionality. In this lab you see how iRules
-LX can be used to look up client ip addresses that should be disallowed
-by AFM.
+  - A Log Publisher
+  - A Log Destination (local-db for this lab)
+  - A Log Profile
 
-Use the following network diagram
+For more detailed information on logging please consult the BIG-IP documentation.
 
-|image98|
+<https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/tmos-concepts-11-3-0/tmos_logging.html>
 
-TASK 1 – Copy LX Code and Test
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On the Win7 client, open the index.js file located in the Desktop
-folder, copy its entire contents.
+In this lab, we will configure a local log publisher and log profile. The
+log profile will then be applied to the virtual server and tested.
 
-On the AFM301 webgui, navigate to Local Traffic->iRules-> LX
-Workspaces-> irules\_lx\_mysql\_workspace
+On BIG-IP
 
-And replace the contents of mysql\_extension/index.js with the contents
-of the index.js on the Win7 client.
+Create A Log Publisher
+----------------------
 
-Click “Save File”
+This will send the firewall logs to a local database.
 
-Next click on rules->mysql\_irulelx
+Create the log publisher using the following information:
 
-On the Win7 client, open the mysql\_iRulesLx.txt file located in the
-Desktop folder, copy its entire contents and paste the contents into the
-“mysql\_irulelx”. Click “Save File”
+**Navigation:** System > Logs > Configuration > Log Publishers, then click
+Create
 
-On the AFM301 webgui, navigate to Local Traffic->iRules-> LX Plugins and
-create a new LX Plugin named “afmmysqlplug” using the workspace (From
-Workspace dropdown) irules\_lx\_mysql\_workspace. Click “Finished”
++-------------------------------+----------------------------+
+| **Name**                      | firewall\_log\_publisher   |
++===============================+============================+
+| **Destinations (Selected)**   | local-db                   |
++-------------------------------+----------------------------+
 
-|image99|
+|image24|
 
-Navigate to Security->Network
-Firewall->Policies->afmmysql\_pol->afmmysql\_rule (this rule already
-exists) and click iRule to assign the “mysql\_Irulelx” iRule. Click
-“Update”
+.. NOTE:: Leave all other fields using the default values.
 
-|image100|
+**Navigation:** Click Finished
 
-This policy is already enforced on the afmmysql\_vs (192.168.1.51)
+Create A Log Profile
+--------------------
 
-On the Win7 client, use curl in the cygwin cli to test that the client
-is being blocked, as the Win7 client’s ip is in the mysql database.
+Create the log profile using the following information:
 
-``curl http://192.168.1.51 --connect-timeout 5``
+**Navigation:** Security > Event Logs > Logging Profiles, then click Create
 
-this should timeout.
++-------------------------+--------------------------+
+| **Name**                | firewall\_log\_profile   |
++=========================+==========================+
+| **Protocol Security**   | Checked                  |
++-------------------------+--------------------------+
+| **Network Firewall**    | Checked                  |
++-------------------------+--------------------------+
 
-Ensure that the Irule is working properly, by going back to the AFM rule
-and setting the iRule back to None.
+Modify The Log Profile To Collect Protocol Security Events
+----------------------------------------------------------
 
-Also look at ``/var/log/ltm`` on the AFM301 BIG-IP.
+Edit log profile protocol security tab using the following information:
 
-.. |image98| image:: /_static/class2/image146.png
-   :width: 7.05000in
-   :height: 5.28750in
-.. |image99| image:: /_static/class2/image147.png
-   :width: 4.00000in
-   :height: 1.93056in
-.. |image100| image:: /_static/class2/image148.png
-   :width: 6.00000in
-   :height: 6.83333in
+**Navigation:** Click on the Protocol Security tab
+
++----+----------------------------+
+|    | firewall\_log\_publisher   |
++====+============================+
++----+----------------------------+
+
+|image25|
+
+.. NOTE:: Leave all other fields using the default values.
+
+Modify The Log Profile To Collect Firewall Security Events
+----------------------------------------------------------
+
+Edit log profile network firewall tab using the following information:
+
+**Navigation:** Click on the Network Firewall tab
+
++----------------------------------+-------------------------------------------+
+| **Network Firewall Publisher**   | firewall\_log\_profile                    |
++==================================+===========================================+
+| **Log Rule Matches**             | Check Accept                              |
+|                                  | Check Drop                                |
+|                                  | Check Reject                              |
++----------------------------------+-------------------------------------------+
+| **Log IP Errors**                | Checked                                   |
++----------------------------------+-------------------------------------------+
+| **Log TCP Errors**               | Checked                                   |
++----------------------------------+-------------------------------------------+
+| **Log TCP Events**               | Checked                                   |
++----------------------------------+-------------------------------------------+
+| **Log Translation Fields**       | Checked                                   |
++----------------------------------+-------------------------------------------+
+| **Storage Format**               | Field-List (Move all to Selected Items)   |
++----------------------------------+-------------------------------------------+
+
+    |image26|
+
+.. NOTE:: Leave all other fields using the default values.
+
+**Navigation:** Click Finished
+
+Apply The Logging Configuration
+-------------------------------
+
+Apply the newly created log profile to the external virtual server created in the previous lab.
+
+**Navigation:** Local Traffic > Virtual Servers > Virtual Server List
+
+**Navigation:** Click on EXT\_VIP\_10.10.99.30
+
+**Navigation:** Security tab > Policies
+
++-------------------+--------------------------+
+| **Log Profile**   | firewall\_log\_profile   |
++===================+==========================+
++-------------------+--------------------------+
+
+|image27|
+
+.. NOTE:: Leave all other fields using the default values.
+
+**Navigation:** Click Update
+
+View empty network firewall logs.
+
+**Navigation:** Security > Event Logs > Network > Firewall
+
+|image28|
+
+Validate
+--------
+
+Open a new web browser tab and access the virtual server or repeat the
+curl statements from the previous sections.
+
+URL: https://www.mysite.com
+
+.. NOTE:: This test creates network firewall log entries.
+
+**Navigation:** Security > Event Logs > Network > Firewall
+
+|image29|
+
+.. NOTE:: View new network firewall log entries. Examine the data collected there.
+
+.. |image24| image:: media/image26.png
+   :width: 7.05278in
+   :height: 2.93819in
+.. |image25| image:: media/image27.png
+   :width: 7.04444in
+   :height: 2.53958in
+.. |image26| image:: media/image28.png
+   :width: 4.83169in
+   :height: 5.41497in
+.. |image27| image:: media/image29.png
+   :width: 7.04167in
+   :height: 5.88889in
+.. |image28| image:: media/image30.png
+   :width: 7.25278in
+   :height: 1.01170in
+.. |image29| image:: media/image31.jpeg
+   :width: 6.73811in
+   :height: 1.69444in

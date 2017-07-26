@@ -1,60 +1,51 @@
-Module 1: F5 Multi-layer Firewall Lab 
-=====================================
+Module 1: F5 Multi-layer Firewall 
+=================================
 
-The purpose of the Lab Setup and Configuration Guide is to walk you
-through the setup of F5 BIGIP to protect applications at multiple layers
-of the OSI stack hence providing Application Security Control. This in
-effect allows F5 BIG-IP to be multiple firewalls within a single
-platform.
+This module has seven labs in configuring an Advanced Multi-layer firewall applicable to many data center environments.
 
-**Assumptions/Prerequisites**: You have attended the AFM 101 lab
-sessions either this year or in previous years. Additionally this lab
-guide assumes that you understand LTM/TMOS basics and are comfortable
-with the process of creating Nodes, Pools, Virtual Servers, Profiles and
-Setting up logging and reporting.
+In this module, you will build a perimeter firewall with advanced Layer 7 security mitigations.
 
-There are three labs detailed in this document.
+Estimated completion time: 1 hour
 
-**Lab 1**
+Objective:
 
-This lab has six steps in configuring an Advanced Multi-layer firewall
-applicable to many data center environments. Task 7 will demonstrate
-additional protocol protections.
+-  Create multiple internal pools and virtual servers for different applications within your data center. e.g. www, API, /downloads
 
-Tasks 1 - 2 highlights the flexibility of leveraging an application
+-  Create external hosted virtual server that allows the same IP address to be shared with multiple SSL enabled applications.
+
+-  Configure LTM policy to direct traffic to appropriate virtual server
+
+-  Configure local logging; test
+
+-  Create a network firewall policy to protect the internal application
+   virtual servers; test
+
+-  Configure the external virtual server to tranform traffic coming through CDN networks so that firewall policies can be applied to specific clients; test
+
+-  Modify the network firewall policy to block based on XFF; test
+
+-  Apply Layer 7 responses (403 Denied) for CDN clients to firewall drop rules
+
+-  Configure HTTP protocol security; test
+
+-  Configure SSL Visibility to external security devices e.g. IDS; test
+
+Labs 1 & 2 highlight the flexibility of leveraging an application
 proxy such as the BIG-IP for your perimeter security utilizing common
-traffic management techniques.
+traffic management techniques and some additional features unique to 
+the BIG-IP as an Application Delivery Controller.
 
-Task 3 & 4 Breaks out applying differing security policies to the
+Labs 3 & 4 Breaks out applying differing security policies to the
 multi-tiered application deployment.
 
-Task 5 Highlights the flexibility of the Multi-Layered Firewall to solve
+Lab 5 Highlights the flexibility of the Multi-Layered Firewall to solve
 common problems for hosting providers.
 
-Task 6 Applies Layer 7 protocol validation and security for HTTP to the
+Lab 6 Applies Layer 7 protocol validation and security for HTTP to the
 existing applications.
 
-Task 7 Highlights protecting the DNS protocol.
-
-**Lab 2**
-
-This lab highlights Advanced Firewall Security (L2-7) layering on
-authentication and access control with Access Policy Manager Application
-Security (L7) for Multi-tenancy using Route Domains and network
-firewalling. (LTM+AFM+APM)
-
-**Lab 3**
-
-This lab introduces iRules Language eXtensions (LX) or iRulesLX which
-enables node.js on the BIG-IP platform. The lab uses Tcl iRules and
-JavaScript code to make a MySQL call to look up a client IP address
-providing access control in the Multi-Layered Firewall. 
-
-**Lab 4**
-
-This lab highlights the Advanced Firewall Manager SSH proxy for securing
-SSH traffic. You will configure an SSH Profile to control the command
-users can execute in an SSH channel.
+Lab 7 Provides a solution for sending decrypted traffic to other
+security devices.
 
 .. NOTE:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP

@@ -79,7 +79,9 @@ click Create
 
 |image4|
 
-|image5|\ |image6|
+|image5| 
+
+|image6|
 
 .. NOTE:: Leave all other fields using the default values.
 

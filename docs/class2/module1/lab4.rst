@@ -104,7 +104,7 @@ URL: https://www.mysite.com/downloads/
 |image37|
 
 .. NOTE:: We want to ensure the site is still available
-after applying the policy. We will get into testing the block later.
+   after applying the policy. We will get into testing the block later.
 
 Create A Separate Policy For The API Virtual Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

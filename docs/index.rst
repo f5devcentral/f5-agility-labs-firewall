@@ -49,7 +49,6 @@ solutions:**      
    :caption: Contents:
    :glob:
 
-   intro*
    class*/class*
 
 .. |image1| image:: /_static/class1/image2.gif

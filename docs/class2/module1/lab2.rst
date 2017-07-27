@@ -1,459 +1,240 @@
-Lab 2: APM SSL VPN Multi-tenancy using Route Domains and AFM Policies
-=====================================================================
+Leverage LTM Policies To Direct SSL Terminated Applications To Secondary Virtual Servers
+========================================================================================
 
-Estimated completion time: 45 minutes
+Introduced in TLS 1.0 as a TLS extension, Server Name Indication (SNI) allows the client to send the hostname they are trying to connect to in the SSL handshake. This allows the Application Delivery Controllers (ADC) such as the BIG-IP and the Application servers to identify the appropriate application the client is trying to connect to. From this information, the ADC can respond with the proper SSL certificate to the client allowing the ADC to provide SSL enabled services for multiple applications from a single IP address.
 
-TASK 1 – Create APM connectivity profile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LTM policies are another way to programatically modify traffic as it is flowing through the data plane of the BIG-IP. This functionality can also be accomplished with F5 iRules. The advantage this has over iRules is that LTM policies can be modified and appended to the existing configuration without replacing the entire application configuration. This lends itself to being updated through the CLI or via the REST API easily.
 
-These steps guide you through configuring the APM VPN and policy
+If you make a single change to an iRule, the entire iRule needs to be re-uploaded and applied.
 
-A connectivity profile is needed in order to establish a layer3 tunnel.
-The name of the connectivity profile will be the name of the tunnel
-interface where packets bound for the internal network(s) the vpn is
-protecting will exit. Tcpdump can be used to see if packets making to
-and from the tunnel
+The LTM policy is what directs application traffic to flow from the external virtual server to the internal virtual servers based on the Layer 7 request. In this case, since we are using SNI to terminate multiple applications (mysite,yoursite,theirsite, api, downloads) we need to be able to direct that traffic to the appropriate application pools. Some can even come back to the same application pool.
 
-For example, in this exercise ``afm_cp`` is the name of the connectivity
-profile therefore the tcpdump syntax would look like
+Whether it is based on the hostname or the URI path, the request can be forwarded to a different virtual server or an application pool of servers.
 
-``tcpdump –ni afm_cp``
+Create the LTM Policies
+-----------------------
 
-|image64|
+**Navigation:** Local Traffic > Policies : Policy List > Policy List Page,
+then click Create
 
-Create a APM connectivity profile
++-------------------+------------------------------------------------------------------------+
+| **Policy Name**   | HTTPS\_Virtual\_Targeting\_PolicyL7                                    |
++===================+========================================================================+
+| **Strategy**      | Execute ***best*** matching rule using the ***best-match*** strategy   |
++-------------------+------------------------------------------------------------------------+
 
-Open the Access > Connectivity/VPN > Profiles, click Add. Use the
-following values, leave all others at their defaults
+**Navigation:** Click Create Policy
 
-- Name: ``afm_cp``
-- Parent Profile: ``/Common/connectivity``
-- Click **Ok**
+|image11|
 
-|image65|
+**Navigation:** Local Traffic > Policies : Policy List >
+/Common/HTTPS\_Virtual\_Targeting\_PolicyL7
 
-TASK 2 – Create APM access profile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|image12|
 
-Create a APM webtop
+The policy configuration should now include a Rules section
 
-Open the Access > Webtops -> page, click Create. Use the following
-values, leave all others at their defaults
+**Navigation:** Click Create
 
-- Name: ``afm_webtop``
-- Type: ``Full``
-- Click **Finished**
+You will need to create the following rules within your policy:
 
-|image66|
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **Rule Name**                                            |                   |                  |               |                                               |
++==========================================================+===================+==================+===============+===============================================+
+| `**www.mysite.com** <http://www.mysite.com>`__           | HTTP Host         | Host             | is            | www.mysite.com                                |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com\_1.1.1.1             |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| `**www.yoursite.com** <http://www.yoursite.com>`__       | HTTP Host         | Host             | is            | www.yoursite.com                              |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.yoursite.com\_3.3.3.3           |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| `**www.theirsite.com** <http://www.theirsite.com>`__     | HTTP Host         | Host             | is            | www.theirsite.com                             |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.theirsite.com\_2.2.2.2          |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| `**www.mysite.com-api** <http://www.mysite.com-api>`__   | HTTP Host         | host             | is            | www.mysite.com                                |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                          | HTTP URI          | path             | begins with   | /api                                          |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-api\_1.1.1.2         |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                          | Replace           | http uri         | path          | with **/**                                    |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **www.mysite.com-downloads**                             | HTTP Host         | host             | is            | www.mysite.com                                |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                          | HTTP URI          | path             | begins with   | /downloads                                    |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-downloads\_1.1.1.3   |
++----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
 
-Create a APM lease pool for route domain 0
+**Navigation:** Remember to click Add after adding the matching string
 
-Open the Access > Connectivity/VPN > Network Access (VPN) > IPV4 Lease
-Pools page, click Create. Use the following values, leave all others at
-their defaults
+|image13|
 
-- Name: ``rd0_leasepool``
-- Type: ``IP Address``
-- IP Address: ``172.1.1.50``
-- Click **Add**
-- Click **Finished**
+**Navigation:** Click Save
 
-|image67|
+Additional Example for /api. The replacement line is required to strip
+the path from the request for the site to work.
 
-Create a APM connectivity profile for route domain 1
+|image14|
 
-Open the Access > Connectivity/VPN > Network Access (VPN) > IPV4 Lease
-Pools page, click Create. Use the following values, leave all others at
-their defaults
+**Complete the additional policies according to the list above.**
 
-- Name: ``rd1_leasepool``
-- Type: ``IP Address``
-- IP Address: ``172.1.2.50``
-- Click **Add**
-- Click **Finished**
+Once complete publish the policy.
 
-|image68|
+**Navigation:** Local Traffic > Policies: Policy List >
+/Common/HTTPS\_Virtual\_Targeting\_PolicyL7
 
-Create a APM network access configuration for route domain 0
+**Navigation:** Click Publish
 
-Open the Access > Connectivity/VPN > Network Access Lists page, click
-Create. Use the following values, leave all others at their defaults
+|image15|
 
-- Name: ``rd0_networkaccess``
-- Click **Finished**
+Apply The Policy To The External Virtual Server
+-----------------------------------------------
 
-|image69|
+**Navigation:** Local Traffic > Virtual Servers : Virtual Server List
 
-Open the ``rd0_networkaccess`` you just created and go to Network Settings.
-Use the following values, leave all others at their defaults
+|image16|
 
-- IPV4 Lease Pool: ``rd0_leasepool``
-- Traffic Options: ``Use split tunneling for traffic``
-- IPV4 LAN Address Space:
-  - IP Address: ``172.1.1.0``
-  - Mask: ``255.255.255.0``
-- Click **Add**
-- Allow Local Subnet: ``Enable``
-- Click **Update**
+**Navigation:** Click the EXT\_VIP\_10.10.90.30
 
-|image70|
+|image17|
 
-|image71|
+**Navigation:** Click the Resources Tab
 
-Create a APM network access configuration for route domain 1
+|image18|
 
-Open the Access > Connectivity/VPN > Network Access Lists page, click
-Create. Use the following values, leave all others at their defaults
+**Navigation:** Under Policies Click Manage
 
-- Name: ``rd1_networkaccess``
-- Click **Finished**
+|image19|
 
-|image72|
+**Navigation:** Select the HTTPS\_Virtual\_Targeting\_PolicyL7
 
-Open the ``rd1_networkaccess`` you just created and go to Network Settings.
-Use the following values, leave all others at their defaults
+|image20|
 
-- IPV4 Lease Pool: ``rd1_leasepool``
-- Traffic Options: ``Use split tunneling for traffic``
-- IPV4 LAN Address Space:
-  - IP Address: ``172.1.2.0%1``
-  - Mask: ``255.255.255.0``
-- Click **Add**
-- Allow Local Subnet: ``Enable``
-- Click **Update**
+**Navigation:** Click the Double Arrow to move the policy into the left-hand
+column and click Finished.
 
-|image73|
+|image21|
 
-|image74|
+The result should look like the screenshot below.
 
-Create a APM access profile
+|image22|
 
-Open the Access >Profiles / Policies (Per-Session Policies) page, click
-Create. Use the following values, leave all others at their defaults
+Validate Lab 2 Configuration
+----------------------------
 
-- Name: ``afm_accessprofile``
-- Profile Type: ``All``
-- Accepted Languages: ``English``
-- Click **Finished**
+**Validation:** This lab is using self-signed certificates. You can
+either open a web browser on the test client or run CURL from the CLI to
+validate your configuration.
 
-|image75|
+**You will need to accept the certificate to proceed to the application sites**
 
-|image76|
+**With curl you need to use the -k option to ignore certificate validation**
 
-Now the click Edit for the ``afm_accessprofile``
+.. NOTE:: You may have to edit the hosts file on your Win7 Client to add:
 
-|image77|
+.. code-block:: console
 
-The ``afm_accessprofile`` is displayed
+   10.10.99.30 www.mysite.com
 
-|image78|
+   10.10.99.30 www.yoursite.com
 
-Modify the Visual Policy Editor (VPE) – The VPE is what the client
-interacts with and is assigned before the approval or denial of access
-to a resource.
+   10.10.99.30 www.theirsite.com
 
-Click on the plus sign after the start block and navigate to Endpoint
-Security (Client-Side) and select Firewall and click **Add Item**
+|image23|
 
-|image79|
+From a terminal window (use Cygwin on Win7 Client Desktop). Curl will
+let us do some of the additional testing in later sections.
 
-Leave the defaults
+.. code-block:: console
 
-|image80|
+   curl -k https://10.10.99.30 -H 'Host:www.mysite.com'
 
-and click **Save**
+   <H1> MYSITE.COM </H1>
 
-Change both endings from Deny
+   curl -k https://10.10.99.30 -H 'Host:www.theirsite.com'
 
-|image81|
+   <H1> THEIRSITE.COM </H1>
 
-to Allow
+   curl -k https://10.10.99.30 -H 'Host:www.yoursite.com'
 
-|image82|
+   <H1> YOURSITE.COM </H1>
 
-In the Successful branch of the Firewall block click the “+” sign and
-navigate to Assignment->Route Domain and SNAT Selection and click Add
-Item. Use the following values, leave all others at their defaults
+   curl -k https://10.10.99.30/api -H 'Host:www.mysite.com'
 
-- Name: ``rd1``
-- Route Domain: ``/Common/rd1``
-- SNAT: ``none``
-- Click **Save**
+.. code-block:: console
 
-|image83|
+   {
+      "web-app": {
+        "servlet": [
+           {
+              "servlet-name": "cofaxCDS",
+              "servlet-class": "org.cofax.cds.CDSServlet"
+           }
+    ...   
 
-After the rd1 block click the “+” sign and navigate to
-Assignment->Advanced Resource Assign and 
+.. NOTE:: A bunch of nonsense JSON should be returned.
 
-- Click **Add Item**
-- Click **Add new entry**
-- Click **Add/Delete**
+.. code-block:: console
 
-Use the following values, leave all others at their defaults
+   curl -k https://10.10.99.30/downloads/ -H 'Host:www.mysite.com'
 
-- Network Access: ``/Common/rd1_networkaccess``
-- Webtop: ``/Common/afm_webtop``
-- Click **Update**
+.. code-block:: html
 
-Change the name to ``rd1`` Resource Assign and click Save
+   <html>
+   <head>
+     <title>Index of /downloads</title>
+   </head>
+   <body>
 
-|image84|
+.. NOTE:: A larger page with this title should be displayed.
 
-In the fallback branch of the Firewall block click the “+” sign and
-navigate to Assignment->Route Domain and SNAT Selection and click Add
-Item. Use the following values, leave all others at their defaults
+.. NOTE:: This completes Module 1 - Lab 2
 
-- Name: ``rd0``
-- Route Domain: ``/Common/0``
-- SNAT: ``none``
-- Click **Save**
-
-|image85|
-
-After the rd0 block click the “+” sign and navigate to
-Assignment->Advanced Resource Assign and 
-
-- Click **Add Item**
-- Click **Add new entry**
-- Click **Add/Delete**
-
-Use the following values, leave all others at their defaults
-
-- Network Access: ``/Common/rd0_networkaccess``
-- Webtop: ``/Common/afm_webtop``
-- Click **Update**
-
-Change the name to ``rd0`` Resource Assign and click Save
-
-|image86|
-
-The final access policy should look like
-
-|image87|
-
-Click Apply Access Policy
-
-TASK 3 – Create new virtual server for the APM L3 SSL VPN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create a new virtual server for the APM L3 SSL VPN. This is the virtual
-where the APM policy will be assigned and where sslvpn traffic will be
-terminated.
-
-Open the Local Traffic -> Virtual Servers page, click Create. Use the
-following values, leave all others at their defaults
-
-- Name: ``apm_vs``
-- Type: ``standard``
-- Destination Address: ``192.168.1.50``
-- Service Port: ``443``
-- HTTP Profile: ``HTTP``
-- SSL Profile (Client): ``clientssl``
-- Access Profile: ``afm_accessprofile``
-- Connectivity Profile: ``afm_cp``
-- Click **Finished**
-
-|image88|
-
-|image89|
-
-|image90|
-
-TASK 4 – Create APM policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create a new virtual server. Two new virtual servers need to be created
-that control traffic coming out of the vpn tunnel to resources protected
-by the tunnel. In addition the virtual servers provide a place to apply
-afm policies to control traffic.
-
-Create a new virtual server for route domain 0 traffic
-
-Open the Local Traffic -> Virtual Servers page, click Create. Use the
-following values, leave all others at their defaults
-
-- Name: ``rd0_vs``
-- Type: ``Forwarding (IP)``
-- Destination Address: ``172.1.1.0/24``
-- Service Port: ``* All Ports``
-- Protocols: ``* All Protocols``
-- VLANS and Tunnels: ``afm_cp``
-- Click **Finished**
-
-|image91|
-
-Create a new virtual server for route domain 1 traffic
-
-Open the Local Traffic -> Virtual Servers page, click Create. Use the
-following values, leave all others at their defaults
-
-- Name: ``rd1_vs``
-- Type: ``Forwarding (IP)``
-- Source Address: ``0.0.0.0%1/0``
-- Destination Address: ``172.1.2.0%1/24``
-- Service Port: ``* All Ports``
-- Protocols: ``* All Protocols``
-- VLANS and Tunnels: ``afm_cp``
-- Click **Finished**
-
-|image92|
-
-Create the AFM policy for route domain 0 traffic. This limits traffic
-through sslvpn to the internal subnet in route domain 0.
-
-Open the Security -> Network Firewall->Active Rules page, click Add. Use
-the following values, leave all others at their defaults
-
-- Context: ``Virtual Server, rd0``
-- Policy New, Name: ``rd0_afmpolicy``
-- Name: ``rd0_denyall_rule``
-- Action: ``Reject``
-- Logging: ``Enabled``
-- Click **Finished**
-
-|image93|
-
-Create the AFM policy for route domain 1 traffic. This limits traffic
-through sslvpn to the internal subnet in route domain 1.
-
-Open the Security -> Network Firewall->Active Rules page, click Add. Use
-the following values, leave all others at their defaults
-
-- Context: ``Virtual Server, rd1``
-- Policy New, Name: ``rd1_afmpolicy``
-- Name: ``rd1_denyall_rule``
-- Action: ``Reject``
-- Logging: ``Enabled``
-- Click **Finished**
-
-|image94|
-
-TASK 5 – Test
-~~~~~~~~~~~~~
-
-Now its time to test the vpn.
-
-On your jumpstation start the BIG-IP Edge Client which is the grey
-ethernet port at the bottom of the desktop.
-
-|image95|
-
-Ensure the Edge Client is using server 192.168.1.50, the APM vip, if not
-use Change Server to select it and Click Connect
-
-|image96|
-
-The Edge Client will inspect your jumpstation to determine the firewall
-status, select “Allow this site to inspect for this session only”
-
-|image97|
-
-Once the Edge Client is connected, go to View Details, which route
-domain are you in?
-
-Why?
-
-**This completes Lab2**
-
-.. |image64| image:: /_static/class2/image30.png
-   :width: 4.64158in
-   :height: 3.37569in
-.. |image65| image:: /_static/class2/image31.png
-   :width: 6.23089in
-   :height: 4.63403in
-.. |image66| image:: /_static/class2/image136.png
-   :width: 6.00000in
-   :height: 5.85646in
-.. |image67| image:: /_static/class2/image33.png
-   :width: 5.60895in
-   :height: 3.61152in
-.. |image68| image:: /_static/class2/image137.png
-   :width: 6.00000in
-   :height: 3.73611in
-.. |image69| image:: /_static/class2/image35.png
-   :width: 4.87536in
-   :height: 3.64653in
-.. |image70| image:: /_static/class2/image36.png
-   :width: 5.00858in
-   :height: 6.75069in
-.. |image71| image:: /_static/class2/image37.png
-   :width: 5.38758in
-   :height: 0.75763in
-.. |image72| image:: /_static/class2/image38.png
-   :width: 5.35372in
-   :height: 3.95520in
-.. |image73| image:: /_static/class2/image39.png
-   :width: 5.50419in
-   :height: 7.58104in
-.. |image74| image:: /_static/class2/image37.png
-   :width: 5.38758in
-   :height: 0.75763in
-.. |image75| image:: /_static/class2/image138.png
-   :width: 6.98662in
-   :height: 1.58879in
-.. |image76| image:: /_static/class2/image41.png
+.. |image9| image:: /_static/class2/image11.png
+   :width: 7.05556in
+   :height: 6.20833in
+.. |image10| image:: /_static/class2/image12.png
+   :width: 7.05556in
+   :height: 3.45833in
+.. |image11| image:: /_static/class2/image13.png
+   :width: 7.08611in
+   :height: 1.97069in
+.. |image12| image:: /_static/class2/image14.png
+   :width: 7.04167in
+   :height: 2.62500in
+.. |image13| image:: /_static/class2/image15.png
    :width: 7.05000in
-   :height: 2.29778in
-.. |image77| image:: /_static/class2/image42.png
+   :height: 2.63403in
+.. |image14| image:: /_static/class2/image16.png
    :width: 7.05000in
-   :height: 0.92316in
-.. |image78| image:: /_static/class2/image43.png
-   :width: 2.91088in
-   :height: 0.79236in
-.. |image79| image:: /_static/class2/image44.png
-   :width: 4.38610in
-   :height: 1.06597in
-.. |image80| image:: /_static/class2/image45.png
-   :width: 5.49755in
-   :height: 1.43333in
-.. |image81| image:: /_static/class2/image46.png
-   :width: 3.40534in
-   :height: 1.01389in
-.. |image82| image:: /_static/class2/image47.png
-   :width: 4.24056in
-   :height: 1.51448in
-.. |image83| image:: /_static/class2/image48.png
-   :width: 4.16906in
-   :height: 2.13333in
-.. |image84| image:: /_static/class2/image49.png
-   :width: 4.34192in
-   :height: 3.10903in
-.. |image85| image:: /_static/class2/image50.png
-   :width: 3.90610in
-   :height: 1.86597in
-.. |image86| image:: /_static/class2/image51.png
-   :width: 4.67794in
-   :height: 3.70069in
-.. |image87| image:: /_static/class2/image52.png
+   :height: 3.29861in
+.. |image15| image:: /_static/class2/image17.png
+   :width: 7.05556in
+   :height: 1.68056in
+.. |image16| image:: /_static/class2/image18.png
    :width: 7.05000in
-   :height: 1.90385in
-.. |image88| image:: /_static/class2/image53.png
-   :width: 4.66754in
-   :height: 3.26528in
-.. |image89| image:: /_static/class2/image54.png
-   :width: 6.09340in
-   :height: 5.59287in
-.. |image90| image:: /_static/class2/image55.png
-   :width: 4.72323in
-   :height: 2.81241in
-.. |image91| image:: /_static/class2/image139.png
-   :width: 4.79853in
-   :height: 5.60620in
-.. |image92| image:: /_static/class2/image140.png
-   :width: 5.06591in
-   :height: 6.81758in
-.. |image93| image:: /_static/class2/image141.png
-   :width: 5.14788in
-   :height: 7.25486in
-.. |image94| image:: /_static/class2/image142.png
-   :width: 5.11930in
-   :height: 6.63730in
-.. |image95| image:: /_static/class2/image143.png
-   :width: 4.25278in
-   :height: 0.77495in
-.. |image96| image:: /_static/class2/image144.png
-   :width: 5.50467in
-   :height: 2.58403in
-.. |image97| image:: /_static/class2/image145.png
-   :width: 6.13439in
-   :height: 4.05248in
+   :height: 2.35764in
+.. |image17| image:: /_static/class2/image19.png
+   :width: 7.04167in
+   :height: 2.25000in
+.. |image18| image:: /_static/class2/image20.png
+   :width: 7.05556in
+   :height: 0.80556in
+.. |image19| image:: /_static/class2/image21.png
+   :width: 7.05556in
+   :height: 3.34722in
+.. |image20| image:: /_static/class2/image22.png
+   :width: 7.04167in
+   :height: 2.56944in
+.. |image21| image:: /_static/class2/image23.png
+   :width: 7.04167in
+   :height: 2.59722in
+.. |image22| image:: /_static/class2/image24.png
+   :width: 7.04167in
+   :height: 4.31944in
+.. |image23| image:: /_static/class2/image25.png
+   :width: 7.05000in
+   :height: 1.60208in

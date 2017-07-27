@@ -5,7 +5,7 @@ This lab introduces iRules Language eXtensions (LX) or iRulesLX which enables no
 
 This could be useful in developer driven / devops environments where the development team can modify firewall policies simply by updating a database.
 
-.. NOTE:: IP addresses in screenshots are examples only. Please read the
+.. WARNING:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP
    addresses.
 

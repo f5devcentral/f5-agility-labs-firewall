@@ -11,7 +11,7 @@ This module highlights Advanced Firewall Security (L2-7) layering on authenticat
 
 |image64|
 
-.. NOTE:: IP addresses in screenshots are examples only. Please read the
+.. WARNING:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP
    addresses.
 

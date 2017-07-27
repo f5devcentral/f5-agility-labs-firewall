@@ -119,7 +119,7 @@ URL: https://10.10.99.30/dvwa
 
 |image56|
 
-.. NOTE:: This application is not accessible because the ”Host header contains IP address” and “Block” options in the HTTP security policy are selected.
+.. ATTENTION:: This application should not be accessible because the ”Host header contains IP address” and “Block” options in the HTTP security policy are selected.
 
 Open a new web browser tab and access the virtual server.
 
@@ -127,7 +127,7 @@ URL: https://www.mysite.com/dvwa
 
 |image57|
 
-.. NOTE:: This application is now accessible because we requested it through the FQDN instead of an IP address
+.. ATTENTION:: This application should now be accessible because we requested it through the FQDN instead of an IP address
 
 .. NOTE:: Explore some of the other settings avaialable to you in the security policy
 

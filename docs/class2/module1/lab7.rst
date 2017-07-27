@@ -73,7 +73,7 @@ View the tcpdump output on the syslog-webserver.
    17:25:42.688028 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [F.], seq 252, ack 80, win 4458, length 0
    17:25:42.688057 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [.], ack 253, win 4631, length 0
 
-.. NOTE:: A copy of the web traffic destined for the internal virtual server is received by the monitoring device on 172.1.1.11. Alternatively you could attach the clone pool to the client side of the internal virtual server. How is the traffic getting to the server when the source and destination IP addresses are not on that interface?
+.. ATTENTION:: A copy of the web traffic destined for the internal virtual server is received by the monitoring device on 172.1.1.11. Alternatively you could attach the clone pool to the client side of the internal virtual server. How is the traffic getting to the server when the source and destination IP addresses are not on that interface?
 
 .. NOTE:: This is the end of Module 1 - Lab 7.
 

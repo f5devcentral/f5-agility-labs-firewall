@@ -196,7 +196,7 @@ click **Create**
 
 .. NOTE:: The default pool is not necessary and might not be what you want from a security perspective but it’s here as a fallback and to let the virtual server turn green
 
-.. NOTE:: Try accessing the virtual servers you created from the Windows host via ping or a web browser. The web browser on the Windows host has links saved to access it. **If you try yourself, use https://** since you enabled encyrption when you created the virtual server. Were you able to connect to any of applications? What was available? **Why are some accessible while others are not?**
+.. ATTENTION:: Try accessing the virtual servers you created from the Windows host via ping or a web browser. The web browser on the Windows host has links saved to access it. **If you try yourself, use https://** since you enabled encyrption when you created the virtual server. Were you able to connect to any of applications? What was available? **Why are some accessible while others are not?**
 
 .. NOTE:: This completes Module 1 - Lab 1
 

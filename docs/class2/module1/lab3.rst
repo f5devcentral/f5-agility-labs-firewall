@@ -142,7 +142,9 @@ URL: https://www.mysite.com
 
 |image29|
 
-.. NOTE:: View new network firewall log entries. Examine the data collected there.
+.. ATTENTION:: View new network firewall log entries. Examine the data collected there.
+
+.. NOTE:: This completes Module 1 - Lab 3
 
 .. |image24| image:: /_static/class2/image26.png
    :width: 7.05278in

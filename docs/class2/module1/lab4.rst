@@ -200,7 +200,7 @@ URL: https://www.mysite.com/api
 
 |image43|
 
-.. NOTE:: We can no longer access the /api site because the only allowed address is 172.16.99.5. You can verify this in the logs. What is the IP address that is trying to connect?
+.. ATTENTION:: You should no longer be able to access the /api site because the only allowed address is 172.16.99.5. You can verify this in the logs. What is the IP address that is trying to connect?
 
 |image44|
 

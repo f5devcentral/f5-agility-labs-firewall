@@ -346,12 +346,9 @@ status, select “Allow this site to inspect for this session only”
 
 |image97|
 
-**Once the Edge Client is connected, go to View Details, which route
-domain are you in?**
+.. ATTENTION:: Once the Edge Client is connected, go to View Details, which route domain are you in? Why?
 
-**Why?**
-
-.. NOTE:: This completes Lab2
+.. NOTE:: This completes Module 2 - Lab 1
 
 .. |image65| image:: /_static/class2/image62.png
    :width: 4.64158in

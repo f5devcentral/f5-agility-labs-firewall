@@ -47,7 +47,7 @@ existing applications.
 Lab 7 Provides a solution for sending decrypted traffic to other
 security devices.
 
-.. NOTE:: IP addresses in screenshots are examples only. Please read the
+.. WARNING:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP
    addresses.
 

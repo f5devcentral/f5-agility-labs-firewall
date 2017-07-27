@@ -103,7 +103,7 @@ should be returned.
      </body>
    </html>
 
-.. NOTE:: Since a TCP solution would cause disasterous consequences, the HTML error response will traverse the CDN network back only to the originating client. Using a unique error code such as 418 (I Am A Teapot) would allow you to determine that the webserver is likely not the source of the response. It would also allow the CDN network providers to track these error codes. Try to find one that has a sense of humor.
+.. ATTENTION:: Since a TCP solution would cause disasterous consequences, the HTML error response will traverse the CDN network back only to the originating client. Using a unique error code such as 418 (I Am A Teapot) would allow you to determine that the webserver is likely not the source of the response. It would also allow the CDN network providers to track these error codes. Try to find one that has a sense of humor.
 
 .. NOTE:: This concludes Module 1 - Lab 5
 

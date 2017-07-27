@@ -28,11 +28,15 @@ Click “Save File”
 
 **Navigate:** click on rules->mysql\_irulelx
 
-On the Windows 7 client, open the mysql\_iRulesLx.txt file located in the
+On the Windows 7 client:
+
+**Navigate:** Open the mysql\_iRulesLx.txt file located in the
 Desktop folder, copy its entire contents and paste the contents into the
 “mysql\_irulelx”. Click “Save File”
 
-On the BIG-IP webgui, navigate to Local Traffic->iRules-> LX Plugins and
+On the BIG-IP webgui 
+
+**Navigate:** to Local Traffic->iRules-> LX Plugins and
 create a new LX Plugin named “afmmysqlplug” using the workspace (From
 Workspace dropdown) irules\_lx\_mysql\_workspace. Click “Finished”
 
@@ -45,7 +49,7 @@ exists) and click iRule to assign the “mysql\_Irulelx” iRule. Click
 
 |image100|
 
-This policy is already enforced on the afmmysql\_vs (192.168.1.51)
+This policy is already enforced on the ``afmmysql_vs (192.168.1.51)``
 
 On the Win7 client, use curl in the cygwin cli to test that the client
 is being blocked, as the Win7 client’s ip is in the mysql database.
@@ -54,10 +58,9 @@ is being blocked, as the Win7 client’s ip is in the mysql database.
 
 this should timeout.
 
-Ensure that the Irule is working properly, by going back to the AFM rule
-and setting the iRule back to None.
+.. ATTENTION:: Ensure that the iRule is working properly, by going back to the AFM rule and setting the iRule back to None. Also examine the log files at ``/var/log/ltm`` on the BIG-IP.
 
-Also look at ``/var/log/ltm`` on the BIG-IP.
+.. NOTE:: This completes Module 3 - Lab 1
 
 .. |image98| image:: /_static/class2/image146.png
    :width: 7.05000in

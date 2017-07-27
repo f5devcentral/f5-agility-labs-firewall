@@ -14,11 +14,11 @@ On your personal device
 
 Look at the supplemental login instructions for:
 
-  * External Hostnames
+* External Hostnames
 
-  * External IP addressing diagram
+* External IP addressing diagram
 
-  * Login IDs and Passwords are subject to change as well.
+* Login IDs and Passwords are subject to change as well.
 
 |image1|
 
@@ -31,17 +31,29 @@ Create a pool using the following information:
 
 **Navigation:** Local Traffic > Pools > Pool List, then click Create
 
-+----------------------------+----------------------+-----------------+--------------------+
-| **Name**                   | **Health Monitor**   | **Members**     | **Service Port**   |
-+============================+======================+=================+====================+
-| pool\_www.mysite.com       | tcp\_half\_open      | 10.10.121.129   | 80                 |
-+----------------------------+----------------------+-----------------+--------------------+
-| pool\_www.mysite.com-api   | tcp\_half\_open      | 10.10.121.132   | 80                 |
-+----------------------------+----------------------+-----------------+--------------------+
-| pool\_www.theirsite.com    | tcp\_half\_open      | 10.10.121.131   | 80                 |
-+----------------------------+----------------------+-----------------+--------------------+
-| pool\_www.yoursite.com     | tcp\_half\_open      | 10.10.121.130   | 80                 |
-+----------------------------+----------------------+-----------------+--------------------+
+.. list-table::
+   :header-rows: 1
+
+   * - **Name**
+     - **Health Monitor**
+     - **Members**
+     - **Service Port**
+   * - pool\_www.mysite.com
+     - tcp\_half\_open
+     - 10.10.121.129
+     - 80
+   * - pool\_www.mysite.com-api
+     - tcp\_half\_open
+     - 10.10.121.132
+     - 80
+   * - pool\_www.theirsite.com
+     - tcp\_half\_open
+     - 10.10.121.131
+     - 80
+   * - pool\_www.yoursite.com
+     - tcp\_half\_open
+     - 10.10.121.130
+     - 80
 
 |image2|
 
@@ -63,23 +75,80 @@ Create the internal virtual servers using the following information:
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List, then
 click Create
 
-+-----------------------------------------------+------------+------------+--------------------+-----------------------+------------+----------------------------+
-| **Name**                                      | **Dest**   | **Port**   | **HTTP Profile**   | **Enabled on VLAN**   | **SNAT**   | **Default Pool**           |
-+===============================================+============+============+====================+=======================+============+============================+
-| int\_vip\_www.mysite.com\_1.1.1.1             | 1.1.1.1    | 80         | YES                | loopback              | AUTO       | pool\_www.mysite.com       |
-+-----------------------------------------------+------------+------------+--------------------+-----------------------+------------+----------------------------+
-| int\_vip\_www.mysite.com-api\_1.1.1.2         | 1.1.1.2    | 80         | YES                | loopback              | AUTO       | pool\_www.mysite.com-api   |
-+-----------------------------------------------+------------+------------+--------------------+-----------------------+------------+----------------------------+
-| int\_vip\_www.mysite.com-downloads\_1.1.1.3   | 1.1.1.3    | 80         | YES                | loopback              | AUTO       | pool\_www.mysite.com       |
-+-----------------------------------------------+------------+------------+--------------------+-----------------------+------------+----------------------------+
-| int\_vip\_www.theirsite.com\_2.2.2.2          | 2.2.2.2    | 80         | YES                | loopback              | AUTO       | pool\_www.theirsite.com    |
-+-----------------------------------------------+------------+------------+--------------------+-----------------------+------------+----------------------------+
-| int\_vip\_www.yoursite.com\_3.3.3.3           | 3.3.3.3    | 80         | YES                | loopback              | AUTO       | pool\_www.yoursite.com     |
-+-----------------------------------------------+------------+------------+--------------------+-----------------------+------------+----------------------------+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 1
+
+   * - **Name**
+     - **Properties**
+   * - ``int_vip_www.mysite.com_1.1.1.1``
+     - **Dest**: ``1.1.1.1``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: YES
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.mysite.com``
+
+   * - ``int_vip_www.mysite.com-api_1.1.1.2``
+     - **Dest**: ``1.1.1.2``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: YES
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.mysite.com-api``
+
+   * - ``int_vip_www.mysite.com-downloads_1.1.1.3``
+     - **Dest**: ``1.1.1.3``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: YES
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.mysite.com``
+
+   * - ``int_vip_www.theirsite.com_2.2.2.2``
+     - **Dest**: ``2.2.2.2``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: YES
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.theirsite.com``
+
+   * - ``int_vip_www.yoursite.com_3.3.3.3``
+     - **Dest**: ``3.3.3.3``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: YES
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.yoursite.com``
 
 |image4|
 
-|image5| 
+|image5|
 
 |image6|
 
@@ -99,15 +168,25 @@ Create the external virtual server using the following information:
 **Navigation: _Local Traffic > Virtual Servers > Virtual Server List_**, then
 click **Create**
 
-+-------------------------+---------------+------------+--------------------+----------------------------------------------------+------------------------+
-| **Name**                | **Dest**      | **Port**   | **HTTP Profile**   | **SSL Profile (Client)**                           | **Default Pool**       |
-+=========================+===============+============+====================+====================================================+========================+
-| EXT\_VIP\_10.10.99.30   | 10.10.99.30   | 443        | YES                | `www.mysite.com <http://www.mysite.com>`__         | pool\_www.mysite.com   |
-|                         |               |            |                    |                                                    |                        |
-|                         |               |            |                    | `www.theirsite.com <http://www.theirsite.com>`__   |                        |
-|                         |               |            |                    |                                                    |                        |
-|                         |               |            |                    | `www.yoursite.com <http://www.yoursite.com>`__     |                        |
-+-------------------------+---------------+------------+--------------------+----------------------------------------------------+------------------------+
+.. list-table::
+   :header-rows: 1
+
+   * - **Name**
+     - **Dest**
+     - **Port**
+     - **HTTP Profile**
+     - **SSL Profile (Client)**
+     - **Default Pool**
+   * - EXT\_VIP\_10.10.99.30
+     - 10.10.99.30
+     - 443
+     - YES
+     - www.mysite.com
+
+       www.theirsite.com
+
+       www.yoursite.com
+     - pool\_www.mysite.com
 
 |image8|
 
@@ -149,5 +228,3 @@ click **Create**
    :width: 7.05556in
 .. |image10| image:: /_static/class2/image12.png
    :width: 7.05556in
-
-

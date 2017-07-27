@@ -30,8 +30,8 @@ Apply the iRule to the Virtual Server
 **Navigation:** Once you have moved the iRule XFF-SNAT over to the Enabled
 Section, Click Finished
 
-Validate
---------
+Validate SNAT Function
+----------------------
 
 To test functionality, we will need to leverage curl from the CLI to insert the X-Forwarded-For header in to the request.
 
@@ -69,7 +69,8 @@ Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.
 
    {
      "web-app": {
-       "servlet": [ {
+       "servlet": [ 
+       {
        "servlet-name": "cofaxCDS",
        "servlet-class": "org.cofax.cds.CDSServlet",
 
@@ -94,12 +95,12 @@ should be returned.
 .. code-block:: html
 
    <html>
-   <head>
-      <title>403 Forbidden</title>
-   </head>
-   <body>
-      403 Forbidden Download of Cryptographic Software Is Restricted
-   </body>
+     <head>
+       <title>403 Forbidden</title>
+     </head>
+     <body>
+        403 Forbidden Download of Cryptographic Software Is Restricted
+     </body>
    </html>
 
 .. NOTE:: Since a TCP solution would cause disasterous consequences, the HTML error response will traverse the CDN network back only to the originating client. Using a unique error code such as 418 (I Am A Teapot) would allow you to determine that the webserver is likely not the source of the response. It would also allow the CDN network providers to track these error codes. Try to find one that has a sense of humor.

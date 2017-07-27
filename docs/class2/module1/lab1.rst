@@ -143,3 +143,9 @@ click **Create**
 .. |image8| image:: /_static/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in
+.. |image9| image:: /_static/class2/image11.png
+   :width: 7.05556in
+.. |image10| image:: /_static/class2/image12.png
+   :width: 7.05556in
+
+

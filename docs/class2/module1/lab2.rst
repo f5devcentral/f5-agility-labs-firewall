@@ -122,8 +122,8 @@ The result should look like the screenshot below.
 
 |image22|
 
-Validate
---------
+Validate Lab 2 Configuration
+----------------------------
 
 **Validation:** This lab is using self-signed certificates. You can
 either open a web browser on the test client or run CURL from the CLI to

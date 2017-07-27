@@ -5,10 +5,10 @@ HTTP security profiles are used to apply basic HTTP security to a
 virtual server. Significantly more advanced HTTP security is available
 by adding ASM (Application Security Manager).
 
-On BIG-IP
-
 Configure An HTTP Security Profile And Apply It To The External Virtual Server
 ------------------------------------------------------------------------------
+
+On the BIG-IP:
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP,
 then click Create.
@@ -31,7 +31,6 @@ then click Create.
 
 +------------------+--------------+
 | **File Types**   | Select All   |
-+==================+==============+
 +------------------+--------------+
 
 |image49|
@@ -52,17 +51,14 @@ then click Create.
 
 **Navigation:** Click Finished
 
-Apply HTTP security profile to the external virtual server.
+Apply the HTTP security profile to the external virtual server.
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List >
 EXT\_VIP\_10.10.99.30
 
-+-------------------------+------------------------+
-| **Protocol Security**   | Enabled                |
-|                         |                        |
-|                         | demo\_http\_security   |
-+=========================+========================+
-+-------------------------+------------------------+
++-------------------------+------------------------+------------------------+
+| **Protocol Security**   | Enabled                | demo\_http\_security   |
++-------------------------+------------------------+------------------------+
 
 |image51|
 
@@ -79,9 +75,7 @@ URL: https://www.mysite.com/dvwa
 
 |image52|
 
-.. NOTE:: This application is accessible, even though there are policy
-violations, because the “Block” option in the HTTP security policy is
-not selected.
+.. NOTE:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
 Browse the application.
 
@@ -89,8 +83,7 @@ Browse the application.
 
 |image53|
 
-.. NOTE:: This traffic will generate network firewall log entries
-because the “Alarm” option in the HTTP security policy is selected.
+.. NOTE:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
 
 On BIG-IP
 
@@ -100,17 +93,16 @@ Review the log entries created in the previous step.
 
 |image54|
 
-.. NOTE::  Your log entries may be different than the example shown above.
+.. NOTE::  Your log entries may be different than the example shown above but the concept should be the same.
 
 Edit the demo\_http\_security HTTP security profile.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
 +----------------------------+---------------------------------------------------------+
-| **HTTP Protocol Checks**   | Uncheck all except “Host header contains IP address”.   |
+| **HTTP Protocol Checks**   | Uncheck all except "Host header contains IP address”.   |
 |                            |                                                         |
 |                            | Check “Block”                                           |
-+============================+=========================================================+
 +----------------------------+---------------------------------------------------------+
 
 |image55|
@@ -127,9 +119,7 @@ URL: https://10.10.99.30/dvwa
 
 |image56|
 
-.. NOTE:: This application is not accessible because the ”Host header
-contains IP address” and “Block” options in the HTTP security policy are
-selected.
+.. NOTE:: This application is not accessible because the ”Host header contains IP address” and “Block” options in the HTTP security policy are selected.
 
 Open a new web browser tab and access the virtual server.
 
@@ -137,11 +127,11 @@ URL: https://www.mysite.com/dvwa
 
 |image57|
 
-.. NOTE::  This application is now accessible because we requested a FQDN instead of an IP address.
+.. NOTE:: This application is now accessible because we requested it through the FQDN instead of an IP address
 
 .. NOTE:: Explore some of the other settings avaialable to you in the security policy
 
-**→NOTE:** This is the end of Module 1 - Lab 6
+.. NOTE:: This is the end of Module 1 - Lab 6
 
 .. |image48| image:: /_static/class2/image49.png
    :width: 5.41503in

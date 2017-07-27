@@ -11,13 +11,11 @@ High Speed Logging for modules such as the firewall module requires three compon
 
 For more detailed information on logging please consult the BIG-IP documentation.
 
-<https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/tmos-concepts-11-3-0/tmos_logging.html>
-
+https://askf5.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-external-monitoring-implementations-13-0-0/3.html
 
 In this lab, we will configure a local log publisher and log profile. The
 log profile will then be applied to the virtual server and tested.
 
-On BIG-IP
 
 Create A Log Publisher
 ----------------------
@@ -32,7 +30,7 @@ Create
 +-------------------------------+----------------------------+
 | **Name**                      | firewall\_log\_publisher   |
 +===============================+============================+
-| **Destinations (Selected)**   | local-db                   |
+| Destinations (Selected)       | local-db                   |
 +-------------------------------+----------------------------+
 
 |image24|
@@ -65,7 +63,6 @@ Edit log profile protocol security tab using the following information:
 
 +----------------------------+
 | firewall\_log\_publisher   |
-+============================+
 +----------------------------+
 
 |image25|
@@ -131,8 +128,8 @@ View empty network firewall logs.
 
 |image28|
 
-Validate
---------
+Validate Lab 3 Configuration
+----------------------------
 
 Open a new web browser tab and access the virtual server or repeat the
 curl statements from the previous sections.

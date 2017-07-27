@@ -1,29 +1,25 @@
 APM SSL VPN Multi-tenancy using Route Domains and AFM Policies
 ==============================================================
 
+Please refer to the following network diagram for this module:
+
+|image101|
+
 Estimated completion time: 45 minutes
 
 Create The Access Policy Manager (APM) Profiles
------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create APM connectivity profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These steps guide you through configuring the APM VPN and policy
 
-A connectivity profile is needed in order to establish a layer3 tunnel.
-The name of the connectivity profile will be the name of the tunnel
-interface where packets bound for the internal network(s) the vpn is
-protecting will exit. Tcpdump can be used to see if packets making to
-and from the tunnel
+A connectivity profile is needed in order to establish a layer3 tunnel. The name of the connectivity profile will be the name of the tunnel interface where packets bound for the internal network(s) the vpn is protecting will exit. Tcpdump can be used to see if packets making to and from the tunnel
 
-For example, in this exercise ``afm_cp`` is the name of the connectivity
-profile therefore the tcpdump syntax would look like
-```console
+For example, in this exercise ``afm_cp`` is the name of the connectivity profile therefore the tcpdump syntax would look like
+
 ``tcpdump –ni afm_cp``
-```
-
-|image64|
 
 Create a APM connectivity profile
 
@@ -41,12 +37,11 @@ Create APM access profile
 
 Create a APM webtop
 
-Open the Access > Webtops -> page, click Create. Use the following
-values, leave all others at their defaults
+Open the Access > Webtops -> page, click Create. Use the following values, leave all others at their defaults
 
 - Name: ``afm_webtop``
 - Type: ``Full``
-- Click **Finished**
+- Click ``Finished``
 
 |image66|
 
@@ -332,8 +327,8 @@ the following values, leave all others at their defaults
 
 |image94|
 
-Validate
-~~~~~~~~
+Validate Module 2 Lab 1 Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now its time to test the vpn.
 
@@ -342,8 +337,7 @@ ethernet port at the bottom of the desktop.
 
 |image95|
 
-.. NOTE:: Ensure the Edge Client is using server 192.168.1.50, the APM vip, if not
-use Change Server to select it and Click Connect
+.. NOTE:: Ensure the Edge Client is using server 192.168.1.50, the APM vip. If not use Change Server to select it and Click Connect
 
 |image96|
 
@@ -359,85 +353,80 @@ domain are you in?**
 
 .. NOTE:: This completes Lab2
 
-.. |image64| image:: /_static/class2/image30.png
+.. |image65| image:: /_static/class2/image62.png
    :width: 4.64158in
    :height: 3.37569in
-.. |image65| image:: /_static/class2/image31.jpeg
-   :width: 6.23089in
-   :height: 4.63403in
 .. |image66| image:: /_static/class2/image136.png
    :width: 6.00000in
    :height: 5.85646in
-.. |image67| image:: /_static/class2/image33.png
+.. |image67| image:: /_static/class2/image64.png
    :width: 5.60895in
    :height: 3.61152in
-.. |image68| image:: /_static/class2/image137.png
+.. |image68| image:: /_static/class2/image65.png
    :width: 6.00000in
    :height: 3.73611in
-.. |image69| image:: /_static/class2/image35.png
+.. |image69| image:: /_static/class2/image66.png
    :width: 4.87536in
    :height: 3.64653in
-.. |image70| image:: /_static/class2/image36.png
+.. |image70| image:: /_static/class2/image67.png
    :width: 5.00858in
    :height: 6.75069in
-.. |image71| image:: /_static/class2/image37.png
+.. |image71| image:: /_static/class2/image68.png
    :width: 5.38758in
    :height: 0.75763in
-.. |image72| image:: /_static/class2/image38.png
+.. |image72| image:: /_static/class2/image69.png
    :width: 5.35372in
    :height: 3.95520in
-.. |image73| image:: /_static/class2/image39.png
+.. |image73| image:: /_static/class2/image70.png
    :width: 5.50419in
    :height: 7.58104in
-.. |image74| image:: /_static/class2/image37.png
+.. |image74| image:: /_static/class2/image68.png
    :width: 5.38758in
    :height: 0.75763in
-.. |image75| image:: /_static/class2/image138.png
-   :width: 6.98662in
-   :height: 1.58879in
-.. |image76| image:: /_static/class2/image41.png
-   :width: 7.05000in
-   :height: 2.29778in
-.. |image77| image:: /_static/class2/image42.png
+.. |image75| image:: /_static/class2/image71.png
+   :width: 5.50419in
+.. |image76| image:: /_static/class2/image72.png
+   :width: 5.50419in
+.. |image77| image:: /_static/class2/image73.png
    :width: 7.05000in
    :height: 0.92316in
-.. |image78| image:: /_static/class2/image43.png
+.. |image78| image:: /_static/class2/image74.png
    :width: 2.91088in
    :height: 0.79236in
-.. |image79| image:: /_static/class2/image44.png
+.. |image79| image:: /_static/class2/image75.png
    :width: 4.38610in
    :height: 1.06597in
-.. |image80| image:: /_static/class2/image45.png
+.. |image80| image:: /_static/class2/image76.png
    :width: 5.49755in
    :height: 1.43333in
-.. |image81| image:: /_static/class2/image46.png
+.. |image81| image:: /_static/class2/image77.png
    :width: 3.40534in
    :height: 1.01389in
-.. |image82| image:: /_static/class2/image47.png
+.. |image82| image:: /_static/class2/image78.png
    :width: 4.24056in
    :height: 1.51448in
-.. |image83| image:: /_static/class2/image48.png
+.. |image83| image:: /_static/class2/image79.png
    :width: 4.16906in
    :height: 2.13333in
-.. |image84| image:: /_static/class2/image49.png
+.. |image84| image:: /_static/class2/image80.png
    :width: 4.34192in
    :height: 3.10903in
-.. |image85| image:: /_static/class2/image50.png
+.. |image85| image:: /_static/class2/image81.png
    :width: 3.90610in
    :height: 1.86597in
-.. |image86| image:: /_static/class2/image51.png
+.. |image86| image:: /_static/class2/image82.png
    :width: 4.67794in
    :height: 3.70069in
-.. |image87| image:: /_static/class2/image52.png
+.. |image87| image:: /_static/class2/image83.png
    :width: 7.05000in
    :height: 1.90385in
-.. |image88| image:: /_static/class2/image53.png
+.. |image88| image:: /_static/class2/image84.png
    :width: 4.66754in
    :height: 3.26528in
-.. |image89| image:: /_static/class2/image54.png
+.. |image89| image:: /_static/class2/image85.png
    :width: 6.09340in
    :height: 5.59287in
-.. |image90| image:: /_static/class2/image55.png
+.. |image90| image:: /_static/class2/image86.png
    :width: 4.72323in
    :height: 2.81241in
 .. |image91| image:: /_static/class2/image139.png
@@ -461,3 +450,4 @@ domain are you in?**
 .. |image97| image:: /_static/class2/image145.png
    :width: 6.13439in
    :height: 4.05248in
+.. |image101| image:: /_static/class2/image94.png

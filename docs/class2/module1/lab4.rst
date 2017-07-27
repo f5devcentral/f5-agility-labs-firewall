@@ -1,15 +1,10 @@
 Configure A Firewall Policy and Firewall Rules For Each Application
 -------------------------------------------------------------------
 
-A network firewall policy is a collection of network firewall rules that
-can be applied to a virtual server. In our lab, we will create two
-policies, each of which includes two rules. This policy will then be
-applied to the appropriate virtual servers and tested.
-
-On BIG-IP
+A network firewall policy is a collection of network firewall rules that can be applied to a virtual server. In our lab, we will create two policies, each of which includes two rules. This policy will then be applied to the appropriate virtual servers and tested.
 
 Create The downloads\_policy Firewall Policy And Rules
-----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example provides a firewall policy to the **www.mysite.com\/downloads** portion of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the /downloads portion of the application, while access to **www** remains unaffected.
 
@@ -23,7 +18,7 @@ This example provides a firewall policy to the **www.mysite.com\/downloads** por
 
 .. NOTE:: Leave all other fields using the default values.
 
- Click Finished
+**Navigation:** Click Finished
 
 Create an IP Drop Network Firewall Rule
 
@@ -80,11 +75,9 @@ URL: https://www.mysite.com/downloads/
 .. NOTE:: We want to validate the site is available before and after applying the Network Firewall Policy
 
 Assign The Policy To The Virtual Server
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A unique feature of the BIG-IP Firewall Module allows L3-4 security policies to be assigned specifically to an application i.e. Virtual Server. So each application can have its own firewall policy separate from other application virtual servers.
-
-**On BIG-IP**
 
 Apply the Network Firewall Policy to Virtual Server
 
@@ -110,11 +103,11 @@ URL: https://www.mysite.com/downloads/
 
 |image37|
 
-.. NOTE:: We want to ensure the On BIG-IP the site is still available
+.. NOTE:: We want to ensure the site is still available
 after applying the policy. We will get into testing the block later.
 
 Create A Separate Policy For The API Virtual Server
----------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now we want to create a second policy for access to the \/api\/
 application
@@ -125,7 +118,6 @@ Create Network Firewall Policy
 
 +------------+---------------+
 | **Name**   | api\_policy   |
-+============+===============+
 +------------+---------------+
 
 |image38|
@@ -164,7 +156,7 @@ Create Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule
 
 For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation.
 
-<https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html>
+https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html
 
 +---------------+-------------+
 | **Name**      | deny\_log   |

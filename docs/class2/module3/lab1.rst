@@ -6,23 +6,19 @@ Estimated completion time: 15 minutes
 Overview
 ~~~~~~~~
 
-Beginning in TMOS 12.1 BIGIP offers iRules LX which is a node.js
-extension to iRules IRules LX does not replace iRules, rather allows
-iRules to offer additional functionality. In this lab you see how iRules
-LX can be used to look up client ip addresses that should be disallowed
-by AFM.
+Beginning in TMOS 12.1 BIGIP offers iRules LX which is a node.js extension to iRules IRules LX does not replace iRules, rather allows iRules to offer additional functionality. In this lab you see how iRules LX can be used to look up client ip addresses that should be disallowed by AFM.
 
-Use the following network diagram
+Use the following network diagram for this module
 
 |image98|
 
 Copy LX Code and Test
 ~~~~~~~~~~~~~~~~~~~~~
 
-On the Win7 client, open the index.js file located in the Desktop
+On the Windows 7 client, open the index.js file located in the Desktop
 folder, copy its entire contents.
 
-On the AFM301 webgui, navigate to Local Traffic->iRules-> LX
+On the BIG-IP webgui, navigate to Local Traffic->iRules-> LX
 Workspaces-> irules\_lx\_mysql\_workspace
 
 And replace the contents of mysql\_extension/index.js with the contents
@@ -30,13 +26,13 @@ of the index.js on the Win7 client.
 
 Click “Save File”
 
-Next click on rules->mysql\_irulelx
+**Navigate:** click on rules->mysql\_irulelx
 
-On the Win7 client, open the mysql\_iRulesLx.txt file located in the
+On the Windows 7 client, open the mysql\_iRulesLx.txt file located in the
 Desktop folder, copy its entire contents and paste the contents into the
 “mysql\_irulelx”. Click “Save File”
 
-On the AFM301 webgui, navigate to Local Traffic->iRules-> LX Plugins and
+On the BIG-IP webgui, navigate to Local Traffic->iRules-> LX Plugins and
 create a new LX Plugin named “afmmysqlplug” using the workspace (From
 Workspace dropdown) irules\_lx\_mysql\_workspace. Click “Finished”
 
@@ -61,7 +57,7 @@ this should timeout.
 Ensure that the Irule is working properly, by going back to the AFM rule
 and setting the iRule back to None.
 
-Also look at ``/var/log/ltm`` on the AFM301 BIG-IP.
+Also look at ``/var/log/ltm`` on the BIG-IP.
 
 .. |image98| image:: /_static/class2/image146.png
    :width: 7.05000in

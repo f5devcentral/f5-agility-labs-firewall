@@ -10,7 +10,7 @@ In this case we are going to leverage iRules to modify the traffic coming from t
    when HTTP_REQUEST {
       if { [HTTP::header exists "X-Forwarded-For"] } {
          snat [HTTP::header X-Forwarded-For]
-         log local0. '[HTTP::header X-Forwarded-For]'
+         log local0. [HTTP::header X-Forwarded-For]
       }
    }
 
@@ -69,7 +69,7 @@ Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.
 
    {
      "web-app": {
-       "servlet": [ 
+       "servlet": [
        {
        "servlet-name": "cofaxCDS",
        "servlet-class": "org.cofax.cds.CDSServlet",

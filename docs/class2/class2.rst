@@ -1,12 +1,12 @@
-Class 2: Advanced Multi-Layer Firewall Protection
+Advanced Multi-Layer Firewall Protection
 =================================================
 Firewall 320 – Advanced Multi-Layer Firewall Protection
 
 Participant Hands-on Lab Guide
 
-    Last Updated: July 25, 2017
+    Last Updated: March26, 2018
 
-©2017 F5 Networks, Inc. All rights reserved. F5, F5 Networks, and the F5
+©2018 F5 Networks, Inc. All rights reserved. F5, F5 Networks, and the F5
 logo are trademarks of F5 Networks, Inc. in the U.S. and in certain
 other countries. Other F5 trademarks are identified at f5.com.
 
@@ -14,7 +14,7 @@ Any other products, services, or company names referenced herein may be
 trademarks of their respective owners with no endorsement or
 affiliation, express or implied, claimed by F5.
 
-Welcome to the F5 Agility 2017 Multilayer Firewall Implementations setup
+Welcome to the F5 Agility 2018 Multilayer Firewall Implementations setup
 and hands-on exercise series.
 
 The purpose of the Lab Setup and Configuration Guide is to walk you

@@ -4,7 +4,7 @@ Firewall 320 – Advanced Multi-Layer Firewall Protection
 
 Participant Hands-on Lab Guide
 
-    Last Updated: March26, 2018
+    Last Updated: March 26, 2018
 
 ©2018 F5 Networks, Inc. All rights reserved. F5, F5 Networks, and the F5
 logo are trademarks of F5 Networks, Inc. in the U.S. and in certain

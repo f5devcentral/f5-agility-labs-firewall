@@ -5,10 +5,10 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5 Firewall Solutions"
+classname = "F5 Firewall Solutions 2018 Brett"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/f5devcentral/f5-agility-labs-firewall"
+github_repo = "https://github.com/bwolmarans/f5-agility-labs-firewall"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'

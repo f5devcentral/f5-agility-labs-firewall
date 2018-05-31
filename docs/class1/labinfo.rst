@@ -18,17 +18,13 @@ Your administrator will provide login credentials and the URL.
 
 Within each lab environment there are the following Virtual Machines:
 
--  Windows 7 Jumpbox
+-  Windows 7 Jumpbox ( or not if in UDF )
 
--  Two BIG-IP Virtual Editions (VE) – running TMOS 13.0
+-  One BIG-IP Virtual Editions (VE) – running TMOS 13.X ( or 14.X )
 
--  Two BIG-IQ Virtual Editions (VE) – running TMOS 5.2
+-  A Server 
 
--  LAMP Server (Web Servers)
-
--  DoSServer
-
--  SevOne PLA 2.3.0
+-  A Client
 
 |image2|
 

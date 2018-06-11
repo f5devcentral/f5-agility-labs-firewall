@@ -5,7 +5,7 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5 Firewall Solutions 2018 Brett"
+classname = "F5 Firewall Solutions Agility 2018"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
 github_repo = "https://github.com/bwolmarans/f5-agility-labs-firewall"
@@ -30,6 +30,7 @@ year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
 
 rst_prolog = """
+.. |copyright| replace:: Copyright 2018, F5 Networks Inc.
 .. |classname| replace:: %s
 .. |classbold| replace:: **%s**
 .. |classitalic| replace:: *%s*

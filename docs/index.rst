@@ -1,11 +1,9 @@
 |classname|
 ===========
 
-Welcome
--------
-
 Welcome to the |classbold| lab at F5 Agility |year|
 
+|copyright|
 |repoinfo|
 
 |image1|
@@ -44,11 +42,14 @@ solutions:**      
 `*https://www.f5.com/it-management/solutions/ddos-protection/overview* <https://www.f5.com/it-management/solutions/ddos-protection/overview>`__
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :numbered:
    :caption: Contents:
    :glob:
 
+   intro
+   lab*/lab*
+   module*/module*
    class*/class*
 
-.. |image1| image:: /_static/class1/image2.gif
+.. |image1| image:: /_static/class1/ICSA.gif

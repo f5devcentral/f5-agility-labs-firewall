@@ -28,8 +28,11 @@ import f5_sphinx_theme
 
 year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
+lastupdated = time.strftime("%x")
+
 
 rst_prolog = """
+.. |lastupdated| replace:: Last Updated July 2018
 .. |copyright| replace:: Copyright 2018, F5 Networks Inc.
 .. |classname| replace:: %s
 .. |classbold| replace:: **%s**
@@ -53,16 +56,12 @@ rst_prolog = """
 .. |f5|  replace:: F5 Networks
 .. |f5i| replace:: F5 Networks, Inc.
 .. |year| replace:: %s
-""" % (classname,
-       classname,
-       classname,
-       year)
+""" % (classname, classname, classname, year)
 
 if 'github_repo' in locals() and len(github_repo) > 0:
     rst_prolog += """
-.. |repoinfo| replace:: The content contained here leverages a full DevOps CI/CD
-              pipeline and is sourced from the GitHub repository at %s.
-              Bugs and Requests for enhancements can be made using by
+.. |repoinfo| replace:: This content is sourced from the GitHub repository at %s.
+              Requests for enhancements can be made using by
               opening an Issue within the repository.
 """ % (github_repo)
 else:

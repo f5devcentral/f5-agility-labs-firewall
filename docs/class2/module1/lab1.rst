@@ -1,5 +1,5 @@
-Configure pools and internal virtual servers
-============================================
+Lab 1: Configure pools and internal virtual servers
+===================================================
 
 A virtual server is used by BIG-IP to identify specific types of
 traffic. Other objects such as profiles, policies, pools and iRules are

@@ -1,21 +1,13 @@
-Class 2: Advanced Multi-Layer Firewall Protection
+|classname|
 =================================================
-Firewall 320 – Advanced Multi-Layer Firewall Protection
+|classname|
 
-Participant Hands-on Lab Guide
+|lastupdated|
 
-    Last Updated: July 25, 2017
+|copyright|
 
-©2017 F5 Networks, Inc. All rights reserved. F5, F5 Networks, and the F5
-logo are trademarks of F5 Networks, Inc. in the U.S. and in certain
-other countries. Other F5 trademarks are identified at f5.com.
 
-Any other products, services, or company names referenced herein may be
-trademarks of their respective owners with no endorsement or
-affiliation, express or implied, claimed by F5.
-
-Welcome to the F5 Agility 2017 Multilayer Firewall Implementations setup
-and hands-on exercise series.
+Welcome to the |classname| setup and hands-on exercise series.
 
 The purpose of the Lab Setup and Configuration Guide is to walk you
 through the setup of F5 BIGIP to protect applications at multiple layers
@@ -33,9 +25,9 @@ There are three modules detailed in this document.
 
 **Module 1: F5 Multi-layer Firewall**
 
-**Module 2: F5 Multi-tenant Firewall **
+**Module 2: F5 Multi-tenant Firewall**
 
-**Module 3: F5 Dynamic Firewall Rules **
+**Module 3: F5 Dynamic Firewall Rules**
 
 **Lab Requirements:**
 

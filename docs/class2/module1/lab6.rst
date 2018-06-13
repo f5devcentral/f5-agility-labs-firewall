@@ -1,5 +1,5 @@
-Configure HTTP security
-=======================
+Lab 6: Configure HTTP security
+==============================
 
 HTTP security profiles are used to apply basic HTTP security to a
 virtual server. Significantly more advanced HTTP security is available

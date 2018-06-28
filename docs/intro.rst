@@ -14,8 +14,9 @@ The following components have been included in your lab environment:
 - 1 x Linux Box ( Webserver, Syslog, etc )
 - 1 x Windows Box ( to generate traffic and test the configuration. )
 
-|image1|
+In Ravello, the toplogy looks like this:
 
+|image1|
 
 
 Lab Components
@@ -55,5 +56,13 @@ components:
         - **Server IP:** 10.10.121.129-132
       - ``ubuntu``/``Agility1``
 
-.. |image1| image:: /_static/class2/diagram.png
+
+This is shown here in this detailed Topology showing IP addresses:
+
+|topo|
+
+.. |topo| image:: /_static/class2/image3.png
+   :width: 7.04167in
+   :height: 3.51389in
+.. |image1| image:: /_static/class2/diagram98.png
 

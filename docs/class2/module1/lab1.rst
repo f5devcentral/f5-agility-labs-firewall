@@ -201,8 +201,6 @@ click **Create**
 .. NOTE:: This completes Module 1 - Lab 1
 
 .. |image1| image:: /_static/class2/image3.png
-   :width: 7.04167in
-   :height: 3.51389in
 .. |image2| image:: /_static/class2/image4.png
    :width: 6.74931in
    :height: 5.88401in

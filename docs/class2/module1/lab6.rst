@@ -71,7 +71,7 @@ application.
 
 URL: https://www.mysite.com/dvwa
 
-**Credentials: _admin\/password_**
+**Credentials: admin\/password_**
 
 |image52|
 

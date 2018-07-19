@@ -1,4 +1,4 @@
-Configure A Clone Pool For SSL Visibility To IDS Sensors Or Other Security Tools
+Lab 7: Configure A Clone Pool For SSL Visibility To IDS Sensors Or Other Security Tools
 ================================================================================
 
 SSL encrypted traffic poses a problem for most security devices. The performance of those devices is significantly impacted when trying to decrypt SSL traffic. Since the BIG-IP is designed to handle SSL traffic with specialized hardware and optimized software libraries, it is in the unique position to 'hand-off' a copy of the decrypted traffic to other devices.
@@ -41,11 +41,11 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 **Navigation:** SSH in to the Syslog/Webserver
 
-Run tcpdump –i eth2 port 80
+Run tcpdump –i -c 200 eth2 port 80
 
 .. code-block:: console
 
-   root@syslogWebserver:~# tcpdump -i eth2 port 80
+   root@syslogWebserver:~# tcpdump -i eth2 -c 200 port 80
 
 Initiate another attempt to connect to the website via curl or your web browser on the Windows host.
 

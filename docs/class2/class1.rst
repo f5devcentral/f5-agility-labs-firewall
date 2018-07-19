@@ -25,9 +25,9 @@ There are three modules detailed in this document.
 
 **Module 1: F5 Multi-layer Firewall**
 
-**Module 2: F5 Multi-tenant Firewall**
+**Module 2: F5 Dynamic Firewall Rules With iRules LX**
 
-**Module 3: F5 Dynamic Firewall Rules**
+**Module 3: IPS Intrusion Detection and Prevention system**
 
 **Lab Requirements:**
 
@@ -43,10 +43,10 @@ There are three modules detailed in this document.
 
    -  Unix/Linux (Source – Requires Compiling): http://www.rdesktop.org/
 
-.. NOTE:: You may use your webbrowser for console access if necessary but screen
+.. NOTE:: You may use your web browser for console access if necessary but screen
    sizing may be affected.
 
-.. NOTE:: IP Filtering locks down connectivity to to the remote labs.
+.. NOTE:: IP Filtering locks down connectivity to the remote labs.
    If you are required to VPN into your corporate office to get Internet access,
    please determine your external IP address via https://www.whatismyip.com and provide
    an instructor with that information for your pod.

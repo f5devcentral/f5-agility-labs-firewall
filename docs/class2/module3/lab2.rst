@@ -24,6 +24,7 @@ You will create an Inspection Profile containing compliance checks.
 
 5. Under Services, Select HTTP.
 
+.. NOTE:: You have to wait a few seconds after selecting HTTP
 
 |ips2|
 
@@ -36,53 +37,54 @@ You will create an Inspection Profile containing compliance checks.
 
 7. Click the checkbox to select all the HTTP compliance checks.
 
-8. In the edit window make the following selections:
+8. In the edit window in the upper-right of the F5 GUI, make the following selections:
 
-a. Enable the selected inspections
+  - Enable the selected inspections
 
-b. Set the 'Action' to 'Accept'
+  - Set the 'Action' to 'Accept'
 
-c. Enable logging
+  - Enable logging
+
+.. NOTE:: These should be the default actions, so they most likely are already set for you.
 
 |ips4|
 
 
-d. Click 'Apply'
+  -  Click 'Apply'
 
 9. Click 'Commit Changes to System'
 
 **You should now have an Inspection Policy.**
 
-10. Create a Global Firewall Policy. Security > Network Firewall > Policies -> Create and name it "global-fw-policy"
-
-|xxx1|
-
-
  
 Task 2: Apply the Profile to the Global Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1. Navigate to Security > Network Firewall > Active Rules. Verify that the Context is 'Global'
+1. Navigate to Security > Network Firewall > Active Rules
 
-2. Click 'Add Rule' and select 'Add rule to Global'
+2. Change Context to 'Global'
+
+3. Click 'Add Rule' 
+
+4. Make a new policy named 'global-fw-policy'
+
+5. Make a new rule named fw-global-http-inspection'
+
+6. Configure the new rule:
+
+ - Protocol 'TCP'
+
+ - Set the Destination port to 80
+
+ - Action 'Accept' 
+
+ - Protocol Inspection Profile: 'my-inspection-profile'
+
+ - Enable logging
+
+7. Click Save
 
 |ips5|
 
-3. Configure the new rule:
-
-a. Name it 'fw-global-http-inspection'
-
-b. Protocol 'TCP'
-
-c. Destination '80'
-
-d. Action 'Accept' (NOTE: scroll right to see these configuration elements.)
-
-e. Protocol Inspection Profile: 'my-inspection-profile'
-
-f. Enable logging
-
-
-4. Click Save
 
 Task 2.5: Create testing Virtual server on port 80
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,47 +123,55 @@ To get an understanding of how the IPS function works, we need the manual comman
    * - Pool
      - pool\_www.mysite.com
 
-**You will notice that you neither applied an Inspection Policy to this VS, nor did you apply a Firewall Policy to this VS.  And yet, the IPS is now functional on this VS.  This is because the global firewall policy is in affect, and the Inspection Policy will be invoked by the Global Firewall Policy.**
+.. NOTE:: Note that we neither applied an Inspection Policy to this VS, nor did you apply a Firewall Policy to this VS.  And yet, the IPS is now functional on this VS.  Can you think why this is? This is because the global firewall policy is in affect, and the Inspection Policy will be invoked by the Global Firewall Policy.
 
 Task 3: Test the Inspection Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1. From the Cygwin session, or from the DOS prompt, enter this command: **telnet 10.10.99.40 80**
+1. From the Cygwin session, or from the DOS prompt, enter this command: 
+
+.. code-block:: console
+
+   telnet 10.10.99.40 80
 
 
 **The expected output is:**
 
-Trying 10.10.99.40...
-Connected to 10.10.99.40
-Escape character is '^]'.
+.. code-block:: console
+
+   Trying 10.10.99.40...
+   Connected to 10.10.99.40
+   Escape character is '^]'.
 
 
-**Enter the following:**
+**Enter the following ( Suggestion: copy and paste ):**
 
+.. code-block:: console
 
-GET /index.html HTTP/5
+   GET /index.html HTTP/5
 
 (hit Enter key two times)
 
 The expected HTTP response is:
 
-HTTP/1.1 200 OK
+.. code-block:: console
 
-( and lots more HTTP headers, etc.)
+   HTTP/1.1 200 OK
+   ( and lots more HTTP headers, etc.)
 
 
 
 
 2. Check the results.
 
-a. Navigate to Security > Protocol Security > Inspection Profiles > my-inspectionprofile
+ - Navigate to Security > Protocol Security > Inspection Profiles > my-inspectionprofile
 
-b. Filter for Inspection Type 'compliance'
+ - Filter for Inspection Type 'compliance'
 
-c. Look at the Total Hit Count for HTTP Compliance Check ID 11011 "Bad HTTP Version." We expect to see a hit count of at least 1, and a missing host header count of at least 1.
+ - Look at the Total Hit Count for HTTP Compliance Check ID 11011 "Bad HTTP Version." We expect to see a hit count of at least 1, and a missing host header count of at least 1.
+
+ -  Look at the protocol inspection logs.  Go to Security > Protocol Security > Inspection Logs.  You can see the incoming ip address and port, among other things. 
 
 |image5|
-
-d. Look at the protocol inspection logs.  Go to Security > Protocol Security > Inspection Logs.  You can see the incoming ip address and port, among other things. 
 
 |image6|
 
@@ -169,8 +179,6 @@ d. Look at the protocol inspection logs.  Go to Security > Protocol Security > I
 Task 4: Modify a Compliance Check
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Select Compliance Check 11017 'Disallowed Methods'
-
-|head|
 
 2. Enter the value "Head" and click 'Add'
 
@@ -183,44 +191,55 @@ Task 4: Modify a Compliance Check
 Task 5: Test the Modified Compliance Check
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. From the Cygwin session, enter this command: **telnet 10.10.99.40 80**
+1. From the Cygwin session, enter (or copy and paste) this command:
 
+.. code-block:: console
+
+   telnet 10.10.99.40 80
 
 **The expected output is:**
 
+.. code-block:: console
 
-Trying 10.10.99.40...
-Connected to 10.10.99.40.
-Escape character is '^]'
-
-
-**Enter the following:**
+   Trying 10.10.99.40...
+   Connected to 10.10.99.40
+   Escape character is '^]'.
 
 
-HEAD /index.html HTTP/1.1
-(hit Enter key two times)
+**Enter the following ( Suggestion: copy and paste ):**
 
+.. code-block:: console
 
-Expected output:
-HTTP/1.1 400 Bad Request
+   HEAD /index.html HTTP/1.1
 
-2. Check the results. Note: Again, this is the IPS code checking HTTP, not the HTTP Profile ( This VS does not have an HTTP Profile )
+**Expected output:**
 
-a. Navigate to Security > Protocol Security > Inspection Profiles > my-inspection-profile
+.. code-block:: console
 
-b. Filter for Inspection Type 'compliance'
+   HTTP/1.1 400 Bad Request
 
-3. Look at the Total Hit Count for HTTP Compliance Check ID 11017 "Disallowed Methods." You may have to refresh the page. We expect to see a hit count of 1.
+2. Check the results. 
+
+.. NOTE:: Just an interesting point to make again, this is the IPS code checking HTTP, not the HTTP Profile ( This VS does not have an HTTP Profile )
+
+- Navigate to Security > Protocol Security > Inspection Profiles > my-inspection-profile
+
+- Filter for Inspection Type 'compliance'
+
+- Look at the Total Hit Count for HTTP Compliance Check ID 11017 "Disallowed Methods." You may have to refresh the page. 
+
+- We expect to see a hit count of 1.
 
 4. Look at the stats. Enter the following command on the Big-IP command line:
 
-**tmsh show sec proto profile my-inspection-profile**
+.. code-block:: console
+
+   tmsh show sec proto profile my-inspection-profile
 
 
 We expect to see a Hit Count of at least 1 (more if you've done it multiple times). 
 
 |tmsh1|
-
 
 
 .. NOTE:: This completes Module 4 - Lab 2
@@ -237,15 +256,8 @@ We expect to see a Hit Count of at least 1 (more if you've done it multiple time
 .. |ips7| image:: /_static/class2/ips7.png
    :width: 7.05000in
    :height: 5.28750in
-.. |ips6| image:: /_static/class2/ips6.png
-   :width: 7.05000in
-   :height: 5.28750in
-.. |ips5| image:: /_static/class2/ips5.png
-   :width: 7.05000in
-   :height: 5.28750in
+.. |ips5| image:: /_static/class2/global-policy.png
 .. |ips4| image:: /_static/class2/ips4.png
-   :width: 7.05000in
-   :height: 5.28750in
 .. |ips3| image:: /_static/class2/ips3.png
    :width: 7.05000in
    :height: 5.28750in

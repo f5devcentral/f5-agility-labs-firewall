@@ -1,0 +1,249 @@
+Lab 2: Protocol Inspection - Compliance Checks
+==============================================
+
+Estimated completion time: Thirty Five 35 minutes
+
+Overview
+~~~~~~~~
+Compliance Checks model protocols and applications and flag deviations from the model. End
+users can't add compliance checks, but some of them have parameters the user can modify.
+We'll look at a couple of these checks and modify one. 
+Have fun!
+
+Task 1: The Inspection Profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You will create an Inspection Profile containing compliance checks.
+
+1. Navigate to Security > Protocol Security > Inspection Profiles and click 'Add', select 'New'
+
+2. Name the profile 'my-inspection-profile'
+
+3. Disable Signatures
+
+4. Make sure Compliance is enabled.
+
+5. Under Services, Select HTTP.
+
+
+|ips2|
+
+
+6. When the HTTP Service appears, click to open the Inspection list for HTTP, and select Inspection Type 'compliance.' 
+
+
+|ips3|
+
+
+7. Click the checkbox to select all the HTTP compliance checks.
+
+8. In the edit window make the following selections:
+
+a. Enable the selected inspections
+
+b. Set the 'Action' to 'Accept'
+
+c. Enable logging
+
+|ips4|
+
+
+d. Click 'Apply'
+
+9. Click 'Commit Changes to System'
+
+**You should now have an Inspection Policy.**
+
+10. Create a Global Firewall Policy. Security > Network Firewall > Policies -> Create and name it "global-fw-policy"
+
+|xxx1|
+
+
+ 
+Task 2: Apply the Profile to the Global Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Navigate to Security > Network Firewall > Active Rules. Verify that the Context is 'Global'
+
+2. Click 'Add Rule' and select 'Add rule to Global'
+
+|ips5|
+
+3. Configure the new rule:
+
+ - Name it 'fw-global-http-inspection'
+
+ - Protocol 'TCP'
+
+ - Set the Destination port to HTTP '80'
+
+ - Action 'Accept' 
+
+ - Protocol Inspection Profile: 'my-inspection-profile'
+
+ - Enable logging
+
+
+4. Click Save
+
+Task 2.5: Create testing Virtual server on port 80
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To get an understanding of how the IPS function works, we need the manual commands we can issue via Telnet. Because Telnet does not work very well with SSL, we need to create a virtual server on port 80 instead of the one on 443 that we have been using so far.  Remember this is only for testing, and the IPS functionality can work perfectly well on encrypted traffic ( as long as we terminate the SSL )
+
+1. Check if the pool "pool_www.mysite.com" exists.  Does it already exist? Only if it does not exist, please create it as follows: 
+
+.. list-table::
+   :header-rows: 1
+
+   * - **Name**
+     - **Health Monitor**
+     - **Members**
+     - **Service Port**
+   * - pool\_www.mysite.com
+     - tcp\_half\_open
+     - 10.10.121.129
+     - 80
+
+
+2. Create a virtual server with no HTTP profile.  Use the following settings, leave everything else default.
+
+.. list-table::
+   :header-rows: 1
+
+   * - **Parameter**
+     - **Value**
+   * - name
+     - IPS_VS
+   * - IP Address
+     - 10.10.99.40
+   * - Service Port
+     - 80
+   * - SNAT
+     - automap
+   * - Pool
+     - pool\_www.mysite.com
+
+**You will notice that you neither applied an Inspection Policy to this VS, nor did you apply a Firewall Policy to this VS.  And yet, the IPS is now functional on this VS.  This is because the global firewall policy is in affect, and the Inspection Policy will be invoked by the Global Firewall Policy.**
+
+Task 3: Test the Inspection Profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. From the Cygwin session, or from the DOS prompt, enter this command: **telnet 10.10.99.40 80**
+
+
+**The expected output is:**
+
+Trying 10.10.99.40...
+Connected to 10.10.99.40
+Escape character is '^]'.
+
+
+**Enter the following:**
+
+
+GET /index.html HTTP/5
+
+(hit Enter key two times)
+
+The expected HTTP response is:
+
+HTTP/1.1 200 OK
+
+( and lots more HTTP headers, etc.)
+
+
+
+
+2. Check the results.
+
+a. Navigate to Security > Protocol Security > Inspection Profiles > my-inspectionprofile
+
+b. Filter for Inspection Type 'compliance'
+
+c. Look at the Total Hit Count for HTTP Compliance Check ID 11011 "Bad HTTP Version." We expect to see a hit count of at least 1, and a missing host header count of at least 1.
+
+|image5|
+
+d. Look at the protocol inspection logs.  Go to Security > Protocol Security > Inspection Logs.  You can see the incoming ip address and port, among other things. 
+
+|image6|
+
+
+Task 4: Modify a Compliance Check
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Select Compliance Check 11017 'Disallowed Methods'
+
+|head|
+
+2. Enter the value "Head" and click 'Add'
+
+|head2|
+
+
+3. Click 'Commit Changes to System'
+
+
+Task 5: Test the Modified Compliance Check
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. From the Cygwin session, enter this command: **telnet 10.10.99.40 80**
+
+
+**The expected output is:**
+
+
+Trying 10.10.99.40...
+Connected to 10.10.99.40.
+Escape character is '^]'
+
+
+**Enter the following:**
+
+
+HEAD /index.html HTTP/1.1
+(hit Enter key two times)
+
+
+Expected output:
+HTTP/1.1 400 Bad Request
+
+2. Check the results. Note: Again, this is the IPS code checking HTTP, not the HTTP Profile ( This VS does not have an HTTP Profile )
+
+a. Navigate to Security > Protocol Security > Inspection Profiles > my-inspection-profile
+
+b. Filter for Inspection Type 'compliance'
+
+3. Look at the Total Hit Count for HTTP Compliance Check ID 11017 "Disallowed Methods." You may have to refresh the page. We expect to see a hit count of 1.
+
+4. Look at the stats. Enter the following command on the Big-IP command line:
+
+**tmsh show sec proto profile my-inspection-profile**
+
+
+We expect to see a Hit Count of at least 1 (more if you've done it multiple times). 
+
+|tmsh1|
+
+
+
+.. NOTE:: This completes Module 4 - Lab 2
+
+.. |xxx1|  image:: /_static/class2/xxx1.png
+.. |tmsh1|  image:: /_static/class2/ips-tmsh1.png
+.. |head2|  image:: /_static/class2/head2.png
+.. |head|   image:: /_static/class2/head.png
+.. |image5| image:: /_static/class2/module4-lab2-image5.png
+.. |image6| image:: /_static/class2/module4-lab2-image6.png
+.. |ips8| image:: /_static/class2/ips8.png
+   :width: 7.05000in
+   :height: 5.28750in
+.. |ips7| image:: /_static/class2/ips7.png
+   :width: 7.05000in
+   :height: 5.28750in
+.. |ips5| image:: /_static/class2/ips5.png
+   :width: 7.05000in
+   :height: 5.28750in
+.. |ips4| image:: /_static/class2/ips4.png
+.. |ips3| image:: /_static/class2/ips3.png
+   :width: 7.05000in
+   :height: 5.28750in
+.. |ips2| image:: /_static/class2/ips2.png
+   :width: 7.05000in
+   :height: 5.28750in

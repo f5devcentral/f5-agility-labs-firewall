@@ -27,7 +27,8 @@ Create Application Pools
 
 On BIG-IP
 
-Create a pool using the following information:
+Create the following pools using the following tabel of pool information.  Note that each pool has only one pool member, that is fine for the purposes of our lab:
+
 
 **Navigation:** Local Traffic > Pools > Pool List, then click Create
 
@@ -70,10 +71,10 @@ Create **Internal** Application Virtual Servers
 
 By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed.
 
-Create the internal virtual servers using the following information:
+Create the following internal virtual servers using the following table of information:
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List, then
-click Create
+click Create. ( Change to "Advanced" configuration style )
 
 .. list-table::
    :widths: 50 50
@@ -86,7 +87,7 @@ click Create
 
        **Port**: ``80``
 
-       **HTTP Profile**: YES
+       **HTTP Profile**: http 
 
        **Enabled on VLAN**: ``loopback``
 
@@ -99,7 +100,7 @@ click Create
 
        **Port**: ``80``
 
-       **HTTP Profile**: YES
+       **HTTP Profile**: http
 
        **Enabled on VLAN**: ``loopback``
 
@@ -112,7 +113,7 @@ click Create
 
        **Port**: ``80``
 
-       **HTTP Profile**: YES
+       **HTTP Profile**: http
 
        **Enabled on VLAN**: ``loopback``
 
@@ -125,7 +126,7 @@ click Create
 
        **Port**: ``80``
 
-       **HTTP Profile**: YES
+       **HTTP Profile**: http
 
        **Enabled on VLAN**: ``loopback``
 
@@ -138,7 +139,7 @@ click Create
 
        **Port**: ``80``
 
-       **HTTP Profile**: YES
+       **HTTP Profile**: http
 
        **Enabled on VLAN**: ``loopback``
 
@@ -163,7 +164,8 @@ click Create
 Create An External Virtual Server To Host Multiple SSL Enabled Websites
 -----------------------------------------------------------------------
 
-Create the external virtual server using the following information:
+Create the external virtual server using the following information.
+
 
 **Navigation: _Local Traffic > Virtual Servers > Virtual Server List_**, then
 click **Create**
@@ -180,7 +182,7 @@ click **Create**
    * - EXT\_VIP\_10.10.99.30
      - 10.10.99.30
      - 443
-     - YES
+     - http 
      - www.mysite.com
 
        www.theirsite.com
@@ -194,9 +196,9 @@ click **Create**
 
 |image10|
 
-.. NOTE:: The default pool is not necessary and might not be what you want from a security perspective but it’s here as a fallback and to let the virtual server turn green
+.. NOTE:: The default pool is here simply to let the virtual server turn green. Policies will be used to switch traffic, not hard-coded pools.  Note also the three different certificates applied to the Virtual Server.  This is the basis of SNI.
 
-.. ATTENTION:: Try accessing the virtual servers you created from the Windows host via ping or a web browser. The web browser on the Windows host has links saved to access it. **If you try yourself, use https://** since you enabled encyrption when you created the virtual server. Were you able to connect to any of applications? What was available? **Why are some accessible while others are not?**
+.. ATTENTION:: Try accessing all the VS you created from the Windows host via ping and Chrome. There are bookmarks saved to access it.  Ping works, but web browsing ( chrome or curl ) does not work because our policies are not set up yet. 
 
 .. NOTE:: This completes Module 1 - Lab 1
 
@@ -216,9 +218,7 @@ click **Create**
 .. |image6| image:: /_static/class2/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: /_static/class2/image9.png
-   :width: 7.05000in
-   :height: 1.50278in
+.. |image7| image:: /_static/class2/lab1_networkmap.png
 .. |image8| image:: /_static/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in

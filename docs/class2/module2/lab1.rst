@@ -1,450 +1,99 @@
-APM SSL VPN Multi-tenancy using Route Domains and AFM Policies
-==============================================================
+AFM with iRules LX
+==================
 
-Please refer to the following network diagram for this module:
+Estimated completion time: 15 minutes
 
-|image101|
+Overview
+~~~~~~~~
 
-Estimated completion time: 45 minutes
+Beginning in TMOS 12.1 BIGIP offers iRules LX which is a node.js extension to iRules IRules LX does not replace iRules, rather allows iRules to offer additional functionality. In this lab you see how iRules LX can be used to look up client ip addresses that should be disallowed by AFM.
 
-Create The Access Policy Manager (APM) Profiles
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Note:** You do not need skills or knowledge of iRules LX to do this lab. This lab will not go into detail on iRules LX nor will it go into detail on Node.JS, rather, this lab shows an application of this with AFM.
+ 
+**Note:** We are using a different set of IP subnets just for this module, as shown in this network diagram:
 
-Create APM connectivity profile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|image98|
 
-These steps guide you through configuring the APM VPN and policy
+**Note:** You should be comfortable creating pools and virtual servers by now. Therefore, the following steps to create pools, virtual servers, and AFM policies are kept brief and to the point.
 
-A connectivity profile is needed in order to establish a layer3 tunnel. The name of the connectivity profile will be the name of the tunnel interface where packets bound for the internal network(s) the vpn is protecting will exit. Tcpdump can be used to see if packets making to and from the tunnel
+Create the Pool and VS
+~~~~~~~~~~~~~~~~~~~~~~
+1. Create a pool named afmmysql_pool with one pool member ip address 172.1.1.10 and port 80, and a tcp half-open monitor. Leave all other values default.
 
-For example, in this exercise ``afm_cp`` is the name of the connectivity profile therefore the tcpdump syntax would look like
+2. Create a TCP VS named afmmysql_vs with a destination address of 192.168.1.51, port 80, snat Automap, and set it to use the afmmysql_pool pool. Leave all other values default.
 
-``tcpdump –ni afm_cp``
 
-Create a APM connectivity profile
+Test the Virtual Server
+~~~~~~~~~~~~~~~~~~~~~~~
+On the Win7 client, use curl in the cygwin cli ( or from the c:\\curl directory in a windows command line shell ) to test the Virtual Server. 
 
-Open the Access > Connectivity/VPN > Profiles, click Add. Use the
-following values, leave all others at their defaults
+``curl http://192.168.1.51 --connect-timeout 5``
 
-- Name: ``afm_cp``
-- Parent Profile: ``/Common/connectivity``
-- Click **Ok**
+You will notice that you connect, and web page is shown.
 
-|image65|
+|curl_lx_success|
 
-Create APM access profile
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Copy & Paste LX Code 
+~~~~~~~~~~~~~~~~~~~~
 
-Create a APM webtop
+**Note:** Dont' worry, you're not doing any coding here today.  Just a little copy and paste excersize. You are going to copy two files from the Windows desktop and paste them into the iRules LX workspace.
 
-Open the Access > Webtops -> page, click Create. Use the following values, leave all others at their defaults
 
-- Name: ``afm_webtop``
-- Type: ``Full``
-- Click ``Finished``
+1. **Navigate:** In the BIG-IP webgui, navigate to Local Traffic->iRules-> LX Workspaces-> irules\_lx\_mysql\_workspace
+2. Open the mysql\_iRulesLx.txt file in Notepad ( located on the Windows Desktop) and copy ( Ctrl-C or use Mouse ) the entire contents
+3. In the Big-IP webgui, Click on rules->mysql\_irulelx 
+4. Replace the contents of this with the text you just copied from the mysql\_irulesLx.txt file. 
+5. Click "Save File"
+6. In Windows, open the index.js file located on the Desktop ( it should open in NotePad ), select all, and copy ( Ctrl-C or use Mouse ) its entire contents.
+7. In the Big-IP gui, click on mysql\_extension/index.js. Replace the contents of mysql\_extension/index.js with the contents of the index.js that you just copied.
+8. Click “Save File”
 
-|image66|
+|lx_workspace.png|
 
-Create a APM lease pool for route domain 0
+Create LX Plug-In
+~~~~~~~~~~~~~~~~~
 
-Open the Access > Connectivity/VPN > Network Access (VPN) > IPV4 Lease
-Pools page, click Create. Use the following values, leave all others at
-their defaults
+1. **Navigate:** to Local Traffic->iRules-> LX Plugins and create a new LX Plugin named “afmmysqlplug” using the workspace (From Workspace dropdown) irules\_lx\_mysql\_workspace. 
 
-- Name: ``rd0_leasepool``
-- Type: ``IP Address``
-- IP Address: ``172.1.1.50``
-- Click **Add**
-- Click **Finished**
+2. Click “Finished”
 
-|image67|
+|image99|
 
-Create a APM connectivity profile for route domain 1
 
-Open the Access > Connectivity/VPN > Network Access (VPN) > IPV4 Lease
-Pools page, click Create. Use the following values, leave all others at
-their defaults
+Create a new AFM Policy to use this LX Rule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Name: ``rd1_leasepool``
-- Type: ``IP Address``
-- IP Address: ``172.1.2.50``
-- Click **Add**
-- Click **Finished**
+**Note:** You are assumed to be pretty familiar with creating AFM policies by now, hence the following steps are kept brief and to the point.
 
-|image68|
+1. Create a new AFM policy named afmmysql_pol
+2. Add a rule named afmmysql\_rule and click iRule to assign the “mysql\_Irulelx” iRule. 
 
-Create a APM network access configuration for route domain 0
+|image100|
 
-Open the Access > Connectivity/VPN > Network Access Lists page, click
-Create. Use the following values, leave all others at their defaults
 
-- Name: ``rd0_networkaccess``
-- Click **Finished**
+3. Click “Finished"
+4. Assign this rule to the afmmysql_vs virtual server.
 
-|image69|
-
-Open the ``rd0_networkaccess`` you just created and go to Network Settings.
-Use the following values, leave all others at their defaults
-
-- IPV4 Lease Pool: ``rd0_leasepool``
-- Traffic Options: ``Use split tunneling for traffic``
-- IPV4 LAN Address Space:
-  - IP Address: ``172.1.1.0``
-  - Mask: ``255.255.255.0``
-- Click **Add**
-- Allow Local Subnet: ``Enable``
-- Click **Update**
-
-|image70|
-
-|image71|
-
-Create a APM network access configuration for route domain 1
-
-Open the Access > Connectivity/VPN > Network Access Lists page, click
-Create. Use the following values, leave all others at their defaults
-
-- Name: ``rd1_networkaccess``
-- Click **Finished**
-
-|image72|
-
-Open the ``rd1_networkaccess`` you just created and go to Network Settings.
-Use the following values, leave all others at their defaults
-
-- IPV4 Lease Pool: ``rd1_leasepool``
-- Traffic Options: ``Use split tunneling for traffic``
-- IPV4 LAN Address Space:
-  - IP Address: ``172.1.2.0%1``
-  - Mask: ``255.255.255.0``
-- Click **Add**
-- Allow Local Subnet: ``Enable``
-- Click **Update**
-
-|image73|
-
-|image74|
-
-Create a APM access profile
-
-Open the Access >Profiles / Policies (Per-Session Policies) page, click
-Create. Use the following values, leave all others at their defaults
-
-- Name: ``afm_accessprofile``
-- Profile Type: ``All``
-- Accepted Languages: ``English``
-- Click **Finished**
-
-|image75|
-
-|image76|
-
-Now the click Edit for the ``afm_accessprofile``
-
-|image77|
-
-The ``afm_accessprofile`` is displayed
-
-|image78|
-
-Modify the Visual Policy Editor (VPE) – The VPE is what the client
-interacts with and is assigned before the approval or denial of access
-to a resource.
-
-Click on the plus sign after the start block and navigate to Endpoint
-Security (Client-Side) and select Firewall and click **Add Item**
-
-|image79|
-
-Leave the defaults
-
-|image80|
-
-and click **Save**
-
-Change both endings from Deny
-
-|image81|
-
-to Allow
-
-|image82|
-
-In the Successful branch of the Firewall block click the “+” sign and
-navigate to Assignment->Route Domain and SNAT Selection and click Add
-Item. Use the following values, leave all others at their defaults
-
-- Name: ``rd1``
-- Route Domain: ``/Common/rd1``
-- SNAT: ``none``
-- Click **Save**
-
-|image83|
-
-After the rd1 block click the “+” sign and navigate to
-Assignment->Advanced Resource Assign and 
-
-- Click **Add Item**
-- Click **Add new entry**
-- Click **Add/Delete**
-
-Use the following values, leave all others at their defaults
-
-- Network Access: ``/Common/rd1_networkaccess``
-- Webtop: ``/Common/afm_webtop``
-- Click **Update**
-
-Change the name to ``rd1`` Resource Assign and click Save
-
-|image84|
-
-In the fallback branch of the Firewall block click the “+” sign and
-navigate to Assignment->Route Domain and SNAT Selection and click Add
-Item. Use the following values, leave all others at their defaults
-
-- Name: ``rd0``
-- Route Domain: ``/Common/0``
-- SNAT: ``none``
-- Click **Save**
-
-|image85|
-
-After the rd0 block click the “+” sign and navigate to
-Assignment->Advanced Resource Assign and 
-
-- Click **Add Item**
-- Click **Add new entry**
-- Click **Add/Delete**
-
-Use the following values, leave all others at their defaults
-
-- Network Access: ``/Common/rd0_networkaccess``
-- Webtop: ``/Common/afm_webtop``
-- Click **Update**
-
-Change the name to ``rd0`` Resource Assign and click Save
-
-|image86|
-
-The final access policy should look like
-
-|image87|
-
-Click Apply Access Policy
-
-Create new virtual server for the APM L3 SSL VPN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create a new virtual server for the APM L3 SSL VPN. This is the virtual
-where the APM policy will be assigned and where sslvpn traffic will be
-terminated.
-
-Open the Local Traffic -> Virtual Servers page, click Create. Use the
-following values, leave all others at their defaults
-
-- Name: ``apm_vs``
-- Type: ``standard``
-- Destination Address: ``192.168.1.50``
-- Service Port: ``443``
-- HTTP Profile: ``HTTP``
-- SSL Profile (Client): ``clientssl``
-- Access Profile: ``afm_accessprofile``
-- Connectivity Profile: ``afm_cp``
-- Click **Finished**
-
-|image88|
-
-|image89|
-
-|image90|
-
-Create APM Policies
-~~~~~~~~~~~~~~~~~~~
-
-Create a new virtual server. Two new virtual servers need to be created
-that control traffic coming out of the vpn tunnel to resources protected
-by the tunnel. In addition the virtual servers provide a place to apply
-afm policies to control traffic.
-
-Create a new virtual server for route domain 0 traffic
-
-Open the Local Traffic -> Virtual Servers page, click Create. Use the
-following values, leave all others at their defaults
-
-- Name: ``rd0_vs``
-- Type: ``Forwarding (IP)``
-- Destination Address: ``172.1.1.0/24``
-- Service Port: ``* All Ports``
-- Protocols: ``* All Protocols``
-- VLANS and Tunnels: ``afm_cp``
-- Click **Finished**
-
-|image91|
-
-Create a new virtual server for route domain 1 traffic
-
-Open the Local Traffic -> Virtual Servers page, click Create. Use the
-following values, leave all others at their defaults
-
-- Name: ``rd1_vs``
-- Type: ``Forwarding (IP)``
-- Source Address: ``0.0.0.0%1/0``
-- Destination Address: ``172.1.2.0%1/24``
-- Service Port: ``* All Ports``
-- Protocols: ``* All Protocols``
-- VLANS and Tunnels: ``afm_cp``
-- Click **Finished**
-
-|image92|
-
-Create the AFM policy for route domain 0 traffic. This limits traffic
-through sslvpn to the internal subnet in route domain 0.
-
-Open the Security -> Network Firewall->Active Rules page, click Add. Use
-the following values, leave all others at their defaults
-
-- Context: ``Virtual Server, rd0``
-- Policy New, Name: ``rd0_afmpolicy``
-- Name: ``rd0_denyall_rule``
-- Action: ``Reject``
-- Logging: ``Enabled``
-- Click **Finished**
-
-|image93|
-
-Create the AFM policy for route domain 1 traffic. This limits traffic
-through sslvpn to the internal subnet in route domain 1.
-
-Open the Security -> Network Firewall->Active Rules page, click Add. Use
-the following values, leave all others at their defaults
-
-- Context: ``Virtual Server, rd1``
-- Policy New, Name: ``rd1_afmpolicy``
-- Name: ``rd1_denyall_rule``
-- Action: ``Reject``
-- Logging: ``Enabled``
-- Click **Finished**
-
-|image94|
-
-Validate Module 2 Lab 1 Configuration
+Test the VS with the LX Rule in Place
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now its time to test the vpn.
+On the Win7 client, use curl in the cygwin cli ( or from c:\\curl directory in a windows command line shell ) to test that the client is being blocked, as the Win7 client’s ip is in the mysql database.
 
-On your jumpstation start the BIG-IP Edge Client which is the grey
-ethernet port at the bottom of the desktop.
+``curl http://192.168.1.51 --connect-timeout 5``
 
-|image95|
+If everything went successfull, this should now timeout.
 
-.. NOTE:: Ensure the Edge Client is using server 192.168.1.50, the APM vip. If not use Change Server to select it and Click Connect
+.. ATTENTION:: Ensure that the iRule is working properly, by going back to the AFM rule and setting the iRule back to None. Also examine the log files at ``/var/log/ltm`` on the BIG-Ip ( or look in the GUI Log as shown here )
 
-|image96|
+|lx_log|
 
-The Edge Client will inspect your jumpstation to determine the firewall
-status, select “Allow this site to inspect for this session only”
+.. NOTE:: This completes Module 3 - Lab 1
 
-|image97|
-
-.. ATTENTION:: Once the Edge Client is connected, go to View Details, which route domain are you in? Why?
-
-.. NOTE:: This completes Module 2 - Lab 1
-
-.. |image65| image:: /_static/class2/image62.png
-   :width: 4.64158in
-   :height: 3.37569in
-.. |image66| image:: /_static/class2/image136.png
-   :width: 6.00000in
-   :height: 5.85646in
-.. |image67| image:: /_static/class2/image64.png
-   :width: 5.60895in
-   :height: 3.61152in
-.. |image68| image:: /_static/class2/image65.png
-   :width: 6.00000in
-   :height: 3.73611in
-.. |image69| image:: /_static/class2/image66.png
-   :width: 4.87536in
-   :height: 3.64653in
-.. |image70| image:: /_static/class2/image67.png
-   :width: 5.00858in
-   :height: 6.75069in
-.. |image71| image:: /_static/class2/image68.png
-   :width: 5.38758in
-   :height: 0.75763in
-.. |image72| image:: /_static/class2/image69.png
-   :width: 5.35372in
-   :height: 3.95520in
-.. |image73| image:: /_static/class2/image70.png
-   :width: 5.50419in
-   :height: 7.58104in
-.. |image74| image:: /_static/class2/image68.png
-   :width: 5.38758in
-   :height: 0.75763in
-.. |image75| image:: /_static/class2/image71.png
-   :width: 5.50419in
-.. |image76| image:: /_static/class2/image72.png
-   :width: 5.50419in
-.. |image77| image:: /_static/class2/image73.png
+.. |lx_workspace.png| image:: /_static/class2/lx_workspace.png
+.. |curl_lx_success| image:: /_static/class2/curl_lx_success.png
+.. |lx_log| image:: /_static/class2/lx_log.png
+.. |image98| image:: /_static/class2/lx_diagram.png
    :width: 7.05000in
-   :height: 0.92316in
-.. |image78| image:: /_static/class2/image74.png
-   :width: 2.91088in
-   :height: 0.79236in
-.. |image79| image:: /_static/class2/image75.png
-   :width: 4.38610in
-   :height: 1.06597in
-.. |image80| image:: /_static/class2/image76.png
-   :width: 5.49755in
-   :height: 1.43333in
-.. |image81| image:: /_static/class2/image77.png
-   :width: 3.40534in
-   :height: 1.01389in
-.. |image82| image:: /_static/class2/image78.png
-   :width: 4.24056in
-   :height: 1.51448in
-.. |image83| image:: /_static/class2/image79.png
-   :width: 4.16906in
-   :height: 2.13333in
-.. |image84| image:: /_static/class2/image80.png
-   :width: 4.34192in
-   :height: 3.10903in
-.. |image85| image:: /_static/class2/image81.png
-   :width: 3.90610in
-   :height: 1.86597in
-.. |image86| image:: /_static/class2/image82.png
-   :width: 4.67794in
-   :height: 3.70069in
-.. |image87| image:: /_static/class2/image83.png
-   :width: 7.05000in
-   :height: 1.90385in
-.. |image88| image:: /_static/class2/image84.png
-   :width: 4.66754in
-   :height: 3.26528in
-.. |image89| image:: /_static/class2/image85.png
-   :width: 6.09340in
-   :height: 5.59287in
-.. |image90| image:: /_static/class2/image86.png
-   :width: 4.72323in
-   :height: 2.81241in
-.. |image91| image:: /_static/class2/image139.png
-   :width: 4.79853in
-   :height: 5.60620in
-.. |image92| image:: /_static/class2/image140.png
-   :width: 5.06591in
-   :height: 6.81758in
-.. |image93| image:: /_static/class2/image141.png
-   :width: 5.14788in
-   :height: 7.25486in
-.. |image94| image:: /_static/class2/image142.png
-   :width: 5.11930in
-   :height: 6.63730in
-.. |image95| image:: /_static/class2/image143.png
-   :width: 4.25278in
-   :height: 0.77495in
-.. |image96| image:: /_static/class2/image144.png
-   :width: 5.50467in
-   :height: 2.58403in
-.. |image97| image:: /_static/class2/image145.png
-   :width: 6.13439in
-   :height: 4.05248in
-.. |image101| image:: /_static/class2/image94.png
+   :height: 3.28750in
+.. |image99| image:: /_static/class2/lx_plug.png
+.. |image100| image:: /_static/class2/image148.png

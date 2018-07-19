@@ -14,7 +14,7 @@ techniques with automated tools to cause delay or disruption to
 web-application services. With each news story, IT executives continue
 to ask:
 
--  Is my organization prepared to handle floods of HTP traffic?
+-  Is my organization prepared to handle floods of HTTP traffic?
 
 -  Does my team know vulnerabilities and how to mitigate an attack,
    while maintaining availability of applications for our customers?

@@ -1,7 +1,7 @@
 Getting Started
 ---------------
 
-Please follow the instructions provided by the instructor to start your
+You're going to be using a "jump box" aka a Windows machine that you will RDP to, and do all the work from that RDP session. Please follow the instructions provided by the instructor to start your
 lab and access your jump host.
 
 

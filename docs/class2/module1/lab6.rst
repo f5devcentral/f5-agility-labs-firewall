@@ -71,7 +71,7 @@ application.
 
 URL: https://www.mysite.com/dvwa
 
-**Credentials: admin\/password_**
+**Credentials: admin\/password**
 
 |image52|
 
@@ -157,7 +157,7 @@ URL: https://www.mysite.com/dvwa
 .. |image55| image:: /_static/class2/image56.png
    :width: 4.52592in
    :height: 4.53707in
-.. |image56| image:: /_static/class2/image57.png
+.. |image56| image:: /_static/class2/dvwa555.png
    :width: 5.16503in
    :height: 1.12839in
 .. |image57| image:: /_static/class2/image53.png

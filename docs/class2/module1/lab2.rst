@@ -13,6 +13,11 @@ Whether it is based on the hostname or the URI path, the request can be forwarde
 
 Create the LTM Policies
 -----------------------
+.. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
+
+
+|ltp-diagram|
+
 
 **Navigation:** Local Traffic > Policies : Policy List > Policy List Page,
 then click Create
@@ -191,6 +196,7 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 
 .. NOTE:: This completes Module 1 - Lab 2
 
+.. |ltp-diagram| image:: /_static/class2/ltp-diagram.png
 .. |image9| image:: /_static/class2/image11.png
    :width: 7.05556in
    :height: 6.20833in

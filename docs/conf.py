@@ -5,7 +5,7 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5 Firewall Solutions Agility 2018"
+classname = "Agility Advanced Firewall 2018"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
 github_repo = "https://github.com/bwolmarans/f5-agility-labs-firewall"

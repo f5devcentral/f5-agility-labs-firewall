@@ -1,0 +1,15 @@
+Lab 8: There will be stuff here
+================================================================================
+
+Intro stuff here.... we love intros.
+
+.. NOTE:: Here is a yellow banana.
+
+|lab8-image1|
+
+.. ATTENTION:: Pay attention please!
+
+Here is some more text after the image of a yellow banana.
+
+
+.. |lab8-image1| image:: /_static/class2/banana.png

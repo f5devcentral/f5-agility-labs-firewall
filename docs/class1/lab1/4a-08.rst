@@ -1,0 +1,36 @@
+Creating an Additional Rule List for Additional Services
+--------------------------------------------------------
+
+Rules and Rule Lists can also be created and attached to a context from
+the Active Rules section of the GUI. Go to the
+
+**Security > Network Firewall > Rule Lists**
+
+Create a **Rule List** called **application_rule_list** then click
+**Finished**.
+
+Enter the rule list by clicking on its hyperlink, then in the **Rules**
+section click **Add**, and add the following information, then click
+**Finished**.
+
++-------------------------+-----------------------------------------------+
+| **Name**                | allow_http                                    |
++=========================+===============================================+
+| **Protocol**            | TCP                                           |
++-------------------------+-----------------------------------------------+
+| **Source**              | Leave at Default of **Any**                   |
++-------------------------+-----------------------------------------------+
+| **Destination Address** | **Specify…**\ 10.40.0.50, then click **Add**  |
++-------------------------+-----------------------------------------------+
+| **Destination Port**    | **Specify…**\ Port **80**, then click **Add** |
++-------------------------+-----------------------------------------------+
+| **Action**              | **Accept-Decisively**                         |
++-------------------------+-----------------------------------------------+
+| **Logging**             | Enabled                                       |
++-------------------------+-----------------------------------------------+
+
+|image26|
+
+.. |image26| image:: /_static/class1/image27.png
+   :width: 6.49097in
+   :height: 0.75in

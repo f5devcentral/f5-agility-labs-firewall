@@ -6,4 +6,4 @@ Class 1: |afm|\ , the ENTERPRISE Firewall
    :glob:
 
    labinfo
-   module*/module*
+   lab*/intro

@@ -1,0 +1,34 @@
+Rule Hierarchy
+--------------
+
+With the BIG-IP\ :sup:`®` Network Firewall, you use a context to
+configure the level of specificity of a firewall rule or policy. For
+example, you might make a global context rule to block ICMP ping
+messages, and you might make a virtual server context rule to allow only
+a specific network to access an application.
+
+Context is processed in this order:
+
+-  Global
+
+-  Route domain
+
+-  Virtual server / self IP
+
+-  Management port\*
+
+-  Global drop\*
+
+The firewall processes policies and rules in order, progressing from the
+global context, to the route domain context, and then to either the
+virtual server or self IP context. Management port rules are processed
+separately, and are not processed after previous rules. Rules can be
+viewed in one list, and viewed and reorganized separately within each
+context. You can enforce a firewall policy on any context except the
+management port. You can also stage a firewall policy in any context
+except management.
+
+.. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
+
+.. image:: http://support.f5.com/kb/global/manual_images/MAN-0439-01/firewall_processing.png
+

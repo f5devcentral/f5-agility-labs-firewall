@@ -1,0 +1,21 @@
+Attaching a DoS Profile
+-----------------------
+
+We will attach the DoS profile to the virtual server that we configured
+to manage DNS traffic.
+
+1. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual
+   Server List**.
+
+2. Click on the **udp_dns_VS** name.
+
+3. Click on the **Security** tab and select **Policies**.
+
+4. In the **DoS Protection Profile** field, select **Enabled** and
+   choose the **dns-dos-profile**.
+
+5. In the **Log Profile**, select **Enabled** and move the
+   **dns-dos-profile-logging** profile from **Available** to
+   **Selected**.
+
+6. Click **Update**.

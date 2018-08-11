@@ -1,0 +1,58 @@
+Test Access to the Server
+-------------------------
+
+-  Open a new Web browser and access http://10.30.0.50
+
+**Success!!**
+
+Before we continue let’s clean up the rules just a little for best
+practices. The clean-up/catch-all/drop/etc rule is typically applied to
+the end of your policy, not necessarily within the rule-list. While its
+perfectly acceptable to have drop statements within individual rules to
+prevent certain traffic, the broader drop statement should be applied at
+the end of the policy (remember how AFM processes contexts from the
+beginning of this lab – see pages 6+7).
+
+Use the **Rule Lists** page to modify the firewall rule
+**‘web_rule_list’**. Open the **Security > Network Firewall > Rule
+Lists** page. Click on the rule list **‘web_rule_list’** to modify the
+rule list. Check the box next to the reject_10_20_0_0 rule and click
+‘\ **Remove’.** The updated rule should look something like the below
+screen shot:
+
+|image29|
+
+Next, you’ll want to add the reject rule to the policy. In the
+Configuration Utility, open the **Security > Network Firewall >
+Policies** page. Click on the **rd_0_policy**. Select ‘Add Rule’ drop
+down and select at the end. You’ll notice all the same options are
+available within a policy as they are within a rule-list. Create an
+entry with the following information then click Done Editing and commit
+the change.
+
++-------------------------+------------------------------------------+
+| **Name**                | reject_10_20_0_0                         |
++=========================+==========================================+
+| **Protocol**            | Any                                      |
++-------------------------+------------------------------------------+
+| **Source**              | Address 10.20.0.0/24, then click **Add** |
++-------------------------+------------------------------------------+
+| **Destination Address** | Any                                      |
++-------------------------+------------------------------------------+
+| **Destination Port**    | Any                                      |
++-------------------------+------------------------------------------+
+| **Action**              | Reject                                   |
++-------------------------+------------------------------------------+
+| **Logging**             | Enabled                                  |
++-------------------------+------------------------------------------+
+
+The new Policy should look something like the screen shot below:
+
+|image30|
+
+.. |image29| image:: /_static/class1/image30.png
+   :width: 6.49097in
+   :height: 1.01875in
+.. |image30| image:: /_static/class1/image31.png
+   :width: 6.5in
+   :height: 1.14792in

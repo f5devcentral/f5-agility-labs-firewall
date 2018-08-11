@@ -1,5 +1,5 @@
-Configure Local Logging For Firewall Events
-===========================================
+Lab 3: Configure Local Logging For Firewall Events
+==================================================
 
 Security logging needs to be configured separately from LTM logging. 
 

@@ -1,7 +1,7 @@
-Leverage LTM Policies To Direct SSL Terminated Applications To Secondary Virtual Servers
-========================================================================================
+Lab 2: Leverage LTM Policies To Direct SSL Terminated Applications To Secondary Virtual Servers
+===============================================================================================
 
-Introduced in TLS 1.0 as a TLS extension, Server Name Indication (SNI) allows the client to send the hostname they are trying to connect to in the SSL handshake. This allows the Application Delivery Controllers (ADC) such as the BIG-IP and the Application servers to identify the appropriate application the client is trying to connect to. From this information, the ADC can respond with the proper SSL certificate to the client allowing the ADC to provide SSL enabled services for multiple applications from a single IP address.
+What is SNI? Introduced in TLS 1.0 as a TLS extension, Server Name Indication (SNI) allows the client to send the hostname they are trying to connect to in the SSL handshake. This allows the Application Delivery Controllers (ADC) such as the BIG-IP and the Application servers to identify the appropriate application the client is trying to connect to. From this information, the ADC can respond with the proper SSL certificate to the client allowing the ADC to provide SSL enabled services for multiple applications from a single IP address.
 
 LTM policies are another way to programatically modify traffic as it is flowing through the data plane of the BIG-IP. This functionality can also be accomplished with F5 iRules. The advantage this has over iRules is that LTM policies can be modified and appended to the existing configuration without replacing the entire application configuration. This lends itself to being updated through the CLI or via the REST API easily.
 
@@ -13,6 +13,11 @@ Whether it is based on the hostname or the URI path, the request can be forwarde
 
 Create the LTM Policies
 -----------------------
+.. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
+
+
+|ltp-diagram|
+
 
 **Navigation:** Local Traffic > Policies : Policy List > Policy List Page,
 then click Create
@@ -27,46 +32,43 @@ then click Create
 
 |image11|
 
-**Navigation:** Local Traffic > Policies : Policy List >
-/Common/HTTPS\_Virtual\_Targeting\_PolicyL7
+**Navigation:** Local Traffic > Policies : Policy List > Draft Policies >  /Common/HTTPS\_Virtual\_Targeting\_PolicyL7
 
 |image12|
 
-The policy configuration should now include a Rules section
-
-**Navigation:** Click Create
+**Navigation:** Click create to create some rules.
 
 You will need to create the following rules within your policy:
 
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **Rule Name**                                            |                   |                  |               |                                               |
-+==========================================================+===================+==================+===============+===============================================+
-| `**www.mysite.com** <http://www.mysite.com>`__           | HTTP Host         | Host             | is            | www.mysite.com                                |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com\_1.1.1.1             |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| `**www.yoursite.com** <http://www.yoursite.com>`__       | HTTP Host         | Host             | is            | www.yoursite.com                              |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.yoursite.com\_3.3.3.3           |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| `**www.theirsite.com** <http://www.theirsite.com>`__     | HTTP Host         | Host             | is            | www.theirsite.com                             |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.theirsite.com\_2.2.2.2          |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| `**www.mysite.com-api** <http://www.mysite.com-api>`__   | HTTP Host         | host             | is            | www.mysite.com                                |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                          | HTTP URI          | path             | begins with   | /api                                          |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-api\_1.1.1.2         |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                          | Replace           | http uri         | path          | with **/**                                    |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **www.mysite.com-downloads**                             | HTTP Host         | host             | is            | www.mysite.com                                |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                          | HTTP URI          | path             | begins with   | /downloads                                    |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **ACTION**                                               | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-downloads\_1.1.1.3   |
-+----------------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| **Rule Name**                                       | **Rule Logic**    |                  |               |                                               |
++=====================================================+===================+==================+===============+===============================================+
+| www.mysite.com                                      | HTTP Host         | Host             | is            | www.mysite.com                                |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com\_1.1.1.1             |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| www.yoursite.com                                    | HTTP Host         | Host             | is            | www.yoursite.com                              |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.yoursite.com\_3.3.3.3           |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| www.theirsite.com                                   | HTTP Host         | Host             | is            | www.theirsite.com                             |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.theirsite.com\_2.2.2.2          |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| www.mysite.com-api                                  | HTTP Host         | host             | is            | www.mysite.com                                |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | HTTP URI          | path             | begins with   | /api                                          |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-api\_1.1.1.2         |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | Replace           | http uri         | path          | with **/**                                    |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+| www.mysite.com-downloads                            | HTTP Host         | host             | is            | www.mysite.com                                |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | HTTP URI          | path             | begins with   | /downloads                                    |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
+|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-downloads\_1.1.1.3   |
++-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
 
 **Navigation:** Remember to click Add after adding the matching string
 
@@ -81,11 +83,13 @@ the path from the request for the site to work.
 
 **Complete the additional policies according to the list above.**
 
-Once complete publish the policy.
+Once complete, you must save a Draft, then publish the policy.
+
 
 **Navigation:** Local Traffic > Policies: Policy List >
 /Common/HTTPS\_Virtual\_Targeting\_PolicyL7
 
+**Navigation:** Save Draft
 **Navigation:** Click Publish
 
 |image15|
@@ -122,6 +126,8 @@ The result should look like the screenshot below.
 
 |image22|
 
+.. ATTENTION:: When you first set up the Virtual Servers, accessing the sites didn't work very well because the policies were not setup.  Now try accessing all the VS you created from Chrome. You can use the bookmarks for easy access. If you manually type in the sites in the address bar, use https://** since you enabled encyrption when you created the virtual server. 
+
 Validate Lab 2 Configuration
 ----------------------------
 
@@ -145,24 +151,23 @@ validate your configuration.
 
 |image23|
 
-From a terminal window (use Cygwin on Win7 Client Desktop). Curl will
-let us do some of the additional testing in later sections.
+From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl directory from windows command shell ). Curl will let us do some of the additional testing in later sections.
 
 .. code-block:: console
 
-   curl -k https://10.10.99.30 -H 'Host:www.mysite.com'
+   curl -k https://10.10.99.30 -H Host:www.mysite.com
 
    <H1> MYSITE.COM </H1>
 
-   curl -k https://10.10.99.30 -H 'Host:www.theirsite.com'
+   curl -k https://10.10.99.30 -H Host:www.theirsite.com
 
    <H1> THEIRSITE.COM </H1>
 
-   curl -k https://10.10.99.30 -H 'Host:www.yoursite.com'
+   curl -k https://10.10.99.30 -H Host:www.yoursite.com
 
    <H1> YOURSITE.COM </H1>
 
-   curl -k https://10.10.99.30/api -H 'Host:www.mysite.com'
+   curl -k https://10.10.99.30/api -H Host:www.mysite.com
 
 .. code-block:: console
 
@@ -189,10 +194,9 @@ let us do some of the additional testing in later sections.
    </head>
    <body>
 
-.. NOTE:: A larger page with this title should be displayed.
-
 .. NOTE:: This completes Module 1 - Lab 2
 
+.. |ltp-diagram| image:: /_static/class2/ltp-diagram.png
 .. |image9| image:: /_static/class2/image11.png
    :width: 7.05556in
    :height: 6.20833in
@@ -205,12 +209,12 @@ let us do some of the additional testing in later sections.
 .. |image12| image:: /_static/class2/image14.png
    :width: 7.04167in
    :height: 2.62500in
-.. |image13| image:: /_static/class2/image15.png
+.. |image13| image:: /_static/class2/policy_shot.png
+   :width: 7.04167in
+   :height: 4.02500in
+.. |image14| image:: /_static/class2/policy2.png
    :width: 7.05000in
-   :height: 2.63403in
-.. |image14| image:: /_static/class2/image16.png
-   :width: 7.05000in
-   :height: 3.29861in
+   :height: 4.29861in
 .. |image15| image:: /_static/class2/image17.png
    :width: 7.05556in
    :height: 1.68056in

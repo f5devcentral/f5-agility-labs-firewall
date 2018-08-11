@@ -1,5 +1,5 @@
-Configure A Firewall Policy and Firewall Rules For Each Application
--------------------------------------------------------------------
+Lab 4: Configure A Firewall Policy and Firewall Rules For Each Application
+==========================================================================
 
 A network firewall policy is a collection of network firewall rules that can be applied to a virtual server. In our lab, we will create two policies, each of which includes two rules. This policy will then be applied to the appropriate virtual servers and tested.
 

@@ -1,15 +1,9 @@
-Module 2: F5 Multi-tenant Firewall With Access Control Lab 
-==========================================================
+Module 2: F5 Dynamic Firewall Rules With iRules LX
+==================================================
 
-This module highlights Advanced Firewall Security (L2-7) layering on authentication and access control with Access Policy Manager Application Security (L7) for Multi-tenancy using Route Domains and network firewalling. (LTM+AFM+APM)
+This lab introduces iRules Language eXtensions (LX) or iRulesLX which enables node.js on the BIG-IP platform. The lab uses Tcl iRules and JavaScript code to make a MySQL call to look up a client IP address providing access control in the Multi-Layered Firewall.
 
-.. Note:: To begin this section you will want to restore the archive ``afmapmbase.ucs``.
-
-**Navigate:** System > Archives
-
-``Select the afmapmbase.ucs archive and Click > Restore``
-
-|image64|
+This could be useful in developer driven / devops environments where the development team can modify firewall policies simply by updating a database.
 
 .. WARNING:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP
@@ -20,7 +14,3 @@ This module highlights Advanced Firewall Security (L2-7) layering on authenticat
    :glob:
 
    lab*
-
-.. |image64| image:: /_static/class2/image61.png
-   :width: 6.23089in
-   :height: 4.63403in

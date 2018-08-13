@@ -1,5 +1,5 @@
-Class 1: |afm|\ , the ENTERPRISE Firewall
-=========================================
+Class 1: AFM – The Data Center Firewall
+=======================================
 
 .. toctree::
    :maxdepth: 1

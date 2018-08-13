@@ -1,10 +1,10 @@
-Advanced Firewall Manager - The Data Center Firewall
-****************************************************
+AFM – The Data Center Firewall
+******************************
 
 Overview
 ========
 
-This lab is a collection of 6 smaller labs. 
+This lab is a collection of 6 smaller labs.
 
 Lab 1 Overview
 --------------
@@ -29,7 +29,7 @@ This lab includes centralized management using F5 BIG-IQ.
 Lab 5 Overview
 --------------
 
-This lab will cover AFM management using F5 BIG-IQ. 
+This lab will cover AFM management using F5 BIG-IQ.
 
 Lab 6 Overview
 --------------

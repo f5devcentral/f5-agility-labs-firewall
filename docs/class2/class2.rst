@@ -33,9 +33,9 @@ There are three modules detailed in this document.
 
 **Module 1: F5 Multi-layer Firewall**
 
-**Module 2: F5 Multi-tenant Firewall With Access Control Lab**
+**Module 2: F5 Dynamic Firewall Rules With iRules LX**
 
-**Module 3: F5 Dynamic Firewall Rules With iRules LX**
+**Module 3: AFM Protocol Inspection IPS**
 
 **Lab Requirements:**
 

@@ -11,7 +11,7 @@ Prepare traffic visualization and monitoring
         |image3|
 
 -  Start interface monitoring in Router1 and Router2
-``monitor interfaces ethernet``
+   ``monitor interfaces ethernet``
 
     |image5|
     |image6|
@@ -19,7 +19,8 @@ Prepare traffic visualization and monitoring
     |image7|
 
 -  Select *eth1* and press ``g`` to enable graphical statistics
-.. NOTE:: You may need to expand terminal window for graphs to appear
+
+   .. note:: You may need to expand terminal window for graphs to appear
 
 -  Open Web Browser and click on `BIG-IP AFM` bookmark, then login into BIG-IP TMUI using ``admin`` credentials
 

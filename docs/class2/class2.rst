@@ -64,7 +64,7 @@ There are three modules detailed in this document.
 -  Unique destination IP address for RDP to your lab
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :glob:
 
    module*/module*

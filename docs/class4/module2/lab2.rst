@@ -68,6 +68,7 @@ profile
 |image18|
 
 .. NOTE:: `Statistics -> DoS Visibility` TMUI menu provides graphical attack data
+
 It may take up to ~5 minutes for DoS Visibility Dashboard to show our simulated DDoS attack. You may need to click `Refresh` for data to appear
 
 |image26|

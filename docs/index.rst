@@ -30,21 +30,21 @@ intelligently to mitigate DDOS attacks and other emerging threats at the
 **network, session, and application** levels.
 
 **Protect your reputation and your bottom line with F5 security
-solutions:**      
+solutions:**
 
 -  Defend against sophisticated attacks to secure internal and customer
    data
 
--  Mitigate security risks instantly with “virtual” patches.
+-  Mitigate security risks instantly with virtual patches.
 
 -  Maintain availability in the face of large-scale attacks.
 
--  Monitor continuously for application vulnerabilities. 
+-  Monitor continuously for application vulnerabilities.
 
 `*https://www.f5.com/it-management/solutions/ddos-protection/overview* <https://www.f5.com/it-management/solutions/ddos-protection/overview>`__
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
    :caption: Contents:
    :glob:

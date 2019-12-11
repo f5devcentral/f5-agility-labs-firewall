@@ -24,7 +24,7 @@ import re
 import pkgutil
 import string
 sys.path.insert(0, os.path.abspath('.'))
-import f5_sphinx_theme
+#import f5_sphinx_theme
 
 year = time.strftime("%Y")
 eventname = "Agility %s Hands-on Lab Guide" % (year)
@@ -211,8 +211,8 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-html_theme = 'f5_sphinx_theme'
-html_theme_path = f5_sphinx_theme.get_html_theme_path()
+#html_theme = 'f5_sphinx_theme'
+#html_theme_path = f5_sphinx_theme.get_html_theme_path()
 html_sidebars = {'**': ['searchbox.html', 'localtoc.html', 'globaltoc.html','relations.html']}
 html_theme_options = {
                         'site_name': 'Community Training Classes & Labs',

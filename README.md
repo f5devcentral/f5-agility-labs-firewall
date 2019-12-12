@@ -6,3 +6,5 @@ http://f5-agility-labs-firewall.readthedocs.io/en/latest/
 
 git clone https://github.com/f5devcentral/f5-agility-labs-firewall.git
 
+Do not commit changes to master branch
+

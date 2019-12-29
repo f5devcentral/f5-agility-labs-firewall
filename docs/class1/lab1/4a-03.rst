@@ -4,7 +4,7 @@ Create and View Log Entries
 In this section, you will generate various types of traffic through the
 firewall as you did previously, but now you will view the log entries
 using the network firewall log. Open your web browser and once again try
-to access http://10.30.0.50. Also, try to ping 10.30.0.50.
+to access http://10.1.20.11. Also, try to ping 10.1.20.11.
 
 Open the **Security > Event Logs > Network > Firewall** page on
 bigip2.dnstest.lab (192.168.1.150). The log file shows the ping requests
@@ -19,3 +19,28 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
 .. |image6| image:: /_static/class1/image7.png
    :width: 6.49097in
    :height: 1in
+
+Review the configuration required to generate the logs reviewed in the prior step
+
+Default Firewall options determine if the system is in ADC mode or Firewall Mode. 
+The configuration in this lab is Firewall mode as sen in the Defaut Firewall Options
+
+Local-db-publisher is linked to the global-network logging profile in the next step
+
+|image201|
+
+.. |image201| image:: /_static/class1/image201.png
+   :width: 6.49097in
+   :height: 7in
+
+Navigate to Security>>Event Logs>>Logging Profiles
+Select Global Network
+Click on the Network Firewall Tab
+Review the configuration. The Storage Format section allows you to select the values included in the log
+
+|image202|
+
+.. |image202| image:: /_static/class1/image202.png
+   :width: 6.49097in
+   :height: 7in
+  

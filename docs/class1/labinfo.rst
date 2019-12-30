@@ -20,17 +20,12 @@ Within each lab environment there are the following Virtual Machines:
 
 -  Windows 7 Jumpbox
 
--  Two BIG-IP Virtual Editions (VE) – running TMOS 13.0
-
--  Two BIG-IQ Virtual Editions (VE) – running TMOS 5.2
+-  Two BIG-IP Virtual Editions (VE) – running TMOS 15.1
 
 -  LAMP Server (Web Servers)
 
--  DoSServer
 
--  SevOne PLA 2.3.0
-
-|image2|
+|image204|
 
 Lab Components
 ^^^^^^^^^^^^^^
@@ -38,12 +33,12 @@ Lab Components
 Below are all the IP addresses that will be used during the labs. Please
 refer back to this page and use the IP addresses assigned to your site.
 
-+--------------+-----------------------------------------------+
-|              | IP Addresses                                  |
-+--------------+-----------------------------------------------+
-| Lampserver   | 10.128.20.150, 10.128.20.160, 10.128.20.170   |
-+--------------+-----------------------------------------------+
++--------------+--------------------------------------------------------------+
+|              | IP Addresses                                                 |
++--------------+--------------------------------------------------------------+
+| Lampserver   | 10.1.20.11, 10.1.20.12, 10.1.20.13 ,10.1.20.14, 10.1.20.15   |
++--------------+--------------------------------------------------------------+
 
-.. |image2| image:: /_static/class1/image3.png
+.. |image2| image:: /_static/class1/image204.png
    :width: 6.47917in
    :height: 3.31250in

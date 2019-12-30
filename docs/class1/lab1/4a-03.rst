@@ -38,9 +38,10 @@ Select Global Network
 Click on the Network Firewall Tab
 Review the configuration. The Storage Format section allows you to select the values included in the log
 
-|image202|
+|image201|
 
 .. |image202| image:: /_static/class1/image202.png
    :width: 6.49097in
    :height: 7in
   
+test-12-30-19

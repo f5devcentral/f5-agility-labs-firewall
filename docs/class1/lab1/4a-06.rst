@@ -23,15 +23,23 @@ to:
 
 **Security > Network Firewall > Active Rules.**
 
-From the **Context Filter** select **Route Domain 0**. You can expand
-the web_rule_list by clicking the plus sign, your screen should look
-similar to the below screen shot.
 
-|image19|
+
+From the **Context Filter** select **Route Domain 0**. 
+
+Now click on the **Add Rule List to Route Domain** from the ypper right 
+corner of the screen and click **Cancel**
+
+your screen should show theweb_rule _list you assigned earlier through the 
+Route Domain Screen. 
+
+The sceen should look similar to the below screen shot.
+
+|image20|
 
 .. |image18| image:: /_static/class1/image19.png
    :width: 6.5in
    :height: 1.25in
-.. |image19| image:: /_static/class1/image20.png
+.. |image20| image:: /_static/class1/image20.png
    :width: 6.49514in
    :height: 1.37014in

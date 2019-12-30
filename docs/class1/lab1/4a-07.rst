@@ -4,13 +4,14 @@ Test the New Firewall Rules
 Once again you will generate traffic through the BIG-IP AFM and then
 view the AFM (firewall) logs.
 
--  Ping 10.30.0.50
+-  Ping 10.1.20.11, 10.1.20.12, 10;120.13, 10.120.14, and 10.1.20.15 (why does ths work?)
 
--  Open a new Web browser and access http://10.30.0.50
+-  Open a new Web browser and access http://10.1.20.11
 
--  Open a new Web browser and access http://10.30.0.50:8081
+-  Open a new Web browser and access https://10.1.20.11 (this should fail--why)
 
--  SSH to 10.30.0.50 using Web Server shortcut (PUTTY) on desktop.
+- Open a new Web browser and access https://10.1.20.14
+
 
 In the Configuration Utility, open the **Security > Event Logs > Network
 > Firewall** page.

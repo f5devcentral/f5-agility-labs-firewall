@@ -39,6 +39,6 @@ refer back to this page and use the IP addresses assigned to your site.
 | Lampserver   | 10.1.20.11, 10.1.20.12, 10.1.20.13 ,10.1.20.14, 10.1.20.15   |
 +--------------+--------------------------------------------------------------+
 
-.. |image2| image:: /_static/class1/image204.png
+.. |image204| image:: /_static/class1/image204.png
    :width: 6.47917in
    :height: 3.31250in

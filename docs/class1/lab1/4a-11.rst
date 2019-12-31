@@ -1,26 +1,76 @@
 Test Access to the Server
 -------------------------
 
--  Open a new Web browser and access http://10.30.0.50
+-  Open a new Web browser and access http://10.1.20.11
 
 **Success!!**
 
 Before we continue let’s clean up the rules just a little for best
-practices. The clean-up/catch-all/drop/etc rule is typically applied to
-the end of your policy, not necessarily within the rule-list. While its
-perfectly acceptable to have drop statements within individual rules to
-prevent certain traffic, the broader drop statement should be applied at
-the end of the policy (remember how AFM processes contexts from the
-beginning of this lab – see pages 6+7).
+practices. Use the **Rule Lists** page to consolidate the firewall rule
+**‘web_rule_list’** with the **‘application_rule_list’** since
+these rules would ttypically be in the same rule list
 
-Use the **Rule Lists** page to modify the firewall rule
-**‘web_rule_list’**. Open the **Security > Network Firewall > Rule
-Lists** page. Click on the rule list **‘web_rule_list’** to modify the
-rule list. Check the box next to the reject_10_20_0_0 rule and click
-‘\ **Remove’.** The updated rule should look something like the below
-screen shot:
+Open the **Security > Network Firewall > Polocies** page. 
 
-|image29|
+Select the RD_0_policy
+
+Check the bix in front of  **‘application_rule_list’** and press the Delete button
+
+Commit Changes to System
+
+Open the **Security > Network Firewall > RuleLists** page. 
+
+Check the bix in front of  **‘application_rule_list’** and press the Delete button (2x-Confirm action) 
+
+Click on the rule  list **‘web_rule_list’** to modify the
+rule list. 
+
+Enter the rule list by clicking on its hyperlink, then in the **Rules**
+section click **Add**, and add the following information, then click
+**Finished**.
+
++-------------------------+--------------------------------------------------+
+| **Name**                | allow_http_8081_10_1_20_11                       |
++=========================+==================================================+
+| **Protocol**            | TCP                                              |
++-------------------------+--------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                      |
++-------------------------+--------------------------------------------------+
+| **Destination Address** | **Specify…**\ 10.1.20.11, then click **Add**     |
++-------------------------+--------------------------------------------------+
+| **Destination Port**    | **Specify…**\ Port **8081**, then click **Add**  |
++-------------------------+--------------------------------------------------+
+| **Action**              | **Accept-Decisively**                            |
++-------------------------+--------------------------------------------------+
+| **Logging**             | Enabled                                          |
++-------------------------+--------------------------------------------------+
+
+
+
+Inspect the properties of the rule list to verify the changes were made
+
+Review the rules that are now applied to this route domain by navigating
+to:
+
+**Security > Network Firewall > Active Rules.**
+
+From the **Context Filter** select **Route Domain 0**. 
+
+Click on the **Add Rule List to Global** from the ypper right 
+corner of the screen and click **Cancel** (note:this is a GUI bug)
+
+Click on the **Add Rule List to Route Domain** from the ypper right 
+corner of the screen and click **Cancel** (note:this is a GUI bug)
+
+your screen should show the web_rule _list you assigned earlier through the 
+Route Domain Screen. 
+
+|image211|
+
+.. |image211| image:: /_static/class1/image211.png
+   :width: 6.5in
+   :height: 2.5in
+
 
 Next, you’ll want to add the reject rule to the policy. In the
 Configuration Utility, open the **Security > Network Firewall >

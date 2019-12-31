@@ -4,35 +4,19 @@ Test the New Firewall Rules
 Once again you will generate traffic through the BIG-IP AFM and then
 view the AFM (firewall) logs.
 
--  Ping 10.30.0.50
+-  Ping 10.1.20.11
 
--  Open a new Web browser and access http://10.30.0.50
+-  Open a new Web browser and access http://10.1.20.11
 
--  Open a new Web browser and access http://10.30.0.50:8081
+-  Open a new Web browser and access http://10.1.20.11:8081
 
--  SSH to 10.30.0.50 using Web Server shortcut on desktop
+-  Open a new Web browser and access https://10.1.20.12 (site cant be reached)
+
 
 In the Configuration Utility, open the **Security > Event Logs > Network
 > Firewall** page.
 
-Access for port 80 on 10.30.0.50 was granted using the web_rule_list:
-**allow_http** rule.
-
-|image31|
-
-Access for port 80 on 10.40.0.50 was granted using the
-application_rule_list: **allow_http** rule.
-
-|image32|
-
-Ping to 10.30.0.50 was granted using the global rule.
-
-|image33|
-
-All other traffic was rejected by the rd_0_policy reject_10_20_0_0
-reject rule
-
-|image34|
+Inspect for the expected log entries
 
 .. |image31| image:: /_static/class1/image32.png
    :width: 6.5in

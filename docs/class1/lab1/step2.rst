@@ -15,19 +15,18 @@ furious the world does not know about the glory of TPS reports!!
 Let’s start by testing the web server to verify. On your workstation
 open a browser (we prefer you use the Chrome shortcut labeled BIG-IP UI,
 all the tabs are pre-populated) and enter the address of the web server
-(http://10.30.0.50). No Bueno! Let’s see if we can even ping the host.
-Launch a command prompt (startrun cmd) and type ‘ping 10.30.0.50’.
+(http://10.31.20.11). No Bueno! Let’s see if we can even ping the host.
+Launch a command prompt (startrun cmd) and type ‘ping 10.1.20.11’.
 Bueno! Looks like the server is up and responding to pings, as such,
 this is likely not a network connectivity issue.
 
 You ask one of your colleagues, who just got out of his meeting with the
 Bob’s, if he knows the IP address of the firewall. He recalls the
 firewall they would traverse for this communication is
-bigip2.dnstest.lab and its management IP address is 192.168.1.150. In
-your browser, open a new tab (of if you’re using Chrome open the tab
-with bigip2.dnslab.lab) and navigate to https://192.168.1.150. The
+bigip01.f5demo.com and its management IP address is 10.1.1.4. In
+your browser, open a new tab  and navigate to https://10.1.1.4. The
 credentials to log into the device are username: admin and password:
-401elliottW! (these can also be found on the login banner of the device
+f5DEMOs4u (these can also be found on the login banner of the device
 for convenience). Note if you receive a security warning it is ok to
 proceed to the site and add as a trusted site.
 

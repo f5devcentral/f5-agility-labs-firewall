@@ -7,7 +7,7 @@ Lab 1 – Advanced Firewall Manager (AFM)
 
    step*
 
-**Written for TMOS 13.1.0.1/BIG-IQ 6.0**
+**Written for TMOS 15.1.0
 
 |image0| |https://www.icsalabs.com/sites/default/files/imagecache/large_logo/ICSA_Cert_Firewall_WEB.gif|
 

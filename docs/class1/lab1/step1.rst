@@ -11,5 +11,7 @@ Base BIG-IP Configuration
 
 In this lab, the VE has been configured with the basic system settings
 and the VLAN/self-IP configurations required for the BIG-IP to
-communicate and pass traffic on the network. We’ll now need to configure
+communicate and pass traffic on the network. Inspect the Virtual Servers 
+which have been configured. Note that they are Wwildcard (listen for all traffic) 
+and have SNAT auto-map enabled. We’ll now need to configure
 the BIG-IP to pass it to the back-end server.

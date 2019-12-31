@@ -8,7 +8,7 @@ A new tool introduced in version 13 is the flow inspector. This tool is
 useful to view statistical information about existing flows within the
 flow table. To test the flow inspector, navigate to **Security > Debug >
 Flow Inspector.** Refresh the web page we’ve been using for testing
-(http://10.30.0.50) and click “Get Flows”.
+(http://10.1.20.11) and click “Get Flows”.
 
 |image46|
 

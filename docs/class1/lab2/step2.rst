@@ -6,9 +6,9 @@ Create and View Packet Tracer Entries
 
 In this section, you will generate various types of traffic as you did
 previously, but now you will view the flow using the network packet
-tracer. Login to bigip2.dnstest.lab
+tracer. Login to bigip01.f5demo.com
 
-(192.168.1.150), navigate to **Security > Debug > Packet Tester**.
+(10.1.1.4), navigate to **Security > Debug > Packet Tester**.
 
 |image42|
 
@@ -21,11 +21,11 @@ Create a packet test with the following parameters:
 +-------------------+------------------------+
 | **Source**        | IP - 1.2.3.4           |
 |                   | Port – 9999            |
-|                   | Vlan – Outside         |
+|                   | Vlan – external        |
 +-------------------+------------------------+
 | **TTL**           | 255                    |
 +-------------------+------------------------+
-| **Destination**   | IP – 10.30.0.50        |
+| **Destination**   | IP – 10.1.20.11        |
 |                   | Port - 80              |
 +-------------------+------------------------+
 | **Trace Options** | Use Staged Policy – no |
@@ -58,7 +58,7 @@ Create a packet test with the following parameters:
 +-------------------+------------------------+
 | **TTL**           | 255                    |
 +-------------------+------------------------+
-| **Destination**   | IP – 10.30.0.50        |
+| **Destination**   | IP – 10.1.20.11        |
 |                   | Port - **8081**        |
 +-------------------+------------------------+
 | **Trace Options** | Use Staged Policy – no |
@@ -69,6 +69,26 @@ Click Run Trace to view the response. Your output should resemble the
 allowed flow as shown below:
 
 |image45|
+
++-------------------+------------------------+
+| **Protocol**      | TCP                    |
++===================+========================+
+| **TCP Flags**     | SYN                    |
++-------------------+------------------------+
+| **Source**        | IP - 1.2.3.4           |
+|                   | Port – 9999            |
+|                   | Vlan – Outside         |
++-------------------+------------------------+
+| **TTL**           | 255                    |
++-------------------+------------------------+
+| **Destination**   | IP – 10.1.20.11        |
+|                   | Port - **443**         |
++-------------------+------------------------+
+| **Trace Options** | Use Staged Policy – no |
+|                   | Trigger Log - no       |
++-------------------+------------------------+
+
+This traffic will be blocked by the default deny rule
 
 This shows there is no rule associated with the route domain or a
 virtual server which would permit the traffic. As such, the traffic

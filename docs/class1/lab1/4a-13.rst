@@ -9,7 +9,7 @@ matched in the past hour.
 |image35|
 
 The default view gives reports per Context, in the drop-down menu select
-**Rules (Enforced)**.
+**Enforced Rules**.
 
 |image36|
 

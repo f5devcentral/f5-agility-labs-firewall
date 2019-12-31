@@ -3,7 +3,7 @@ Stale Rule Report
 
 AFM also can list out stale rules within the device its self. You must
 first enable the feature. To enable, navigate to **Security >Reporting >
-Settings > Reporting Settings.** You will then need to check
+Settings > Report Settings.** You will then need to check
 “\ **Collect Stale Rules Statistics**\ ” found under the Network
 Firewall Rules Section. Please be sure to click “Save” before
 proceeding.
@@ -12,7 +12,7 @@ proceeding.
 
 Once enabled, navigate to **Security >Reporting > Network > Stale
 Rules.** Feel free to refresh the web page we’ve been testing with
-(http://10.30.0.50) to see data populate into the rules.
+(http://10.1.20.11) to see data populate into the rules.
 
 .. NOTE:: It could take 60+ seconds for data to populate
 

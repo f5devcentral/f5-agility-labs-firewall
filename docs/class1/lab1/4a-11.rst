@@ -14,13 +14,13 @@ Open the **Security > Network Firewall > Polocies** page.
 
 Select the RD_0_policy
 
-Check the bix in front of  **‘application_rule_list’** and press the Delete button
+Check the box in front of  **‘application_rule_list’** and press the Delete button
 
 Commit Changes to System
 
 Open the **Security > Network Firewall > RuleLists** page. 
 
-Check the bix in front of  **‘application_rule_list’** and press the Delete button (2x-Confirm action) 
+Check the box in front of  **‘application_rule_list’** and press the Delete button (2x-Confirm action) 
 
 Click on the rule  list **‘web_rule_list’** to modify the
 rule list. 
@@ -70,36 +70,6 @@ Route Domain Screen.
 .. |image211| image:: /_static/class1/image211.png
    :width: 6.5in
    :height: 2.5in
-
-
-Next, you’ll want to add the reject rule to the policy. In the
-Configuration Utility, open the **Security > Network Firewall >
-Policies** page. Click on the **rd_0_policy**. Select ‘Add Rule’ drop
-down and select at the end. You’ll notice all the same options are
-available within a policy as they are within a rule-list. Create an
-entry with the following information then click Done Editing and commit
-the change.
-
-+-------------------------+------------------------------------------+
-| **Name**                | reject_10_20_0_0                         |
-+=========================+==========================================+
-| **Protocol**            | Any                                      |
-+-------------------------+------------------------------------------+
-| **Source**              | Address 10.20.0.0/24, then click **Add** |
-+-------------------------+------------------------------------------+
-| **Destination Address** | Any                                      |
-+-------------------------+------------------------------------------+
-| **Destination Port**    | Any                                      |
-+-------------------------+------------------------------------------+
-| **Action**              | Reject                                   |
-+-------------------------+------------------------------------------+
-| **Logging**             | Enabled                                  |
-+-------------------------+------------------------------------------+
-
-The new Policy should look something like the screen shot below:
-
-|image30|
-
 .. |image29| image:: /_static/class1/image30.png
    :width: 6.49097in
    :height: 1.01875in

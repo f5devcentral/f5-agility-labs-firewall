@@ -23,7 +23,7 @@ This is typical in a "Data Center" firewall implemntation where BIG-IP is positi
 standalone firewall. 
 
 The BIG-IP Firewall module can also be used on a BIG-IP configured as an Application 
-Delivery Controller/Load Balancer. for these environments additional granularity and 
+Delivery Controller/Load Balancer. For these environments additional granularity and 
 East - West traffic control can be implemented by applying Ruls/Rule Lists to specific
 Virtual Servers or Self-IP's
 

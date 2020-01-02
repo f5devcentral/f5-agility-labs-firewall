@@ -8,11 +8,11 @@ Test Access to the Server
 
 The new ordering should look something like the screen shot below:
 
-|image28|
+|image212|
 
-.. |image28| image:: /_static/class1/image29.png
+.. |image212| image:: /_static/class1/image212.png
    :width: 6.5in
-   :height: 1.02778in
+   :height: 3in
 
 .. |image209| image:: /_static/class1/image209.png
    :width: 2in

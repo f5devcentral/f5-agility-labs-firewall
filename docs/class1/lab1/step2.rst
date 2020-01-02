@@ -15,7 +15,7 @@ furious the world does not know about the glory of TPS reports!!
 Let’s start by testing the web server to verify. On your workstation
 open a browser (we prefer you use the Chrome shortcut labeled BIG-IP UI,
 all the tabs are pre-populated) and enter the address of the web server
-(http://10.31.20.11). No Bueno! Let’s see if we can even ping the host.
+(http://10.1.20.11). No Bueno! Let’s see if we can even ping the host.
 Launch a command prompt (startrun cmd) and type ‘ping 10.1.20.11’.
 Bueno! Looks like the server is up and responding to pings, as such,
 this is likely not a network connectivity issue.

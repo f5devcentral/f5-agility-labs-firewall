@@ -23,6 +23,21 @@ Firewall mode. In **Firewall mode**, a default deny configuration, all
 traffic is blocked through the firewall, and any traffic you want to
 allow through the firewall must be explicitly specified.
 
+This lab has been pre-configured in **Firewall mode**. 
+
+You can change the BIG-IP AFM Network Firewall mode by modifying the 
+Default Firewall Action setting. When you enable Firewall mode, the 
+AFM system allows access only when specific firewall rules are put in 
+place. While this method reduces the overall attack surface, it may 
+impact services that you are not be aware of. ADC mode is currentl
+the default and most popular choice. These steps change the AFM mode 
+from the default ADC mode to firewall mode.
+
+On the Main tab, click Security>>Options>>Network Firewall>>Firewall Options. 
+Under Default Firewall Action, from theVirtual Server Self IP Contexts list, select Reject.
+When you select Reject, the system immediately notifies the remote client that access is denied. 
+Click Update at the bottom of the page.
+
 The BIG-IP\ :sup:`®` Network Firewall provides policy-based access
 control to and from address and port pairs, inside and outside of your
 network. By default, the network firewall is configured in ADC mode,

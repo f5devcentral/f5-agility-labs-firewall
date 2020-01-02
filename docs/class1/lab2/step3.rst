@@ -10,6 +10,8 @@ flow table. To test the flow inspector, navigate to **Security > Debug >
 Flow Inspector.** Refresh the web page we’ve been using for testing
 (http://10.1.20.11) and click “Get Flows”.
 
+(mkurath---Opened incident C3173863 -- I could not see any flow data)
+
 |image46|
 
 Select a flow and click on the pop-out arrow for additional data.

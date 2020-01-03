@@ -20,9 +20,6 @@ Once completed, you should see a policy similar to the one below:
 
 |image209|
 
-.. |image208| image:: /_static/class1/image208.png
-   :width: 6.5in
-   :height: 1.66667in
 
 Review the rules that are now applied to this route domain by navigating
 to:
@@ -40,12 +37,12 @@ corner of the screen and click **Cancel** (note:this is a GUI bug)
 your screen should show the web_rule _list you assigned earlier through the 
 Route Domain Screen. 
 
-|image210|
+|image212|
 
-.. |image208| image:: /_static/class1/image208.png
+.. |image209| image:: /_static/class1/image209.png
    :width: 6.5in
    :height: 1.66667in
 
-.. |image210| image:: /_static/class1/image210.png
+.. |image212| image:: /_static/class1/image210.png
    :width: 6.5in
    :height: 3in

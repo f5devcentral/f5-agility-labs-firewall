@@ -36,9 +36,9 @@ Local-db-publisher is linked to the global-network logging profile in the next s
 Navigate to Security>>Event Logs>>Logging Profiles
 Select Global Network
 Click on the Network Firewall Tab
-Review the configuration. The Storage Format section allows you to select the values included in the log
+Review the configuration. The Storage Format section allows you to select the values included in the log.
 
-|image201|
+|image202|
 
 .. |image202| image:: /_static/class1/image202.png
    :width: 6.49097in

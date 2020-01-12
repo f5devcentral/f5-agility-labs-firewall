@@ -128,6 +128,22 @@ View empty network firewall logs.
 
 |image28|
 
+
+Configure BIG-IP Firewall in ADC Mode
+-------------------------------------
+
+**Navigation:** Security > Options > Network Firewall 
+
++-----------------------------------------+---------+
+| **Virtual Server & Self IP Contexts**   | Accept  |
++-----------------------------------------+---------+
+
+|image251|
+
+Open the Firewall Options tab
+
+
+
 Validate Lab 3 Configuration
 ----------------------------
 
@@ -146,6 +162,9 @@ URL: https://www.mysite.com
 
 .. NOTE:: This completes Module 1 - Lab 3
 
+
+
+
 .. |image24| image:: /_static/class2/image26.png
    :width: 7.05278in
    :height: 2.93819in
@@ -163,4 +182,7 @@ URL: https://www.mysite.com
    :height: 1.01170in
 .. |image29| image:: /_static/class2/image31.jpeg
    :width: 6.73811in
+   :height: 1.69444in
+.. |image251| image:: /_static/class2/image251.jpeg
+   :width: 3.73811in
    :height: 1.69444in

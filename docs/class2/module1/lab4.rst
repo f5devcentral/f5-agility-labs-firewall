@@ -6,12 +6,12 @@ A network firewall policy is a collection of network firewall rules that can be 
 Create The downloads\_policy Firewall Policy And Rules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example provides a firewall policy to the **www.mysite.com\/downloads** portion of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the /downloads portion of the application, while access to **www** remains unaffected.
+This example provides a firewall policy to the **www.site1.com** portion of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the /downloads portion of the application, while access to **www** remains unaffected.
 
 **Navigation:** Security > Network Firewall > Policies, then click Create
 
 +------------+---------------------+
-| **Name**   | downloads\_policy   |
+| **Name**   | site1_policy        |
 +------------+---------------------+
 
 |image30|
@@ -20,14 +20,27 @@ This example provides a firewall policy to the **www.mysite.com\/downloads** por
 
 **Navigation:** Click Finished
 
-Create an IP Drop Network Firewall Rule
+
+Create an IP Drop Network Firewall Rule List
+
+Note: we could have created a rule directly in the policy. Using Rule lists allows us to re-use this in multiple policies
+
+**Navigation:** Security > Network Firewall > Rule Lists then click Create
+
++------------+-------------------------+
+| **Name**   | geo_restrict_rule_list  |
++------------+-------------------------+
+
+**Navigation:** Click Finished
+
+**Navigation:** Click the geo_restrict_rule_list you just created
 
 **Navigation:** Click Add
 
-|image31|
+|image252|
 
 +----------------+----------------------------------------+
-| **Name**       | block\_export\_restricted\_countries   |
+| **Name**       | block_AF_CN_CA   |
 +================+========================================+
 | **Order**      | First                                  |
 +----------------+----------------------------------------+
@@ -40,11 +53,12 @@ Create an IP Drop Network Firewall Rule
 | **Logging**    | Enabled                                |
 +----------------+----------------------------------------+
 
-|image32|
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click repeat
+
+**Navigation:** Click Add
 
 +---------------+---------------+
 | **Name**      | permit\_log   |
@@ -56,21 +70,35 @@ Create an IP Drop Network Firewall Rule
 | **Logging**   | Enabled       |
 +---------------+---------------+
 
-Create Permit Log Network Firewall Rule
-
-|image33|
+Create Permit Log Network Firewall Rule.
 
 .. NOTE:: Leave all other fields using the default values.
 
 **Navigation:** Click Finished
 
-|image34|
+|image253|
+
+Assign the geo_restrict_rule_list to the site1_policy
+
+**Navigation:** Security > Network Firewall > Policies then click Add Rule List
+
+In the name field  start typing geo in the rule listfield. Select geo_restrict_rule_list 
+
+**Navigation:** Click Done Editing
+
+**Navigation:** Click Commit Changes to System
 
 From client machine try to connect again to the application site.
 
-URL: https://www.mysite.com/downloads/
+URL: https://site1.com
 
-|image35|
+We will use Cywin Terminal for more controlled testing in 
+
+.. code-block:: console
+
+   curl -k https://10.1.10.30/ -H 'Host: site1.com'
+
+|image255.png|
 
 .. NOTE:: We want to validate the site is available before and after applying the Network Firewall Policy
 
@@ -81,12 +109,17 @@ A unique feature of the BIG-IP Firewall Module allows L3-4 security policies to 
 
 Apply the Network Firewall Policy to Virtual Server
 
+**Navigation:** Local Traffic > Virtual Servers then click int_vip_www.site1.com_1.1.1.1
+
+**Navigation:** Click on the Security Tab and select Policies
+
+
 +----------------------+-----------------------------------------------+
-| **Virtual Server**   | int\_vip\_www.mysite.com-downloads\_1.1.1.3   |
+| **Virtual Server**   | int\_vip\_www.site1.com\_1.1.1.3              |
 +======================+===============================================+
 | **Enforcement**      | Enabled                                       |
 +----------------------+-----------------------------------------------+
-| **Policy**           | downloads\_policy                             |
+| **Policy**           | site1\_policy                             |
 +----------------------+-----------------------------------------------+
 | **Log Profile**      | firewall\_log\_profile                        |
 +----------------------+-----------------------------------------------+
@@ -97,11 +130,32 @@ Apply the Network Firewall Policy to Virtual Server
 
 **Navigation:** Click Update
 
-From client machine validate that you can still reach the application as you did in Lab3.
+From client machine validate that you can still reach the application
 
+
+We will use Cywin Terminal for more controlled testing in 
+
+.. code-block:: console
+
+   curl -k https://10.1.10.30/ -H 'Host: site1.com'
 URL: https://www.mysite.com/downloads/
 
-|image37|
+Next we will use a more specific command which leverages the iRule addigned to the
+External VIP to simulate specifi IP addresses
+
+RFC 1918 addresses are considerd US addresses by the Geolocation database
+
+.. code-block:: console
+
+   curl -k https://10.1.10.30/ -H 'Host:site1.com.com' -H 'X-Forwarded-For: 172.16.99.5'
+
+The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
+
+https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
+
+.. code-block:: console
+
+   curl -k https://10.1.10.30/ -H 'Host: www.site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
 .. NOTE:: We want to ensure the site is still available
    after applying the policy. We will get into testing the block later.
@@ -251,3 +305,13 @@ URL: https://www.mysite.com/api
 .. |image44| image:: /_static/class2/image45.png
    :width: 7.04167in
    :height: 0.63889in
+.. |image254| image:: /_static/class2/image254.png
+   :width: 6.04167in
+   :height: 7.63889in
+.. |image253| image:: /_static/class2/image253.png
+   :width: 7.04167in
+   :height: 2.63889in
+.. |image255| image:: /_static/class2/image255.png
+   :width: 7.04167in
+   :height: 3.63889in
+

@@ -37,7 +37,7 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 
 **Navigation:** Click Add
 
-|image252|
+|image253|
 
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA   |

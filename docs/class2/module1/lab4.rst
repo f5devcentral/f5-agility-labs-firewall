@@ -313,7 +313,7 @@ URL: https://www.mysite.com/api
    :height: 7.63889in
 .. |image253| image:: /_static/class2/image253.png
    :width: 7.04167in
-   :height: 1.70833in
+   :height: 3.70833in
 .. |image255| image:: /_static/class2/image255.png
    :width: 7.04167in
    :height: 3.63889in

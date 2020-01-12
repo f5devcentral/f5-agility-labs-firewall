@@ -38,6 +38,8 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 **Navigation:** Click Add
 
 |image253|
+|image30|
+
 
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA   |
@@ -98,7 +100,7 @@ We will use Cywin Terminal for more controlled testing in
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com'
 
-|image255.png|
+|image255|
 
 .. NOTE:: We want to validate the site is available before and after applying the Network Firewall Policy
 
@@ -138,6 +140,7 @@ We will use Cywin Terminal for more controlled testing in
 .. code-block:: console
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com'
+
 URL: https://www.mysite.com/downloads/
 
 Next we will use a more specific command which leverages the iRule addigned to the

@@ -3,7 +3,7 @@ Lab 4: Configure A Firewall Policy and Firewall Rules For Each Application
 
 A network firewall policy is a collection of network firewall rules that can be applied to a virtual server. In our lab, we will create two policies, each of which includes two rules. This policy will then be applied to the appropriate virtual servers and tested.
 
-Create The downloads\_policy Firewall Policy And Rules
+Create The geo_restrict Firewall Rule List and Firewall Policy.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example provides a firewall policy to the **www.site1.com** portion of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the /downloads portion of the application, while access to **www** remains unaffected.
@@ -308,7 +308,7 @@ URL: https://www.mysite.com/api
 .. |image254| image:: /_static/class2/image254.png
    :width: 6.04167in
    :height: 7.63889in
-.. |image253| image:: /_static/class2/image253.png
+.. |image253| image:: /docs/_static/class2/image253.png
    :width: 7.04167in
    :height: 2.63889in
 .. |image255| image:: /_static/class2/image255.png

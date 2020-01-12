@@ -38,7 +38,7 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 **Navigation:** Click Add
 
 |image253|
-|image30|
+|image253|
 
 
 +----------------+----------------------------------------+

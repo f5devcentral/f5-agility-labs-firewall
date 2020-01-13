@@ -10,6 +10,8 @@ flow table. To test the flow inspector, navigate to **Security > Debug >
 Flow Inspector.** Refresh the web page we’ve been using for testing
 (http://10.1.20.11) and click “Get Flows”.
 
+**MK---SSH from jumphost to 10.1.20.11  (no login but session will show up in flows)** 
+
 (mkurath---Opened incident C3173863 -- I could not see any flow data)
 
 |image46|

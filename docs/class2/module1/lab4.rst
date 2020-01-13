@@ -116,11 +116,13 @@ Apply the Network Firewall Policy to Virtual Server
 
 
 +----------------------+-----------------------------------------------+
-| **Virtual Server**   | int\_vip\_www.site1.com\_1.1.1.3              |
+| **Virtual Server**   | int\_vip\_www.site1.com\_1.1.1.1              |
 +======================+===============================================+
 | **Enforcement**      | Enabled                                       |
 +----------------------+-----------------------------------------------+
-| **Policy**           | site1\_policy                             |
+| **Policy**           | site1_policy                                  |
++----------------------+-----------------------------------------------+
+| **Log Profile**      | enabled                                       |
 +----------------------+-----------------------------------------------+
 | **Log Profile**      | firewall\_log\_profile                        |
 +----------------------+-----------------------------------------------+
@@ -131,10 +133,11 @@ Apply the Network Firewall Policy to Virtual Server
 
 **Navigation:** Click Update
 
-From client machine validate that you can still reach the application
+From client machine validate the behavior of the Policy an dthe associated Rule List
 
-
-We will use Cywin Terminal for more controlled testing in 
+We will use Cywin Terminal to allow us to specify the source IP address. This is done by leveraging
+an iRule which SNAT's the source IP to match the X-Forwarded-For header. This iRule is applied to 
+EXT_VIP_10_1_10_30
 
 .. code-block:: console
 
@@ -159,54 +162,54 @@ https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing
 
    curl -k https://10.1.10.30/ -H 'Host: www.site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
-.. NOTE:: We want to ensure the site is still available
-   after applying the policy. We will get into testing the block later.
 
-Create A Separate Policy For The API Virtual Server
+Create A Separate Policy For The site2 Virtual Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now we want to create a second policy for access to the \/api\/
-application
+Now we want to create a second policy for access to site2
 
 Create Network Firewall Policy
 
 **Navigation:** Security > Network Firewall > Policies, then click Create
 
 +------------+---------------+
-| **Name**   | api\_policy   |
+| **Name**   | site2_policy   |
 +------------+---------------+
 
-|image38|
+|image257|
 
 .. NOTE:: Leave all other fields using the default values.
 
 **Navigation:** Click Finished
 
-Create Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule
+Create Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly into the policy instead or using a Rule List
 
-**Navigation:** Click Add
+**Navigation:** Click on the site2_policy you just created 
 
-|image39|
+**Navigation:** Click Add Rule pull down on the upper right - Add rule at beginning
 
-+----------------+------------------------+
-| **Name**       | allow\_api\_access     |
-+================+========================+
-| **Order**      | First                  |
-+----------------+------------------------+
-| **Protocol**   | TCP (6)                |
-+----------------+------------------------+
-| **Source**     | Address: 172.16.99.5   |
-+----------------+------------------------+
-| **Action**     | Accept                 |
-+----------------+------------------------+
-| **Logging**    | Enabled                |
-+----------------+------------------------+
 
-|image40|
++----------------+----------------------------+
+| **Name**       | allow_site2_ 172.16.99.5   |
++================+============================+
+| **Protocol**   | TCP (6)                    |
++----------------+----------------------------+
+| **Source**     | Address: 172.16.99.5       |
++----------------+----------------------------+
+| **Action**     | Accept                     |
++----------------+----------------------------+
+| **Logging**    | Enabled                    |
++----------------+----------------------------+
+
+|image258|
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click Done Editing
+
+Create Deny Log Network Firewall Rule
+
+**Navigation:** Click Add Rule pull down on the upper right - Add rule at end
 
 .. NOTE:: As we are deployed in “ADC Mode” where the default action on a virtual server is ‘Accept’, we must also create a default deny rule.
 
@@ -214,37 +217,52 @@ For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP do
 
 https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html
 
+
 +---------------+-------------+
-| **Name**      | deny\_log   |
+| **Name**      | deny_log    |
 +===============+=============+
-| **Order**     | Last        |
-+---------------+-------------+
 | **Action**    | Drop        |
 +---------------+-------------+
 | **Logging**   | Enabled     |
 +---------------+-------------+
 
-Create Deny Log Network Firewall Rule
-
-|image41|
-
 .. NOTE:: Leave all other fields using the default values.
+
+**Navigation:** Click Done Editing
+
+|image259|
+
+Review the rules and Click Commit Changes To System
+
+|image260|
 
 **Navigation:** Click Finished
 
 Apply the Network Firewall Policy to Virtual Server
 
+**Navigation:** Local Traffic > Virtual Servers
+
+**Navigation:** Click on int_vip_www.site2.com_2.2.2.2
+
+**Navigation:** Select the Security Tab and select Policies 
+
 +----------------------+-----------------------------------------+
-| **Virtual Server**   | int\_vip\_www.mysite.com-api\_1.1.1.2   |
+| **Virtual Server**   | int_vip_www.site2.com_2.2.2.2           |
 +======================+=========================================+
-| **Enforcement**      | Enabled                                 |
+| **Network Firewall** | Enabled                                 |
 +----------------------+-----------------------------------------+
-| **Policy**           | api\_policy                             |
+| **Policy**           | site2_policy                            |
++----------------------+-----------------------------------------+
+| **Log Profile**      | enabled                                 |
 +----------------------+-----------------------------------------+
 | **Log Profile**      | firewall\_log\_profile                  |
 +----------------------+-----------------------------------------+
 
-|image42|
+.. NOTE:: Leave all other fields using the default values.
+
+**Navigation:** Click Update
+
+|image261|
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -252,13 +270,36 @@ Apply the Network Firewall Policy to Virtual Server
 
 From client machine
 
-URL: https://www.mysite.com/api
+From client machine validate the behavior of the Policy an dthe associated Rule List
 
-|image43|
+We will use Cywin Terminal to allow us to specify the source IP address. This is done by leveraging
+an iRule which SNAT's the source IP to match the X-Forwarded-For header. This iRule is applied to 
+EXT_VIP_10_1_10_30
 
-.. ATTENTION:: You should no longer be able to access the /api site because the only allowed address is 172.16.99.5. You can verify this in the logs. What is the IP address that is trying to connect?
+.. code-block:: console
 
-|image44|
+   curl -k https://10.1.10.30/ -H 'Host: site2.com'  
+
+
+Next we will use a more specific command which leverages the iRule addigned to the
+External VIP to simulate specifi IP addresses
+
+RFC 1918 addresses are considerd US addresses by the Geolocation database
+
+.. code-block:: console
+
+   curl -k https://10.1.10.30/ -H 'Host:site2.com.com' -H 'X-Forwarded-For: 172.16.99.5'
+
+The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
+
+https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
+
+.. code-block:: console
+
+   curl -k https://10.1.10.30/ -H 'Host: www.site1.com' -H 'X-Forwarded-For: 1.202.2.1'
+
+.. NOTE:: We want to ensure the site is still available
+   after applying the policy. We will get into testing the block later
 
 .. NOTE:: This concludes Module 1 - Lab 4
 
@@ -309,7 +350,7 @@ URL: https://www.mysite.com/api
    :height: 0.63889in
 .. |image252| image:: /_static/class2/image252.png
    :width: 7.04167in
-   :height: 3.70833in
+   :height: 1.70833in
 .. |image253| image:: /_static/class2/image253.png
    :width: 7.04167in
    :height: 1.70833in
@@ -319,4 +360,19 @@ URL: https://www.mysite.com/api
 .. |image255| image:: /_static/class2/image255.png
    :width: 7.04167in
    :height: 3.63889in
+.. |image257| image:: /_static/class2/image257.png
+   :width: 7.04167in
+   :height: 1.70833in
+.. |image258| image:: /_static/class2/image258.png
+   :width: 7.04167in
+   :height: 2.70833in
+.. |image259| image:: /_static/class2/image259.png
+   :width: 7.04167in
+   :height: 3.70833in
+.. |image260| image:: /_static/class2/image260.png
+   :width: 7.04167in
+   :height: 3.70833in
+.. |image261| image:: /_static/class2/image261.png
+   :width: 7.04167in
+   :height: 7.70833in
 

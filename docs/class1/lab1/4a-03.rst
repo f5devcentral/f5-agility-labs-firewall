@@ -7,7 +7,7 @@ using the network firewall log. Open your web browser and once again try
 to access http://10.1.20.11. Also, try to ping 10.1.20.11.
 
 Open the **Security > Event Logs > Network > Firewall** page on
-bigip2.dnstest.lab (192.168.1.150). The log file shows the ping requests
+bigip01.f5demo.com (10.1.1.4). The log file shows the ping requests
 are being accepted and the web traffic is being dropped:
 
 |image6|

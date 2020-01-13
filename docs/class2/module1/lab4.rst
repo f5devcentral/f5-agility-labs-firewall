@@ -14,7 +14,7 @@ This example provides a firewall policy to the **www.site1.com** portion of the 
 | **Name**   | site1_policy        |
 +------------+---------------------+
 
-|image32|
+|image256|
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -262,7 +262,7 @@ URL: https://www.mysite.com/api
 
 .. NOTE:: This concludes Module 1 - Lab 4
 
-.. |image32| image:: /_static/class2/image32.png
+.. |image256| image:: /_static/class2/image256.png
    :width: 7.04167in
    :height: 1.70833in
 .. |image31| image:: /_static/class2/image33.png

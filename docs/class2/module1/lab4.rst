@@ -1,12 +1,17 @@
 Lab 4: Configure A Firewall Policy and Firewall Rules For Each Application
 ==========================================================================
 
-A network firewall policy is a collection of network firewall rules that can be applied to a virtual server. In our lab, we will create two policies, each of which includes two rules. This policy will then be applied to the appropriate virtual servers and tested.
+A network firewall policy is a collection of network firewall rules that can be applied to a virtual server. 
+In our lab, we will create two policies, each of which includes two rules. This policy will then be applied 
+to the appropriate virtual servers and tested.
 
 Create The geo_restrict Firewall Rule List and Firewall Policy.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example provides a firewall policy to the **www.site1.com** portion of the application. A real world example of this would be with companies hosting cryptographic software which is subject to export restrictions. In this case we will use the Geolocation feature to block access from a couple countries only and only on the /downloads portion of the application, while access to **www** remains unaffected.
+This example provides a firewall policy to the **www.site1.com** portion of the application. A real world
+example of this would be with companies hosting cryptographic software which is subject to export 
+restrictions. In this case we will use the Geolocation feature to block access from a couple countries 
+only and only on the site1.com application.
 
 **Navigation:** Security > Network Firewall > Policies, then click Create
 
@@ -89,6 +94,8 @@ In the name field  start typing geo in the rule listfield. Select geo_restrict_r
 
 **Navigation:** Click Commit Changes to System
 
+.. NOTE:: We want to validate the site is available before and after applying the Network Firewall Policy
+
 From client machine try to connect again to the application site.
 
 URL: https://site1.com
@@ -116,7 +123,7 @@ Apply the Network Firewall Policy to Virtual Server
 
 
 +----------------------+-----------------------------------------------+
-| **Virtual Server**   | int\_vip\_www.site1.com\_1.1.1.1              |
+| **Virtual Server**   | int_vip_www.site1.com_1.1.1.1                 |
 +======================+===============================================+
 | **Enforcement**      | Enabled                                       |
 +----------------------+-----------------------------------------------+
@@ -135,24 +142,36 @@ Apply the Network Firewall Policy to Virtual Server
 
 From client machine validate the behavior of the Policy an dthe associated Rule List
 
-We will use Cywin Terminal to allow us to specify the source IP address. This is done by leveraging
-an iRule which SNAT's the source IP to match the X-Forwarded-For header. This iRule is applied to 
-EXT_VIP_10_1_10_30
+We will use Cywin Terminal to allow us to specify the sX-Forwarded -For header. . There is an iRule
+applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwarded-For header
+
+**XFF-SNAT iRule**
+when HTTP_REQUEST {
+  if {[HTTP::header exists "X-Forwarded-For"]}  {
+  snat [HTTP::header X-Forwarded-For]
+  log local0. '[HTTP::header X-Forwarded-For]'
+  }
+}
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host: site1.com'
+   curl -k https://10.1.10.30/ -H 'Host: site1.com' 
 
-URL: https://www.mysite.com/downloads/
+.. Note: Since we did nit define the header, the firewall will see the RFC 1918 Addres of the jump host 
+   (10.1.10.199) which is allowed
 
-Next we will use a more specific command which leverages the iRule addigned to the
-External VIP to simulate specifi IP addresses
+URL: https://site1.com
+
+Use the -H option in curl to define the X-Forwarded-For Header. This will trigger the iRule addigned to the
+External VIP to simulate specific IP addresses in the header
 
 RFC 1918 addresses are considerd US addresses by the Geolocation database
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host:site1.com.com' -H 'X-Forwarded-For: 172.16.99.5'
+   curl -k https://10.1.10.30/ -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
+
+Next we will simulate a connection an IP address in Bejing, China
 
 The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
 
@@ -182,7 +201,8 @@ Create Network Firewall Policy
 
 **Navigation:** Click Finished
 
-Create Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly into the policy instead or using a Rule List
+Create Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly 
+into the policy instead or using a Rule List
 
 **Navigation:** Click on the site2_policy you just created 
 
@@ -288,7 +308,7 @@ RFC 1918 addresses are considerd US addresses by the Geolocation database
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host:site2.com.com' -H 'X-Forwarded-For: 172.16.99.5'
+   curl -k https://10.1.10.30/ -H 'Host:site2.com' -H 'X-Forwarded-For: 172.16.99.5'
 
 The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
 
@@ -296,7 +316,7 @@ https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host: www.site1.com' -H 'X-Forwarded-For: 1.202.2.1'
+   curl -k https://10.1.10.30/ -H 'Host: www.site2.com' -H 'X-Forwarded-For: 1.202.2.1'
 
 .. NOTE:: We want to ensure the site is still available
    after applying the policy. We will get into testing the block later

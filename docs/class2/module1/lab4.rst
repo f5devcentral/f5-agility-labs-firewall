@@ -142,7 +142,14 @@ Apply the Network Firewall Policy to Virtual Server
 
 From client machine validate the behavior of the Policy an dthe associated Rule List
 
-We will use Cywin Terminal to allow us to specify the sX-Forwarded -For header. . There is an iRule
+Many enterprise sites have some or all of their content served up by Content Delivery Networks (CDN). 
+This common use case leverages proxies to provide static content closer to the end client machines for 
+performance. Because of this there may only be one or two IP addresses connecting to the origin website. 
+The original IP address of the client in this case is often mapped to a common HTTP header X-Forwarded-For 
+or some variation. In this deployment, the BIG-IP can translate the original source of the request in the 
+XFF to the source IP address.
+
+Use Cywin Terminal to allow us to specify the sX-Forwarded -For header. . There is an iRule
 applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwarded-For header
 
 **XFF-SNAT iRule**

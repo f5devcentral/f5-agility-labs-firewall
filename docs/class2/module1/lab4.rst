@@ -14,7 +14,7 @@ This example provides a firewall policy to the **www.site1.com** portion of the 
 | **Name**   | site1_policy        |
 +------------+---------------------+
 
-|image30|
+|image32|
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -31,18 +31,17 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 | **Name**   | geo_restrict_rule_list  |
 +------------+-------------------------+
 
+|image253|
+
 **Navigation:** Click Finished
 
 **Navigation:** Click the geo_restrict_rule_list you just created
 
 **Navigation:** Click Add
 
-|image252|
-|image252|
-
 
 +----------------+----------------------------------------+
-| **Name**       | block_AF_CN_CA   |
+| **Name**       | block_AF_CN_CA                         |
 +================+========================================+
 | **Order**      | First                                  |
 +----------------+----------------------------------------+
@@ -263,13 +262,13 @@ URL: https://www.mysite.com/api
 
 .. NOTE:: This concludes Module 1 - Lab 4
 
-.. |image30| image:: /_static/class2/image32.png
+.. |image32| image:: /_static/class2/image32.png
    :width: 7.04167in
    :height: 1.70833in
 .. |image31| image:: /_static/class2/image33.png
    :width: 7.04167in
    :height: 2.33333in
-.. |image32| image:: /_static/class2/image34.png
+.. |image3200| image:: /_static/class2/image34.png
    :width: 7.05556in
    :height: 6.47222in
 .. |image33| image:: /_static/class2/image35.png
@@ -311,6 +310,9 @@ URL: https://www.mysite.com/api
 .. |image252| image:: /_static/class2/image252.png
    :width: 7.04167in
    :height: 3.70833in
+.. |image253| image:: /_static/class2/image253.png
+   :width: 7.04167in
+   :height: 1.70833in
 .. |image254| image:: /_static/class2/image254.png
    :width: 6.04167in
    :height: 7.63889in

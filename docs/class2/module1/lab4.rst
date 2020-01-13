@@ -40,9 +40,6 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 |image252|
 |image252|
 
-.. |image252| image:: /_static/class2/image252.png
-   :width: 7.04167in
-   :height: 3.70833in
 
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA   |
@@ -311,6 +308,9 @@ URL: https://www.mysite.com/api
 .. |image44| image:: /_static/class2/image45.png
    :width: 7.04167in
    :height: 0.63889in
+.. |image252| image:: /_static/class2/image252.png
+   :width: 7.04167in
+   :height: 3.70833in
 .. |image254| image:: /_static/class2/image254.png
    :width: 6.04167in
    :height: 7.63889in

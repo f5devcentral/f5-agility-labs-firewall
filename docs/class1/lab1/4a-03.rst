@@ -20,10 +20,15 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
    :width: 6.49097in
    :height: 1in
 
-Review the configuration required to generate the logs reviewed in the prior step
 
-Default Firewall options determine if the system is in ADC mode or Firewall Mode. 
-The configuration in this lab is Firewall mode as sen in the Defaut Firewall Options
+
+
+**Navigate** Security > Options > Network Firewall > Firewall Options
+
+Default Firewall options configuration determine if the system is in ADC mode or Firewall Mode. 
+In the screenshot below note the Virtual Server & Self IP Contexts Value. If it is set to 
+Accept (system default) the Firewall is in ADC mode. For ths lab we will use Firewall Mode 
+with the value set to Reject
 
 Local-db-publisher is linked to the global-network logging profile in the next step
 
@@ -33,7 +38,9 @@ Local-db-publisher is linked to the global-network logging profile in the next s
    :width: 6.49097in
    :height: 7in
 
-Navigate to Security>>Event Logs>>Logging Profiles
+Review the log configuration 
+
+**Navigate**  Security>>Event Logs>>Logging Profiles
 Select Global Network
 Click on the Network Firewall Tab
 Review the configuration. The Storage Format section allows you to select the values included in the log.

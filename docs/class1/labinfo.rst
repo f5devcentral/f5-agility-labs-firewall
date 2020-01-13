@@ -18,13 +18,13 @@ Your administrator will provide login credentials and the URL.
 
 Within each lab environment there are the following Virtual Machines:
 
--  Windows 7 Jumpbox  
+-  **Windows 7 Jumpbox** 
 -  username: external_user     password: P@ssw0rd!
 
--  Two BIG-IP Virtual Editions (VE) – running TMOS 15.1
+-  **Two BIG-IP Virtual Editions (VE) – running TMOS 15.1**
 -  username: admin     password: f5DEMOs4u
 
--  LAMP Server (Web Servers)
+-  **LAMP Server (Web Servers)**
 
 
 |image204|

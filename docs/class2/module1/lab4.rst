@@ -37,13 +37,13 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 
 **Navigation:** Click Add
 
-|image253|
-|image253|
+|image252|
+|image252|
 
-.. |image253| image:: /_static/class2/image253.png
+.. |image252| image:: /_static/class2/image252.png
    :width: 7.04167in
    :height: 3.70833in
-   
+
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA   |
 +================+========================================+
@@ -81,7 +81,7 @@ Create Permit Log Network Firewall Rule.
 
 **Navigation:** Click Finished
 
-|image253|
+|image252|
 
 Assign the geo_restrict_rule_list to the site1_policy
 

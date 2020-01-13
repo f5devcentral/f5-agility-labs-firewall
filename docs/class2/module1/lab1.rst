@@ -1,4 +1,4 @@
-Lab 1: Configure pools and internal virtual servers
+Lab 1: Pre-configured  pools and  virtual servers
 ===================================================
 
 A virtual server is used by BIG-IP to identify specific types of
@@ -27,7 +27,7 @@ Create Application Pools
 
 On BIG-IP
 
-Create the following pools using the following tabel of pool information.  Note that each pool has only one pool member, that is fine for the purposes of our lab:
+Verify the following pools using the following tabel of pool information.  
 
 
 **Navigation:** Local Traffic > Pools > Pool List, then click Create
@@ -39,30 +39,33 @@ Create the following pools using the following tabel of pool information.  Note 
      - **Health Monitor**
      - **Members**
      - **Service Port**
-   * - pool\_www.mysite.com
-     - tcp\_half\_open
-     - 10.10.121.129
+   * - pool\_www.site1.com
+     - thttp
+     - 10.1.20.11
      - 80
-   * - pool\_www.mysite.com-api
-     - tcp\_half\_open
-     - 10.10.121.132
+   * - pool\_www.site2.com
+     - http
+     - 10.1.20.12
      - 80
-   * - pool\_www.theirsite.com
-     - tcp\_half\_open
-     - 10.10.121.131
+   * - pool\_www.site3.com
+     - http
+     - 10.1.20.13
      - 80
-   * - pool\_www.yoursite.com
-     - tcp\_half\_open
-     - 10.10.121.130
+   * - pool\_www.site4.com
+     - http
+     - 10.1.20.14
      - 80
+   * - pool\_www.site5.com
+     - http
+     - 10.1.20.15
+     - 80
+   * - pool\_www.dvwa.com
+     - http
+     - 10.1.20.17
+     - tcp\_half\_open
 
-|image2|
 
-.. NOTE:: Leave all other fields using the default values.
-
-**Navigation:** Click Finished
-
-|image3|
+|image162|
 
 .. NOTE:: The pools should now show a green circle for status.
 
@@ -226,3 +229,4 @@ click **Create**
    :width: 7.05556in
 .. |image10| image:: /_static/class2/image12.png
    :width: 7.05556in
+.. |image162| image:: /_static/class2/image12.png

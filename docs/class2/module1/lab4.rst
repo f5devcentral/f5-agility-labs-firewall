@@ -153,6 +153,9 @@ Use Cywin Terminal to allow us to specify the sX-Forwarded -For header. . There 
 applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwarded-For header
 
 **XFF-SNAT iRule**
+
+.. code-block:: tcl 
+
 when HTTP_REQUEST {
   if {[HTTP::header exists "X-Forwarded-For"]}  {
   snat [HTTP::header X-Forwarded-For]

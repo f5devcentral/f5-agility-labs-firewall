@@ -22,7 +22,7 @@ Look at the supplemental login instructions for:
 
 |image1|
 
-Create Application Pools
+CreateInspect Application Pools
 ------------------------
 
 On BIG-IP
@@ -30,7 +30,7 @@ On BIG-IP
 Verify the following pools using the following tabel of pool information.  
 
 
-**Navigation:** Local Traffic > Pools > Pool List, then click Create
+**Navigation:** Local Traffic > Pools > Pool List
 
 .. list-table::
    :header-rows: 1
@@ -60,16 +60,16 @@ Verify the following pools using the following tabel of pool information.
      - 10.1.20.15
      - 80
    * - pool\_www.dvwa.com
-     - http
-     - 10.1.20.17
      - tcp\_half\_open
+     - 10.1.20.17
+     - 80
 
 
 |image162|
 
 .. NOTE:: The pools should now show a green circle for status.
 
-Create **Internal** Application Virtual Servers
+Inspect  Application Virtual Servers
 -----------------------------------------------
 
 By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed.
@@ -85,7 +85,7 @@ click Create. ( Change to "Advanced" configuration style )
 
    * - **Name**
      - **Properties**
-   * - ``int_vip_www.mysite.com_1.1.1.1``
+   * - ``int_vip_www.site1.com_1.1.1.1``
      - **Dest**: ``1.1.1.1``
 
        **Port**: ``80``
@@ -96,35 +96,9 @@ click Create. ( Change to "Advanced" configuration style )
 
        **SNAT**: AUTO
 
-       **Default Pool**: ``pool_www.mysite.com``
+       **Default Pool**: ``pool_www.site1.com``
 
-   * - ``int_vip_www.mysite.com-api_1.1.1.2``
-     - **Dest**: ``1.1.1.2``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.mysite.com-api``
-
-   * - ``int_vip_www.mysite.com-downloads_1.1.1.3``
-     - **Dest**: ``1.1.1.3``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.mysite.com``
-
-   * - ``int_vip_www.theirsite.com_2.2.2.2``
+   * - ``int_vip_www.site2.com_2.2.2.2``
      - **Dest**: ``2.2.2.2``
 
        **Port**: ``80``
@@ -135,10 +109,36 @@ click Create. ( Change to "Advanced" configuration style )
 
        **SNAT**: AUTO
 
-       **Default Pool**: ``pool_www.theirsite.com``
+       **Default Pool**: ``pool_www.site2.com``
 
-   * - ``int_vip_www.yoursite.com_3.3.3.3``
+   * - ``int_vip_www.site3.com_3.3.3.3``
      - **Dest**: ``3.3.3.3``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: http
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.site3.com.com``
+
+   * - ``int_vip_www.site4.com_4.4.4.4``
+     - **Dest**: ``4.4.4.4``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: http
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.site4.com``
+
+   * - ``int_vip_www.site5.com_5.5.5.5``
+     - **Dest**: ``5.5.5.5``
 
        **Port**: ``80``
 
@@ -150,7 +150,33 @@ click Create. ( Change to "Advanced" configuration style )
 
        **Default Pool**: ``pool_www.yoursite.com``
 
-|image4|
+    * - ``int_vip_www.dvwa.com_6.6.6.17``
+     - **Dest**: ``6.6.6.17``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: http
+
+       **Enabled on VLAN**: ``loopback``
+
+       **SNAT**: AUTO
+
+       **Default Pool**: ``pool_www.dvwa.com``
+
+    * - ``EXT_VIP_10_1_10_30``
+     - **Dest**: ``10.1.10.30``
+
+       **Port**: ``80``
+
+       **HTTP Profile**: http
+
+       **Enabled on VLAN**: ``any``
+
+       **SNAT**: none
+
+       **Default Pool**: ``pool_www.site1.com``
+
+|image163|
 
 |image5|
 
@@ -205,6 +231,10 @@ click **Create**
 
 .. NOTE:: This completes Module 1 - Lab 1
 
+
+
+.. |image162| image:: /_static/class2/image162.png
+.. |image163| image:: /_static/class2/image163.png
 .. |image1| image:: /_static/class2/image3.png
 .. |image2| image:: /_static/class2/image4.png
    :width: 6.74931in
@@ -229,4 +259,4 @@ click **Create**
    :width: 7.05556in
 .. |image10| image:: /_static/class2/image12.png
    :width: 7.05556in
-.. |image162| image:: /_static/class2/image12.png
+

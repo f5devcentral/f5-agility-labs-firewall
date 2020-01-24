@@ -22,7 +22,7 @@ Look at the supplemental login instructions for:
 
 |image1|
 
-CreateInspect Application Pools
+Inspect Application Pools
 ------------------------
 
 On BIG-IP
@@ -68,22 +68,21 @@ Verify the following pools using the following tabel of pool information.
 |image162|
 
 
-Inspect  Application Virtual Servers
+Inspect Application Virtual Servers
 -----------------------------------------------
 
-By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed.
+By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed. The EXT_VIP in this exercise is used to forward traffic with specific characteristics to the internal VIP's. THis is accomplished by assigning a traffic policy to the VIP. The traffic policy is described and inspected in the next section. For this class, the Wildcard Virtual servers (Blue Square  status indicator)  are used in a different lab 
 
-Create the following internal virtual servers using the following table of information:
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List, then
-click Create. ( Change to "Advanced" configuration style )
+**Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
 
 |image163|
 
 
-.. NOTE:: Leave all other fields using the default values.
+Inspect the Local Traffic Network Map
 
+**Navigation:** Local Traffic > Network Map
 
 |image7|
 
@@ -124,7 +123,7 @@ click **Create**
 .. |image6| image:: /_static/class2/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: /_static/class2/lab1_networkmap.png
+.. |image7| image:: /_static/class2/limage7.png
 .. |image8| image:: /_static/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in

@@ -67,7 +67,6 @@ Verify the following pools using the following tabel of pool information.
 
 |image162|
 
-.. NOTE:: The pools should now show a green circle for status.
 
 Inspect  Application Virtual Servers
 -----------------------------------------------
@@ -79,112 +78,12 @@ Create the following internal virtual servers using the following table of infor
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List, then
 click Create. ( Change to "Advanced" configuration style )
 
-.. list-table::
-   :widths: 50 50
-   :header-rows: 1
-
-   * - **Name**
-     - **Properties**
-   * - ``int_vip_www.site1.com_1.1.1.1``
-     - **Dest**: ``1.1.1.1``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http 
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.site1.com``
-
-   * - ``int_vip_www.site2.com_2.2.2.2``
-     - **Dest**: ``2.2.2.2``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.site2.com``
-
-   * - ``int_vip_www.site3.com_3.3.3.3``
-     - **Dest**: ``3.3.3.3``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.site3.com.com``
-
-   * - ``int_vip_www.site4.com_4.4.4.4``
-     - **Dest**: ``4.4.4.4``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.site4.com``
-
-   * - ``int_vip_www.site5.com_5.5.5.5``
-     - **Dest**: ``5.5.5.5``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.yoursite.com``
-
-    * - ``int_vip_www.dvwa.com_6.6.6.17``
-     - **Dest**: ``6.6.6.17``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``loopback``
-
-       **SNAT**: AUTO
-
-       **Default Pool**: ``pool_www.dvwa.com``
-
-    * - ``EXT_VIP_10_1_10_30``
-     - **Dest**: ``10.1.10.30``
-
-       **Port**: ``80``
-
-       **HTTP Profile**: http
-
-       **Enabled on VLAN**: ``any``
-
-       **SNAT**: none
-
-       **Default Pool**: ``pool_www.site1.com``
 
 |image163|
 
-|image5|
-
-|image6|
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click **Finished**
 
 |image7|
 
@@ -198,32 +97,6 @@ Create the external virtual server using the following information.
 
 **Navigation: _Local Traffic > Virtual Servers > Virtual Server List_**, then
 click **Create**
-
-.. list-table::
-   :header-rows: 1
-
-   * - **Name**
-     - **Dest**
-     - **Port**
-     - **HTTP Profile**
-     - **SSL Profile (Client)**
-     - **Default Pool**
-   * - EXT\_VIP\_10.10.99.30
-     - 10.10.99.30
-     - 443
-     - http 
-     - www.mysite.com
-
-       www.theirsite.com
-
-       www.yoursite.com
-     - pool\_www.mysite.com
-
-|image8|
-
-|image9|
-
-|image10|
 
 .. NOTE:: The default pool is here simply to let the virtual server turn green. Policies will be used to switch traffic, not hard-coded pools.  Note also the three different certificates applied to the Virtual Server.  This is the basis of SNI.
 

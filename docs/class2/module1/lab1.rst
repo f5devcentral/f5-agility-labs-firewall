@@ -94,8 +94,7 @@ Create An External Virtual Server To Host Multiple SSL Enabled Websites
 Create the external virtual server using the following information.
 
 
-**Navigation: _Local Traffic > Virtual Servers > Virtual Server List_**, then
-click **Create**
+**Navigation:** _Local Traffic > Virtual Servers > Virtual Server List
 
 .. NOTE:: The default pool is here simply to let the virtual server turn green. Policies will be used to switch traffic, not hard-coded pools.  Note also the three different certificates applied to the Virtual Server.  This is the basis of SNI.
 

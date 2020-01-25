@@ -107,7 +107,7 @@ Apply the newly created log profile to the external virtual server created in th
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
-**Navigation:** Click on EXT\_VIP\_10.10.99.30
+**Navigation:** Click on EXT_VIP_10.1.10.30
 
 **Navigation:** Security tab > Policies
 

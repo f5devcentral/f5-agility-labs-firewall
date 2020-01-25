@@ -49,17 +49,17 @@ validate your configuration.
 
 **You will need to accept the certificate to proceed to the application sites**
 
-https://site1.com
+URL: https://site1.com
 
-https://site2.com
+URL: https://site2.com
 
-https://site3.com
+URL: https://site3.com
 
-https://site4.com
+URL: https://site4.com
 
-https://site5.com
+URL: https://site5.com
 
-https://dvwa.com
+URL: https://dvwa.com
 
 **With curl you need to use the -k option to ignore certificate validation**
 
@@ -67,24 +67,22 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30 -H Host:site1.com
+    curl -k https://10.1.10.30 -H Host:site1.com
 
-   curl -k https://10.1.10.30 -H Host:site2.com
+    curl -k https://10.1.10.30 -H Host:site2.com
 
-   curl -k https://10.1.10.30 -H Host:site3.com
+    curl -k https://10.1.10.30 -H Host:site3.com
 
-   curl -k https://10.1.10.30 -H Host:site4.com
+    curl -k https://10.1.10.30 -H Host:site4.com
 
-   curl -k https://10.1.10.30 -H Host:site5.com
+    curl -k https://10.1.10.30 -H Host:site5.com
 
-   curl -k https://10.1.10.30 -H Host:dvwa.com
+    curl -k https://10.1.10.30 -H Host:dvwa.com
 
 |image264|
  
 
 .. NOTE:: for site 1 connected to  10.1.20.11, site 2 10.1.20.12  etc:
-
-
 
 .. NOTE:: This completes Module 1 - Lab 2:
 

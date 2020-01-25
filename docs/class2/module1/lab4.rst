@@ -140,7 +140,7 @@ Apply the Network Firewall Policy to Virtual Server
 
 **Navigation:** Click Update
 
-From client machine validate the behavior of the Policy an dthe associated Rule List
+From client machine validate the behavior of the Policy and the associated Rule List
 
 Many enterprise sites have some or all of their content served up by Content Delivery Networks (CDN). 
 This common use case leverages proxies to provide static content closer to the end client machines for 
@@ -181,6 +181,10 @@ RFC 1918 addresses are considerd US addresses by the Geolocation database
 
    curl -k https://10.1.10.30/ -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
 
+Review the logs. each connection will log events from the external and internal virtual server
+
+**Navigation:** Security > Event Logs > Network > Firewall
+
 Next we will simulate a connection an IP address in Bejing, China
 
 The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
@@ -189,8 +193,13 @@ https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host: www.site1.com' -H 'X-Forwarded-For: 1.202.2.1'
+   curl -k https://10.1.10.30/ -H 'Host: site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
+This connection attempt will fail. Return to the BIG-IP GUI and refresh the firewall event log.  
+
+.. NOTE:: you may need to zoom the browser to see the "Action" collumn at the right sie of the screen
+
+|image265|
 
 Create A Separate Policy For The site2 Virtual Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +220,7 @@ Create Network Firewall Policy
 
 **Navigation:** Click Finished
 
-Create Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly 
+Create a rule Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly 
 into the policy instead or using a Rule List
 
 **Navigation:** Click on the site2_policy you just created 
@@ -300,36 +309,24 @@ Apply the Network Firewall Policy to Virtual Server
 
 From client machine
 
-From client machine validate the behavior of the Policy an dthe associated Rule List
+From client machine validate the behavior of the Policy and the associated Rule List
 
 We will use Cywin Terminal to allow us to specify the source IP address. This is done by leveraging
 an iRule which SNAT's the source IP to match the X-Forwarded-For header. This iRule is applied to 
 EXT_VIP_10_1_10_30
 
-.. code-block:: console
-
-   curl -k https://10.1.10.30/ -H 'Host: site2.com'  
-
-
-Next we will use a more specific command which leverages the iRule addigned to the
-External VIP to simulate specifi IP addresses
-
-RFC 1918 addresses are considerd US addresses by the Geolocation database
 
 .. code-block:: console
 
    curl -k https://10.1.10.30/ -H 'Host:site2.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
-
-https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host: www.site2.com' -H 'X-Forwarded-For: 1.202.2.1'
+   curl -k https://10.1.10.30/ -H 'Host: www.site2.com' -H 'X-Forwarded-For: 172.16.99.7'
 
-.. NOTE:: We want to ensure the site is still available
-   after applying the policy. We will get into testing the block later
+.. NOTE:: This is expected to fail
+   
 
 .. NOTE:: This concludes Module 1 - Lab 4
 
@@ -405,4 +402,6 @@ https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing
 .. |image261| image:: /_static/class2/image261.png
    :width: 7.04167in
    :height: 7.70833in
-
+.. |image265| image:: /_static/class2/image265.png
+   :width: 6
+   :height: 1.25

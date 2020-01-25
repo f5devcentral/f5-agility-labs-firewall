@@ -167,7 +167,7 @@ when HTTP_REQUEST {
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com' 
 
-.. Note: Since we did nit define the header, the firewall will see the RFC 1918 Addres of the jump host 
+.. Note: Since we did not define the header, the firewall will see the RFC 1918 Addres of the jump host 
    (10.1.10.199) which is allowed
 
 URL: https://site1.com

@@ -321,7 +321,7 @@ EXT_VIP_10_1_10_30
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30/ -H 'Host: www.site2.com' -H 'X-Forwarded-For: 172.16.99.7'
+   curl -k https://10.1.10.30/ -H 'Host:site2.com' -H 'X-Forwarded-For: 172.16.99.7'
 
 .. NOTE:: This is expected to fail
    

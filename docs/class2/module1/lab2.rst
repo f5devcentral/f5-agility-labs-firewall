@@ -82,11 +82,11 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 |image264|
  
 
-.. NOTE:: for site 1 connected to  10.1.20.11, site 2 10.1.20.12  etc.
+.. NOTE:: for site 1 connected to  10.1.20.11, site 2 10.1.20.12  etc:
 
 
 
-.. NOTE:: This completes Module 1 - Lab 2
+.. NOTE:: This completes Module 1 - Lab 2:
 
 .. |ltp-diagram| image:: /_static/class2/ltp-diagram.png
 .. |image9| image:: /_static/class2/image11.png

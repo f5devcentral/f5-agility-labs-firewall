@@ -11,7 +11,7 @@ The LTM policy is what directs application traffic to flow from the external vir
 
 Whether it is based on the hostname or the URI path, the request can be forwarded to a different virtual server or an application pool of servers.
 
-Create the LTM Policies
+Inspect the LTM Policies
 -----------------------
 .. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
 
@@ -19,114 +19,26 @@ Create the LTM Policies
 |ltp-diagram|
 
 
-**Navigation:** Local Traffic > Policies : Policy List > Policy List Page,
-then click Create
+**Navigation:** Local Traffic > Policies : Policy List 
 
-+-------------------+------------------------------------------------------------------------+
-| **Policy Name**   | HTTPS\_Virtual\_Targeting\_PolicyL7                                    |
-+===================+========================================================================+
-| **Strategy**      | Execute ***best*** matching rule using the ***best-match*** strategy   |
-+-------------------+------------------------------------------------------------------------+
+**Navigation:** Select HTTPS_Virtual_Targeting_Policy_L7V3 from the published policies
 
-**Navigation:** Click Create Policy
+|image262|
 
-|image11|
-
-**Navigation:** Local Traffic > Policies : Policy List > Draft Policies >  /Common/HTTPS\_Virtual\_Targeting\_PolicyL7
-
-|image12|
-
-**Navigation:** Click create to create some rules.
-
-You will need to create the following rules within your policy:
-
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| **Rule Name**                                       | **Rule Logic**    |                  |               |                                               |
-+=====================================================+===================+==================+===============+===============================================+
-| www.mysite.com                                      | HTTP Host         | Host             | is            | www.mysite.com                                |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com\_1.1.1.1             |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| www.yoursite.com                                    | HTTP Host         | Host             | is            | www.yoursite.com                              |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.yoursite.com\_3.3.3.3           |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| www.theirsite.com                                   | HTTP Host         | Host             | is            | www.theirsite.com                             |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.theirsite.com\_2.2.2.2          |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| www.mysite.com-api                                  | HTTP Host         | host             | is            | www.mysite.com                                |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | HTTP URI          | path             | begins with   | /api                                          |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-api\_1.1.1.2         |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | Replace           | http uri         | path          | with **/**                                    |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-| www.mysite.com-downloads                            | HTTP Host         | host             | is            | www.mysite.com                                |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | HTTP URI          | path             | begins with   | /downloads                                    |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-|                                                     | Forward Traffic   | Virtual Server   |               | int\_vip\_www.mysite.com-downloads\_1.1.1.3   |
-+-----------------------------------------------------+-------------------+------------------+---------------+-----------------------------------------------+
-
-**Navigation:** Remember to click Add after adding the matching string
-
-|image13|
-
-**Navigation:** Click Save
-
-Additional Example for /api. The replacement line is required to strip
-the path from the request for the site to work.
-
-|image14|
-
-**Complete the additional policies according to the list above.**
-
-Once complete, you must save a Draft, then publish the policy.
-
-
-**Navigation:** Local Traffic > Policies: Policy List >
-/Common/HTTPS\_Virtual\_Targeting\_PolicyL7
-
-**Navigation:** Save Draft
-**Navigation:** Click Publish
-
-|image15|
-
-Apply The Policy To The External Virtual Server
+Verify that the  Policy is assigned To The External Virtual Server
 -----------------------------------------------
 
 **Navigation:** Local Traffic > Virtual Servers : Virtual Server List
 
-|image16|
 
-**Navigation:** Click the EXT\_VIP\_10.10.90.30
+**Navigation:** Click the EXT_VIP_10.1.10.30
 
-|image17|
 
 **Navigation:** Click the Resources Tab
 
-|image18|
+|image263|
 
-**Navigation:** Under Policies Click Manage
-
-|image19|
-
-**Navigation:** Select the HTTPS\_Virtual\_Targeting\_PolicyL7
-
-|image20|
-
-**Navigation:** Click the Double Arrow to move the policy into the left-hand
-column and click Finished.
-
-|image21|
-
-The result should look like the screenshot below.
-
-|image22|
-
-.. ATTENTION:: When you first set up the Virtual Servers, accessing the sites didn't work very well because the policies were not setup.  Now try accessing all the VS you created from Chrome. You can use the bookmarks for easy access. If you manually type in the sites in the address bar, use https://** since you enabled encyrption when you created the virtual server. 
+.. NOTE:: there is a  policy and an iRule  is assigned to the VIP:
 
 Validate Lab 2 Configuration
 ----------------------------
@@ -137,62 +49,42 @@ validate your configuration.
 
 **You will need to accept the certificate to proceed to the application sites**
 
+https://site1.com
+
+https://site2.com
+
+https://site3.com
+
+https://site4.com
+
+https://site5.com
+
+https://dvwa.com
+
 **With curl you need to use the -k option to ignore certificate validation**
-
-.. NOTE:: You may have to edit the hosts file on your Win7 Client to add:
-
-.. code-block:: console
-
-   10.10.99.30 www.mysite.com
-
-   10.10.99.30 www.yoursite.com
-
-   10.10.99.30 www.theirsite.com
-
-|image23|
 
 From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl directory from windows command shell ). Curl will let us do some of the additional testing in later sections.
 
 .. code-block:: console
 
-   curl -k https://10.10.99.30 -H Host:www.mysite.com
+   curl -k https://10.1.10.30 -H Host:site1.com
 
-   <H1> MYSITE.COM </H1>
+   curl -k https://10.1.10.30 -H Host:site2.com
 
-   curl -k https://10.10.99.30 -H Host:www.theirsite.com
+   curl -k https://10.1.10.30 -H Host:site3.com
 
-   <H1> THEIRSITE.COM </H1>
+   curl -k https://10.1.10.30 -H Host:site4.com
 
-   curl -k https://10.10.99.30 -H Host:www.yoursite.com
+   curl -k https://10.1.10.30 -H Host:site5.com
 
-   <H1> YOURSITE.COM </H1>
+   curl -k https://10.1.10.30 -H Host:dvwa.com
 
-   curl -k https://10.10.99.30/api -H Host:www.mysite.com
+|image264|
+ 
 
-.. code-block:: console
+.. NOTE:: for site 1 connected to  10.1.20.11, site 2 10.1.20.12  etc.
 
-   {
-      "web-app": {
-        "servlet": [
-           {
-              "servlet-name": "cofaxCDS",
-              "servlet-class": "org.cofax.cds.CDSServlet"
-           }
-    ...   
 
-.. NOTE:: A bunch of nonsense JSON should be returned.
-
-.. code-block:: console
-
-   curl -k https://10.10.99.30/downloads/ -H 'Host:www.mysite.com'
-
-.. code-block:: html
-
-   <html>
-   <head>
-     <title>Index of /downloads</title>
-   </head>
-   <body>
 
 .. NOTE:: This completes Module 1 - Lab 2
 
@@ -242,3 +134,12 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 .. |image23| image:: /_static/class2/image25.png
    :width: 7.05000in
    :height: 1.60208in
+.. |image262| image:: /_static/class2/image262.png
+   :width: 7.05000in
+   :height: 5.60208in
+.. |image263| image:: /_static/class2/image263.png
+   :width: 7.05000in
+   :height: 4.60208in
+.. |image264| image:: /_static/class2/image264.png
+   :width: 7.05000in
+   :height: 3.60208in

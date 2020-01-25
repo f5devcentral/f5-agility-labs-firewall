@@ -88,18 +88,6 @@ Inspect the Local Traffic Network Map
 
 .. NOTE:: The virtual servers should now show a green circle for status.
 
-Create An External Virtual Server To Host Multiple SSL Enabled Websites
------------------------------------------------------------------------
-
-Create the external virtual server using the following information.
-
-
-**Navigation:** _Local Traffic > Virtual Servers > Virtual Server List
-
-.. NOTE:: The default pool is here simply to let the virtual server turn green. Policies will be used to switch traffic, not hard-coded pools.  Note also the three different certificates applied to the Virtual Server.  This is the basis of SNI.
-
-.. ATTENTION:: Try accessing all the VS you created from the Windows host via ping and Chrome. There are bookmarks saved to access it.  Ping works, but web browsing ( chrome or curl ) does not work because our policies are not set up yet. 
-
 .. NOTE:: This completes Module 1 - Lab 1
 
 
@@ -122,7 +110,9 @@ Create the external virtual server using the following information.
 .. |image6| image:: /_static/class2/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: /_static/class2/limage7.png
+.. |image7| image:: /_static/class2/image7.png
+   :width: 7.05000in
+   :height: 4.46949in
 .. |image8| image:: /_static/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in

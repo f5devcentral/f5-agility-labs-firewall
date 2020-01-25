@@ -150,7 +150,7 @@ Validate Lab 3 Configuration
 Open a new web browser tab and access the virtual server or repeat the
 curl statements from the previous sections.
 
-URL: https://www.mysite.com
+URL: https://site1.com
 
 .. NOTE:: This test generates traffic that creates network firewall log entries.
 

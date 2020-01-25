@@ -186,9 +186,11 @@ Review the logs. each connection will log events from the external and internal 
 
 Next we will simulate a connection an IP address in Bejing, China
 
-The BIG-IP Geolocation database is supplied by Digital Element http://www.digitalelement.com/ 
+The BIG-IP Geolocation database is supplied by Digital Element 
 
-https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
+URL: http://www.digitalelement.com/ 
+
+URL: https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
 
 .. code-block:: console
 

@@ -158,7 +158,7 @@ URL: https://site1.com
 
 |image29|
 
-.. ATTENTION:: View new network firewall log entries. Examine the data collected there.
+.. NOTE:: View new network firewall log entries. Examine the data collected there.
 
 .. NOTE:: This completes Module 1 - Lab 3
 

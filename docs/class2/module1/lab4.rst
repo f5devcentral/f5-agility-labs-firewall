@@ -167,8 +167,7 @@ when HTTP_REQUEST {
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com' 
 
-.. Note: Since we did not define the header, the firewall will see the RFC 1918 Addres of the jump host 
-   (10.1.10.199) which is allowed
+.. NOTE:: Since we did not define the heade, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) which is considered a US address by the geolocation database
 
 URL: https://site1.com
 
@@ -229,7 +228,7 @@ into the policy instead or using a Rule List
 
 
 +----------------+----------------------------+
-| **Name**       | allow_site2_ 172.16.99.5   |
+| **Name**       | allow_site_172.16.99.5     |
 +================+============================+
 | **Protocol**   | TCP (6)                    |
 +----------------+----------------------------+
@@ -254,7 +253,7 @@ Create Deny Log Network Firewall Rule
 
 For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation.
 
-https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html
+URL: https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html
 
 
 +---------------+-------------+
@@ -320,14 +319,12 @@ EXT_VIP_10_1_10_30
 
    curl -k https://10.1.10.30/ -H 'Host:site2.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-
 .. code-block:: console
 
    curl -k https://10.1.10.30/ -H 'Host: www.site2.com' -H 'X-Forwarded-For: 172.16.99.7'
 
 .. NOTE:: This is expected to fail
    
-
 .. NOTE:: This concludes Module 1 - Lab 4
 
 .. |image256| image:: /_static/class2/image256.png

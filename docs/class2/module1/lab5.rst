@@ -29,7 +29,7 @@ Verify that the iRule to the Virtual Server
 
 **Navigation:** Click on the Manage button
 
-this is where you assign iRules
+This is where you assign iRules
 
 **Navigation:** Click on the Cancel button  since the iRule is already assigned
 

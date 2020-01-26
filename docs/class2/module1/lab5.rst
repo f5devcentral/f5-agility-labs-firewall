@@ -3,7 +3,7 @@ Lab 5: Provide Firewall Security Policies For CDN Enabled Applications
 
 Many enterprise sites have some or all of their content served up by Content Delivery Networks (CDN). This common use case leverages proxies to provide static content closer to the end client machines for performance. Because of this there may only be one or two IP addresses connecting to the origin website. The original IP address of the client in this case is often mapped to a common HTTP header X-Forwarded-For or some variation. In this deployment, the BIG-IP can translate the original source of the request in the XFF to the source IP address.
 
-In this case we are going to leverage iRules to modify the traffic coming from the CDN networks so we can apply a firewall policy to it. The iRule to accomplish this is already installed on your BIG-IP. We need to apply it the External Virtual Server. Here is a sample of the iRule.
+In this case we are going to leverage iRules to modify the traffic coming from the CDN networks so we can apply a firewall policy to it. The iRule to accomplish this is already installed on your BIG-IP and applied to EXT_VIP_10_1_10_30. We have been leveraging it to run the tests in previous exercises
 
 .. code-block:: tcl
 
@@ -16,44 +16,36 @@ In this case we are going to leverage iRules to modify the traffic coming from t
 
 Examminig the iRule we find that it is called when an HTTP request happens. It then checks to see if the ``X-Forwarded-For`` header exists (We wouldn't want to SNAT to a non-existent IP address) and if it does it modifies the source IP address of the request to the IP address provided in the header.
 
-Apply the iRule to the Virtual Server
+Verify that the iRule to the Virtual Server
 -------------------------------------
 
-**Navigation:** Click on the ``EXT_VIP_10.10.99.30`` virtual server
+**Navigation:** Local Traffic > Virtual Servers
+
+**Navigation:** Click on the ``EXT_VIP_10.1.10.30`` virtual server
+
+**Navigation:** Click on the Resources tab
 
 |image45|
 
-**Navigation:** Click Manage under the iRule section
+**Navigation:** Click on the Manage button
+
+this is where you assign iRules
+
+**Navigation:** Click on the Cancel button  since the iRule is already assigned
 
 |image46|
 
-**Navigation:** Once you have moved the iRule XFF-SNAT over to the Enabled
-Section, Click Finished
+
 
 Validate SNAT Function
 ----------------------
 
-To test functionality, we will need to leverage curl from the CLI to insert the X-Forwarded-For header in to the request.
+We tested functionality in prior exercises with the commands belos leverage curl from the Cygwin Terminal to insert the X-Forwarded-For header in to the request.
+
 
 .. code-block:: console
 
-   curl -k https://10.10.99.30/downloads/ -H 'Host: www.mysite.com'
-
-Expected Result Snippet:
-
-.. code-block:: html
-
-   <html>
-      <head>
-        <title>Index of /downloads</title>
-      </head>
-   <body>
-
-Validate that IP addresses sourced from China are blocked:
-
-.. code-block:: console
-
-   curl -k https://10.10.99.30/downloads/ -H 'Host: www.mysite.com' -H 'X-Forwarded-For: 1.202.2.1'
+   curl -k https://10.1.10.30 -H 'Host: site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
 **Expected Result:** The site should now be blocked and eventually timeout
 
@@ -61,9 +53,9 @@ Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.
 
 .. code-block:: console
 
-   curl -k https://10.10.99.30/api -H 'Host:www.mysite.com' -H 'X-Forwarded-For: 172.16.99.5'
+   curl -k https://10.1.10.30 -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-**Expected Result:**
+**Expected Result:** Page will work
 
 .. code-block:: console
 
@@ -79,15 +71,22 @@ Solve For TCP Issues With CDN Networks
 
 The next step is to solve for the TCP connection issue with CDN providers. While we are provided the originating client IP address, dropping or reseting the connection can be problematic for other users of the application. This solution is accomplished via AFM iRules. The iRule is already provided for you. We need to apply it to the Network Firewall downloads\_policy Policy. It still is logged as a drop or reset in the firewall logs. We allow it to be processed slightly further so that a Layer 7 response can be provided.
 
-|image47|
+**Navigation:** Security > Network Firewall > Rule Lists
 
-**Navigation:** iRule select the AFM\_403\_Downloads
+**Navigation:** Select **geo_restrict_rule_list**
+
+**Navigation:** Select  **block_AF_CN_CA**
+
+**Navigation:** Add the AFM_403_Downloads iRule to the rule list
+
+**Navigation** Click Update
+|image47|
 
 Validate that denied requests are now responded with a Layer 7 **403 Error** Page.
 
 .. code-block:: console
 
-   curl -k https://10.10.99.30/downloads -H 'Host: www.mysite.com' -H 'X-Forwarded-For: 1.202.2.1'
+   curl -k https://10.1.10.30/ -H 'Host:site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
 Expected Result: Instead of the traffic getting dropped, a 403 error
 should be returned.
@@ -103,7 +102,7 @@ should be returned.
      </body>
    </html>
 
-.. ATTENTION:: Since a TCP solution would cause disasterous consequences, the HTML error response will traverse the CDN network back only to the originating client. Using a unique error code such as 418 (I Am A Teapot) would allow you to determine that the webserver is likely not the source of the response. It would also allow the CDN network providers to track these error codes. Try to find one that has a sense of humor.
+.. ATTENTION:: Since a TCP solution could cause users to be blocked without explanation , the HTML error response will traverse the CDN network back only to the originating client. Using a unique error code such as 418 (I Am A Teapot) would allow you to determine that the webserver is likely not the source of the response. It would also allow the CDN network providers to track these error codes. Try to find one that has a sense of humor.
 
 .. NOTE:: This concludes Module 1 - Lab 5
 

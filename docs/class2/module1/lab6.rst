@@ -14,7 +14,7 @@ On the BIG-IP:
 then click Create.
 
 +---------------------------------+------------------------+
-| **Profile Name**                | demo\_http\_security   |
+| **Profile Name**                | demo_http_security     |
 +=================================+========================+
 | **Custom**                      | Checked                |
 +---------------------------------+------------------------+
@@ -27,7 +27,10 @@ then click Create.
 
 .. NOTE::  Leave all other fields using the default values.
 
+
 **Navigation:** Click Request Checks Tab.
+
+.. NOTE::  We will leave the default methods. This allows you to restrict methods used to access the Web Server
 
 +------------------+--------------+
 | **File Types**   | Select All   |
@@ -54,10 +57,13 @@ then click Create.
 Apply the HTTP security profile to the external virtual server.
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List >
-EXT\_VIP\_10.10.99.30
+
+**Navigation:** Select EXT_VIP_10.1.10.30
+
+**Navigation:** Select the Security  tab
 
 +-------------------------+------------------------+------------------------+
-| **Protocol Security**   | Enabled                | demo\_http\_security   |
+| **Protocol Security**   | Enabled                | demo_http_security     |
 +-------------------------+------------------------+------------------------+
 
 |image51|
@@ -69,7 +75,7 @@ EXT\_VIP\_10.10.99.30
 Open a new web browser tab, access the virtual server and log into the
 application.
 
-URL: https://www.mysite.com/dvwa
+URL: https://dvwa.com
 
 **Credentials: admin\/password**
 
@@ -99,8 +105,12 @@ Edit the demo\_http\_security HTTP security profile.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
+**Navigation:** Select the **demo_http_security** profile
+
+**Navigation:** Select the Request Checks Tab
+
 +----------------------------+---------------------------------------------------------+
-| **HTTP Protocol Checks**   | Uncheck all except "Host header contains IP address”.   |
+| **Methods**                | Remove Post Fro the Allowed Group.                      |
 |                            |                                                         |
 |                            | Check “Block”                                           |
 +----------------------------+---------------------------------------------------------+
@@ -115,21 +125,17 @@ On Windows jumpbox
 
 Open a new web browser tab and access the virtual server.
 
-URL: https://10.10.99.30/dvwa
+URL: https://dvwa.com
+
+**Credentials: admin\/password**
+
+Select the Command Execution button in the DVWA browser Window
+
+Enter and IP address and press submit
 
 |image56|
 
-.. ATTENTION:: This application should not be accessible because the ”Host header contains IP address” and “Block” options in the HTTP security policy are selected.
-
-Open a new web browser tab and access the virtual server.
-
-URL: https://www.mysite.com/dvwa
-
-|image57|
-
-.. ATTENTION:: This application should now be accessible because we requested it through the FQDN instead of an IP address
-
-.. NOTE:: Explore some of the other settings avaialable to you in the security policy
+.. ATTENTION:: This action requires a "POST" action and will be blocked because this is not allowed. 
 
 .. NOTE:: This is the end of Module 1 - Lab 6
 

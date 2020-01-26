@@ -133,7 +133,7 @@ Select the Command Execution button in the DVWA browser Window
 
 Enter and IP address and press submit
 
-|image56|
+|image266|
 
 .. ATTENTION:: This action requires a "POST" action and will be blocked because this is not allowed. 
 
@@ -163,7 +163,7 @@ Enter and IP address and press submit
 .. |image55| image:: /_static/class2/image56.png
    :width: 4.52592in
    :height: 4.53707in
-.. |image56| image:: /_static/class2/dvwa555.png
+.. |image266| image:: /_static/class2/image266.png
    :width: 5.16503in
    :height: 1.12839in
 .. |image57| image:: /_static/class2/image53.png

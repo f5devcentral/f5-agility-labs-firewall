@@ -51,7 +51,7 @@ Initiate another attempt to connect to the website via curl or your web browser 
 
 .. code-block:: console
 
-   curl -k https://10.10.99.30 -H 'Host:www.mysite.com'
+   curl -k https://10.11.0.30 -H 'Host:site1.com'
 
    <H1> MYSITE.COM </H1>
 

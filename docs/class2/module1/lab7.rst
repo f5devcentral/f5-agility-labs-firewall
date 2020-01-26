@@ -41,7 +41,9 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 **Navigation:** SSH in to the Syslog/Webserver
 
-Run sudo tcpdump –i eth2 -c 200 port 80
+.. code-block:: console
+
+    Run sudo tcpdump –i eth2 -c 200 port 80
 
 .. code-block:: console
 

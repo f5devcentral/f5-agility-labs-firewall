@@ -131,7 +131,7 @@ URL: https://dvwa.com
 
 Select the Command Execution button in the DVWA browser Window
 
-Enter and IP address and press submit
+Enter and IP address and press submit.
 
 |image266|
 

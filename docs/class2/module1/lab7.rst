@@ -51,9 +51,9 @@ Initiate another attempt to connect to the website via curl or your web browser 
 
 .. code-block:: console
 
-   curl -k https://10.11.0.30 -H 'Host:site1.com'
+   curl -k https://10.1.10.30 -H 'Host:site3.com'
 
-   <H1> MYSITE.COM </H1>
+   <H1> site3.COM </H1>
 
 View the tcpdump output on the syslog-webserver.
 

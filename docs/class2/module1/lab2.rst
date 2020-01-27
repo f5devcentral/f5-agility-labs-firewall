@@ -110,7 +110,6 @@ and then click **Finished.
 (Note: We commonly use “RD” in our rules to help reference the “Route
 Domain”, default is 0)**
 
-|image13|
 
 Edit the **rd_0_policy** by selecting it in the Policy Lists table, then
 click the **Add Rule List** button. Here you will add the rule list you
@@ -119,11 +118,8 @@ created in the previous section. For the **Name,** start typing
 the rule list **/Common/web_rule_list**, provide an optional description
 and then click **Done Editing.**
 
-|image14|
 
 When finished your policy should look like the screen shot below.
-
-|image15|
 
 You will notice the changes are unsaved and need to be committed to the
 system. This is a nice feature to have enabled to verify you want to

@@ -163,8 +163,6 @@ URL: https://site1.com
 .. NOTE:: This completes Module 1 - Lab 3
 
 
-
-
 .. |image24| image:: /_static/class2/image26.png
    :width: 7.05278in
    :height: 2.93819in

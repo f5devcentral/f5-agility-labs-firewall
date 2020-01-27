@@ -107,7 +107,7 @@ Assign the Rule List to a Policy
 --------------------------------
 
 For the **Name** enter **rd_0_policy**, provide an optional description
-and then click **Finished.
+and then click **Finished**.
 (Note: We commonly use “RD” in our rules to help reference the “Route
 Domain”, default is 0)**
 

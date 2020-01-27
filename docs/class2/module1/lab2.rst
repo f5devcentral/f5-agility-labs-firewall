@@ -85,7 +85,7 @@ to the LAMP Servers
 
 
 click the **Add** button in the Rules section. Here you will add two
-rules into the list; the first is a rule to allow HTTP.
+rules into the list; the first is a rule to allow HTTP
 
 +-------------------------+-----------------------------------------------------------+
 | **Name**                | allow_https_10_1_10_30                                    |

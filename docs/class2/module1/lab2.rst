@@ -56,7 +56,7 @@ create a container for the rules by going to:
 **Security > Network Firewall > Rule Lists** and select **Create.**
 
 For the **Name** enter **web_rule_list**, provide an optional
-description and then click **Finished.**
+description and then click **Finished**
 
 |image269|
 
@@ -103,6 +103,7 @@ rules into the list; the first is a rule to allow HTTP.
 | **Logging**             | Enabled                                                   |
 +-------------------------+-----------------------------------------------------------+
 
+
 Assign the Rule List to a Policy 
 --------------------------------
 
@@ -129,6 +130,7 @@ implemented.
 
 To commit the change, simply click **“Commit** Changes **to System”**
 located at the top of the screen.
+
 
 Validate Lab 2 Configuration
 ----------------------------

@@ -103,7 +103,7 @@ rules into the list; the first is a rule to allow HTTP.
 +-------------------------+-----------------------------------------------------------+
 
 Assign the Rule List to a Policy 
-----------------------------------
+--------------------------------
 
 For the **Name** enter **rd_0_policy**, provide an optional description
 and then click **Finished.

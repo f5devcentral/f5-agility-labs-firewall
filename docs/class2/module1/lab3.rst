@@ -20,7 +20,7 @@ log profile will then be applied to the virtual server and tested.
 Create A Log Publisher
 ----------------------
 
-This will send the firewall logs to a local database.
+This will send the firewall logs to a local database
 
 Create the log publisher using the following information:
 
@@ -94,7 +94,7 @@ Edit log profile network firewall tab using the following information:
 | **Storage Format**               | Field-List (Move all to Selected Items)   |
 +----------------------------------+-------------------------------------------+
 
-    |image26|
+|image26|
 
 .. NOTE:: Leave all other fields using the default values.
 

@@ -26,7 +26,7 @@ Inspect the LTM Policies
 |image262|
 
 Verify that the  Policy is assigned To The External Virtual Server
------------------------------------------------
+------------------------------------------------------------------
 
 **Navigation:** Local Traffic > Virtual Servers : Virtual Server List
 
@@ -39,6 +39,99 @@ Verify that the  Policy is assigned To The External Virtual Server
 |image263|
 
 .. NOTE:: there is a  policy and an iRule  is assigned to the VIP:
+
+
+Create An ACL to allow web traffic 
+----------------------------------
+
+On bigip01.f5demo.com (10.1.1.4) create a rule list to allow Web
+traffic. A logical container must be created before the individual rules
+can be added. You will create a list with two rules, to allow port 80
+(HTTP) and 443 (HTTPS)  to servers 10.1.20.11 through 10.1.20.15 We will
+also create a rule which allows https traffic to access 10.1.10.30
+
+First you need to
+create a container for the rules by going to:
+
+**Security > Network Firewall > Rule Lists** and select **Create.**
+
+For the **Name** enter **web_rule_list**, provide an optional
+description and then click **Finished.**
+
+|image269|
+
+Edit the **web_rule_list** by selecting it in the Rule Lists table, then
+click the **Add** button in the Rules section. Here you will add two
+rules into the list; the first is a rule to allow HTTP.
+
+|image10|
+
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Name**                | allow_http_and_https                                                                           |
++=========================+=================================================================================================+
+| **Protocol**            | TCP                                                                                             |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                                                                     |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Destination Address** | **Specify...** 10.1.20.11, 10.1.20.12, 10.1.20.13, 10.1.20.14, 10.1.20.15 - then click **Add**  |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Destination Port**    | **Specify…** Port **80**, then click **Add**   **Specify…** Port **443**, then click **Add**    |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Action**              | **Accept-Decisively**                                                                           |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Logging**             | Enabled                                                                                         |
++-------------------------+-------------------------------------------------------------------------------------------------+
+
+
+click the **Add** button in the Rules section. Here you will add two
+rules into the list; the first is a rule to allow HTTP.
+
++-------------------------+-----------------------------------------------------------+
+| **Name**                | allow_https_10_1_10_30                                           |
++=========================+===========================================================+
+| **Protocol**            | TCP                                                       |
++-------------------------+-----------------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                               |
++-------------------------+-----------------------------------------------------------+
+| **Destination Address** | **Specify...**\ 10.1.10.30 then click **Add** |
++-------------------------+-----------------------------------------------------------+
+| **Destination Port**    | **Specify…** Port **443**, then click **Add**             |
++-------------------------+-----------------------------------------------------------+
+| **Action**              | **Accept-Decisively**                                     |
++-------------------------+-----------------------------------------------------------+
+| **Logging**             | Enabled                                                   |
++-------------------------+-----------------------------------------------------------+
+
+Assign the Rule List to a Policy 
+----------------------------------
+
+For the **Name** enter **rd_0_policy**, provide an optional description
+and then click **Finished.
+(Note: We commonly use “RD” in our rules to help reference the “Route
+Domain”, default is 0)**
+
+|image13|
+
+Edit the **rd_0_policy** by selecting it in the Policy Lists table, then
+click the **Add Rule List** button. Here you will add the rule list you
+created in the previous section. For the **Name,** start typing
+**web_rule_list**, you will notice the name will auto complete, select
+the rule list **/Common/web_rule_list**, provide an optional description
+and then click **Done Editing.**
+
+|image14|
+
+When finished your policy should look like the screen shot below.
+
+|image15|
+
+You will notice the changes are unsaved and need to be committed to the
+system. This is a nice feature to have enabled to verify you want to
+commit the changes you’ve just made without a change automatically being
+implemented.
+
+To commit the change, simply click **“Commit** Changes **to System”**
+located at the top of the screen.
 
 Validate Lab 2 Configuration
 ----------------------------
@@ -139,5 +232,8 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
    :width: 7.05000in
    :height: 4.60208in
 .. |image264| image:: /_static/class2/image264.png
+   :width: 7.05000in
+   :height: 3.60208in
+.. |image269| image:: /_static/class2/image269.png
    :width: 7.05000in
    :height: 3.60208in

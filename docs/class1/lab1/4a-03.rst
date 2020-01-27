@@ -33,23 +33,21 @@ Local-db-publisher is linked to the global-network logging profile in the next s
 
 |image267|
 
-.. |image201| image:: /_static/class1/image201.png
-   :width: 6.49097in
-   :height: 7in
 
 Add a log publisher to the log configuration 
 
 **Navigate**  Security>>Event Logs>>Logging Profiles
+
 **Navigate**  Select **Global Network**
+
 **Navigate**  Click on the **Network Firewall** Tab
+
 **Navigate**  Use the publisher pulldown to select **local-db-publisher**
+
 Review the configuration. The Storage Format section allows you to select the values included in the log.
 
 |image268|
 
-.. |image202| image:: /_static/class1/image202.png
-   :width: 6.49097in
-   :height: 7in
 .. |image267| image:: /_static/class1/image267.png
    :width: 6.49097in
    :height: 7in 

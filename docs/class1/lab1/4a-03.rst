@@ -22,7 +22,6 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
 
 
 
-
 **Navigate** Security > Options > Network Firewall > Firewall Options
 
 Default Firewall options configuration determine if the system is in ADC mode or Firewall Mode. 
@@ -32,23 +31,29 @@ with the value set to Reject
 
 Local-db-publisher is linked to the global-network logging profile in the next step
 
-|image201|
+|image267|
 
 .. |image201| image:: /_static/class1/image201.png
    :width: 6.49097in
    :height: 7in
 
-Review the log configuration 
+Add a log publisher to the log configuration 
 
 **Navigate**  Security>>Event Logs>>Logging Profiles
-Select Global Network
-Click on the Network Firewall Tab
+**Navigate**  Select **Global Network**
+**Navigate**  Click on the **Network Firewall** Tab
+**Navigate**  Use the publisher pulldown to select **local-db-publisher**
 Review the configuration. The Storage Format section allows you to select the values included in the log.
 
-|image202|
+|image268|
 
 .. |image202| image:: /_static/class1/image202.png
    :width: 6.49097in
    :height: 7in
-  
+.. |image267| image:: /_static/class1/image267.png
+   :width: 6.49097in
+   :height: 7in 
+.. |image268| image:: /_static/class1/image268.png
+   :width: 6.49097in
+   :height: 7in 
 

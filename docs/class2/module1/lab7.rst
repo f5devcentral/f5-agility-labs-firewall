@@ -14,7 +14,7 @@ Configure a new Pool.
 +-------------+----------------------+---------------+--------------------+
 | **Name**    | **Health Monitor**   | **Members**   | **Service Port**   |
 +=============+======================+===============+====================+
-| IDS\_Pool   | gateway\_icmp        | 172.1.1.11    | \*                 |
+| IDS\_Pool   | gateway\_icmp        | 10.1.20.252    | \*                 |
 +-------------+----------------------+---------------+--------------------+
 
 |image58|
@@ -25,7 +25,7 @@ Configure a new Pool.
 
 Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List > EXT\_VIP\_10.10.99.30.
+**Navigation:** Local Traffic > Virtual Servers > Virtual Server List > EXT\_VIP\_10.1.10.30.
 
 **Navigation:** Configuration > Advanced.
 
@@ -43,7 +43,7 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 .. code-block:: console
 
-    Run sudo tcpdump –i eth2 -c 200 port 80
+    Run sudo tcpdump –i eth1 -c 200 port 80
 
 .. code-block:: console
 

@@ -50,13 +50,17 @@ can be added. You will create a list with two rules, to allow port 80
 (HTTP) and 443 (HTTPS)  to servers 10.1.20.11 through 10.1.20.15 We will
 also create a rule which allows https traffic to access 10.1.10.30
 
-First you need to
-create a container for the rules by going to:
+Create a container for the rules by going to:
 
-**Security > Network Firewall > Rule Lists** and select **Create.**
+**Navigation:** Security > Network Firewall > Rule Lists
+
+**Navigation:** select Create
 
 For the **Name** enter **web_rule_list**, provide an optional
+
 description and then click **Finished**
+
+|image270|
 
 |image269|
 
@@ -74,15 +78,18 @@ to the LAMP Servers
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Source**              | Leave at Default of **Any**                                                                     |
 +-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Address** | **Specify...** 10.1.20.11, 10.1.20.12, 10.1.20.13, 10.1.20.14, 10.1.20.15, then click **Add**   |
+| **Destination Address** | **Specify  Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                         |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Destination Port**    | **Specify…** Port **80**, then click **Add**   **Specify…** Port **443**, then click **Add**    |
 +-------------------------+-------------------------------------------------------------------------------------------------+
-| **Action**              | **Accept-Decisively**                                                                           |
+| **Action**              | **Accept**                                                                                      |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Logging**             | Enabled                                                                                         |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 
+|image271|
+
+**Navigation:** Click Repeat
 
 click the **Add** button in the Rules section. Here you will add two
 rules into the list; the first is a rule to allow HTTP.
@@ -103,15 +110,23 @@ rules into the list; the first is a rule to allow HTTP.
 | **Logging**             | Enabled                                                   |
 +-------------------------+-----------------------------------------------------------+
 
+|image272|
+
+**Navigation:** Click Finished
 
 Assign the Rule List to a Policy 
 --------------------------------
+
+**Navigation:** Security > Network Firewall > Policies
+
+**Navigation** Click Create
 
 For the **Name** enter **rd_0_policy**, provide an optional description
 and then click **Finished**.
 (Note: We commonly use “RD” in our rules to help reference the “Route
 Domain”, default is 0)**
 
+|image273|
 
 Edit the **rd_0_policy** by selecting it in the Policy Lists table, then
 click the **Add Rule List** button. Here you will add the rule list you
@@ -120,8 +135,8 @@ created in the previous section. For the **Name,** start typing
 the rule list **/Common/web_rule_list**, provide an optional description
 and then click **Done Editing.**
 
+|image274|
 
-When finished your policy should look like the screen shot below.
 
 You will notice the changes are unsaved and need to be committed to the
 system. This is a nice feature to have enabled to verify you want to
@@ -131,9 +146,24 @@ implemented.
 To commit the change, simply click **“Commit** Changes **to System”**
 located at the top of the screen.
 
+Assign the rd_0_policy to Route Domain 0
+
+**Navigation:** Network > Route Domains
+
+**Navigauion:** Click on the "0" to select Route Domain 0
+
+**Navigation:** Select the Security Tab
+
+Set **Enforcement** to **Enable** and select the **rd_0_policy** 
+
+**Navigation** Click Update
+
+|Image275|
 
 Validate Lab 2 Configuration
 ----------------------------
+
+
 
 **Validation:** This lab is using self-signed certificates. You can
 either open a web browser on the test client or run CURL from the CLI to
@@ -151,7 +181,7 @@ URL: https://site4.com
 
 URL: https://site5.com
 
-URL: https://dvwa.com
+URL: https://dvwa.com    Username:  admin    Password: password
 
 **With curl you need to use the -k option to ignore certificate validation**
 
@@ -236,3 +266,32 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 .. |image269| image:: /_static/class2/image269.png
    :width: 7.05000in
    :height: 3.60208in
+.. |image270| image:: /_static/class2/image270.png
+   :width: 6.05000in
+   :height: 2.60208in
+.. |image271| image:: /_static/class2/image271.png
+   :width: 7in
+   :height: 7in
+.. |image272| image:: /_static/class2/image272.png
+   :width: 7in
+   :height: 7in
+.. |image273| image:: /_static/class2/image273.png
+   :width: 6.05000in
+   :height: 2.60208in
+.. |image274| image:: /_static/class2/image274.png
+   :width: 7.05000in
+   :height: 2.90208in
+.. |image275| image:: /_static/class2/image275.png
+   :width: 6.05000in
+   :height: 3.60208in
+
+
+
+
+
+
+
+
+
+
+

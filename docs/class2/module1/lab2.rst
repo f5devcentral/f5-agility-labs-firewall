@@ -47,8 +47,8 @@ Create An ACL to allow web traffic
 On bigip01.f5demo.com (10.1.1.4) create a rule list to allow Web
 traffic. A logical container must be created before the individual rules
 can be added. You will create a list with two rules, to allow port 80
-(HTTP) and 443 (HTTPS)  to servers 10.1.20.11 through 10.1.20.15 We will
-also create a rule which allows https traffic to access 10.1.10.30
+(HTTP) and 443 (HTTPS)  to servers 10.1.20.11 through 10.1.20.17 We will
+also create a rule which allows HTTPS traffic to access 10.1.10.30
 
 Create a container for the rules by going to:
 

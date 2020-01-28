@@ -12,7 +12,7 @@ The LTM policy is what directs application traffic to flow from the external vir
 Whether it is based on the hostname or the URI path, the request can be forwarded to a different virtual server or an application pool of servers.
 
 Inspect the LTM Policies
------------------------
+------------------------
 .. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
 
 

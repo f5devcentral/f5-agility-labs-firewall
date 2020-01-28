@@ -171,17 +171,19 @@ validate your configuration.
 
 **You will need to accept the certificate to proceed to the application sites**
 
-URL: https://site1.com
+.. code-block:: console
 
-URL: https://site2.com
+    URL: https://site1.com
 
-URL: https://site3.com
+    URL: https://site2.com
 
-URL: https://site4.com
+    URL: https://site3.com
 
-URL: https://site5.com
+    URL: https://site4.com
 
-URL: https://dvwa.com    Username:  admin    Password: password
+    URL: https://site5.com
+
+    URL: https://dvwa.com    Username:  admin    Password: password
 
 **With curl you need to use the -k option to ignore certificate validation**
 

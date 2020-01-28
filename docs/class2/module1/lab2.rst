@@ -31,7 +31,7 @@ Verify that the  Policy is assigned To The External Virtual Server
 **Navigation:** Local Traffic > Virtual Servers : Virtual Server List
 
 
-**Navigation:** Click the EXT_VIP_10.1.10.30
+**Navigation:** Click the EXT_VIP_10_1_10_30
 
 
 **Navigation:** Click the Resources Tab
@@ -78,7 +78,7 @@ to the LAMP Servers
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Source**              | Leave at Default of **Any**                                                                     |
 +-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Address** | **Specify  Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                         |
+| **Destination Address** | **Specify Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                          |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Destination Port**    | **Specify…** Port **80**, then click **Add**   **Specify…** Port **443**, then click **Add**    |
 +-------------------------+-------------------------------------------------------------------------------------------------+
@@ -143,7 +143,7 @@ system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
-To commit the change, simply click **“Commit** Changes **to System”**
+To commit the change, simply click **“Commit** Changes **to System**
 located at the top of the screen.
 
 Assign the rd_0_policy to Route Domain 0

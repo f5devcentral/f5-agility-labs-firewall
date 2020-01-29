@@ -1,8 +1,6 @@
 Lab 1: Pre-configured  pools and  virtual servers
 ===================================================
 
-George is not a good friend
-
 A virtual server is used by BIG-IP to identify specific types of
 traffic. Other objects such as profiles, policies, pools and iRules are
 applied to the virtual server to add features and functionality. In the

@@ -45,6 +45,21 @@ section click **Add**, and add the following information, then click
 | **Logging**             | Enabled                                          |
 +-------------------------+--------------------------------------------------+
 
++-------------------------+--------------------------------------------------+
+| **Name**                | allow_ssh_10_1_20_11                       |
++=========================+==================================================+
+| **Protocol**            | TCP                                              |
++-------------------------+--------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                      |
++-------------------------+--------------------------------------------------+
+| **Destination Address** | **Specify…**\ 10.1.20.11, then click **Add**     |
++-------------------------+--------------------------------------------------+
+| **Destination Port**    | **Specify…**\ Port **22**, then click **Add**  |
++-------------------------+--------------------------------------------------+
+| **Action**              | **Accept-Decisively**                            |
++-------------------------+--------------------------------------------------+
+| **Logging**             | Enabled                                          |
++-------------------------+--------------------------------------------------+
 
 
 Inspect the properties of the rule list to verify the changes were made
@@ -56,7 +71,7 @@ to:
 
 From the **Context Filter** select **Route Domain 0**. 
 
-Click on the **Add Rule List to Global** from the ypper right 
+Click on the **Add Rule List to Global** from the upper right 
 corner of the screen and click **Cancel** (note:this is a GUI bug)
 
 Click on the **Add Rule List to Route Domain** from the ypper right 

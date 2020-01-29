@@ -5,6 +5,10 @@ Test Access to the Server
 
 |image209|
 
+-  Open Putty on the Desktop, select Lamp Server 10.1.20.11 from Saved Sessions.
+-  For username type in f5 and hit <enter>
+
+|image213|
 
 The new ordering should look something like the screen shot below:
 

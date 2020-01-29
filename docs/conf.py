@@ -73,8 +73,8 @@ else:
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 on_snops = os.environ.get('SNOPS_ISALIVE', None) == 'True'
 
-print "on_rtd = %s" % on_rtd
-print "on_snops = %s" % on_snops
+print("on_rtd = %s" % on_rtd)
+print("on_snops = %s" % on_snops)
 
 branch_map = {
     "stable":"master",

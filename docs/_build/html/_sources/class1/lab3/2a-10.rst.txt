@@ -1,0 +1,7 @@
+Silverline Mitigation
+^^^^^^^^^^^^^^^^^^^^^
+	
+F5’s Silverline service offers “always on” and “on demand” DDoS
+scrubbing that could assist in this scenario as well. This is not
+demonstrated in this lab.
+

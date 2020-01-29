@@ -1,0 +1,34 @@
+Default Actions
+---------------
+
+The BIG-IP\ :sup:`®` Network Firewall provides policy-based access
+control to and from address and port pairs, inside and outside of your
+network. Using a combination of contexts, the network firewall can apply
+rules in many ways, including: at a global level, on a per-virtual
+server level, and even for the management port or a self IP address.
+Firewall rules can be combined in a firewall policy, which can contain
+multiple context and address pairs, and is applied directly to a virtual
+server.
+
+By default, the Network Firewall is configured in **ADC mode**, a
+default allow configuration, in which all traffic is allowed through the
+firewall, and any traffic you want to block must be explicitly
+specified.
+
+The system is configured in this mode by default so all traffic on your
+system continues to pass after you provision the Advanced Firewall
+Manager. You should create appropriate firewall rules to allow necessary
+traffic to pass before you switch the Advanced Firewall Manager to
+Firewall mode. In **Firewall mode**, a default deny configuration, all
+traffic is blocked through the firewall, and any traffic you want to
+allow through the firewall must be explicitly specified.
+
+The BIG-IP\ :sup:`®` Network Firewall provides policy-based access
+control to and from address and port pairs, inside and outside of your
+network. By default, the network firewall is configured in ADC mode,
+which is a **default allow** configuration, in which all traffic is
+allowed to virtual servers and self IPs on the system, and any traffic
+you want to block must be explicitly specified. This applies only to the
+Virtual Server & Self IP level on the system.
+
+.. IMPORTANT:: Even though the system is in a default allow configuration, if a packet matches no rule in any context on the firewall, a Global Drop rule drops the traffic.

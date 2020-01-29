@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>1.3.2. Advanced Firewall Manager (AFM) Packet Tracer</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="1.3.2. Advanced Firewall Manager (AFM) Packet Tracer"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1.3.2. Advanced Firewall Manager (AFM) Packet Tracer &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.3.3. Advanced Firewall Manager (AFM) Flow Inspector" href="step3.html" />
+    <link rel="prev" title="1.3.1. Lab Overview" href="step1.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">1.3.2. Advanced Firewall Manager (AFM) Packet Tracer</a><ul>
+<li><a class="reference internal" href="#create-and-view-packet-tracer-entries">1.3.2.1. Create and View Packet Tracer Entries</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class1.html">1. Class 1: AFM – The Data Center Firewall</a>
+              &gt; <a href="intro.html">1.3. Lab 2 - AFM Packet Tester, Flow Inspector, Stale Rule Lab</a>
+
+          <span class="right">
+             <a href="../../_sources/class1/lab2/step2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="advanced-firewall-manager-afm-packet-tracer">
+<h1>1.3.2. Advanced Firewall Manager (AFM) Packet Tracer<a class="headerlink" href="#advanced-firewall-manager-afm-packet-tracer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-and-view-packet-tracer-entries">
+<h2>1.3.2.1. Create and View Packet Tracer Entries<a class="headerlink" href="#create-and-view-packet-tracer-entries" title="Permalink to this headline">¶</a></h2>
+<p>In this section, you will generate various types of traffic as you did
+previously, but now you will view the flow using the network packet
+tracer. Login to bigip2.dnstest.lab</p>
+<p>(192.168.1.150), navigate to <strong>Security &gt; Debug &gt; Packet Tester</strong>.</p>
+<p><a class="reference internal" href="../../_images/image41.png"><img alt="image42" src="../../_images/image41.png" style="width: 6.48958in; height: 3.44792in;" /></a></p>
+<p>Create a packet test with the following parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Protocol</strong></th>
+<th class="head">TCP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>TCP Flags</strong></td>
+<td>SYN</td>
+</tr>
+<tr class="row-odd"><td><strong>Source</strong></td>
+<td>IP - 1.2.3.4
+Port – 9999
+Vlan – Outside</td>
+</tr>
+<tr class="row-even"><td><strong>TTL</strong></td>
+<td>255</td>
+</tr>
+<tr class="row-odd"><td><strong>Destination</strong></td>
+<td>IP – 10.30.0.50
+Port - 80</td>
+</tr>
+<tr class="row-even"><td><strong>Trace Options</strong></td>
+<td>Use Staged Policy – no
+Trigger Log - no</td>
+</tr>
+</tbody>
+</table>
+<p>Click Run Trace to view the response. Your output should resmeble the
+allowed flow as shown below:</p>
+<p><a class="reference internal" href="../../_images/image42.png"><img alt="image43" src="../../_images/image42.png" style="width: 6.47361in; height: 2.94722in;" /></a></p>
+<p>You can also click on the “Route Domain Rules” trace result and see
+which rule is permitting the traffic.</p>
+<p><a class="reference internal" href="../../_images/image43.png"><img alt="image44" src="../../_images/image43.png" style="width: 6.5in; height: 2.66667in;" /></a></p>
+<p>Click <strong>New Packet Trace</strong> (optionally do not clear the existing data –
+aka leave checked).</p>
+<p>Create a packet test with the following parameters:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Protocol</strong></th>
+<th class="head">TCP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>TCP Flags</strong></td>
+<td>SYN</td>
+</tr>
+<tr class="row-odd"><td><strong>Source</strong></td>
+<td>IP - 1.2.3.4
+Port – 9999
+Vlan – Outside</td>
+</tr>
+<tr class="row-even"><td><strong>TTL</strong></td>
+<td>255</td>
+</tr>
+<tr class="row-odd"><td><strong>Destination</strong></td>
+<td>IP – 10.30.0.50
+Port - <strong>8081</strong></td>
+</tr>
+<tr class="row-even"><td><strong>Trace Options</strong></td>
+<td>Use Staged Policy – no
+Trigger Log - no</td>
+</tr>
+</tbody>
+</table>
+<p>Click Run Trace to view the response. Your output should resemble the
+allowed flow as shown below:</p>
+<p><a class="reference internal" href="../../_images/image44.png"><img alt="image45" src="../../_images/image44.png" style="width: 6.49722in; height: 2.97708in;" /></a></p>
+<p>This shows there is no rule associated with the route domain or a
+virtual server which would permit the traffic. As such, the traffic
+would be dropped/rejected.</p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="step1.html" title="1.3.1. Lab Overview" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="step3.html" title="1.3.3. Advanced Firewall Manager (AFM) Flow Inspector" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

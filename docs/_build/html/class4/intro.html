@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>4.1. Getting Started</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="4.1. Getting Started"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.1. Getting Started &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. Module – Deployment use case and Lab diagram" href="module1/module1.html" />
+    <link rel="prev" title="4. Flowmon Integrated Out-of-path DDoS Solution" href="class4.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../class1/class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class2/class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">4.1. Getting Started</a><ul>
+<li><a class="reference internal" href="#lab-topology">4.1.1. Lab Topology</a><ul>
+<li><a class="reference internal" href="#lab-components">4.1.1.1. Lab Components</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a>
+
+          <span class="right">
+             <a href="../_sources/class4/intro.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="getting-started">
+<h1>4.1. Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Please follow the instructions provided by the instructor to start your
+lab and access your jump host.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All work for this lab will be performed exclusively from the Windows
+jumphost. No installation or interaction with your local system is
+required.</p>
+</div>
+<div class="section" id="lab-topology">
+<h2>4.1.1. Lab Topology<a class="headerlink" href="#lab-topology" title="Permalink to this headline">¶</a></h2>
+<p>The following components have been included in your lab environment:</p>
+<ul class="simple">
+<li>1 x F5 BIG-IP AFM VE (v13.1.0.6)</li>
+<li>2 x vyOS routers (v1.1.8)</li>
+<li>1 x Flowmon Collector (v9.01.04)/DDoS Defender (v4.01.00)</li>
+<li>1 x Webserver (Ubuntu 16.04)</li>
+<li>1 x Jumphost (Windows 7)</li>
+<li>1 x Attacker (Ubuntu 16.04)</li>
+</ul>
+<div class="section" id="lab-components">
+<h3>4.1.1.1. Lab Components<a class="headerlink" href="#lab-components" title="Permalink to this headline">¶</a></h3>
+<p>The following table lists VLANS, IP Addresses and Credentials for all
+components:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="40%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Component</strong></th>
+<th class="head"><strong>VLAN/IP Address(es)</strong></th>
+<th class="head"><strong>Connection Type, Credentials</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Jumphost</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.199</li>
+<li><strong>Users:</strong> 10.1.10.30</li>
+<li><strong>Internal:</strong> 10.1.20.30</li>
+<li><strong>Servers:</strong> 10.1.30.30</li>
+</ul>
+</td>
+<td>RDP <code class="docutils literal notranslate"><span class="pre">external_user</span></code>/<code class="docutils literal notranslate"><span class="pre">P&#64;ssw0rd!</span></code></td>
+</tr>
+<tr class="row-odd"><td>BIG-IP AFM</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.7</li>
+<li><strong>Internal:</strong> 10.1.20.245</li>
+</ul>
+</td>
+<td>TMUI <code class="docutils literal notranslate"><span class="pre">admin</span></code>/<code class="docutils literal notranslate"><span class="pre">admin</span></code></td>
+</tr>
+<tr class="row-even"><td>Flowmon Collector/DDoS Defender</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.9</li>
+<li><strong>Internal:</strong> 10.1.20.10</li>
+</ul>
+</td>
+<td>TMUI <code class="docutils literal notranslate"><span class="pre">admin</span></code>/<code class="docutils literal notranslate"><span class="pre">admin</span></code></td>
+</tr>
+<tr class="row-odd"><td>Router 1</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.10</li>
+<li><strong>Users:</strong> 10.1.10.243</li>
+<li><strong>Internal:</strong> 10.1.20.243</li>
+</ul>
+</td>
+<td>ssh <code class="docutils literal notranslate"><span class="pre">vyos</span></code>/<code class="docutils literal notranslate"><span class="pre">vyos</span></code></td>
+</tr>
+<tr class="row-even"><td>Router 2</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.11</li>
+<li><strong>Users:</strong> 10.1.10.244</li>
+<li><strong>Internal:</strong> 10.1.20.244</li>
+</ul>
+</td>
+<td>ssh <code class="docutils literal notranslate"><span class="pre">vyos</span></code>/<code class="docutils literal notranslate"><span class="pre">vyos</span></code></td>
+</tr>
+<tr class="row-odd"><td>Attacker</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.4</li>
+<li><strong>Users:</strong> 10.1.10.100</li>
+</ul>
+</td>
+<td>ssh <code class="docutils literal notranslate"><span class="pre">f5admin</span></code>/<code class="docutils literal notranslate"><span class="pre">f5admin</span></code></td>
+</tr>
+<tr class="row-even"><td>Webserver</td>
+<td><ul class="first last simple">
+<li><strong>Management:</strong> 10.1.1.6</li>
+<li><strong>Servers:</strong> 10.1.30.252</li>
+</ul>
+</td>
+<td>ssh <code class="docutils literal notranslate"><span class="pre">f5admin</span></code>/<code class="docutils literal notranslate"><span class="pre">f5admin</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="class4.html" title="4. Flowmon Integrated Out-of-path DDoS Solution" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="module1/module1.html" title="4.2. Module – Deployment use case and Lab diagram" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../_static/js/index.js"></script>
+  <script src="../_static/js/jquery.appear.js"></script>
+  <script src="../_static/js/printThis.js"></script>
+  <script src="../_static/js/bootstrap.min.js"></script>
+  <script src="../_static/js/clouddocs.js"></script>
+  <script src="../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

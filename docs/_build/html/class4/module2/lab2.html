@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>4.3.2. Initiate DDoS attack</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="4.3.2. Initiate DDoS attack"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4.3.2. Initiate DDoS attack &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.3.3. Attack stop" href="lab3.html" />
+    <link rel="prev" title="4.3.1. Prepare traffic visualization and monitoring" href="lab1.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">4.3.2. Initiate DDoS attack</a><ul>
+<li><a class="reference internal" href="#run-syn-flood-hping3-from-attacker-vm">4.3.2.1. Run SYN flood (hping3) from Attacker VM</a></li>
+<li><a class="reference internal" href="#ddos-mitigation-start">4.3.2.2. DDoS mitigation start</a></li>
+<li><a class="reference internal" href="#bgp-route-change-and-traffic-drop">4.3.2.3. BGP route change and traffic drop</a></li>
+<li><a class="reference internal" href="#afm-ddos-profile-and-virtual-server">4.3.2.4. AFM DDoS profile and virtual server</a></li>
+<li><a class="reference internal" href="#afm-ddos-mitigation">4.3.2.5. AFM DDoS mitigation</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a>
+              &gt; <a href="module2.html">4.3. Module – DDoS Attack</a>
+
+          <span class="right">
+             <a href="../../_sources/class4/module2/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="initiate-ddos-attack">
+<h1>4.3.2. Initiate DDoS attack<a class="headerlink" href="#initiate-ddos-attack" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="run-syn-flood-hping3-from-attacker-vm">
+<h2>4.3.2.1. Run SYN flood (hping3) from Attacker VM<a class="headerlink" href="#run-syn-flood-hping3-from-attacker-vm" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Click on <strong>Attacker SSH</strong> icon to open <code class="docutils literal notranslate"><span class="pre">Attacker</span> <span class="pre">VM</span></code> ssh session</p>
+</li>
+<li><p class="first">From Attacker VM run SYN flood towards Web server</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">./syn_flood</span></code></p>
+<p><a class="reference internal" href="../../_images/image1012.png"><img alt="image10" src="../../_images/image1012.png" style="width: 817.5px; height: 93.0px;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Observe traffic growth in both Router1 and Router2. After <strong>15-45
+seconds</strong> traffic will drop in Router2 due to DDoS detection and
+mitigation start</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image1112.png"><img alt="image11" src="../../_images/image1112.png" style="width: 935.1999999999999px; height: 272.29999999999995px;" /></a></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="ddos-mitigation-start">
+<h2>4.3.2.2. DDoS mitigation start<a class="headerlink" href="#ddos-mitigation-start" title="Permalink to this headline">¶</a></h2>
+<p>An <em>ACTIVE</em> attack with the new ID will appear in Flowmon DDoS defender
+‘Active attacks’ screen. Flowmon dynamically provisions AFM DDoS profile
+and VS, and initiates traffic diversion to AFM using BGP advertisement</p>
+<p><a class="reference internal" href="../../_images/image1212.png"><img alt="image12" src="../../_images/image1212.png" style="width: 1108.8px; height: 193.2px;" /></a></p>
+<p><img alt="image13" src="../../_images/image1310.png" /></p>
+</div>
+<div class="section" id="bgp-route-change-and-traffic-drop">
+<h2>4.3.2.3. BGP route change and traffic drop<a class="headerlink" href="#bgp-route-change-and-traffic-drop" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Router1 shows new route to protected <code class="docutils literal notranslate"><span class="pre">10.1.30.0/24</span></code> subnet</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">ip</span> <span class="pre">bgp</span></code></p>
+<p><img alt="image14" src="../../_images/image143.png" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">As traffic is being routed through AFM, Router2 shows no significant
+network activity while Router1 still experiences high traffic load</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image152.png"><img alt="image15" src="../../_images/image152.png" style="width: 837.6px; height: 418.2px;" /></a></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="afm-ddos-profile-and-virtual-server">
+<h2>4.3.2.4. AFM DDoS profile and virtual server<a class="headerlink" href="#afm-ddos-profile-and-virtual-server" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Flowmon uses iControl REST interface to provision necessary parameters in AFM</p>
+</div>
+<ul>
+<li><p class="first">In AFM TMUI Navigate to <strong>Security –&gt; DoS protection –&gt; DoS profiles</strong> and confirm that
+the DoS profile has been provisioned for the protected subnet</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image162.png"><img alt="image16" src="../../_images/image162.png" style="width: 924.0px; height: 137.0px;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">In <strong>Local Traffic –&gt; Virtual Servers –&gt; Virtual Server List</strong> confirm that
+VS with corresponding Attack ID has been created</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/image173.png"><img alt="image17" src="../../_images/image173.png" style="width: 923.0px; height: 144.5px;" /></a></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="afm-ddos-mitigation">
+<h2>4.3.2.5. AFM DDoS mitigation<a class="headerlink" href="#afm-ddos-mitigation" title="Permalink to this headline">¶</a></h2>
+<p>In AFM TMUI navigate to <strong>Security –&gt; DoS Protection –&gt; DoS Overview</strong> and
+confirm that AFM is performing DoS mitigation using the provisioned DoS
+profile</p>
+<p><a class="reference internal" href="../../_images/image183.png"><img alt="image18" src="../../_images/image183.png" style="width: 703.1999999999999px; height: 230.39999999999998px;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>Statistics -&gt; DoS Visibility</cite> TMUI menu provides graphical attack data</p>
+</div>
+<p>It may take up to ~5 minutes for DoS Visibility Dashboard to show our simulated DDoS attack. You may need to click <cite>Refresh</cite> for data to appear</p>
+<p><a class="reference internal" href="../../_images/image263.png"><img alt="image26" src="../../_images/image263.png" style="width: 716.55px; height: 244.79999999999998px;" /></a></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab1.html" title="4.3.1. Prepare traffic visualization and monitoring" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab3.html" title="4.3.3. Attack stop" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

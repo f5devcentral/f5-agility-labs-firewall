@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>2.1.6. Lab 6: Configure HTTP security</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="2.1.6. Lab 6: Configure HTTP security"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.1.6. Lab 6: Configure HTTP security &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1.7. Lab 7: Configure A Clone Pool For SSL Visibility To IDS Sensors Or Other Security Tools" href="lab7.html" />
+    <link rel="prev" title="2.1.5. Lab 5: Provide Firewall Security Policies For CDN Enabled Applications" href="lab5.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">2.1.6. Lab 6: Configure HTTP security</a><ul>
+<li><a class="reference internal" href="#configure-an-http-security-profile-and-apply-it-to-the-external-virtual-server">2.1.6.1. Configure An HTTP Security Profile And Apply It To The External Virtual Server</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class2.html">2. Advanced Multi-Layer Firewall Protection</a>
+              &gt; <a href="module1.html">2.1. Module 1: F5 Multi-layer Firewall</a>
+
+          <span class="right">
+             <a href="../../_sources/class2/module1/lab6.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-6-configure-http-security">
+<h1>2.1.6. Lab 6: Configure HTTP security<a class="headerlink" href="#lab-6-configure-http-security" title="Permalink to this headline">¶</a></h1>
+<p>HTTP security profiles are used to apply basic HTTP security to a
+virtual server. Significantly more advanced HTTP security is available
+by adding ASM (Application Security Manager).</p>
+<div class="section" id="configure-an-http-security-profile-and-apply-it-to-the-external-virtual-server">
+<h2>2.1.6.1. Configure An HTTP Security Profile And Apply It To The External Virtual Server<a class="headerlink" href="#configure-an-http-security-profile-and-apply-it-to-the-external-virtual-server" title="Permalink to this headline">¶</a></h2>
+<p>On the BIG-IP:</p>
+<p><strong>Navigation:</strong> Security &gt; Protocol Security &gt; Security Profiles &gt; HTTP,
+then click Create.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="58%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Profile Name</strong></th>
+<th class="head">demo_http_security</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Custom</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-odd"><td><strong>Profile is case sensitive</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-even"><td><strong>HTTP Protocol Checks</strong></td>
+<td>Check All</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image491.png"><img alt="image48" src="../../_images/image491.png" style="width: 5.41503in; height: 5.23780in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Request Checks Tab.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>File Types</strong></td>
+<td>Select All</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image501.png"><img alt="image49" src="../../_images/image501.png" style="width: 5.25667in; height: 6.99992in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Blocking Page Tab.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Response Type</strong></th>
+<th class="head">Custom Response</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Response Body</strong></td>
+<td>Insert “Please contact the helpdesk at x1234” as noted below</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image511.png"><img alt="image50" src="../../_images/image511.png" style="width: 7.04444in; height: 7.07986in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Finished</p>
+<p>Apply the HTTP security profile to the external virtual server.</p>
+<p><strong>Navigation:</strong> Local Traffic &gt; Virtual Servers &gt; Virtual Server List &gt;
+EXT_VIP_10.10.99.30</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Protocol Security</strong></td>
+<td>Enabled</td>
+<td>demo_http_security</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image521.png"><img alt="image51" src="../../_images/image521.png" style="width: 7.04167in; height: 6.19444in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Update.</p>
+<p>Open a new web browser tab, access the virtual server and log into the
+application.</p>
+<p>URL: <a class="reference external" href="https://www.mysite.com/dvwa">https://www.mysite.com/dvwa</a></p>
+<p><strong>Credentials: admin/password</strong></p>
+<p><a class="reference internal" href="../../_images/image531.png"><img alt="image52" src="../../_images/image531.png" style="width: 3.27502in; height: 2.37667in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.</p>
+</div>
+<p>Browse the application.</p>
+<p><strong>Navigation:</strong> Click on various links on the sidebar.</p>
+<p><a class="reference internal" href="../../_images/image541.png"><img alt="image53" src="../../_images/image541.png" style="width: 3.84750in; height: 3.25278in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.</p>
+</div>
+<p>On BIG-IP</p>
+<p>Review the log entries created in the previous step.</p>
+<p><strong>Navigation:</strong> Security &gt; Event Logs &gt; Protocol &gt; HTTP</p>
+<p><a class="reference internal" href="../../_images/image551.png"><img alt="image54" src="../../_images/image551.png" style="width: 7.04444in; height: 1.56667in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Your log entries may be different than the example shown above but the concept should be the same.</p>
+</div>
+<p>Edit the demo_http_security HTTP security profile.</p>
+<p><strong>Navigation:</strong> Security &gt; Protocol Security &gt; Security Profiles &gt; HTTP</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>HTTP Protocol Checks</strong></td>
+<td><p class="first">Uncheck all except “Host header contains IP address”.</p>
+<p class="last">Check “Block”</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image561.png"><img alt="image55" src="../../_images/image561.png" style="width: 4.52592in; height: 4.53707in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Finished.</p>
+<p>On Windows jumpbox</p>
+<p>Open a new web browser tab and access the virtual server.</p>
+<p>URL: <a class="reference external" href="https://10.10.99.30/dvwa">https://10.10.99.30/dvwa</a></p>
+<p><a class="reference internal" href="../../_images/dvwa555.png"><img alt="image56" src="../../_images/dvwa555.png" style="width: 5.16503in; height: 1.12839in;" /></a></p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">This application should not be accessible because the ”Host header contains IP address” and “Block” options in the HTTP security policy are selected.</p>
+</div>
+<p>Open a new web browser tab and access the virtual server.</p>
+<p>URL: <a class="reference external" href="https://www.mysite.com/dvwa">https://www.mysite.com/dvwa</a></p>
+<p><a class="reference internal" href="../../_images/image531.png"><img alt="image57" src="../../_images/image531.png" style="width: 3.27502in; height: 2.37667in;" /></a></p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">This application should now be accessible because we requested it through the FQDN instead of an IP address</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Explore some of the other settings avaialable to you in the security policy</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is the end of Module 1 - Lab 6</p>
+</div>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab5.html" title="2.1.5. Lab 5: Provide Firewall Security Policies For CDN Enabled Applications" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab7.html" title="2.1.7. Lab 7: Configure A Clone Pool For SSL Visibility To IDS Sensors Or Other Security Tools" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

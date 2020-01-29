@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>3.2.1. Detecting and Preventing System DoS and DDoS Attacks</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="3.2.1. Detecting and Preventing System DoS and DDoS Attacks"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3.2.1. Detecting and Preventing System DoS and DDoS Attacks &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.3. Appendix" href="../module3/module3.html" />
+    <link rel="prev" title="3.2. Module 2 – Detecting and Preventing System DoS and DDoS Attacks" href="module2.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">3.2.1. Detecting and Preventing System DoS and DDoS Attacks</a><ul>
+<li><a class="reference internal" href="#configure-logging">3.2.1.1. Configure Logging</a></li>
+<li><a class="reference internal" href="#simulating-a-christmas-tree-packet-attack">3.2.1.2. Simulating a Christmas Tree Packet Attack</a></li>
+<li><a class="reference internal" href="#simulating-a-tcp-syn-ddos-attack">3.2.1.3. Simulating a TCP SYN DDoS Attack</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#preventing-global-dos-sweep-and-flood-attacks">3.2.2. Preventing Global DoS Sweep and Flood Attacks</a><ul>
+<li><a class="reference internal" href="#single-endpoint-sweep">3.2.2.1. Single Endpoint Sweep</a></li>
+<li><a class="reference internal" href="#single-endpoint-flood">3.2.2.2. Single Endpoint Flood</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion">3.2.3. Conclusion</a></li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a>
+              &gt; <a href="module2.html">3.2. Module 2 – Detecting and Preventing System DoS and DDoS Attacks</a>
+
+          <span class="right">
+             <a href="../../_sources/class3/module2/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="detecting-and-preventing-system-dos-and-ddos-attacks">
+<h1>3.2.1. Detecting and Preventing System DoS and DDoS Attacks<a class="headerlink" href="#detecting-and-preventing-system-dos-and-ddos-attacks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configure-logging">
+<h2>3.2.1.1. Configure Logging<a class="headerlink" href="#configure-logging" title="Permalink to this headline">¶</a></h2>
+<p>Configuring a logging destination will allow you to verify the BIG-IPs
+detection and mitigation of attacks, in addition to the built-in
+reporting.</p>
+<ol class="arabic">
+<li><p class="first">In the BIG-IP web UI, navigate to <strong>Security</strong> &gt; <strong>DoS Protection</strong> &gt;
+<strong>Device Configuration</strong> &gt; <strong>Properties</strong>.</p>
+</li>
+<li><p class="first">Under <strong>Log Pubisher</strong>, select <strong>local-db-publisher</strong>.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Click the <strong>Commit Changes to System</strong> button.</div>
+<div class="line"><a class="reference internal" href="../../_images/image322.png"><img alt="image30" src="../../_images/image322.png" style="width: 2.98013in; height: 1.62914in;" /></a></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="simulating-a-christmas-tree-packet-attack">
+<h2>3.2.1.2. Simulating a Christmas Tree Packet Attack<a class="headerlink" href="#simulating-a-christmas-tree-packet-attack" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we’ll set the BIG-IP to detect and mitigate an attack
+where all flags on a TCP packet are set. This is commonly referred to as
+a Christmas tree packet and is intended to increase processing on
+in-path network devices and end hosts to the target.</p>
+<p>We’ll use the hping utility to send 25,000 packets to our server, with
+random source IPs to simulate a DDoS attack where multiple hosts are
+attacking our server. We’ll set the SYN, ACK, FIN, RST, URG, PUSH, Xmas
+and Ymas TCP flags.</p>
+<ol class="arabic">
+<li><p class="first">In the BIG-IP web UI, navigate to <strong>Security</strong> &gt; <strong>DoS Protection</strong>
+&gt; <strong>Device Configuration</strong> &gt; <strong>Network Security</strong>.</p>
+</li>
+<li><p class="first">Expand the <strong>Bad-Header-TCP</strong> category in the vectors list.</p>
+</li>
+<li><p class="first">Click on the <strong>Bad TCP Flags (All Flags Set)</strong> vector name.</p>
+</li>
+<li><p class="first">Configure the vector with the following parameters:</p>
+<ol class="loweralpha">
+<li><p class="first">State: Mitigate</p>
+</li>
+<li><p class="first">Threshold Mode: Fully Manual</p>
+</li>
+<li><p class="first">Detection Threshold EPS: Specify 50</p>
+</li>
+<li><p class="first">Detection Threshold Percent: Specify 200</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Mitigation Threshold EPS: Specify 100</div>
+<div class="line"><a class="reference internal" href="../../_images/image332.png"><img alt="image31" src="../../_images/image332.png" style="width: 2.43392in; height: 2.49669in;" /></a></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Click <strong>Update</strong> to save your changes.</p>
+</li>
+<li><p class="first">Open the BIG-IP SSH session and scroll the ltm log in real time with
+the following command: tail -f /var/log/ltm</p>
+</li>
+<li><div class="first line-block">
+<div class="line">On the attack host, launch the attack by issuing the following
+command on the BASH prompt:</div>
+<div class="line">sudo hping3 10.20.0.10 –flood –rand-source –destport 80 -c
+25000 –syn –ack –fin –rst –push –urg –xmas –ymas</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">You’ll see the BIG-IP ltm log show that the attack has been
+detected:</div>
+<div class="line"><a class="reference internal" href="../../_images/image342.png"><img alt="image32" src="../../_images/image342.png" style="width: 4.48611in; height: 0.38889in;" /></a></div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">After approximately 60 seconds, press <strong>CTRL+C</strong> to stop the
+attack.</div>
+<div class="line"><a class="reference internal" href="../../_images/image352.png"><img alt="image33" src="../../_images/image352.png" style="width: 4.43056in; height: 0.97222in;" /></a></div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">Return to the BIG-IP web UI. Navigate to <strong>Security</strong> &gt; <strong>Event
+Logs</strong> &gt; <strong>DoS</strong> &gt; <strong>Network</strong> &gt; <strong>Events</strong>. Observer the log
+entries showing the details surrounding the attack detection and
+mitigation.</div>
+<div class="line"><a class="reference internal" href="../../_images/image362.png"><img alt="image34" src="../../_images/image362.png" style="width: 5.00000in; height: 1.70833in;" /></a></div>
+</div>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt; <strong>Analysis</strong>.
+Single-click on the attack ID in the filter list to the right of the
+charts and observe the various statistics around the attack.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="simulating-a-tcp-syn-ddos-attack">
+<h2>3.2.1.3. Simulating a TCP SYN DDoS Attack<a class="headerlink" href="#simulating-a-tcp-syn-ddos-attack" title="Permalink to this headline">¶</a></h2>
+<p>In the last example, we crafted a packet that is easily identified as
+malicious, as its invalid. We’ll now simulate an attack with traffic
+that could be normal, acceptable traffic. The TCP SYN flood attack will
+attempt to DDoS a host by sending valid TCP traffic to a host from
+multiple source hosts.</p>
+<ol class="arabic">
+<li><p class="first">In the BIG-IP web UI, navigate to <strong>Security</strong> &gt; <strong>DoS Protection</strong>
+&gt; <strong>Device</strong> <strong>Configuration</strong> &gt; <strong>Network Security</strong>.</p>
+</li>
+<li><p class="first">Expand the <strong>Flood</strong> category in the vectors list.</p>
+</li>
+<li><p class="first">Click on <strong>TCP Syn Flood</strong> vector name.</p>
+</li>
+<li><p class="first">Configure the vector with the following parameters (use the lower values specified):</p>
+<ol class="loweralpha">
+<li><p class="first">State: Mitigate</p>
+</li>
+<li><p class="first">Threshold Mode: Fully Manual</p>
+</li>
+<li><p class="first">Detection Threshold EPS: 50</p>
+</li>
+<li><p class="first">Detection Threshold Percent: 200</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Mitigation Threshold EPS: 100</div>
+<div class="line"><a class="reference internal" href="../../_images/image372.png"><img alt="image35" src="../../_images/image372.png" style="width: 2.45542in; height: 3.49669in;" /></a></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Click <strong>Update</strong> to save your changes.</p>
+</li>
+<li><p class="first">Open the BIG-IP SSH session and scroll the ltm log in real time with
+the following command: tail -f /var/log/ltm</p>
+</li>
+<li><div class="first line-block">
+<div class="line">On the attack host, launch the attack by issuing the following
+command on the BASH prompt:</div>
+<div class="line">sudo hping3 10.20.0.10 –flood –rand-source –destport 80 –syn
+-d 120 -w 64</div>
+</div>
+</li>
+<li><p class="first">After about 60 seconds, stop the flood attack by pressing <strong>CTRL +
+C</strong>.</p>
+</li>
+<li><p class="first">Return to the BIG-IP web UI and navigate to <strong>Security</strong> &gt; <strong>Event
+Logs</strong> &gt; <strong>DoS</strong> &gt; <strong>Network</strong> &gt; <strong>Events</strong>. Observe the log entries
+showing the details surrounding the attack detection and mitigation.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt; <strong>Dashboard</strong>
+to view an overview of the DoS attacks and timeline. You can select
+filters in the filter pane to highlight the specific attack.</p>
+</li>
+<li><p class="first">Finally, navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt;
+<strong>Analysis</strong>. View detailed statistics around the attack.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="preventing-global-dos-sweep-and-flood-attacks">
+<h1>3.2.2. Preventing Global DoS Sweep and Flood Attacks<a class="headerlink" href="#preventing-global-dos-sweep-and-flood-attacks" title="Permalink to this headline">¶</a></h1>
+<p>In the last section, the focus was on attacks originating from various
+hosts. In this section, we will focus on mitigating flood and sweep
+attacks from a single host.</p>
+<div class="section" id="single-endpoint-sweep">
+<h2>3.2.2.1. Single Endpoint Sweep<a class="headerlink" href="#single-endpoint-sweep" title="Permalink to this headline">¶</a></h2>
+<p>The single endpoint sweep is an attempt for an attacker to send traffic
+across a range of ports on the target server, typically to scan for open
+ports.</p>
+<ol class="arabic">
+<li><p class="first">In the BIG-IP web UI, navigate to <strong>Security</strong> &gt; <strong>DoS Protection</strong>
+&gt; <strong>Device Configuration</strong> &gt; <strong>Network Security</strong>.</p>
+</li>
+<li><p class="first">Expand the <strong>Single-Endpoint</strong> category in the vectors list.</p>
+</li>
+<li><p class="first">Click on <strong>Single Endpoint Sweep</strong> vector name.</p>
+</li>
+<li><p class="first">Configure the vector with the following parameters:</p>
+<ol class="loweralpha">
+<li><p class="first">State: Mitigate</p>
+</li>
+<li><p class="first">Threshold Mode: Fully Manual</p>
+</li>
+<li><p class="first">Detection Threshold EPS: 150</p>
+</li>
+<li><p class="first">Mitigation Threshold EPS: 200</p>
+</li>
+<li><p class="first">Add Source Address to Category: Checked</p>
+</li>
+<li><p class="first">Category Name: denial_of_service</p>
+</li>
+<li><p class="first">Sustained Attack Detection Time: 10 seconds</p>
+</li>
+<li><p class="first">Category Duration Time: 60 seconds</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Packet Type: Move All IPv4 to Selected</div>
+<div class="line"><a class="reference internal" href="../../_images/image382.png"><img alt="image36" src="../../_images/image382.png" style="width: 2.79540in; height: 6.25166in;" /></a></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Click <strong>Update</strong> to save your changes.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Network Firewall</strong> &gt; <strong>IP
+Intelligence</strong> &gt; <strong>Policies</strong>.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">In the <strong>Global Policy</strong> section, change the <strong>IP Intelligence
+Policy</strong> to <strong>ip-intelligence</strong>.</div>
+<div class="line"><a class="reference internal" href="../../_images/image392.png"><img alt="image37" src="../../_images/image392.png" style="width: 2.56954in; height: 0.91286in;" /></a></div>
+</div>
+</li>
+<li><p class="first">Click <strong>Update</strong>.</p>
+</li>
+<li><p class="first">Click on the <strong>ip-intelligence</strong> policy in the policy list below.</p>
+</li>
+<li><p class="first">Create a new Blacklist Matching Policy in the IP Intelligence Policy
+Properties section with the following attributes, leaving
+unspecified attributes with their default values:</p>
+<ol class="loweralpha simple">
+<li>Blacklist Category: denial-of-service</li>
+<li>Action: drop</li>
+<li>Log Blacklist Category Matches: Yes</li>
+</ol>
+</li>
+<li><div class="first line-block">
+<div class="line">Click <strong>Add</strong> to add the new Blacklist Matching Policy.</div>
+<div class="line"><a class="reference internal" href="../../_images/image402.png"><img alt="image38" src="../../_images/image402.png" style="width: 6.17881in; height: 3.91721in;" /></a></div>
+</div>
+</li>
+<li><p class="first">Click <strong>Update</strong> to save changes to the ip-intelligence policy.</p>
+</li>
+<li><p class="first">Open the BIG-IP SSH session and scroll the ltm log in real time with
+the following command: tail -f /var/log/ltm</p>
+</li>
+<li><p class="first">On the victim server, start a packet capture with an SSH filter by
+issuing sudo tcpdump -nn not port 22</p>
+</li>
+<li><div class="first line-block">
+<div class="line">On the attack host, launch the attack by issuing the following
+command on the BASH prompt:</div>
+<div class="line">sudo hping3 10.20.0.10 –flood –scan 1-65535 -d 128 -w 64 –syn</div>
+</div>
+</li>
+<li><p class="first">You will see the scan find a few open ports on the server, and the
+server will show the inbound sweep traffic. However, you will notice
+that the traffic to the server stops after a short time (10 seconds,
+the configured sustained attack detection time.) Leave the test
+running.</p>
+</li>
+<li><p class="first">After approximately 60 seconds, sweep traffic will return to the
+host. This is because the IP Intelligence categorization of the
+attack host has expired. After 10 seconds of traffic, the bad actor
+is again blacklisted for another 60 seconds.</p>
+</li>
+<li><p class="first">Stop the sweep attack on the attack host by pressing <strong>CTRL + C</strong>.</p>
+</li>
+<li><p class="first">Return to the BIG-IP web UI and navigate to <strong>Security</strong> &gt; <strong>Event
+Logs</strong> &gt; <strong>DoS</strong> &gt; <strong>Network</strong> &gt; <strong>Events</strong>. Observe the log entries
+showing the details surrounding the attack detection and mitigation.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Event Logs</strong> &gt; <strong>Network</strong> &gt; <strong>IP
+Intelligence</strong>. Observe the log entries showing the mitigation of
+the sweep attack via the ip-intelligence policy.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Event Logs</strong> &gt; <strong>Network</strong> &gt; <strong>Shun</strong>.
+Observe the log entries showing the blacklist adds and deletes.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>Network</strong> &gt; <strong>IP
+Intelligence</strong>. Observe the statistics showing the sweep attack and
+mitigation. Change the <strong>View By</strong> drop-down to view the varying
+statistics.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt; <strong>Dashboard</strong>
+to view an overview of the DoS attacks and timeline. You can select
+filters in the filter pane to highlight the specific attack.</p>
+</li>
+<li><p class="first">Finally, navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt;
+<strong>Analysis</strong>. View detailed statistics around the attack.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="single-endpoint-flood">
+<h2>3.2.2.2. Single Endpoint Flood<a class="headerlink" href="#single-endpoint-flood" title="Permalink to this headline">¶</a></h2>
+<p>The single endpoint flood attack is an attempt for an attacker to send a
+flood of traffic to a host in hopes of overwhelming a service to a point
+of failure. In this example, we’ll flood the target server with ICMP
+packets.</p>
+<ol class="arabic">
+<li><p class="first">In the BIG-IP web UI, navigate to <strong>Security</strong> &gt; <strong>DoS Protection</strong>
+&gt; <strong>Device Configuration</strong> &gt; <strong>Network Security</strong>.</p>
+</li>
+<li><p class="first">Expand the <strong>Single-Endpoint</strong> category in the vectors list.</p>
+</li>
+<li><p class="first">Click on <strong>Single Endpoint Flood</strong> vector name.</p>
+</li>
+<li><p class="first">Configure the vector with the following parameters:</p>
+<ol class="loweralpha">
+<li><p class="first">State: Mitigate</p>
+</li>
+<li><p class="first">Threshold Mode: Fully Manual</p>
+</li>
+<li><p class="first">Detection Threshold EPS: 150</p>
+</li>
+<li><p class="first">Mitigation Threshold EPS: 200</p>
+</li>
+<li><p class="first">Add Destination Address to Category: Checked</p>
+</li>
+<li><p class="first">Category Name: denial_of_service</p>
+</li>
+<li><p class="first">Sustained Attack Detection Time: 10 seconds</p>
+</li>
+<li><p class="first">Category Duration Time: 60 seconds</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Packet Type: Move Any ICMP (IPv4) to Selected</div>
+<div class="line"><a class="reference internal" href="../../_images/image412.png"><img alt="image39" src="../../_images/image412.png" style="width: 2.41144in; height: 5.43046in;" /></a></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Click <strong>Update</strong> to save your changes.</p>
+</li>
+<li><p class="first">Open the BIG-IP SSH session and scroll the ltm log in real time with
+the following command: tail -f /var/log/ltm</p>
+</li>
+<li><p class="first">We’ll run a packet capture on the victim server to gauge the
+incoming traffic. On the victim server, issue the following command:
+sudo tcpdump -nn not port 22</p>
+</li>
+<li><div class="first line-block">
+<div class="line">On the attack host, launch the attack by issuing the following
+command on the BASH prompt:</div>
+<div class="line">sudo hping3 10.20.0.10 –faster -c 25000 –icmp</div>
+</div>
+</li>
+<li><p class="first">The attack host will begin flooding the victim server with ICMP
+packets. However, you will notice that the traffic to the server
+stops after a short time (10 seconds, the configured sustained
+attack detection time.)</p>
+</li>
+<li><p class="first">After approximately 60 seconds, run the attack again. ICMP traffic
+will return to the host. This is because the IP Intelligence
+categorization of the attack host has expired.</p>
+</li>
+<li><p class="first">Return to the BIG-IP web UI.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Event Logs</strong> &gt; <strong>DoS</strong> &gt; <strong>Network</strong> &gt;
+<strong>Events</strong>. Observe the log entries showing the details surrounding
+the attack detection and mitigation.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Event Logs</strong> &gt; <strong>Network</strong> &gt; <strong>IP
+Intelligence</strong>. Observe the log entries showing the mitigation of
+the sweep attack via the ip-intelligence policy.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>Network</strong> &gt; <strong>IP Intelligence</strong>. Observe the statistics showing the sweep attack and mitigation.</p>
+</li>
+<li><p class="first">Navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt; <strong>Dashboard</strong> to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight the specific attack.</p>
+</li>
+<li><p class="first">Finally, navigate to <strong>Security</strong> &gt; <strong>Reporting</strong> &gt; <strong>DoS</strong> &gt; <strong>Analysis</strong>. View detailed statistics around the attack.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h1>3.2.3. Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h1>
+<p>Congratulations on finishing the lab!</p>
+<p>This lab did not cover auto thresholds for protections, nor did we test dynamic signatures. Testing auto thresholds requires a more real-world environment. For suggested testing guidelines for auto thresholds and dynamic signatures, engage your F5 account team.</p>
+<p>This concludes the DoS/DDoS portion of the lab. You may now close all sessions, log out of the jump host and log out of the training portal.</p>
+<p>Thank you for your time.</p>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="module2.html" title="3.2. Module 2 – Detecting and Preventing System DoS and DDoS Attacks" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module3/module3.html" title="3.3. Appendix" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

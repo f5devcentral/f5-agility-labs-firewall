@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>2.3.2. Lab 2: Protocol Inspection - Compliance Checks</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="2.3.2. Lab 2: Protocol Inspection - Compliance Checks"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.3.2. Lab 2: Protocol Inspection - Compliance Checks &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.3.3. Lab 3: Protocol Inspection - Signatures" href="lab3.html" />
+    <link rel="prev" title="2.3.1. Lab 1: Preconditions" href="lab1.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">2.3.2. Lab 2: Protocol Inspection - Compliance Checks</a><ul>
+<li><a class="reference internal" href="#task-1-the-inspection-profile">2.3.2.1. Task 1: The Inspection Profile</a></li>
+<li><a class="reference internal" href="#task-2-apply-the-profile-to-the-global-policy">2.3.2.2. Task 2: Apply the Profile to the Global Policy</a></li>
+<li><a class="reference internal" href="#task-2-5-create-testing-virtual-server-on-port-80">2.3.2.3. Task 2.5: Create testing Virtual server on port 80</a></li>
+<li><a class="reference internal" href="#task-3-test-the-inspection-profile">2.3.2.4. Task 3: Test the Inspection Profile</a></li>
+<li><a class="reference internal" href="#task-4-modify-a-compliance-check">2.3.2.5. Task 4: Modify a Compliance Check</a></li>
+<li><a class="reference internal" href="#task-5-test-the-modified-compliance-check">2.3.2.6. Task 5: Test the Modified Compliance Check</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class2.html">2. Advanced Multi-Layer Firewall Protection</a>
+              &gt; <a href="module3.html">2.3. Module 3: AFM Protocol Inspection IPS</a>
+
+          <span class="right">
+             <a href="../../_sources/class2/module3/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-protocol-inspection-compliance-checks">
+<h1>2.3.2. Lab 2: Protocol Inspection - Compliance Checks<a class="headerlink" href="#lab-2-protocol-inspection-compliance-checks" title="Permalink to this headline">¶</a></h1>
+<p>Estimated completion time: Thirty Five 35 minutes</p>
+<p>Compliance Checks model protocols and applications and flag deviations from the model. End
+users can’t add compliance checks, but some of them have parameters the user can modify.
+We’ll look at a couple of these checks and modify one.
+Have fun!</p>
+<div class="section" id="task-1-the-inspection-profile">
+<h2>2.3.2.1. Task 1: The Inspection Profile<a class="headerlink" href="#task-1-the-inspection-profile" title="Permalink to this headline">¶</a></h2>
+<p>You will create an Inspection Profile containing compliance checks.</p>
+<ol class="arabic simple">
+<li>Navigate to Security &gt; Protocol Security &gt; Inspection Profiles and click ‘Add’, select ‘New’</li>
+<li>Name the profile ‘my-inspection-profile’</li>
+<li>Disable Signatures</li>
+<li>Make sure Compliance is enabled.</li>
+<li>Under Services, Select HTTP.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You have to wait a few seconds after selecting HTTP</p>
+</div>
+<p><a class="reference internal" href="../../_images/ips2.png"><img alt="ips2" src="../../_images/ips2.png" style="width: 7.05000in; height: 5.28750in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>When the HTTP Service appears, click to open the Inspection list for HTTP, and select Inspection Type ‘compliance.’</li>
+</ol>
+<p><a class="reference internal" href="../../_images/ips3.png"><img alt="ips3" src="../../_images/ips3.png" style="width: 7.05000in; height: 5.28750in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Click the checkbox to select all the HTTP compliance checks.</li>
+<li>In the edit window in the upper-right of the F5 GUI, make the following selections:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Enable the selected inspections</li>
+<li>Set the ‘Action’ to ‘Accept’</li>
+<li>Enable logging</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These should be the default actions, so they most likely are already set for you.</p>
+</div>
+<p><img alt="ips4" src="../../_images/ips4.png" /></p>
+<blockquote>
+<div><ul class="simple">
+<li>Click ‘Apply’</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li>Click ‘Commit Changes to System’</li>
+</ol>
+<p><strong>You should now have an Inspection Policy.</strong></p>
+</div>
+<div class="section" id="task-2-apply-the-profile-to-the-global-policy">
+<h2>2.3.2.2. Task 2: Apply the Profile to the Global Policy<a class="headerlink" href="#task-2-apply-the-profile-to-the-global-policy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to Security &gt; Network Firewall &gt; Active Rules</li>
+<li>Change Context to ‘Global’</li>
+<li>Click ‘Add Rule’</li>
+<li>Make a new policy named ‘global-fw-policy’</li>
+<li>Make a new rule named fw-global-http-inspection’</li>
+<li>Configure the new rule:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Protocol ‘TCP’</li>
+<li>Set the Destination port to 80</li>
+<li>Action ‘Accept’</li>
+<li>Protocol Inspection Profile: ‘my-inspection-profile’</li>
+<li>Enable logging</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>Click Save</li>
+</ol>
+<p><img alt="ips5" src="../../_images/global-policy.png" /></p>
+</div>
+<div class="section" id="task-2-5-create-testing-virtual-server-on-port-80">
+<h2>2.3.2.3. Task 2.5: Create testing Virtual server on port 80<a class="headerlink" href="#task-2-5-create-testing-virtual-server-on-port-80" title="Permalink to this headline">¶</a></h2>
+<p>To get an understanding of how the IPS function works, we need the manual commands we can issue via Telnet. Because Telnet does not work very well with SSL, we need to create a virtual server on port 80 instead of the one on 443 that we have been using so far.  Remember this is only for testing, and the IPS functionality can work perfectly well on encrypted traffic ( as long as we terminate the SSL )</p>
+<ol class="arabic simple">
+<li>Check if the pool “pool_www.mysite.com” exists.  Does it already exist? Only if it does not exist, please create it as follows:</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head"><strong>Health Monitor</strong></th>
+<th class="head"><strong>Members</strong></th>
+<th class="head"><strong>Service Port</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>pool_www.mysite.com</td>
+<td>tcp_half_open</td>
+<td>10.10.121.129</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li>Create a virtual server with no HTTP profile.  Use the following settings, leave everything else default.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Parameter</strong></th>
+<th class="head"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>IPS_VS</td>
+</tr>
+<tr class="row-odd"><td>IP Address</td>
+<td>10.10.99.40</td>
+</tr>
+<tr class="row-even"><td>Service Port</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>SNAT</td>
+<td>automap</td>
+</tr>
+<tr class="row-even"><td>Pool</td>
+<td>pool_www.mysite.com</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that we neither applied an Inspection Policy to this VS, nor did you apply a Firewall Policy to this VS.  And yet, the IPS is now functional on this VS.  Can you think why this is? This is because the global firewall policy is in affect, and the Inspection Policy will be invoked by the Global Firewall Policy.</p>
+</div>
+</div>
+<div class="section" id="task-3-test-the-inspection-profile">
+<h2>2.3.2.4. Task 3: Test the Inspection Profile<a class="headerlink" href="#task-3-test-the-inspection-profile" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>From the Cygwin session, or from the DOS prompt, enter this command:</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">telnet 10.10.99.40 80</span>
+</pre></div>
+</div>
+<p><strong>The expected output is:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Trying 10.10.99.40...</span>
+<span class="go">Connected to 10.10.99.40</span>
+<span class="go">Escape character is &#39;^]&#39;.</span>
+</pre></div>
+</div>
+<p><strong>Enter the following ( Suggestion: copy and paste ):</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /index.html HTTP/5</span>
+</pre></div>
+</div>
+<p>(hit Enter key two times)</p>
+<p>The expected HTTP response is:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HTTP/1.1 200 OK</span>
+<span class="gp gp-VirtualEnv">( and lots more HTTP headers, etc.)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Check the results.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Navigate to Security &gt; Protocol Security &gt; Inspection Profiles &gt; my-inspectionprofile</li>
+<li>Filter for Inspection Type ‘compliance’</li>
+<li>Look at the Total Hit Count for HTTP Compliance Check ID 11011 “Bad HTTP Version.” We expect to see a hit count of at least 1, and a missing host header count of at least 1.</li>
+<li>Look at the protocol inspection logs.  Go to Security &gt; Protocol Security &gt; Inspection Logs.  You can see the incoming ip address and port, among other things.</li>
+</ul>
+</div></blockquote>
+<p><img alt="image5" src="../../_images/module4-lab2-image5.png" /></p>
+<p><img alt="image6" src="../../_images/module4-lab2-image6.png" /></p>
+</div>
+<div class="section" id="task-4-modify-a-compliance-check">
+<h2>2.3.2.5. Task 4: Modify a Compliance Check<a class="headerlink" href="#task-4-modify-a-compliance-check" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select Compliance Check 11017 ‘Disallowed Methods’</li>
+<li>Enter the value “Head” and click ‘Add’</li>
+</ol>
+<p><img alt="head2" src="../../_images/head2.png" /></p>
+<ol class="arabic simple" start="3">
+<li>Click ‘Commit Changes to System’</li>
+</ol>
+</div>
+<div class="section" id="task-5-test-the-modified-compliance-check">
+<h2>2.3.2.6. Task 5: Test the Modified Compliance Check<a class="headerlink" href="#task-5-test-the-modified-compliance-check" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>From the Cygwin session, enter (or copy and paste) this command:</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">telnet 10.10.99.40 80</span>
+</pre></div>
+</div>
+<p><strong>The expected output is:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Trying 10.10.99.40...</span>
+<span class="go">Connected to 10.10.99.40</span>
+<span class="go">Escape character is &#39;^]&#39;.</span>
+</pre></div>
+</div>
+<p><strong>Enter the following ( Suggestion: copy and paste ):</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HEAD /index.html HTTP/1.1</span>
+</pre></div>
+</div>
+<p><strong>Expected output:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HTTP/1.1 400 Bad Request</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Check the results.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Just an interesting point to make again, this is the IPS code checking HTTP, not the HTTP Profile ( This VS does not have an HTTP Profile )</p>
+</div>
+<ul class="simple">
+<li>Navigate to Security &gt; Protocol Security &gt; Inspection Profiles &gt; my-inspection-profile</li>
+<li>Filter for Inspection Type ‘compliance’</li>
+<li>Look at the Total Hit Count for HTTP Compliance Check ID 11017 “Disallowed Methods.” You may have to refresh the page.</li>
+<li>We expect to see a hit count of 1.</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li>Look at the stats. Enter the following command on the Big-IP command line:</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tmsh show sec proto profile my-inspection-profile</span>
+</pre></div>
+</div>
+<p>We expect to see a Hit Count of at least 1 (more if you’ve done it multiple times).</p>
+<p><img alt="tmsh1" src="../../_images/ips-tmsh1.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This completes Module 4 - Lab 2</p>
+</div>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab1.html" title="2.3.1. Lab 1: Preconditions" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab3.html" title="2.3.3. Lab 3: Protocol Inspection - Signatures" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

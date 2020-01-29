@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>2.1.3. Lab 3: Configure Local Logging For Firewall Events</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="2.1.3. Lab 3: Configure Local Logging For Firewall Events"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.1.3. Lab 3: Configure Local Logging For Firewall Events &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1.4. Lab 4: Configure A Firewall Policy and Firewall Rules For Each Application" href="lab4.html" />
+    <link rel="prev" title="2.1.2. Lab 2: Leverage LTM Policies To Direct SSL Terminated Applications To Secondary Virtual Servers" href="lab2.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">2.1.3. Lab 3: Configure Local Logging For Firewall Events</a><ul>
+<li><a class="reference internal" href="#create-a-log-publisher">2.1.3.1. Create A Log Publisher</a></li>
+<li><a class="reference internal" href="#create-a-log-profile">2.1.3.2. Create A Log Profile</a></li>
+<li><a class="reference internal" href="#modify-the-log-profile-to-collect-protocol-security-events">2.1.3.3. Modify The Log Profile To Collect Protocol Security Events</a></li>
+<li><a class="reference internal" href="#modify-the-log-profile-to-collect-firewall-security-events">2.1.3.4. Modify The Log Profile To Collect Firewall Security Events</a></li>
+<li><a class="reference internal" href="#apply-the-logging-configuration">2.1.3.5. Apply The Logging Configuration</a></li>
+<li><a class="reference internal" href="#validate-lab-3-configuration">2.1.3.6. Validate Lab 3 Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class2.html">2. Advanced Multi-Layer Firewall Protection</a>
+              &gt; <a href="module1.html">2.1. Module 1: F5 Multi-layer Firewall</a>
+
+          <span class="right">
+             <a href="../../_sources/class2/module1/lab3.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-3-configure-local-logging-for-firewall-events">
+<h1>2.1.3. Lab 3: Configure Local Logging For Firewall Events<a class="headerlink" href="#lab-3-configure-local-logging-for-firewall-events" title="Permalink to this headline">¶</a></h1>
+<p>Security logging needs to be configured separately from LTM logging.</p>
+<p>High Speed Logging for modules such as the firewall module requires three componenets.</p>
+<blockquote>
+<div><ul class="simple">
+<li>A Log Publisher</li>
+<li>A Log Destination (local-db for this lab)</li>
+<li>A Log Profile</li>
+</ul>
+</div></blockquote>
+<p>For more detailed information on logging please consult the BIG-IP documentation.</p>
+<p><a class="reference external" href="https://askf5.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-external-monitoring-implementations-13-0-0/3.html">https://askf5.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-external-monitoring-implementations-13-0-0/3.html</a></p>
+<p>In this lab, we will configure a local log publisher and log profile. The
+log profile will then be applied to the virtual server and tested.</p>
+<div class="section" id="create-a-log-publisher">
+<h2>2.1.3.1. Create A Log Publisher<a class="headerlink" href="#create-a-log-publisher" title="Permalink to this headline">¶</a></h2>
+<p>This will send the firewall logs to a local database.</p>
+<p>Create the log publisher using the following information:</p>
+<p><strong>Navigation:</strong> System &gt; Logs &gt; Configuration &gt; Log Publishers, then click
+Create</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head">firewall_log_publisher</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Destinations (Selected)</td>
+<td>local-db</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image261.png"><img alt="image24" src="../../_images/image261.png" style="width: 7.05278in; height: 2.93819in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Finished</p>
+</div>
+<div class="section" id="create-a-log-profile">
+<h2>2.1.3.2. Create A Log Profile<a class="headerlink" href="#create-a-log-profile" title="Permalink to this headline">¶</a></h2>
+<p>Create the log profile using the following information:</p>
+<p><strong>Navigation:</strong> Security &gt; Event Logs &gt; Logging Profiles, then click Create</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head">firewall_log_profile</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Protocol Security</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-odd"><td><strong>Network Firewall</strong></td>
+<td>Checked</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="modify-the-log-profile-to-collect-protocol-security-events">
+<h2>2.1.3.3. Modify The Log Profile To Collect Protocol Security Events<a class="headerlink" href="#modify-the-log-profile-to-collect-protocol-security-events" title="Permalink to this headline">¶</a></h2>
+<p>Edit log profile protocol security tab using the following information:</p>
+<p><strong>Navigation:</strong> Click on the Protocol Security tab and select the firewall_log_publisher</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>firewall_log_publisher</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image271.png"><img alt="image25" src="../../_images/image271.png" style="width: 7.04444in; height: 2.53958in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+</div>
+<div class="section" id="modify-the-log-profile-to-collect-firewall-security-events">
+<h2>2.1.3.4. Modify The Log Profile To Collect Firewall Security Events<a class="headerlink" href="#modify-the-log-profile-to-collect-firewall-security-events" title="Permalink to this headline">¶</a></h2>
+<p>Edit log profile network firewall tab using the following information:</p>
+<p><strong>Navigation:</strong> Click on the Network Firewall tab</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Network Firewall Publisher</strong></th>
+<th class="head">firewall_log_profile</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Log Rule Matches</strong></td>
+<td>Check Accept
+Check Drop
+Check Reject</td>
+</tr>
+<tr class="row-odd"><td><strong>Log IP Errors</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-even"><td><strong>Log TCP Errors</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-odd"><td><strong>Log TCP Events</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-even"><td><strong>Log Translation Fields</strong></td>
+<td>Checked</td>
+</tr>
+<tr class="row-odd"><td><strong>Storage Format</strong></td>
+<td>Field-List (Move all to Selected Items)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><a class="reference internal" href="../../_images/image281.png"><img alt="image26" src="../../_images/image281.png" style="width: 4.83169in; height: 5.41497in;" /></a></div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Finished</p>
+</div>
+<div class="section" id="apply-the-logging-configuration">
+<h2>2.1.3.5. Apply The Logging Configuration<a class="headerlink" href="#apply-the-logging-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Apply the newly created log profile to the external virtual server created in the previous lab.</p>
+<p><strong>Navigation:</strong> Local Traffic &gt; Virtual Servers &gt; Virtual Server List</p>
+<p><strong>Navigation:</strong> Click on EXT_VIP_10.10.99.30</p>
+<p><strong>Navigation:</strong> Security tab &gt; Policies</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Log Profile</strong></td>
+<td>firewall_log_profile</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image291.png"><img alt="image27" src="../../_images/image291.png" style="width: 7.04167in; height: 5.88889in;" /></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Leave all other fields using the default values.</p>
+</div>
+<p><strong>Navigation:</strong> Click Update</p>
+<p>View empty network firewall logs.</p>
+<p><strong>Navigation:</strong> Security &gt; Event Logs &gt; Network &gt; Firewall</p>
+<p><a class="reference internal" href="../../_images/image301.png"><img alt="image28" src="../../_images/image301.png" style="width: 7.25278in; height: 1.01170in;" /></a></p>
+</div>
+<div class="section" id="validate-lab-3-configuration">
+<h2>2.1.3.6. Validate Lab 3 Configuration<a class="headerlink" href="#validate-lab-3-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Open a new web browser tab and access the virtual server or repeat the
+curl statements from the previous sections.</p>
+<p>URL: <a class="reference external" href="https://www.mysite.com">https://www.mysite.com</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This test generates traffic that creates network firewall log entries.</p>
+</div>
+<p><strong>Navigation:</strong> Security &gt; Event Logs &gt; Network &gt; Firewall</p>
+<p><a class="reference internal" href="../../_images/image31.jpeg"><img alt="image29" src="../../_images/image31.jpeg" style="width: 6.73811in; height: 1.69444in;" /></a></p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">View new network firewall log entries. Examine the data collected there.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This completes Module 1 - Lab 3</p>
+</div>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab2.html" title="2.1.2. Lab 2: Leverage LTM Policies To Direct SSL Terminated Applications To Secondary Virtual Servers" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab4.html" title="2.1.4. Lab 4: Configure A Firewall Policy and Firewall Rules For Each Application" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

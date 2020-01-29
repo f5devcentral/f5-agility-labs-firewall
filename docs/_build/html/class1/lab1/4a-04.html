@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>1.2.5.4. Create a Rule List</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="1.2.5.4. Create a Rule List"/>
+  <meta name="product" content="F5 Firewall Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-01-28 09:36:45"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Firewall Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1.2.5.4. Create a Rule List &#8212; F5 Firewall Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.2.5.5. Create a Policy with a Rule List" href="4a-05.html" />
+    <link rel="prev" title="1.2.5.3. Create and View Log Entries" href="4a-03.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Firewall Solutions  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">1. Class 1: AFM – The Data Center Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">2. Advanced Multi-Layer Firewall Protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">3. Class - F5 BIG-IP DDoS and DNS DoS Protections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">4. Flowmon Integrated Out-of-path DDoS Solution</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">1.2.5.4. Create a Rule List</a></li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Firewall Solutions</a>
+              &gt; <a href="../class1.html">1. Class 1: AFM – The Data Center Firewall</a>
+              &gt; <a href="intro.html">1.2. Lab 1 – Advanced Firewall Manager (AFM)</a>
+              &gt; <a href="step4.html">1.2.5. Creating AFM Network Firewall Rules</a>
+
+          <span class="right">
+             <a href="../../_sources/class1/lab1/4a-04.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-firewall">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="create-a-rule-list">
+<h1>1.2.5.4. Create a Rule List<a class="headerlink" href="#create-a-rule-list" title="Permalink to this headline">¶</a></h1>
+<p>Rule lists are a way to group a set of individual rules together and
+apply them to the active rule base as a group. A typical use of a rule
+list would be for a set of applications that have common requirements
+for access protocols and ports. As an example, most web applications
+would require TCP port 80 for HTTP and TCP port 443 for SSL/TLS. You
+could create a Rule list with these protocols, and apply them to each of
+your virtual servers.</p>
+<p>Let’s examine some of the default rule lists that are included with AFM.</p>
+<p>Go to <strong>Security &gt;Network Firewall &gt; Rule Lists</strong>. They are:</p>
+<ul class="simple">
+<li>_sys_self_allow_all</li>
+<li>_sys_self_allow_defaults</li>
+<li>_sys_self_allow_management</li>
+</ul>
+<p><a class="reference internal" href="../../_images/image8.png"><img alt="image7" src="../../_images/image8.png" style="width: 6.5in; height: 1.46319in;" /></a></p>
+<p>If you click on <strong>_sys_self_allow_management</strong> you’ll see that it is
+made up of two different rules that will allow management traffic (port
+22/SSH and port 443 HTTPS). Instead of applying multiple rules over and
+over across multiple servers, you can put them in a rule list and then
+apply the rule list as an ACL.</p>
+<p><a class="reference internal" href="../../_images/image9.png"><img alt="image8" src="../../_images/image9.png" style="width: 6.5in; height: 0.80278in;" /></a></p>
+<p>On bigip2.dnstest.lab (192.168.1.150) create a rule list to allow Web
+traffic. A logical container must be created before the individual rules
+can be added. You will create a list with two rules, to allow port 80
+(HTTP) and reject traffic from a specific IP subnet. First you need to
+create a container for the rules by going to:</p>
+<p><strong>Security &gt; Network Firewall &gt; Rule Lists</strong> and select <strong>Create.</strong></p>
+<p>For the <strong>Name</strong> enter <strong>web_rule_list</strong>, provide an optional
+description and then click <strong>Finished.</strong></p>
+<p><a class="reference internal" href="../../_images/image10.png"><img alt="image9" src="../../_images/image10.png" style="width: 3.25in; height: 1.46554in;" /></a></p>
+<p>Edit the <strong>web_rule_list</strong> by selecting it in the Rule Lists table, then
+click the <strong>Add</strong> button in the Rules section. Here you will add two
+rules into the list; the first is a rule to allow HTTP.</p>
+<p><a class="reference internal" href="../../_images/image11.png"><img alt="image10" src="../../_images/image11.png" style="width: 6.2954in; height: 1.66667in;" /></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head">allow_http</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Protocol</strong></td>
+<td>TCP</td>
+</tr>
+<tr class="row-odd"><td><strong>Source</strong></td>
+<td>Leave at Default of <strong>Any</strong></td>
+</tr>
+<tr class="row-even"><td><strong>Destination Address</strong></td>
+<td><strong>Specify…</strong>10.30.0.50, then click <strong>Add</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>Destination Port</strong></td>
+<td><strong>Specify…</strong> Port <strong>80</strong>, then click <strong>Add</strong></td>
+</tr>
+<tr class="row-even"><td><strong>Action</strong></td>
+<td><strong>Accept-Decisively</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>Logging</strong></td>
+<td>Enabled</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../../_images/image12.png"><img alt="image11" src="../../_images/image12.png" style="width: 5.87014in; height: 6.17122in;" /></a></p>
+<p>Select <strong>Repeat</strong> when done.</p>
+<p>Create another rule to reject all access from the 10.20.0.0/24 network.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head">reject_10_20_0_0</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Protocol</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-odd"><td><strong>Source</strong></td>
+<td><strong>Specify…</strong>Address 10.20.0.0/24,
+then click <strong>Add</strong></td>
+</tr>
+<tr class="row-even"><td><strong>Destination Address</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-odd"><td><strong>Destination Port</strong></td>
+<td>Any</td>
+</tr>
+<tr class="row-even"><td><strong>Action</strong></td>
+<td>Reject</td>
+</tr>
+<tr class="row-odd"><td><strong>Logging</strong></td>
+<td>Enabled</td>
+</tr>
+</tbody>
+</table>
+<p>Select <strong>Finished</strong> when completed. When you exit, you’ll notice the
+reject rule is after the <strong>allow_http</strong> rule. This means that HTTP
+traffic from 10.20.0.0/24 will be accepted, while all other traffic from
+this subnet will be rejected based on the ordering of the rules as seen
+below:</p>
+<p><a class="reference internal" href="../../_images/image13.png"><img alt="image12" src="../../_images/image13.png" style="width: 6.49097in; height: 0.25903in;" /></a></p>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="4a-03.html" title="1.2.5.3. Create and View Log Entries" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="4a-05.html" title="1.2.5.5. Create a Policy with a Rule List" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

@@ -47,7 +47,7 @@ section click **Add**, and add the following information, then click
 | **Logging**             | Enabled                                         |
 +-------------------------+-------------------------------------------------+
 
-
+|image214|
 
 .. |image207| image:: /_static/class1/image207.png
    :width: 6.49097in

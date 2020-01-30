@@ -60,3 +60,4 @@ section click **Add**, and add the following information, then click
    :height: 6in
 .. |image214| image:: /_static/class1/image214.png
    :width: 6.49097in
+   :height: 5in 

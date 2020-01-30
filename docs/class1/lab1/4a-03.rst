@@ -1,4 +1,4 @@
-Create and View Log Entries
+pyCreate and View Log Entries
 ---------------------------
 
 In this section, you will generate various types of traffic through the
@@ -48,10 +48,10 @@ Review the configuration. The Storage Format section allows you to select the va
 
 |image268|
 
-.. |image267| image:: /_static/class1/image267.png
+.. |image267| image:: /_static/class2/image267.png
    :width: 6.49097in
    :height: 7in 
-.. |image268| image:: /_static/class1/image268.png
+.. |image268| image:: /_static/class2/image268.png
    :width: 6.49097in
    :height: 7in 
 

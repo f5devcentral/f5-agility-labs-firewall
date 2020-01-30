@@ -21,3 +21,6 @@ The new ordering should look something like the screen shot below:
 .. |image209| image:: /_static/class1/image209.png
    :width: 2in
    :height: 2in
+.. |image213| image:: /_static/class1/image213.png
+   :width: 4.5in
+   :height: 4in

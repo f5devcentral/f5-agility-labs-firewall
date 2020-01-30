@@ -6,7 +6,7 @@ Test Access to the Servers
 |image209|
 
 -  Next open Putty App on the Desktop, select Lamp Server-10.1.20.11.
--  For the login as: type in f5 and hit <enter>
+-  For the login as: type in **f5** and hit **<enter>**
 
 |image213|
 

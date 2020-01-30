@@ -9,9 +9,8 @@ Test Access to the Server
 
 **Success!!**
 
--  
--
--
+     
+--------------------------
 
 
 Before we continue let’s clean up the rules just a little for best

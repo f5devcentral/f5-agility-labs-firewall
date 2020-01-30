@@ -5,8 +5,8 @@ Test Access to the Server
 
 |image209|
 
--  Open Putty on the Desktop, select Lamp Server 10.1.20.11 from Saved Sessions.
--  For username type in f5 and hit <enter>
+-  Open Putty App on the Desktop, select Lamp Server-10.1.20.11 from Saved Sessions.
+-  For the login as: type in f5 and hit <enter>
 
 |image213|
 

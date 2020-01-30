@@ -5,9 +5,10 @@ Test Access to the Server
 
 **Success!!**
 
-_  If you received a login prompt in your Putty terminal
+-  If you received a login prompt in your Putty terminal
 
 **Success!!**
+
 
 
 

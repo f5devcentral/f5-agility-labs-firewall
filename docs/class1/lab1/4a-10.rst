@@ -1,3 +1,8 @@
+The new ordering should look something like the screen shot below:
+
+|image212|
+
+
 Test Access to the Servers
 -------------------------
 
@@ -10,9 +15,6 @@ Test Access to the Servers
 
 |image213|
 
-The new ordering should look something like the screen shot below:
-
-|image212|
 
 .. |image212| image:: /_static/class1/image212.png
    :width: 6.5in

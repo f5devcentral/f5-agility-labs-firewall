@@ -21,7 +21,7 @@ rule list.
 
 Enter the rule list by clicking on its hyperlink, then in the **Rules**
 section click **Add**, and add the following information, then click
-**Finished**.
+**Repeat**.
 
 +-------------------------+--------------------------------------------------+
 | **Name**                | allow_http_8081_10_1_20_11                       |
@@ -39,7 +39,8 @@ section click **Add**, and add the following information, then click
 | **Logging**             | Enabled                                          |
 +-------------------------+--------------------------------------------------+
 
-
+Remove the IPaddress and Port, enter the following information, then click
+**Finished**.
 
 +-------------------------+--------------------------------------------------+
 | **Name**                | allow_ssh 10.1.20.12                             |

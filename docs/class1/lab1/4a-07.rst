@@ -37,7 +37,7 @@ time each rule was matched: (Investigating Counter behavior)
 
 |image23|
 
-.. |image206| image:: /_static/class1/image026.png
+.. |image206| image:: /_static/class1/image206.png
    :width: 6.49097in
    :height: 3in
 .. |image21| image:: /_static/class1/image22.png

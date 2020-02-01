@@ -7,13 +7,20 @@ Test Access to the Servers
 -------------------------
 
 -  Open the incognito  Web browser and access http://10.1.20.11:8081
+-  Open a new Web browser and access http://10.1.20.11
+
+**Success!!**
 
 |image209|
 
--  Next open Putty App on the Desktop, select Lamp Server-10.1.20.11.
+-  Next open Putty Application on the Desktop, select Lamp Server-10.1.20.11.
 -  For the login as: type in **f5** and hit **<Enter>**
 
 |image213|
+
+-  If you received a login prompt in your Putty terminal
+
+**Success!!**
 
 
 .. |image212| image:: /_static/class1/image212.png

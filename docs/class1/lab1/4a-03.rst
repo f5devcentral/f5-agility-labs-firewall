@@ -22,7 +22,7 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
 
 
 
-**Navigate** Security > Options > Network Firewall > Firewall Options
+**Navigate** ** Security > Options > Network Firewall > Firewall Options **
 
 Default Firewall options configuration determine if the system is in ADC mode or Firewall Mode. 
 In the screenshot below note the Virtual Server & Self IP Contexts Value. If it is set to 
@@ -36,7 +36,7 @@ Local-db-publisher is linked to the global-network logging profile in the next s
 
 Add a log publisher to the log configuration 
 
-**Navigate**  Security>>Event Logs>>Logging Profiles
+**Navigate**  **Security>>Event Logs>>Logging Profiles**
 
 **Navigate**  Select **Global Network**
 

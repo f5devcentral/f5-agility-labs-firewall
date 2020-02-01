@@ -1,17 +1,3 @@
-Test Access to the Server
--------------------------
-
--  Open a new Web browser and access http://10.1.20.11
-
-**Success!!**
-
--  If you received a login prompt in your Putty terminal
-
-**Success!!**
-
-     
---------------------------
-
 
 Before we continue let’s clean up the rules just a little for best
 practices. Use the **Rule Lists** page to consolidate the firewall rule
@@ -53,22 +39,7 @@ section click **Add**, and add the following information, then click
 | **Logging**             | Enabled                                          |
 +-------------------------+--------------------------------------------------+
 
-+-------------------------+--------------------------------------------------+
-| **Name**                | allow_ssh_10_1_20_11                       |
-+=========================+==================================================+
-| **Protocol**            | TCP                                              |
-+-------------------------+--------------------------------------------------+
-| **Source**              | Leave at Default of **Any**                      |
-+-------------------------+--------------------------------------------------+
-| **Destination Address** | **Specify…**\ 10.1.20.11, then click **Add**     |
-+-------------------------+--------------------------------------------------+
-| **Destination Port**    | **Specify…**\ Port **22**, then click **Add**  |
-+-------------------------+--------------------------------------------------+
-| **Action**              | **Accept-Decisively**                            |
-+-------------------------+--------------------------------------------------+
-| **Logging**             | Enabled                                          |
-+-------------------------+--------------------------------------------------+
-
+ 
 
 Inspect the properties of the rule list to verify the changes were made
 

@@ -13,7 +13,7 @@ view the AFM (firewall) logs.
 -  Open a new Web browser and access https://10.1.20.12 (site cant be reached)
 
 -  Next open Putty Application on the Desktop, select Lamp Server-10.1.20.12.
-   For the login as: type in **f5** and hit **<Enter>**
+   login as: type in **f5** and **<Enter>**
 
 
 

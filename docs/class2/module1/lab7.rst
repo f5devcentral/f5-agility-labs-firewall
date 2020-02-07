@@ -88,3 +88,6 @@ View the tcpdump output on the syslog-webserver.
 .. |image60| image:: /_static/class2/image60.png
    :width: 4.83440in
    :height: 2.18569in
+.. |image280| image:: /_static/class2/image280.png
+   :width: 4.83440in
+   :height: 2.18569in

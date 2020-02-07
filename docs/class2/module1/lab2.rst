@@ -41,13 +41,13 @@ Verify that the  Policy is assigned To The External Virtual Server
 .. NOTE:: there is a  policy and an iRule  is assigned to the VIP:
 
 
-Create An ACL to allow web traffic 
-----------------------------------
+Create An ACL to allow web traffic and SSH
+------------------------------------------
 
 On bigip01.f5demo.com (10.1.1.4) create a rule list to allow Web
 traffic. A logical container must be created before the individual rules
-can be added. You will create a list with two rules, to allow port 80
-(HTTP) and 443 (HTTPS)  to servers 10.1.20.11 through 10.1.20.17 We will
+can be added. You will create a list with three rules, to allow port 80
+(HTTP), 443 (HTTPS), and 22 (SSH)  to servers 10.1.20.11 through 10.1.20.17 We will
 also create a rule which allows HTTPS traffic to access 10.1.10.30
 
 Create a container for the rules by going to:
@@ -69,7 +69,7 @@ click the **Add** button in the Rules section. Here you will add two
 rules into the list; the first is a rule to allow HTTP and HTTPS traffic
 to the LAMP Servers
 
-|image10|
+|image276|
 
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Name**                | allow_http_and_https                                                                            |
@@ -286,6 +286,9 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 .. |image275| image:: /_static/class2/image275.png
    :width: 6.05000in
    :height: 3.60208in
+.. |image276| image:: /_static/class2/image276.png
+   :width: 7.05556in
+   :height: 3.45833in
 
 
 

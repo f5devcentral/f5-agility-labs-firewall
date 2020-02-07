@@ -112,7 +112,7 @@ Inspect the Local Traffic Network Map
    :height: 3.46949in
 .. |image7| image:: /_static/class2/image7.png
    :width: 7.05000in
-   :height: 4.46949in
+   :height: 5.46949in
 .. |image8| image:: /_static/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in

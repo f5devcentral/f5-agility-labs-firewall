@@ -44,11 +44,14 @@ Verify that the  Policy is assigned To The External Virtual Server
 Create An ACL to allow web traffic and SSH
 ------------------------------------------
 
-On bigip01.f5demo.com (10.1.1.4) create a rule list to allow Web
-traffic. A logical container must be created before the individual rules
-can be added. You will create a list with three rules, to allow port 80
+The rules created in this section allow basic connectivity to the resources.
+We will add enforcement rules at the Virtual server level to demostrate functionality
+
+On bigip01.f5demo.com (10.1.1.4) create a rule list to allow
+traffic. A logical container will be created before the individual rules
+can be added. You will create a list with rules to allow port 80
 (HTTP), 443 (HTTPS), and 22 (SSH)  to servers 10.1.20.11 through 10.1.20.17 We will
-also create a rule which allows HTTPS traffic to access 10.1.10.30
+also create a rules which allows HTTPS and SSH traffic to access 10.1.10.30
 
 Create a container for the rules by going to:
 
@@ -65,8 +68,8 @@ description and then click **Finished**
 |image269|
 
 Edit the **web_rule_list** by selecting it in the Rule Lists table, then
-click the **Add** button in the Rules section. Here you will add two
-rules into the list; the first is a rule to allow HTTP and HTTPS traffic
+click the **Add** button in the Rules section. Here you will add a
+rules into the list to allow HTTP, HTTPS, and SSH  traffic
 to the LAMP Servers
 
 |image276|
@@ -87,12 +90,28 @@ to the LAMP Servers
 | **Logging**             | Enabled                                                                                         |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 
-|image271|
+**Navigation:** Click Repeat
+
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Name**                | allow_SSH_10_1_20_252                                                                           |
++=========================+=================================================================================================+
+| **Protocol**            | TCP                                                                                             |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                                                                     |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Destination Address** | **Specify Address** 10.1.20.252, then click **Add**                                             |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Destination Port**    | **Specify…** Port **22**, then click **Add**                                                    |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Action**              | **Accept**                                                                                      |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Logging**             | Enabled                                                                                         |
++-------------------------+-------------------------------------------------------------------------------------------------+
 
 **Navigation:** Click Repeat
 
-click the **Add** button in the Rules section. Here you will add two
-rules into the list; the first is a rule to allow HTTP.
+click the **Add** button in the Rules section. Here you will add a
+rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
 +-------------------------+-----------------------------------------------------------+
 | **Name**                | allow_https_10_1_10_30                                    |
@@ -105,7 +124,28 @@ rules into the list; the first is a rule to allow HTTP.
 +-------------------------+-----------------------------------------------------------+
 | **Destination Port**    | **Specify…** Port **443**, then click **Add**             |
 +-------------------------+-----------------------------------------------------------+
-| **Action**              | **Accept-Decisively**                                     |
+| **Action**              | **Accept**                                                |
++-------------------------+-----------------------------------------------------------+
+| **Logging**             | Enabled                                                   |
++-------------------------+-----------------------------------------------------------+
+
+**Navigation:** Click Repeat
+
+click the **Add** button in the Rules section. Here you will add two
+rules into the list to allow SSH to Virtual Server 10_1_10_30.
+
++-------------------------+-----------------------------------------------------------+
+| **Name**                | allow_SSH_10_1_10_30                                      |
++=========================+===========================================================+
+| **Protocol**            | TCP                                                       |
++-------------------------+-----------------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                               |
++-------------------------+-----------------------------------------------------------+
+| **Destination Address** | **Specify...**\ 10.1.10.30 then click **Add**             |
++-------------------------+-----------------------------------------------------------+
+| **Destination Port**    | **Specify…** Port **22**, then click **Add**              |
++-------------------------+-----------------------------------------------------------+
+| **Action**              | **Accept**                                                |
 +-------------------------+-----------------------------------------------------------+
 | **Logging**             | Enabled                                                   |
 +-------------------------+-----------------------------------------------------------+
@@ -274,7 +314,7 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 .. |image271| image:: /_static/class2/image271.png
    :width: 7in
    :height: 7in
-.. |image272| image:: /_static/class2/image272.png
+.. |image272| image:: /_static/class2/image272.PNG
    :width: 7in
    :height: 7in
 .. |image273| image:: /_static/class2/image273.png

@@ -190,7 +190,7 @@ Assign the rd_0_policy to Route Domain 0
 
 **Navigation:** Network > Route Domains
 
-**Navigauion:** Click on the "0" to select Route Domain 0
+**Navigation:** Click on the "0" to select Route Domain 0
 
 **Navigation:** Select the Security Tab
 
@@ -227,7 +227,7 @@ validate your configuration.
 
 **With curl you need to use the -k option to ignore certificate validation**
 
-From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl directory from windows command shell ). Curl will let us do some of the additional testing in later sections.
+From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command yu will see the IP addres of the pool member you connected to.
 
 .. code-block:: console
 
@@ -241,7 +241,6 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 
     curl -k https://10.1.10.30 -H Host:site5.com
 
-    curl -k https://10.1.10.30 -H Host:dvwa.com
 
 |image264|
  

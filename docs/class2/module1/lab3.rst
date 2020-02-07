@@ -98,7 +98,7 @@ Edit log profile network firewall tab using the following information:
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click Create
 
 Apply The Logging Configuration
 -------------------------------
@@ -181,6 +181,6 @@ URL: https://site1.com
 .. |image29| image:: /_static/class2/image31.jpeg
    :width: 6.73811in
    :height: 1.69444in
-.. |image251| image:: /_static/class2/image251.jpeg
+.. |image251| image:: /_static/class2/image251.png
    :width: 3.73811in
    :height: 1.69444in

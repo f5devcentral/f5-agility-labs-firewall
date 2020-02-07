@@ -43,4 +43,3 @@ you want to block must be explicitly specified. This applies only to the
 Virtual Server & Self IP level on the system.
 
 .. IMPORTANT:: Even though the system is in a default allow configuration, if a packet matches no rule in any context on the firewall, a Global Drop rule drops the traffic.
-Edited by George Nicholas 

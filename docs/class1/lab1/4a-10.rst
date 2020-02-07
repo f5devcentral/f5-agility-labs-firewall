@@ -1,14 +1,20 @@
-Test Access to the Server
+The new ordering should look something like the screen shot below:
+
+|image212|
+
+
+Test Access to the Servers
 -------------------------
 
 -  Open the incognito  Web browser and access http://10.1.20.11:8081
 
 |image209|
 
+-  Next open Putty App on the Desktop, select Lamp Server-10.1.20.11.
+-  For the login as: type in **f5** and hit **<Enter>**
 
-The new ordering should look something like the screen shot below:
+|image213|
 
-|image212|
 
 .. |image212| image:: /_static/class1/image212.png
    :width: 6.5in
@@ -17,3 +23,6 @@ The new ordering should look something like the screen shot below:
 .. |image209| image:: /_static/class1/image209.png
    :width: 2in
    :height: 2in
+.. |image213| image:: /_static/class1/image213.png
+   :width: 4.0in
+   :height: 4in

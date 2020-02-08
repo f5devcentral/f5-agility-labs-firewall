@@ -260,7 +260,6 @@ For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP do
 
 URL: https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html
 
-
 +---------------+-------------+
 | **Name**      | deny_log    |
 +===============+=============+

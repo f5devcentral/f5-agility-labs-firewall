@@ -86,7 +86,9 @@ Create Permit Log Network Firewall Rule.
 
 Assign the geo_restrict_rule_list to the site1_policy
 
-**Navigation:** Security > Network Firewall > Policies then click Add Rule List
+**Navigation:** Security > Network Firewall > Policies
+
+**Navigation:** Click on **site1_policy**  then click Add Rule List
 
 In the name field  start typing geo in the rule listfield. Select geo_restrict_rule_list 
 
@@ -121,6 +123,7 @@ Apply the Network Firewall Policy to Virtual Server
 
 **Navigation:** Click on the Security Tab and select Policies
 
+Edit the Network Firewall section of the screen
 
 +----------------------+-----------------------------------------------+
 | **Virtual Server**   | int_vip_www.site1.com_1.1.1.1                 |
@@ -149,19 +152,19 @@ The original IP address of the client in this case is often mapped to a common H
 or some variation. In this deployment, the BIG-IP can translate the original source of the request in the 
 XFF to the source IP address.
 
-Use Cywin Terminal to allow us to specify the sX-Forwarded -For header. . There is an iRule
+Use Cywin Terminal to allow us to specify the X-Forwarded-For header. . There is an iRule
 applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwarded-For header
 
 **XFF-SNAT iRule**
 
 .. code-block:: tcl 
 
-when HTTP_REQUEST {
-  if {[HTTP::header exists "X-Forwarded-For"]}  {
-  snat [HTTP::header X-Forwarded-For]
-  log local0. '[HTTP::header X-Forwarded-For]'
+  when HTTP_REQUEST {
+    if {[HTTP::header exists "X-Forwarded-For"]}  {
+    snat [HTTP::header X-Forwarded-For]
+    log local0. '[HTTP::header X-Forwarded-For]'
+    }
   }
-}
 
 .. code-block:: console
 

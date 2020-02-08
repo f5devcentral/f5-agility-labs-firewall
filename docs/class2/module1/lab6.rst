@@ -30,7 +30,7 @@ then click Create.
 
 **Navigation:** Click Request Checks Tab.
 
-.. NOTE::  We will leave the default methods. This allows you to restrict methods used to access the Web Server
+.. NOTE::  Leave the defaut Methods. Changing Methods is a powerful way to protect your web sites
 
 +------------------+--------------+
 | **File Types**   | Select All   |
@@ -38,7 +38,6 @@ then click Create.
 
 |image49|
 
-.. NOTE::  Leave all other fields using the default values.
 
 **Navigation:** Click Blocking Page Tab.
 
@@ -52,7 +51,7 @@ then click Create.
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click Create
 
 Apply the HTTP security profile to the external virtual server.
 
@@ -129,9 +128,6 @@ URL: https://dvwa.com
 
 **Credentials: admin\/password**
 
-Select the Command Execution button in the DVWA browser Window
-
-Enter and IP address and press submit.
 
 |image266|
 

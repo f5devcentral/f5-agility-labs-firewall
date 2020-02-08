@@ -16,8 +16,8 @@ In this case we are going to leverage iRules to modify the traffic coming from t
 
 Examminig the iRule we find that it is called when an HTTP request happens. It then checks to see if the ``X-Forwarded-For`` header exists (We wouldn't want to SNAT to a non-existent IP address) and if it does it modifies the source IP address of the request to the IP address provided in the header.
 
-Verify that the iRule to the Virtual Server
--------------------------------------
+Verify that the iRule is assigned to the Virtual Server
+-------------------------------------------------------
 
 **Navigation:** Local Traffic > Virtual Servers
 
@@ -40,16 +40,16 @@ This is where you assign iRules
 Validate SNAT Function
 ----------------------
 
-We tested functionality in prior exercises with the commands belos leverage curl from the Cygwin Terminal to insert the X-Forwarded-For header in to the request.
+We tested functionality in prior exercises with the commands below. Leverage curl from the Cygwin Terminal to insert the X-Forwarded-For header in to the request.
 
 
 .. code-block:: console
 
    curl -k https://10.1.10.30 -H 'Host: site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
-**Expected Result:** The site should now be blocked and eventually timeout
+**Expected Result:** The site should be blocked by the geo_restrict_rule_list
 
-Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 are now allowed.
+Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 allowed.
 
 .. code-block:: console
 

@@ -9,11 +9,11 @@ Estimated completion time: 1 hour
 
 Objective:
 
--  Create multiple internal pools and virtual servers for different applications within your data center. e.g. www, API, /downloads
+-  Inspect multiple internal pools and virtual servers for different applications within your data center. e.g. www, API, /downloads
 
--  Create external hosted virtual server that allows the same IP address to be shared with multiple SSL enabled applications.
+-  Inspect external hosted virtual server that allows the same IP address to be shared with multiple SSL enabled applications.
 
--  Configure LTM policy to direct traffic to appropriate virtual server
+-  Inspect and understand LTM policy to direct traffic to appropriate virtual server
 
 -  Configure local logging; test
 

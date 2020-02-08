@@ -7,31 +7,23 @@ In this solution, since the BIG-IP is terminating SSL on the external virtual se
 
 On BIG-IP
 
-Configure a new Pool.
+Inspect the preconfigured  IDS_Pool.
 
-**Navigation:** Local Traffic > Pools > Pool List > Click Create.
+**Navigation:** Local Traffic > Pools > Pool List > 
 
-+-------------+----------------------+---------------+--------------------+
-| **Name**    | **Health Monitor**   | **Members**   | **Service Port**   |
-+=============+======================+===============+====================+
-| IDS\_Pool   | gateway\_icmp        | 10.1.20.252   | \*                 |
-+-------------+----------------------+---------------+--------------------+
+**Navigation:** Click on the **Members** Tab 
 
-|image58|
-
-.. Note:: Leave all other fields using the default values.
+.. Note:: Unencrypted traffic will be forwarded to this IP address
 
 **Navigation:** Click Finished.
 
 Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List > EXT\_VIP\_10.1.10.30.
+**Navigation:** Local Traffic > Virtual Servers > Virtual Server List > EXT\_VIP\_10_1_10_30.
 
-**Navigation:** Configuration > Advanced.
+**Navigation:** Select **Advanced** from the pulldown at the top of the Configuration section
 
-|image59|
-
-**Navigation:** Scroll to the configuration for Clone Pools and select the IDS\_Pool
+**Navigation:** Scroll to the configuration for Clone Pool (Client)  and select the IDS\_Pool
 
 |image60|
 
@@ -39,23 +31,39 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 .. Note:: Leave all other fields using the default values.
 
-**Navigation:** SSH in to the Syslog/Webserver
+Select the Putty application from the desktop on the jump host
+
+**Load**   **Lamp Server**  from the sessions list
+
+**Open**   **Lamp Server**
+
+Accept the certificate warning
+
+login as **f5**
+
+.. Attention:: It will take about 30 seconds for the certifivate login process-  No password required
+
+Input the TCPDUMP command to start capturing traffic
 
 .. code-block:: console
 
-    Run sudo tcpdump –i eth1 -c 200 port 80
+    Run sudo tcpdump –i eth1 -c 200 port 8081
+
+Initiate another attempt to connect to the website via curl using the Cygwin application on the desktop.
 
 .. code-block:: console
 
-   root@syslogWebserver:~# sudo tcpdump -i eth2 -c 200 port 80
+   curl -k https://10.1.10.30:8081 -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-Initiate another attempt to connect to the website via curl or your web browser on the Windows host.
+   curl -k https://10.1.10.30:8081 -H 'Host:site3.com' -H 'X-Forwarded-For: 172.16.99.5'
+
+Initiate another attempt to connect to the websites using the browser
 
 .. code-block:: console
 
-   curl -k https://10.1.10.30 -H 'Host:site3.com'
+   https://site2.com:8081
 
-   <H1> site3.COM </H1>
+   https://site4.com:8081
 
 View the tcpdump output on the syslog-webserver.
 
@@ -75,7 +83,7 @@ View the tcpdump output on the syslog-webserver.
    17:25:42.688028 IP 1.1.1.1.http > 10.10.99.222.50924: Flags [F.], seq 252, ack 80, win 4458, length 0
    17:25:42.688057 IP 10.10.99.222.50924 > 1.1.1.1.http: Flags [.], ack 253, win 4631, length 0
 
-.. ATTENTION:: A copy of the web traffic destined for the internal virtual server is received by the monitoring device on 172.1.1.11. Alternatively you could attach the clone pool to the client side of the internal virtual server. How is the traffic getting to the server when the source and destination IP addresses are not on that interface?
+.. Note:: Inspect the source and destination addresses. This traffic is cloned from the EXT_VIP
 
 .. NOTE:: This is the end of Module 1 - Lab 7.
 

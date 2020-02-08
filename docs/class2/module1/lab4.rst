@@ -137,7 +137,7 @@ Edit the Network Firewall section of the screen
 | **Log Profile**      | firewall\_log\_profile                        |
 +----------------------+-----------------------------------------------+
 
-|image36|
+|image277|
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -406,3 +406,6 @@ EXT_VIP_10_1_10_30
 .. |image265| image:: /_static/class2/image265.png
    :width: 6
    :height: 1.25
+.. |image277| image:: /_static/class2/image277.png
+   :width: 7.04167in
+   :height: 7.70833in

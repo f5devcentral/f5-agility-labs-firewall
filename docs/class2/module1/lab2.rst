@@ -62,18 +62,20 @@ Create a container for the rules by going to:
 
 **Navigation:** select Create
 
-For the **Name** enter **web_rule_list**, provide an optional
+For the **Name** enter **web_rule_list**, provide an optional description
 
-description and then click **Finished**
+**Navigation** click **Finished**
 
 |image270|
 
 |image269|
 
-Edit the **web_rule_list** by selecting it in the Rule Lists table, then
-click the **Add** button in the Rules section. Here you will add a
-rules into the list to allow HTTP, HTTPS, and SSH  traffic
-to the LAMP Servers
+**Navigation** Select  the **web_rule_list** by clicking on it in the Rule Lists table
+
+**Navigation** click the **Add** button in the Rules section. 
+
+Add a rules into the list to allow HTTP, HTTPS, and SSH  traffic as described in the next steps
+
 
 |image276|
 
@@ -93,31 +95,13 @@ to the LAMP Servers
 | **Logging**             | Enabled                                                                                         |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 
-**Navigation:** Click Repeat
-
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Name**                | allow_SSH_10_1_20_252                                                                           |
-+=========================+=================================================================================================+
-| **Protocol**            | TCP                                                                                             |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Source**              | Leave at Default of **Any**                                                                     |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Address** | **Specify Address** 10.1.20.252, then click **Add**                                             |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Port**    | **Specify…** Port **22**, then click **Add**                                                    |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Action**              | **Accept**                                                                                      |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Logging**             | Enabled                                                                                         |
-+-------------------------+-------------------------------------------------------------------------------------------------+
 
 **Navigation:** Click Repeat
 
-click the **Add** button in the Rules section. Here you will add a
-rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
+Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
 +-------------------------+-----------------------------------------------------------+
-| **Name**                | allow_https_10_1_10_30                                    |
+| **Name**                | allow_any_10_1_10_30                                    |
 +=========================+===========================================================+
 | **Protocol**            | TCP                                                       |
 +-------------------------+-----------------------------------------------------------+
@@ -125,33 +109,16 @@ rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 +-------------------------+-----------------------------------------------------------+
 | **Destination Address** | **Specify...**\ 10.1.10.30 then click **Add**             |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Port**    | **Specify…** Port **443**, then click **Add**             |
+| **Destination Port**    | **Specify…** Port **Any**, then click **Add**             |
 +-------------------------+-----------------------------------------------------------+
 | **Action**              | **Accept**                                                |
 +-------------------------+-----------------------------------------------------------+
 | **Logging**             | Enabled                                                   |
 +-------------------------+-----------------------------------------------------------+
 
-**Navigation:** Click Repeat
+**Navigation:** Click **Finished**
 
-click the **Add** button in the Rules section. Here you will add two
-rules into the list to allow SSH to Virtual Server 10_1_10_30.
 
-+-------------------------+-----------------------------------------------------------+
-| **Name**                | allow_SSH_10_1_10_30                                      |
-+=========================+===========================================================+
-| **Protocol**            | TCP                                                       |
-+-------------------------+-----------------------------------------------------------+
-| **Source**              | Leave at Default of **Any**                               |
-+-------------------------+-----------------------------------------------------------+
-| **Destination Address** | **Specify...**\ 10.1.10.30 then click **Add**             |
-+-------------------------+-----------------------------------------------------------+
-| **Destination Port**    | **Specify…** Port **22**, then click **Add**              |
-+-------------------------+-----------------------------------------------------------+
-| **Action**              | **Accept**                                                |
-+-------------------------+-----------------------------------------------------------+
-| **Logging**             | Enabled                                                   |
-+-------------------------+-----------------------------------------------------------+
 
 |image272|
 
@@ -165,18 +132,23 @@ Assign the Rule List to a Policy
 **Navigation** Click Create
 
 For the **Name** enter **rd_0_policy**, provide an optional description
-and then click **Finished**.
+
+**Navigation** click **Finished**.
+
 (Note: We commonly use “RD” in our rules to help reference the “Route
 Domain”, default is 0)**
 
 |image273|
 
-Edit the **rd_0_policy** by selecting it in the Policy Lists table, then
-click the **Add Rule List** button. Here you will add the rule list you
-created in the previous section. For the **Name,** start typing
-**web_rule_list**, you will notice the name will auto complete, select
-the rule list **/Common/web_rule_list**, provide an optional description
-and then click **Done Editing.**
+**Navigation** Edit the **rd_0_policy** by clicking on it in the Policy Lists table, 
+
+**Navigation** click the **Add Rule List** button. 
+
+**Navigation** For the **Name,** start typing **web_rule_list**, you will notice the name will auto complete, 
+
+**Navigation** select the rule list **/Common/web_rule_list**, provide an optional description
+
+**Navigation** click **Done Editing.**
 
 |image274|
 
@@ -186,10 +158,11 @@ system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
-To commit the change, simply click **“Commit** Changes **to System**
-located at the top of the screen.
+**Navigation** click **“Commit** Changes **to System**
+
 
 Assign the rd_0_policy to Route Domain 0
+----------------------------------------
 
 **Navigation:** Network > Route Domains
 
@@ -203,10 +176,31 @@ Set **Enforcement** to **Enable** and select the **rd_0_policy**
 
 |Image275|
 
+Configure BIG-IP Firewall in ADC Mode
+-------------------------------------
+
+By default, AFM firewall is configured in ADC mode, which is a default allow configuration. In Firewall mode, all traffic is blocked at the firewall, and any traffic you want to allow must be explicitly specified. 
+
+In deployments where there are a large number of VIP's, deploying in Firewall mode would require significant preperation. Firewall  functionality is easier to introduce in ADC mode. 
+
+**Navigation:** Security > Options > Network Firewall 
+
++-----------------------------------------+---------+
+| **Virtual Server & Self IP Contexts**   | Accept  |
++-----------------------------------------+---------+
+
+**Navigation** Click **Update*
+
+
+
+|image251|
+
+Open the Firewall Options tab
+
 Validate Lab 2 Configuration
 ----------------------------
 
-
+.. Note:: Open a tab on the Chrome Browser to test access to the URL's below
 
 **Validation:** This lab is using self-signed certificates. You can
 either open a web browser on the test client or run CURL from the CLI to
@@ -230,7 +224,7 @@ validate your configuration.
 
 **With curl you need to use the -k option to ignore certificate validation**
 
-From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command yu will see the IP addres of the pool member you connected to.
+.. Note:: From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command yu will see the IP addres of the pool member you connected to.
 
 .. code-block:: console
 

@@ -22,6 +22,9 @@ Look at the supplemental login instructions for:
 
 |image1|
 
+
+.. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4 Credentials are displayed in the login screen
+
 Inspect Application Pools
 ------------------------
 
@@ -71,7 +74,7 @@ Verify the following pools using the following tabel of pool information.
 Inspect Application Virtual Servers
 -----------------------------------------------
 
-By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed. The EXT_VIP in this exercise is used to forward traffic with specific characteristics to the internal VIP's. THis is accomplished by assigning a traffic policy to the VIP. The traffic policy is described and inspected in the next section. For this class, the Wildcard Virtual servers (Blue Square  status indicator)  are used in a different lab 
+By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed. The EXT_VIP in this exercise is used to forward traffic with specific characteristics to the internal VIP's. This is accomplished by assigning a traffic policy to the VIP. The traffic policy is described and inspected in the next section. For this class, the Wildcard Virtual servers (Blue Square  status indicator)  are not used. 
 
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
@@ -86,7 +89,7 @@ Inspect the Local Traffic Network Map
 
 |image7|
 
-.. NOTE:: The virtual servers should now show a green circle for status.
+.. NOTE:: The virtual servers should show a green circle for status.
 
 .. NOTE:: This completes Module 1 - Lab 1
 

@@ -47,7 +47,7 @@ We tested functionality in prior exercises with the commands below. Leverage cur
 
    curl -k https://10.1.10.30 -H 'Host: site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
-**Expected Result:** The site should be blocked by the geo_restrict_rule_list
+**Expected Result:** The site should be blocked by the geo_restrict_rule_list and generate a 403 Forbidden response
 
 Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 allowed.
 

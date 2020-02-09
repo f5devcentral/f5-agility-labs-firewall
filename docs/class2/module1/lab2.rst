@@ -224,7 +224,7 @@ validate your configuration.
 
 **With curl you need to use the -k option to ignore certificate validation**
 
-.. Note:: From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command yu will see the IP addres of the pool member you connected to.
+.. Note:: From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command you will see the IP address of the pool member you connected to.
 
 .. code-block:: console
 

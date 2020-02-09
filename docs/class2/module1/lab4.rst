@@ -85,12 +85,13 @@ Create Permit Log Network Firewall Rule.
 |image252|
 
 Assign the geo_restrict_rule_list to the site1_policy
+-----------------------------------------------------
 
 **Navigation:** Security > Network Firewall > Policies
 
 **Navigation:** Click on **site1_policy**  then click Add Rule List
 
-In the name field  start typing geo in the rule listfield. Select geo_restrict_rule_list 
+In the name field  start typing **geo** in the rule listfield. Select **geo_restrict_rule_list** 
 
 **Navigation:** Click Done Editing
 
@@ -170,7 +171,7 @@ applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwar
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com' 
 
-.. NOTE:: Since we did not define the heade, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) which is considered a US address by the geolocation database
+.. NOTE:: Since we did not define the header, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) 
 
 URL: https://site1.com
 
@@ -224,8 +225,8 @@ Create Network Firewall Policy
 
 **Navigation:** Click Finished
 
-Create a rule Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly 
-into the policy instead or using a Rule List
+Modify the policy with rules to  Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule and deny all other adresses . This time we will build the rules directly 
+into the policy instead of using a Rule List
 
 **Navigation:** Click on the site2_policy you just created 
 
@@ -274,13 +275,14 @@ URL: https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network
 
 |image259|
 
-Review the rules and Click Commit Changes To System
+**Navigation** Click Commit Changes To System
 
 |image260|
 
 **Navigation:** Click Finished
 
 Apply the Network Firewall Policy to Virtual Server
+---------------------------------------------------
 
 **Navigation:** Local Traffic > Virtual Servers
 

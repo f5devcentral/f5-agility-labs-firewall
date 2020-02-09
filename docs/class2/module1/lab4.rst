@@ -177,8 +177,6 @@ URL: https://site1.com
 Use the -H option in curl to define the X-Forwarded-For Header. This will trigger the iRule addigned to the
 External VIP to simulate specific IP addresses in the header
 
-RFC 1918 addresses are considerd US addresses by the Geolocation database
-
 .. code-block:: console
 
    curl -k https://10.1.10.30/ -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
@@ -194,6 +192,8 @@ The BIG-IP Geolocation database is supplied by Digital Element
 URL: http://www.digitalelement.com/ 
 
 URL: https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
+
+.. NOTE:: You can check the geo classification of an address from the BIG-IP CLI using the command geoip_lookup 1.202.2.1
 
 .. code-block:: console
 

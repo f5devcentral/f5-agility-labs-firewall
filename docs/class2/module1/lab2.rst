@@ -13,6 +13,9 @@ Whether it is based on the hostname or the URI path, the request can be forwarde
 
 Inspect the LTM Policies
 ------------------------
+
+Take a few minutes to open the draft policy and review the iptions. Policy is a very flexible tool to direct traffic based on the packet content. In this use case we distribute traffic to a subset of internal VIP's, Policy can be configured to forward traffic directly to pools or nodes based on the packet content and many other attributes
+
 .. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
 
 

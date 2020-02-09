@@ -129,18 +129,7 @@ View empty network firewall logs.
 |image28|
 
 
-Configure BIG-IP Firewall in ADC Mode
--------------------------------------
 
-**Navigation:** Security > Options > Network Firewall 
-
-+-----------------------------------------+---------+
-| **Virtual Server & Self IP Contexts**   | Accept  |
-+-----------------------------------------+---------+
-
-|image251|
-
-Open the Firewall Options tab
 
 
 

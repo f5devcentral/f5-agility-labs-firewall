@@ -1,4 +1,5 @@
-
+View Firewall Reports
+---------------------
 
 View several of the built-in network firewall reports and graphs on the
 BIG-IP system. Open the **Security >Reporting > Network > Enforced

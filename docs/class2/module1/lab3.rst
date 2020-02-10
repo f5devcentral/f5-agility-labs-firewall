@@ -98,7 +98,7 @@ Edit log profile network firewall tab using the following information:
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click Create
 
 Apply The Logging Configuration
 -------------------------------
@@ -122,25 +122,11 @@ Apply the newly created log profile to the external virtual server created in th
 
 **Navigation:** Click Update
 
-View empty network firewall logs.
+View network firewall logs.
 
 **Navigation:** Security > Event Logs > Network > Firewall
 
 |image28|
-
-
-Configure BIG-IP Firewall in ADC Mode
--------------------------------------
-
-**Navigation:** Security > Options > Network Firewall 
-
-+-----------------------------------------+---------+
-| **Virtual Server & Self IP Contexts**   | Accept  |
-+-----------------------------------------+---------+
-
-|image251|
-
-Open the Firewall Options tab
 
 
 

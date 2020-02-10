@@ -13,6 +13,9 @@ Whether it is based on the hostname or the URI path, the request can be forwarde
 
 Inspect the LTM Policies
 ------------------------
+
+Take a few minutes to open the draft policy and review the iptions. Policy is a very flexible tool to direct traffic based on the packet content. In this use case we distribute traffic to a subset of internal VIP's, Policy can be configured to forward traffic directly to pools or nodes based on the packet content and many other attributes
+
 .. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
 
 
@@ -41,14 +44,17 @@ Verify that the  Policy is assigned To The External Virtual Server
 .. NOTE:: there is a  policy and an iRule  is assigned to the VIP:
 
 
-Create An ACL to allow web traffic 
-----------------------------------
+Create An ACL to allow web traffic and SSH
+------------------------------------------
 
-On bigip01.f5demo.com (10.1.1.4) create a rule list to allow Web
-traffic. A logical container must be created before the individual rules
-can be added. You will create a list with two rules, to allow port 80
-(HTTP) and 443 (HTTPS)  to servers 10.1.20.11 through 10.1.20.17 We will
-also create a rule which allows HTTPS traffic to access 10.1.10.30
+The rules created in this section allow basic connectivity to the resources.
+We will add enforcement rules at the Virtual server level to demostrate functionality
+
+On bigip01.f5demo.com (10.1.1.4) create a rule list to allow
+traffic. A logical container will be created before the individual rules
+can be added. You will create a list with rules to allow port 80
+(HTTP), 443 (HTTPS), and 22 (SSH)  to servers 10.1.20.11 through 10.1.20.17 We will
+also create a rules which allows HTTPS and SSH traffic to access 10.1.10.30
 
 Create a container for the rules by going to:
 
@@ -56,20 +62,22 @@ Create a container for the rules by going to:
 
 **Navigation:** select Create
 
-For the **Name** enter **web_rule_list**, provide an optional
+For the **Name** enter **web_rule_list**, provide an optional description
 
-description and then click **Finished**
+**Navigation** click **Finished**
 
 |image270|
 
 |image269|
 
-Edit the **web_rule_list** by selecting it in the Rule Lists table, then
-click the **Add** button in the Rules section. Here you will add two
-rules into the list; the first is a rule to allow HTTP and HTTPS traffic
-to the LAMP Servers
+**Navigation** Select  the **web_rule_list** by clicking on it in the Rule Lists table
 
-|image10|
+**Navigation** click the **Add** button in the Rules section. 
+
+Add a rules into the list to allow HTTP, HTTPS, and SSH  traffic as described in the next steps
+
+
+|image276|
 
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Name**                | allow_http_and_https                                                                            |
@@ -87,15 +95,13 @@ to the LAMP Servers
 | **Logging**             | Enabled                                                                                         |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 
-|image271|
 
 **Navigation:** Click Repeat
 
-click the **Add** button in the Rules section. Here you will add two
-rules into the list; the first is a rule to allow HTTP.
+Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
 +-------------------------+-----------------------------------------------------------+
-| **Name**                | allow_https_10_1_10_30                                    |
+| **Name**                | allow_any_10_1_10_30                                    |
 +=========================+===========================================================+
 | **Protocol**            | TCP                                                       |
 +-------------------------+-----------------------------------------------------------+
@@ -103,12 +109,16 @@ rules into the list; the first is a rule to allow HTTP.
 +-------------------------+-----------------------------------------------------------+
 | **Destination Address** | **Specify...**\ 10.1.10.30 then click **Add**             |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Port**    | **Specify…** Port **443**, then click **Add**             |
+| **Destination Port**    | **Specify…** Port **Any**, then click **Add**             |
 +-------------------------+-----------------------------------------------------------+
-| **Action**              | **Accept-Decisively**                                     |
+| **Action**              | **Accept**                                                |
 +-------------------------+-----------------------------------------------------------+
 | **Logging**             | Enabled                                                   |
 +-------------------------+-----------------------------------------------------------+
+
+**Navigation:** Click **Finished**
+
+
 
 |image272|
 
@@ -122,18 +132,23 @@ Assign the Rule List to a Policy
 **Navigation** Click Create
 
 For the **Name** enter **rd_0_policy**, provide an optional description
-and then click **Finished**.
+
+**Navigation** click **Finished**.
+
 (Note: We commonly use “RD” in our rules to help reference the “Route
 Domain”, default is 0)**
 
 |image273|
 
-Edit the **rd_0_policy** by selecting it in the Policy Lists table, then
-click the **Add Rule List** button. Here you will add the rule list you
-created in the previous section. For the **Name,** start typing
-**web_rule_list**, you will notice the name will auto complete, select
-the rule list **/Common/web_rule_list**, provide an optional description
-and then click **Done Editing.**
+**Navigation** Edit the **rd_0_policy** by clicking on it in the Policy Lists table, 
+
+**Navigation** click the **Add Rule List** button. 
+
+**Navigation** For the **Name,** start typing **web_rule_list**, you will notice the name will auto complete, 
+
+**Navigation** select the rule list **/Common/web_rule_list**, provide an optional description
+
+**Navigation** click **Done Editing.**
 
 |image274|
 
@@ -143,14 +158,15 @@ system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
-To commit the change, simply click **“Commit** Changes **to System**
-located at the top of the screen.
+**Navigation** click **“Commit** Changes **to System**
+
 
 Assign the rd_0_policy to Route Domain 0
+----------------------------------------
 
 **Navigation:** Network > Route Domains
 
-**Navigauion:** Click on the "0" to select Route Domain 0
+**Navigation:** Click on the "0" to select Route Domain 0
 
 **Navigation:** Select the Security Tab
 
@@ -160,10 +176,31 @@ Set **Enforcement** to **Enable** and select the **rd_0_policy**
 
 |Image275|
 
+Configure BIG-IP Firewall in ADC Mode
+-------------------------------------
+
+By default, AFM firewall is configured in ADC mode, which is a default allow configuration. In Firewall mode, all traffic is blocked at the firewall, and any traffic you want to allow must be explicitly specified. 
+
+In deployments where there are a large number of VIP's, deploying in Firewall mode would require significant preperation. Firewall  functionality is easier to introduce in ADC mode. 
+
+**Navigation:** Security > Options > Network Firewall 
+
++-----------------------------------------+---------+
+| **Virtual Server & Self IP Contexts**   | Accept  |
++-----------------------------------------+---------+
+
+**Navigation** Click **Update*
+
+
+
+|image251|
+
+Open the Firewall Options tab
+
 Validate Lab 2 Configuration
 ----------------------------
 
-
+.. Note:: Open a tab on the Chrome Browser to test access to the URL's below
 
 **Validation:** This lab is using self-signed certificates. You can
 either open a web browser on the test client or run CURL from the CLI to
@@ -187,7 +224,7 @@ validate your configuration.
 
 **With curl you need to use the -k option to ignore certificate validation**
 
-From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl directory from windows command shell ). Curl will let us do some of the additional testing in later sections.
+.. Note:: From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command you will see the IP address of the pool member you connected to.
 
 .. code-block:: console
 
@@ -201,7 +238,6 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 
     curl -k https://10.1.10.30 -H Host:site5.com
 
-    curl -k https://10.1.10.30 -H Host:dvwa.com
 
 |image264|
  
@@ -274,7 +310,7 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 .. |image271| image:: /_static/class2/image271.png
    :width: 7in
    :height: 7in
-.. |image272| image:: /_static/class2/image272.png
+.. |image272| image:: /_static/class2/image272.PNG
    :width: 7in
    :height: 7in
 .. |image273| image:: /_static/class2/image273.png
@@ -286,6 +322,9 @@ From a terminal window (use Cygwin on Win7 Client Desktop, or go to the c:\\curl
 .. |image275| image:: /_static/class2/image275.png
    :width: 6.05000in
    :height: 3.60208in
+.. |image276| image:: /_static/class2/image276.png
+   :width: 7.05556in
+   :height: 3.45833in
 
 
 

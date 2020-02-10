@@ -85,10 +85,13 @@ Create Permit Log Network Firewall Rule.
 |image252|
 
 Assign the geo_restrict_rule_list to the site1_policy
+-----------------------------------------------------
 
-**Navigation:** Security > Network Firewall > Policies then click Add Rule List
+**Navigation:** Security > Network Firewall > Policies
 
-In the name field  start typing geo in the rule listfield. Select geo_restrict_rule_list 
+**Navigation:** Click on **site1_policy**  then click Add Rule List
+
+In the name field  start typing **geo** in the rule listfield. Select **geo_restrict_rule_list** 
 
 **Navigation:** Click Done Editing
 
@@ -121,6 +124,7 @@ Apply the Network Firewall Policy to Virtual Server
 
 **Navigation:** Click on the Security Tab and select Policies
 
+Edit the Network Firewall section of the screen
 
 +----------------------+-----------------------------------------------+
 | **Virtual Server**   | int_vip_www.site1.com_1.1.1.1                 |
@@ -134,7 +138,7 @@ Apply the Network Firewall Policy to Virtual Server
 | **Log Profile**      | firewall\_log\_profile                        |
 +----------------------+-----------------------------------------------+
 
-|image36|
+|image277|
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -149,32 +153,30 @@ The original IP address of the client in this case is often mapped to a common H
 or some variation. In this deployment, the BIG-IP can translate the original source of the request in the 
 XFF to the source IP address.
 
-Use Cywin Terminal to allow us to specify the sX-Forwarded -For header. . There is an iRule
+Use Cywin Terminal to allow us to specify the X-Forwarded-For header. . There is an iRule
 applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwarded-For header
 
 **XFF-SNAT iRule**
 
 .. code-block:: tcl 
 
-when HTTP_REQUEST {
-  if {[HTTP::header exists "X-Forwarded-For"]}  {
-  snat [HTTP::header X-Forwarded-For]
-  log local0. '[HTTP::header X-Forwarded-For]'
+  when HTTP_REQUEST {
+    if {[HTTP::header exists "X-Forwarded-For"]}  {
+    snat [HTTP::header X-Forwarded-For]
+    log local0. '[HTTP::header X-Forwarded-For]'
+    }
   }
-}
 
 .. code-block:: console
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com' 
 
-.. NOTE:: Since we did not define the heade, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) which is considered a US address by the geolocation database
+.. NOTE:: Since we did not define the header, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) 
 
 URL: https://site1.com
 
 Use the -H option in curl to define the X-Forwarded-For Header. This will trigger the iRule addigned to the
 External VIP to simulate specific IP addresses in the header
-
-RFC 1918 addresses are considerd US addresses by the Geolocation database
 
 .. code-block:: console
 
@@ -191,6 +193,8 @@ The BIG-IP Geolocation database is supplied by Digital Element
 URL: http://www.digitalelement.com/ 
 
 URL: https://whatismyipaddress.com/ip/1.202.2.1 shows that this address is in Beijing , China
+
+.. NOTE:: You can check the geo classification of an address from the BIG-IP CLI using the command geoip_lookup 1.202.2.1
 
 .. code-block:: console
 
@@ -221,8 +225,8 @@ Create Network Firewall Policy
 
 **Navigation:** Click Finished
 
-Create a rule Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule. This time we will build the rules directly 
-into the policy instead or using a Rule List
+Modify the policy with rules to  Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule and deny all other adresses . This time we will build the rules directly 
+into the policy instead of using a Rule List
 
 **Navigation:** Click on the site2_policy you just created 
 
@@ -257,7 +261,6 @@ For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP do
 
 URL: https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html
 
-
 +---------------+-------------+
 | **Name**      | deny_log    |
 +===============+=============+
@@ -272,13 +275,14 @@ URL: https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network
 
 |image259|
 
-Review the rules and Click Commit Changes To System
+**Navigation** Click Commit Changes To System
 
 |image260|
 
 **Navigation:** Click Finished
 
 Apply the Network Firewall Policy to Virtual Server
+---------------------------------------------------
 
 **Navigation:** Local Traffic > Virtual Servers
 
@@ -404,3 +408,6 @@ EXT_VIP_10_1_10_30
 .. |image265| image:: /_static/class2/image265.png
    :width: 6
    :height: 1.25
+.. |image277| image:: /_static/class2/image277.png
+   :width: 7.04167in
+   :height: 7.70833in

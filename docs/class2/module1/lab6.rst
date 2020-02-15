@@ -5,7 +5,7 @@ HTTP security profiles are used to apply basic HTTP security to a
 virtual server. Significantly more advanced HTTP security is available
 by adding ASM (Application Security Manager).
 
-Configure An HTTP Security Profile And Apply It To The External Virtual Server
+Configure An HTTP Security Profile And Apply It To The External Virtual Server.
 ------------------------------------------------------------------------------
 
 On the BIG-IP:

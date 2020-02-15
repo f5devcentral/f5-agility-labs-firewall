@@ -15,15 +15,15 @@ Inspect the preconfigured  IDS_Pool.
 
 .. Note:: Unencrypted traffic will be forwarded to this IP address
 
-**Navigation:** Click Finished.
-
 Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List > EXT\_VIP\_10_1_10_30.
 
 **Navigation:** Select **Advanced** from the pulldown at the top of the Configuration section
 
-**Navigation:** Scroll to the configuration for Clone Pool (Client)  and select the IDS\_Pool
+**Navigation:** Scroll to the configuration for Clone Pool (Client)  and select None
+
+**Navigation:** Scroll to the configuration for Clone Pool (Server)  and select IDS_pool
 
 |image60|
 
@@ -33,7 +33,7 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 Select the Putty application from the desktop on the jump host
 
-**Load**   **Lamp Server**  from the sessions list
+Load   **Lamp Server**  from the sessions list
 
 **Open**   **Lamp Server**
 
@@ -41,15 +41,15 @@ Accept the certificate warning
 
 login as **f5**
 
-.. Attention:: It will take about 30 seconds for the certifivate login process-  No password required
+.. Attention:: It will take about 30 seconds for the certificate login process-  No password required
 
 Input the TCPDUMP command to start capturing traffic
 
 .. code-block:: console
 
-    Run sudo tcpdump –i eth1 -c 200 port 8081
+    sudo tcpdump –i eth1 -c 200 port 8081
 
-Initiate another attempt to connect to the website via curl using the Cygwin application on the desktop.
+Initiate another attempt to connect to the website via curl using the Cygwin application on the desktop. Position windows on the desktop so that you can see both the Putty session and the Cygwin session  
 
 .. code-block:: console
 
@@ -66,6 +66,8 @@ Initiate another attempt to connect to the websites using the browser
    https://site4.com:8081
 
 View the tcpdump output on the syslog-webserver.
+
+.. Attention:: It will take about 20 seconds after the transaction to appear in the tcpdump session. This is a performance problem on the lamp server
 
 .. code-block:: console
 

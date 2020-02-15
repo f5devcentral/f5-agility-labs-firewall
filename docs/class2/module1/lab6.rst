@@ -53,6 +53,8 @@ then click Create.
 
 **Navigation:** Click Create
 
+.. NOTE:: We did not put the policy in Blocking mode. We will do that after we verify functionality
+
 Apply the HTTP security profile to the external virtual server.
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List >
@@ -109,7 +111,7 @@ Edit the demo\_http\_security HTTP security profile.
 **Navigation:** Select the Request Checks Tab
 
 +----------------------------+---------------------------------------------------------+
-| **Methods**                | Remove Post Fro the Allowed Group.                      |
+| **Methods**                | Remove Post From the Allowed Group.                      |
 |                            |                                                         |
 |                            | Check “Block”                                           |
 +----------------------------+---------------------------------------------------------+
@@ -121,6 +123,8 @@ Edit the demo\_http\_security HTTP security profile.
 **Navigation:** Click Finished.
 
 On Windows jumpbox
+
+Close the Browser window to dvwa.com
 
 Open a new web browser tab and access the virtual server.
 

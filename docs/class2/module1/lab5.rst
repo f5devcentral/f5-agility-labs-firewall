@@ -49,6 +49,8 @@ We tested functionality in prior exercises with the commands below. Leverage cur
 
 **Expected Result:** The site should be blocked by the geo_restrict_rule_list and generate a 403 Forbidden response
 
+.. NOTE:: Optionally you can log into the CLI on the BIG-IP. Putty BIGIP_A --Uersname: root  Password: f5DEMOs4u Then tail -f /var/log/ltm. The iRule logs the SIP
+
 Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 allowed.
 
 .. code-block:: console

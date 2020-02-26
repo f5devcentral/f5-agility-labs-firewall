@@ -28,10 +28,10 @@ to:
 
 From the **Context Filter** select **Route Domain 0**. 
 
-Click on the **Add Rule List to Global** from the ypper right 
+Click on the **Add Rule List to Global** from the upper right 
 corner of the screen and click **Cancel** (note:this is a GUI bug)
 
-Click on the **Add Rule List to Route Domain** from the ypper right 
+Click on the **Add Rule List to Route Domain** from the upper right 
 corner of the screen and click **Cancel** (note:this is a GUI bug)
 
 your screen should show the web_rule _list you assigned earlier through the 

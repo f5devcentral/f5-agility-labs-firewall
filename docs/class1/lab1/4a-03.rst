@@ -32,7 +32,7 @@ Default Firewall options configuration determine if the system is in ADC mode or
 In the screenshot below note the Virtual Server & Self IP Contexts Value. If it is set to 
 Accept (system default) the Firewall is in ADC mode. 
 
-.. NOTE:: For ths lab we will use Firewall Mode with the value set to **Reject**
+.. NOTE:: For this lab we will use Firewall Mode with the value set to **Reject**
 
 
 |image267|
@@ -40,8 +40,6 @@ Accept (system default) the Firewall is in ADC mode.
 
 Review  the log configuration
 -----------------------------
-
-Local-db-publisher is linked to the global-network logging profile in the next step
 
 **Navigate**  **Security>>Event Logs>>Logging Profiles**
 

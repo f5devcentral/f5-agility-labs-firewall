@@ -12,9 +12,13 @@ are being accepted and the web traffic is being dropped:
 
 |image6|
 
-Although we will not configure external logging in this lab, you should
+.. NOTE:: Logging is Pre-Configured for this lab
+
+We will not configure external logging in this lab, you should
 be aware that the BIG-IP supports high speed external logging in various
 formats including **SevOne**, **Splunk** and **ArcSight**.
+
+
 
 .. |image6| image:: /_static/class1/image7.png
    :width: 6.49097in
@@ -26,15 +30,18 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
 
 Default Firewall options configuration determine if the system is in ADC mode or Firewall Mode. 
 In the screenshot below note the Virtual Server & Self IP Contexts Value. If it is set to 
-Accept (system default) the Firewall is in ADC mode. For ths lab we will use Firewall Mode 
-with the value set to **Reject**
+Accept (system default) the Firewall is in ADC mode. 
 
-Local-db-publisher is linked to the global-network logging profile in the next step
+.. NOTE:: For ths lab we will use Firewall Mode with the value set to **Reject**
+
 
 |image267|
 
 
-Add a log publisher to the log configuration 
+Review  the log configuration
+-----------------------------
+
+Local-db-publisher is linked to the global-network logging profile in the next step
 
 **Navigate**  **Security>>Event Logs>>Logging Profiles**
 

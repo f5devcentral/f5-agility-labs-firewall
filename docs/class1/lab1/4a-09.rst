@@ -18,7 +18,7 @@ Remember to Commit the changes to system before proceeding.
 
 Once completed, you should see a policy similar to the one below:
 
-|image209|
+|image215|
 
 
 Review the rules that are now applied to this route domain by navigating
@@ -39,9 +39,9 @@ Route Domain Screen.
 
 |image212|
 
-.. |image209| image:: /_static/class1/image209.png
+.. |image215| image:: /_static/class1/image215.png
    :width: 6.5in
-   :height: 1.66667in
+   :height: 2.66667in
 
 .. |image212| image:: /_static/class1/image210.png
    :width: 6.5in

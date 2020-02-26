@@ -26,10 +26,9 @@ Test Access to the Servers
 .. |image212| image:: /_static/class1/image212.png
    :width: 6.5in
    :height: 3in
-
 .. |image209| image:: /_static/class1/image209.png
    :width: 2in
    :height: 2in
-.. |image213| image:: /_static/class1/image213.png
+.. |image213| image:: /_static/class1/image213.PNG
    :width: 4.0in
    :height: 4in

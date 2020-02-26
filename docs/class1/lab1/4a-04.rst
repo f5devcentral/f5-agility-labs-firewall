@@ -92,7 +92,7 @@ Select **Finished** when completed.
 When you exit, inspect the rule set. You’ll notice the
 reject rule is after the **allow_https** rule. This means that HTTP
 traffic to the servers on 10.1.20.0/24 will be accepted, while all other traffic to
-this subnet will be rejected based on the ordering of the rules. This is tradiditional default 
+this subnet will be rejected based on the ordering of the rules. This is traditional default 
 deny behavior
 
 

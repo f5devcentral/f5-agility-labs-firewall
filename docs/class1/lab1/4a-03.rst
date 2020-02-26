@@ -1,4 +1,4 @@
-pyCreate and View Log Entries
+Create and View Log Entries
 ---------------------------
 
 In this section, you will generate various types of traffic through the
@@ -22,12 +22,12 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
 
 
 
-**Navigate** ** Security > Options > Network Firewall > Firewall Options **
+**Navigate: Security > Options > Network Firewall > Firewall Options**
 
 Default Firewall options configuration determine if the system is in ADC mode or Firewall Mode. 
 In the screenshot below note the Virtual Server & Self IP Contexts Value. If it is set to 
 Accept (system default) the Firewall is in ADC mode. For ths lab we will use Firewall Mode 
-with the value set to Reject
+with the value set to **Reject**
 
 Local-db-publisher is linked to the global-network logging profile in the next step
 

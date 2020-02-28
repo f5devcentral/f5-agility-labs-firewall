@@ -116,7 +116,7 @@ Apply the newly created log profile to the external virtual server created in th
 +-------------------+--------------------------+
 
 
-|image27|
+|image278|
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -158,7 +158,7 @@ URL: https://site1.com
 .. |image26| image:: /_static/class2/image28.png
    :width: 4.83169in
    :height: 5.41497in
-.. |image27| image:: /_static/class2/image29.png
+.. |image278| image:: /_static/class2/image278.png
    :width: 7.04167in
    :height: 5.88889in
 .. |image28| image:: /_static/class2/image30.png

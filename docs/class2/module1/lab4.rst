@@ -26,7 +26,7 @@ only and only on the site1.com application.
 **Navigation:** Click Finished
 
 
-Create an IP Drop Network Firewall Rule List
+Create a geo_restrict_rule_list Firewall Rule List
 
 Note: we could have created a rule directly in the policy. Using Rule lists allows us to re-use this in multiple policies
 
@@ -64,6 +64,8 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 
 **Navigation:** Click repeat
 
+Note: The values will auto populate with prior values. Correct as needed
+
 **Navigation:** Click Add
 
 +---------------+---------------+
@@ -74,6 +76,8 @@ Note: we could have created a rule directly in the policy. Using Rule lists allo
 | **Action**    | Accept        |
 +---------------+---------------+
 | **Logging**   | Enabled       |
++---------------+---------------+
+| **Source**    | Any           |
 +---------------+---------------+
 
 Create Permit Log Network Firewall Rule.

@@ -101,7 +101,7 @@ Add a rules into the list to allow HTTP, HTTPS, and SSH  traffic as described in
 Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
 +-------------------------+-----------------------------------------------------------+
-| **Name**                | allow_any_10_1_10_30                                    |
+| **Name**                | allow_any_10_1_10_30                                      |
 +=========================+===========================================================+
 | **Protocol**            | TCP                                                       |
 +-------------------------+-----------------------------------------------------------+
@@ -190,8 +190,6 @@ In deployments where there are a large number of VIP's, deploying in Firewall mo
 +-----------------------------------------+---------+
 
 **Navigation** Click **Update*
-
-
 
 |image251|
 
@@ -313,7 +311,7 @@ validate your configuration.
 .. |image272| image:: /_static/class2/image272.PNG
    :width: 7in
    :height: 7in
-.. |image273| image:: /_static/class2/image273.png
+.. |image273| image:: /_static/class2/image273.PNG
    :width: 6.05000in
    :height: 2.60208in
 .. |image274| image:: /_static/class2/image274.png
@@ -325,7 +323,9 @@ validate your configuration.
 .. |image276| image:: /_static/class2/image276.png
    :width: 7.05556in
    :height: 3.45833in
-
+.. |image251| image:: /_static/class2/image251.png
+   :width: 3.05556in
+   :height: 2.45833in
 
 
 

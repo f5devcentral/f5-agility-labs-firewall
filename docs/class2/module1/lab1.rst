@@ -43,7 +43,7 @@ Verify the following pools using the following tabel of pool information.
      - **Members**
      - **Service Port**
    * - pool\_www.site1.com
-     - thttp
+     - http
      - 10.1.20.11
      - 80
    * - pool\_www.site2.com

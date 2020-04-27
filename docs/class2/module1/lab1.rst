@@ -74,7 +74,7 @@ Verify the following pools using the following tabel of pool information.
 Inspect Application Virtual Servers
 -----------------------------------------------
 
-By using   the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed. The EXT_VIP in this exercise is used to forward traffic with specific characteristics to the internal VIP's. This is accomplished by assigning a traffic policy to the VIP. The traffic policy is described and inspected in the next section. For this class, the Wildcard Virtual servers (Blue Square  status indicator)  are not used. 
+By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed. The EXT_VIP in this exercise is used to forward traffic with specific characteristics to the internal VIP's. This is accomplished by assigning a traffic policy to the VIP. The traffic policy is described and inspected in the next section. For this class, the Wildcard Virtual servers (Blue Square  status indicator)  are not used. 
 
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List

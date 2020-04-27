@@ -10,7 +10,7 @@ server is necessary to accept specific types of traffic.
 The pool is a logical group of hosts that is applied to and will receive
 traffic from a virtual server.
 
-On your personal device
+On your personal  device
 
 Look at the supplemental login instructions for:
 

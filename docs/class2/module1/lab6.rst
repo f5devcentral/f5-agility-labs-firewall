@@ -66,6 +66,8 @@ Apply the HTTP security profile to the external virtual server.
 +-------------------------+------------------------+------------------------+
 | **Protocol Security**   | Enabled                | demo_http_security     |
 +-------------------------+------------------------+------------------------+
+| **Log Profile      **   | selected               | firewall_log_profile   |
++-------------------------+------------------------+------------------------+
 
 |image51|
 
@@ -111,7 +113,7 @@ Edit the demo\_http\_security HTTP security profile.
 **Navigation:** Select the Request Checks Tab
 
 +----------------------------+---------------------------------------------------------+
-| **Methods**                | Remove Post From the Allowed Group.                      |
+| **Methods**                | Remove Post From the Allowed Group.                     |
 |                            |                                                         |
 |                            | Check “Block”                                           |
 +----------------------------+---------------------------------------------------------+
@@ -136,6 +138,20 @@ URL: https://dvwa.com
 |image266|
 
 .. ATTENTION:: This action requires a "POST" action and will be blocked because this is not allowed. 
+
+Edit the demo\_http\_security HTTP security profile.
+
+**Navigation:** Security > Protocol Security > Security Profiles > HTTP
+
+**Navigation:** Select the **demo_http_security** profile
+
+**Navigation:** Select the Request Checks Tab
+
++----------------------------+---------------------------------------------------------+
+| **Methods**                | Add Post to the Allowed Group.                          |
+|                            |                                                         |
+|                            | Un-check “Block”                                        |
++----------------------------+---------------------------------------------------------+
 
 .. NOTE:: This is the end of Module 1 - Lab 6
 

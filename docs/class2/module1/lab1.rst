@@ -32,6 +32,7 @@ except management.
 
 .. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
+.. TIP:: Use the Chrome Browser on the Jump Host desktop to configure BIG-IP 1 10.1.1.4. The login credentials are on the BIG-IP login page 
 
 
 Lab 1: Pre-configured  pools and  virtual servers

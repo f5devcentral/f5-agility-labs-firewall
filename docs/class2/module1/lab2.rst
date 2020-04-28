@@ -179,7 +179,19 @@ Set **Enforcement** to **Enable** and select the **rd_0_policy**
 Configure BIG-IP Firewall in ADC Mode
 -------------------------------------
 
-By default, AFM firewall is configured in ADC mode, which is a default allow configuration. In Firewall mode, all traffic is blocked at the firewall, and any traffic you want to allow must be explicitly specified. 
+By default, the Network Firewall is configured in **ADC mode**, a
+default allow configuration, in which all traffic is allowed through the
+firewall, and any traffic you want to block must be explicitly
+specified.
+
+The system is configured in this mode by default so all traffic on your
+system continues to pass after you provision the Advanced Firewall
+Manager. You should create appropriate firewall rules to allow necessary
+traffic to pass before you switch the Advanced Firewall Manager to
+Firewall mode. In **Firewall mode**, a default deny configuration, all
+traffic is blocked through the firewall, and any traffic you want to
+allow through the firewall must be explicitly specified.
+
 
 In deployments where there are a large number of VIP's, deploying in Firewall mode would require significant preperation. Firewall  functionality is easier to introduce in ADC mode. 
 

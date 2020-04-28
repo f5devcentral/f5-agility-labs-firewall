@@ -1,5 +1,5 @@
 Firewall Rule Hierarchy
---------------
+-----------------------
 
 With the BIG-IP\ :sup:`®` Network Firewall, you use a context to
 configure the level of specificity of a firewall rule or policy. For

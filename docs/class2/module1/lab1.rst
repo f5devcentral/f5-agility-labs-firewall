@@ -32,7 +32,7 @@ except management.
 
 .. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
-.. image:: http://support.f5.com/kb/global/manual_images/MAN-0439-01/firewall_processing.png
+
 
 Lab 1: Pre-configured  pools and  virtual servers
 ===================================================

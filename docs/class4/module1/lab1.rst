@@ -9,7 +9,7 @@ infrastructure to provide traffic flow information.
 Flowmon Collector appliance receives NetFlow/sFlow/IPFIX from edge
 routers while Flowmon DDoS Defender uses i/eBGP/Flowspec to route the
 traffic to F5 DHD/AFM appliance. F5 DHD/AFM DDoS profile, VS and other
-parameters provisioned dynamically through iControl REST.
+parameters provisioned dynamically through iControl REST API
 
 |image1|
 

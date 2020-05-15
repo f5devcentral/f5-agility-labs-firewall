@@ -18,7 +18,7 @@ Select the course you wnat to take and press **Launch**
 
 |image302|
 
-Press the blue **Join** button to enter the class
+Press the blue **Join** button to enter the  class
 
 Review the **Deployment Description**
 

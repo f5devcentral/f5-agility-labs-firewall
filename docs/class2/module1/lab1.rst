@@ -6,6 +6,7 @@ Check your email for an invitation from noreply@registration.udf.f5.com (Check y
 The email will contain yur username and temporart Passwords
 
 Click the how to join a training class 
+
 .. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
 
 Click the hyperlink Log in **here** 
@@ -13,6 +14,7 @@ Click the hyperlink Log in **here**
 |image301|
 
 Select the course you wnat to take and press **Launch**
+
 .. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
 
 |image302|

@@ -15,7 +15,6 @@ Click the hyperlink Log in **here**
 
 Select the course you wnat to take and press **Launch**
 
-.. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
 
 |image302|
 

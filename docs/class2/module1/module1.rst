@@ -35,17 +35,6 @@ proxy such as the BIG-IP for your perimeter security utilizing common
 traffic management techniques and some additional features unique to 
 the BIG-IP as an Application Delivery Controller.
 
-Labs 3 & 4 Breaks out applying differing security policies to the
-multi-tiered application deployment.
-
-Lab 5 Highlights the flexibility of the Multi-Layered Firewall to solve
-common problems for hosting providers.
-
-Lab 6 Applies Layer 7 protocol validation and security for HTTP to the
-existing applications.
-
-Lab 7 Provides a solution for sending decrypted traffic to other
-security devices.
 
 .. WARNING:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP

@@ -1,11 +1,11 @@
-Lab 2 - AFM Packet Tester, Flow Inspector, Stale Rule Lab
+Module 2: AFM Packet Tester, Flow Inspector, Stale Rule Lab
 *********************************************************
 
 .. toctree::
    :maxdepth: 5
    :glob:
 
-   step*
+   lab*
 
 **Written for TMOS 15.1.0
 

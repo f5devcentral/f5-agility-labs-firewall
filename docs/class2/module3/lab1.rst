@@ -7,7 +7,7 @@ Diagram for Module 4:
 
 |diagram98|
 
-There are some steps we need to complete to get the system to work as expected. 
+There are some  steps we need to complete to get the system to work as expected. 
 We're going to get more feedback if we enable logging.
 
 

@@ -1,3 +1,47 @@
+Getting Started
+---------------
+
+Check your email for an invitation from noreply@registration.udf.f5.com (Check your SPAM folder if you cant locate the email
+
+The email will contain yur username and temporart Passwords
+
+Click the how to join a training class 
+.. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
+
+Click the hyperlink Log in **here** 
+
+|image301|
+
+Select the course you wnat to take and press **Launch**
+.. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
+
+|image302|
+
+Press the blue **Join** button to enter the class
+
+Review the **Deployment Description**
+
+Select the Deployment Tab at the top of the screen
+
+|image303|
+
+Wait about 10 minutes for the **F5 Products** and **Systems** to complete Startup
+
+.. Note:: The Windows  Jump host takes a few minutes to complete startup.. Be patient even if it shows a green indication
+
+Select the **Access** link below the **Windows Jumpbox** and select **RDP** and the correct resolution for your monitor
+
+Select **More Choices**  / **Use A Different Account** from the RDP login screen
+
+**Credentials**
+username: external_user
+password: Passw0rd!
+
+|image304|
+
+
+.. Note:: Disregard the Licensing Error
+
 Firewall Rule Hierarchy
 -----------------------
 
@@ -161,4 +205,12 @@ Inspect the Local Traffic Network Map
 .. |image10| image:: /_static/class2/image12.png
    :width: 7.05556in
 .. |image300| image:: /_static/class2/image300.png
+   :width: 7.05556in
+.. |image301| image:: /_static/class2/image301.png
+   :width: 7.05556in
+.. |image302| image:: /_static/class2/image302.png
+   :width: 7.05556in
+.. |image303| image:: /_static/class2/image303.png
+   :width: 7.05556in
+.. |image304| image:: /_static/class2/image304.png
    :width: 7.05556in

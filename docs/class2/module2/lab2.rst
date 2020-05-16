@@ -10,7 +10,7 @@ tracer. Login to bigip01.f5demo.com
 
 (10.1.1.4), navigate to **Security > Debug > Packet Tester**.
 
-|image42|
+|image441|
 
 Create a packet test with the following parameters:
 
@@ -35,12 +35,12 @@ Create a packet test with the following parameters:
 Click Run Trace to view the response. Your output should resmeble the
 allowed flow as shown below:
 
-|image43|
+|image442|
 
 You can also click on the “Route Domain Rules” trace result and see
 which rule is permitting the traffic.
 
-|image44|
+|image443|
 
 Click **New Packet Trace** (optionally do not clear the existing data –
 aka leave checked).
@@ -68,7 +68,7 @@ Create a packet test with the following parameters:
 Click Run Trace to view the response. Your output should resemble the
 allowed flow as shown below:
 
-|image45|
+|image444|
 
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
@@ -94,16 +94,16 @@ This shows there is no rule associated with the route domain or a
 virtual server which would permit the traffic. As such, the traffic
 would be dropped/rejected.
 
-.. |image42| image:: /_static/class1/image41.png
+.. |image441| image:: /_static/class2/image441.png
    :width: 6.48958in
    :height: 3.44792in
-.. |image43| image:: /_static/class1/image42.png
+.. |image442| image:: /_static/class2/image442.png
    :width: 6.47361in
    :height: 2.94722in
-.. |image44| image:: /_static/class1/image43.png
+.. |image443| image:: /_static/class2/image443.png
    :width: 6.5in
    :height: 2.66667in
-.. |image45| image:: /_static/class1/image44.png
+.. |image444| image:: /_static/class2/image444.png
    :width: 6.49722in
    :height: 2.97708in
 

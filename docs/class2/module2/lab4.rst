@@ -8,7 +8,7 @@ Settings > Report Settings.** You will then need to check
 Firewall Rules Section. Please be sure to click “Save” before
 proceeding.
 
-|image48|
+|image447|
 
 Once enabled, navigate to **Security >Reporting > Network > Stale
 Rules.** Feel free to refresh the web page we’ve been testing with
@@ -16,16 +16,16 @@ Rules.** Feel free to refresh the web page we’ve been testing with
 
 .. NOTE:: It could take 60+ seconds for data to populate
 
-|image49|
+|image448|
 
 This information is quite useful for keeping a rule base tidy and
 optimized.
 
 **Anyone can create a firewall rule, but who is the person that removes the unneccesary ones?**
 
-.. |image48| image:: /_static/class1/image47.png
+.. |image447| image:: /_static/class2/image447.png
    :width: 3.55556in
    :height: 3.70347in
-.. |image49| image:: /_static/class1/image48.png
+.. |image448| image:: /_static/class1/image448.png
    :width: 6.49722in
    :height: 1in

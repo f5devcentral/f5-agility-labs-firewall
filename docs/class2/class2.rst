@@ -33,9 +33,7 @@ There are three modules detailed in this document.
 
 **Module 1: F5 Multi-layer Firewall**
 
-**Module 2: F5 Dynamic Firewall Rules With iRules LX**
-
-**Module 3: AFM Protocol Inspection IPS**
+**Module 2: AFM Packet Tester, Flow Inspector, Stale Rule Lab**
 
 **Lab Requirements:**
 

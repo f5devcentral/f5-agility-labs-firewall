@@ -35,8 +35,10 @@ Select the **Access** link below the **Windows Jumpbox** and select **RDP** and 
 Select **More Choices**  / **Use A Different Account** from the RDP login screen
 
 **Credentials**
+
 username: external_user
-password: Passw0rd!
+
+password: P@ssw0rd!
 
 |image304|
 

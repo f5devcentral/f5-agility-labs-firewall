@@ -158,7 +158,7 @@ system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
-**Navigation** click **“Commit Changes to System**
+**Navigation** click **“Commit Changes to System"**
 
 
 Assign the rd_0_policy to Route Domain 0

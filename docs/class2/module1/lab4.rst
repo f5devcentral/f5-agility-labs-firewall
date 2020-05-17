@@ -213,7 +213,7 @@ This connection attempt will fail. Return to the BIG-IP GUI and refresh the fire
 Create A Separate Policy For The site2 Virtual Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now we want to create a second policy for access to site2
+Now we want to create a second policy to restrict access to site2
 
 Create Network Firewall Policy
 
@@ -246,7 +246,7 @@ into the policy instead of using a Rule List
 +----------------+----------------------------+
 | **Action**     | Accept                     |
 +----------------+----------------------------+
-| **Logging**    | Enabled                    |
+| **Logging**    | Enabled (checked)          |
 +----------------+----------------------------+
 
 |image258|
@@ -305,10 +305,6 @@ Apply the Network Firewall Policy to Virtual Server
 +----------------------+-----------------------------------------+
 | **Log Profile**      | firewall\_log\_profile                  |
 +----------------------+-----------------------------------------+
-
-.. NOTE:: Leave all other fields using the default values.
-
-**Navigation:** Click Update
 
 |image261|
 

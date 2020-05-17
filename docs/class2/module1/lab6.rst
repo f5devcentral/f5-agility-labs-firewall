@@ -11,6 +11,7 @@ Configure An HTTP Security Profile And Apply It To The External Virtual Server.
 On the BIG-IP:
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP,
+confirm that the **Security Profiles** tab is selected
 then click Create.
 
 +---------------------------------+------------------------+

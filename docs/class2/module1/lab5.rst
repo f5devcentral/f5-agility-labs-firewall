@@ -27,7 +27,7 @@ Verify that the iRule is assigned to the Virtual Server
 
 |image45|
 
-**Navigation:** Click on the Manage button
+**Navigation:** Click on the Manage button next to iRules
 
 This is where you assign iRules
 

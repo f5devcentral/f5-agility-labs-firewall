@@ -11,6 +11,8 @@ Inspect the preconfigured  IDS_Pool.
 
 **Navigation:** Local Traffic > Pools > Pool List > 
 
+**Navigation** Select the IDS_Pool
+
 **Navigation:** Click on the **Members** Tab 
 
 .. Note:: Unencrypted traffic will be forwarded to this IP address

@@ -86,9 +86,9 @@ Add a rules into the list to allow HTTP, HTTPS, and SSH  traffic as described in
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Source**              | Leave at Default of **Any**                                                                     |
 +-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Address** | **Specify Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                          |
+| **Destination Address** | Pulldown **Specify Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                 |
 +-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Port**    | **Specify…** Port **80**, then click **Add**   **Specify…** Port **443**, then click **Add**    |
+| **Destination Port**    | Pulldown **Specify…** Port **80**, click **Add**  **Specify…** Port **443**, click **Add**      |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Action**              | **Accept**                                                                                      |
 +-------------------------+-------------------------------------------------------------------------------------------------+
@@ -107,9 +107,9 @@ Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 +-------------------------+-----------------------------------------------------------+
 | **Source**              | Leave at Default of **Any**                               |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Address** | **Specify...**\ 10.1.10.30 then click **Add**             |
+| **Destination Address** | Pulldown **Specify...**\ 10.1.10.30 then click **Add**    |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Port**    | **Specify…** Port **Any**, then click **Add**             |
+| **Destination Port**    | Pulldown **Specify…** Port **Any**, then click **Add**    |
 +-------------------------+-----------------------------------------------------------+
 | **Action**              | **Accept**                                                |
 +-------------------------+-----------------------------------------------------------+
@@ -158,7 +158,7 @@ system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
-**Navigation** click **“Commit** Changes **to System**
+**Navigation** click **“Commit Changes to System**
 
 
 Assign the rd_0_policy to Route Domain 0

@@ -52,14 +52,14 @@ Create a packet test with the following parameters:
 +===================+========================+
 | **TCP Flags**     | SYN                    |
 +-------------------+------------------------+
-| **Source**        | IP - 1.2.3.4           |
+| **Source**        | IP - 172.16.99.5       |
 |                   | Port – 9999            |
-|                   | Vlan – Outside         |
+|                   | Vlan – External        |
 +-------------------+------------------------+
 | **TTL**           | 255                    |
 +-------------------+------------------------+
-| **Destination**   | IP – 10.1.20.11        |
-|                   | Port - **8081**        |
+| **Destination**   | IP – 2.2.2.2           |
+|                   | Port - **80**          |
 +-------------------+------------------------+
 | **Trace Options** | Use Staged Policy – no |
 |                   | Trigger Log - no       |
@@ -70,29 +70,31 @@ allowed flow as shown below:
 
 |image444|
 
+Next to the packet Trace button note the Clear Data Check box **Uncheck it**  so you dont hve to input all the fields again
+
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
 +===================+========================+
 | **TCP Flags**     | SYN                    |
 +-------------------+------------------------+
-| **Source**        | IP - 1.2.3.4           |
+| **Source**        | IP - 172.16.99.7       |
 |                   | Port – 9999            |
-|                   | Vlan – Outside         |
+|                   | Vlan – external        |
 +-------------------+------------------------+
 | **TTL**           | 255                    |
 +-------------------+------------------------+
-| **Destination**   | IP – 10.1.20.11        |
-|                   | Port - **443**         |
+| **Destination**   | IP – 2.2.2.2           |
+|                   | Port - **80**          |
 +-------------------+------------------------+
 | **Trace Options** | Use Staged Policy – no |
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-This traffic will be blocked by the default deny rule
+This traffic will be blocked by the virtual Server rule
 
-This shows there is no rule associated with the route domain or a
-virtual server which would permit the traffic. As such, the traffic
-would be dropped/rejected.
+**Navigation** Click on the Vitrual Server Rules Icon to get more specific information
+
+This demonstrates the rules built in the first lab
 
 .. |image441| image:: /_static/class2/image441.png
    :width: 6.48958in

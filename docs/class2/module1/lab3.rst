@@ -54,18 +54,18 @@ Create the log profile using the following information:
 | **Network Firewall**    | Checked                  |
 +-------------------------+--------------------------+
 
+|image25|
+
 Modify The Log Profile To Collect Protocol Security Events
 ----------------------------------------------------------
 
-Edit log profile protocol security tab using the following information:
+**Navigation** Click on the Protocol Security tab
 
-**Navigation:** Click on the Protocol Security tab and select the firewall_log_publisher
+**Navigation** HTTP, FTP, SMTP Security
 
-+----------------------------+
-| firewall\_log\_publisher   |
-+----------------------------+
-
-|image25|
++-------------------------+--------------------------+
+| **Publisher*            | firewall\_log\_publisher |
++-------------------------+--------------------------+
 
 .. NOTE:: Leave all other fields using the default values.
 

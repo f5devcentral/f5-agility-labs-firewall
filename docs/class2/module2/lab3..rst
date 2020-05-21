@@ -18,7 +18,7 @@ Flow Inspector.** Refresh the web page we’ve been using for testing
 
 Select a flow and click on the pop-out arrow for additional data.
 
-**Navigation** Uncheck **Ckear Data**
+**Navigation** Uncheck **Clear Data**
 
 **Navigation**  Click **New Flow Parameters**
 

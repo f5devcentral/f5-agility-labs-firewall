@@ -23,6 +23,10 @@ optimized.
 
 **Anyone can create a firewall rule, but who is the person that removes the unneccesary ones?**
 
+Take a few minutes to inspect the other reports. Only the Enforced Rules wiill contain data
+
+**Navigation** Security > Reporting > Network 
+
 .. |image447| image:: /_static/class2/image447.png
    :width: 3.55556in
    :height: 3.70347in

@@ -25,6 +25,9 @@ optimized.
 
 Take a few minutes to inspect the other reports. Only the Enforced Rules wiill contain data
 
+.. NOTE:: This concludes the Agility 2020 Advanced Multilayer Firewall Protection Lab. In addition to the exxercises completed, AFM offers a fullt functional IPS implementation, IP-Intelligence database capabilities and other advanced functionality. Please  contact your F5 Solutions Engineer for additional information 
+
+
 **Navigation** Security > Reporting > Network 
 
 .. |image447| image:: /_static/class2/image447.png

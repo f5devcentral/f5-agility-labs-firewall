@@ -221,7 +221,7 @@ Create Network Firewall Policy
 **Navigation** click **Create**
 
 +------------+---------------+
-| **Name**   | site2_policy   |
+| **Name**   | site2_policy  |
 +------------+---------------+
 
 |image257|

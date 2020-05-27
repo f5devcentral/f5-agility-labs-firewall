@@ -211,13 +211,14 @@ This connection attempt will fail. Return to the BIG-IP GUI and refresh the fire
 |image265|
 
 Create A Separate Policy For The site2 Virtual Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Now we want to create a second policy to restrict access to site2
 
 Create Network Firewall Policy
 
-**Navigation:** Security > Network Firewall > Policies, then click Create
+**Navigation:** Security > Network Firewall > Policies
+
+**Navigation** click **Create**
 
 +------------+---------------+
 | **Name**   | site2_policy   |
@@ -227,7 +228,7 @@ Create Network Firewall Policy
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click **Finished**
 
 Modify the policy with rules to  Allow TCP Port 80 From Host 172.16.99.5 Network Firewall Rule and deny all other adresses . This time we will build the rules directly 
 into the policy instead of using a Rule List

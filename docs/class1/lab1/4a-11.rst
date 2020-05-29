@@ -1,0 +1,93 @@
+Test Server Access 8081 & SSH
+-----------------------------
+
+
+Before we continue let’s clean up the rules just a little for best
+practices. Use the **Rule Lists** page to consolidate the firewall rule
+**‘web_rule_list’** with the **‘application_rule_list’** since
+these rules would ttypically be in the same rule list
+
+Open the **Security > Network Firewall > Polocies** page. 
+
+Select the RD_0_policy
+
+Check the box in front of  **‘application_rule_list’** and press the Delete button
+
+Commit Changes to System
+
+Open the **Security > Network Firewall > RuleLists** page. 
+
+Check the box in front of  **‘application_rule_list’** and press the Delete button (2x-Confirm action) 
+
+Click on the rule  list **‘web_rule_list’** to modify the
+rule list. 
+
+Enter the rule list by clicking on its hyperlink, then in the **Rules**
+section click **Add**, and add the following information, then click
+**Repeat**.
+
++-------------------------+--------------------------------------------------+
+| **Name**                | allow_http_8081_10_1_20_11                       |
++=========================+==================================================+
+| **Protocol**            | TCP                                              |
++-------------------------+--------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                      |
++-------------------------+--------------------------------------------------+
+| **Destination Address** | **Specify…**\ 10.1.20.11, then click **Add**     |
++-------------------------+--------------------------------------------------+
+| **Destination Port**    | **Specify…**\ Port **8081**, then click **Add**  |
++-------------------------+--------------------------------------------------+
+| **Action**              | **Accept-Decisively**                            |
++-------------------------+--------------------------------------------------+
+| **Logging**             | Enabled                                          |
++-------------------------+--------------------------------------------------+
+
+Remove the IPaddress and Port, enter the following information, then click
+**Finished**.
+
++-------------------------+--------------------------------------------------+
+| **Name**                | allow_ssh_10.1.20.12                             |
++=========================+==================================================+
+| **Protocol**            | TCP                                              |
++-------------------------+--------------------------------------------------+
+| **Source**              | Leave at Default of **Any**                      |
++-------------------------+--------------------------------------------------+
+| **Destination Address** | **Specify…**\ 10.1.20.12, then click **Add**     |
++-------------------------+--------------------------------------------------+
+| **Destination Port**    | **Specify…**\ Port **22**, then click **Add**    |
++-------------------------+--------------------------------------------------+
+| **Action**              | **Accept-Decisively**                            |
++-------------------------+--------------------------------------------------+
+| **Logging**             | Enabled                                          |
++-------------------------+--------------------------------------------------+
+
+
+Inspect the properties of the rule list to verify the changes were made
+
+Review the rules that are now applied to this route domain by navigating
+to:
+
+**Security > Network Firewall > Active Rules.**
+
+From the **Context Filter** select **Route Domain 0**. 
+
+Click on the **Add Rule List to Global** from the upper right 
+corner of the screen and click **Cancel** (note:this is a GUI bug)
+
+Click on the **Add Rule List to Route Domain** from the ypper right 
+corner of the screen and click **Cancel** (note:this is a GUI bug)
+
+your screen should show the web_rule _list you assigned earlier through the 
+Route Domain Screen. 
+
+|image211|
+
+.. |image211| image:: /_static/class1/image211.png
+   :width: 6.5in
+   :height: 2.5in
+.. |image29| image:: /_static/class1/image30.png
+   :width: 6.49097in
+   :height: 1.01875in
+.. |image30| image:: /_static/class1/image31.png
+   :width: 6.5in
+   :height: 1.14792in

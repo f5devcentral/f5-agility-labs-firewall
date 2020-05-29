@@ -1,5 +1,5 @@
 Advanced Multi-Layer Firewall Protection
-=================================================
+========================================
 Firewall 320 – Advanced Multi-Layer Firewall Protection
 
 Participant Hands-on Lab Guide

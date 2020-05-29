@@ -1,0 +1,39 @@
+Configuring a DoS Profile
+-------------------------
+
+We will now create a DoS profile with manually configured thresholds to
+limit the attack’s effect on our server.
+
+1. Navigate to **Security** > **DoS Protection** > **DoS Profiles**
+
+2. Create a new DoS profile with the name **dns-dos-profile**.
+
+3. | Click **Finished**.
+   | |image59|
+
+4. The UI will return to the DoS Profiles list. Click the
+   **dns-dos-profile** name.
+
+5. Click the **Protocol Security** tab and select **DNS Security** from
+   the drop-down.
+
+6. Click the **DNS A Query** vector from the Attack Type list.
+
+7. Modify the **DNS A Query** vector configuration to match the
+   following values, leaving unspecified attributes with their default
+   value:
+   
+   - State: Mitigate
+   - Threshold Mode: Fully Manual
+   - Detection Threshold EPS: (Set this at 80% of your safe QPS value)
+   - | Mitigation Threshold EPS: (Set this to your safe QPS value)
+     | |image60|
+
+8. Make sure that you click **Update** to save your changes.
+
+.. |image59| image:: /_static/class1/image57.png
+   :width: 4.94444in
+   :height: 2.29167in
+.. |image60| image:: /_static/class1/image58.png
+   :width: 3.54305in
+   :height: 4.68726in

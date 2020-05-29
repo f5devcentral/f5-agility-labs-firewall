@@ -1,0 +1,91 @@
+Filtering specific DNS operations
+---------------------------------
+
+The BIG-IP offers the ability to filter DNS query types and header
+opcodes to act as a DNS firewall. To demonstrate, we will block MX
+queries from our DNS server.
+
+1.  Open the SSH session to the Attack Host.
+
+2.  | Perform an MX record lookup by issuing the following command:
+    | ``dig @10.20.0.10 MX example.com``
+
+3.  The server doesn’t have a record for this domain. This server
+    doesn’t have MX records, so those requests should be filtered
+
+4.  Navigate to **Security** > **Protocol Security** > **Security
+    Profiles** > **DNS** and create a new DNS security profile with the
+    following values, leaving unspecified attributes at their default
+    value:
+
+    - Name: dns-block-mx-query
+    - | Query Type Filter: move mx from Available to Active and click finished
+      | |image74|
+
+5.  Navigate to **Local Traffic** > **Profiles** > **Services** >
+    **DNS**. **NOTE:** if you are mousing over the services, DNS may not
+    show up on the list. Select **Services** and then use the pulldown
+    menu on services to select **DNS**.
+
+6.  Create a new DNS services profile with the following values, leaving
+    unspecified values at their default values:
+    
+    - Name: dns-block-mx
+    - DNS Traffic
+       -  DNS Security: Enabled
+       - | DNS Security Profile Name: dns-block-mx-query. Click finished
+         | |image75|
+
+7.  Navigate to **Local Traffic** > **Virtual Servers** > **Virtual
+    Server List**.
+
+8.  Click on the **udp_dns_VS** virtual server name.
+
+9.  In the **Configuration** section, change the view to **Advanced**.
+
+10. | Set the **DNS Profile** to **dns-block-mx**.
+    | |image76|
+
+11. Click **Update** to save your settings.
+
+12. Navigate to **Security** > **Event Logs** > **Logging Profiles**.
+
+13. Click on the **dns-dos-profile-logging** logging profile name.
+
+14. Check **Enabled** next to **Protocol Security**.
+
+15. | In the **Protocol Security** tab, set the **DNS Security
+      Publisher** to **local-db-publisher** and check all five of the
+      request log types.
+    | |image77|
+
+16. Make sure that you click **Update** to save your settings.
+
+17. | Return to the Attack Server SSH session and re-issue the MX query
+      command:
+    | ``dig @10.20.0.10 MX example.com``
+
+18. The query hangs as the BIG-IP is blocking the MX lookup.
+
+19. | Navigate to **Security** > **Event Logs** > **Protocol** >
+      **DNS**. Observe the MX query drops.
+    | |image78|
+
+This concludes the DNS portion of the lab. On the Victim Server, stop
+the top utility by pressing **CTRL + C**. No mail for you Joanna!!
+
+.. |image74| image:: /_static/class1/image72.png
+   :width: 3.89968in
+   :height: 3.43639in
+.. |image75| image:: /_static/class1/image73.png
+   :width: 2.60017in
+   :height: 6.93378in
+.. |image76| image:: /_static/class1/image74.png
+   :width: 3.02244in
+   :height: 2.63576in
+.. |image77| image:: /_static/class1/image75.png
+   :width: 3.19205in
+   :height: 5.75689in
+.. |image78| image:: /_static/class1/image76.png
+   :width: 3.80132in
+   :height: 1.11928in

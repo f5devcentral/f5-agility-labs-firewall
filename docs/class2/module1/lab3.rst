@@ -64,10 +64,10 @@ Modify The Log Profile To Collect Protocol Security Events
 **Navigation** HTTP, FTP, SMTP Security
 
 +-------------------------+--------------------------+
-| **Publisher*            | firewall\_log\_publisher |
+| **Publisher**           | firewall\_log\_publisher |
 +-------------------------+--------------------------+
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Modify The Log Profile To Collect Firewall Security Events
 ----------------------------------------------------------

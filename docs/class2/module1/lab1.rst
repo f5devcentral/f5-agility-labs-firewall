@@ -1,5 +1,5 @@
 Getting Started
----------------
+===============
 
 Check your email for an invitation from noreply@registration.udf.f5.com (Check your SPAM folder if you cant locate the email
 
@@ -110,7 +110,7 @@ Look at the supplemental login instructions for:
 .. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4 Credentials are displayed in the login screen
 
 Inspect Application Pools
-------------------------
+-------------------------
 
 On BIG-IP
 

@@ -5,7 +5,7 @@ HTTP security profiles are used to apply basic HTTP security to a
 virtual server. Significantly more advanced HTTP security is available
 by adding ASM (Application Security Manager).
 
-Configure An HTTP Security Profile And Apply It To The External Virtual Server.
+Configure An HTTP Security Profile And Apply It To The External Virtual Server
 ------------------------------------------------------------------------------
 
 On the BIG-IP:
@@ -62,12 +62,12 @@ Apply the HTTP security profile to the external virtual server.
 
 **Navigation:** Select EXT_VIP_10.1.10.30
 
-**Navigation:** Select the Security  tab
+**Navigation:** Select the Security tab
 
 +-------------------------+------------------------+------------------------+
 | **Protocol Security**   | Enabled                | demo_http_security     |
 +-------------------------+------------------------+------------------------+
-| **Log Profile      **   | selected               | firewall_log_profile   |
+| **Log Profile**         | selected               | firewall_log_profile   |
 +-------------------------+------------------------+------------------------+
 
 |image51|

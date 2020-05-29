@@ -1,0 +1,9 @@
+DNS DDoS Mitigations for Continued Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+At this point, you have successfully configured the BIG-IP to limit the
+amount of resource utilization on the BIG-IP, thus further frustrating
+Joanna on her flair rage. Unfortunately, even valid DNS requests can be
+caught in the mitigation we’ve configured. There are further steps that
+can be taken to mitigate Joanna’s attack that will allow non-malicious
+DNS queries.

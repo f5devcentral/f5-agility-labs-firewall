@@ -1,0 +1,51 @@
+Simulating a TCP SYN DDoS Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the last example, Joanna crafted a packet that is easily identified
+as malicious, as its invalid. We’ll now simulate an attack with traffic
+that could be normal, acceptable traffic. The TCP SYN flood attack will
+attempt to DDoS a host by sending valid TCP traffic to a host from
+multiple source hosts.
+
+1.  In the BIG-IP web UI, go to **Security** > **DoS Protection** >
+    **Device** **Configuration** > **Network Security**.
+
+2.  Expand the **Flood** category in the vectors list.
+
+3.  Click on **TCP Syn Flood** vector name.
+
+4.  Configure the vector with the following parameters:
+    
+    - State: Mitigate
+    - Threshold Mode: Fully Manual
+    - Detection Threshold EPS: 200
+    - Detection Threshold Percent: 500
+    - | Mitigation Threshold EPS: 400
+      | |image85|
+
+5.  Click **Update** to save your changes.
+
+6.  Open the BIG-IP SSH session and scroll the ltm log in real time with
+    the following command: ``tail -f /var/log/ltm``
+
+7.  | On the attack host, launch the attack by issuing the following
+      command on the BASH prompt:
+    | ``sudo hping3 10.20.0.10 --flood --rand-source --destport 80 --syn -d 120 -w 64``
+
+8.  After about 60 seconds, stop the flood attack by pressing **CTRL +
+    C**.
+
+9.  Return to the BIG-IP web UI and navigate to **Security** > **Event
+    Logs** > **DoS** > **Network** > **Events**. Observe the log entries
+    showing the details surrounding the attack detection and mitigation.
+
+10. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard**
+    to view an overview of the DoS attacks and timeline. You can select
+    filters in the filter pane to highlight the specific attack.
+
+11. Finally, navigate to **Security** > **Reporting** > **DoS** >
+    **Analysis**. View detailed statistics around the attack.
+
+.. |image85| image:: /_static/class1/image83.png
+   :width: 2.45542in
+   :height: 3.49669in

@@ -5,8 +5,8 @@ A network firewall policy is a collection of network firewall rules that can be 
 In our lab, we will create two policies, each of which includes two rules. This policy will then be applied 
 to the appropriate virtual servers and tested.
 
-Create The geo_restrict Firewall Rule List and Firewall Policy.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create The geo_restrict Firewall Rule List and Firewall Policy
+--------------------------------------------------------------
 
 This example provides a firewall policy to the **www.site1.com** portion of the application. A real world
 example of this would be with companies hosting cryptographic software which is subject to export 
@@ -162,20 +162,20 @@ applied to   EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwar
 
 **XFF-SNAT iRule**
 
-.. code-block:: tcl 
+.. code-block:: tcl
 
-  when HTTP_REQUEST {
-    if {[HTTP::header exists "X-Forwarded-For"]}  {
-    snat [HTTP::header X-Forwarded-For]
-    log local0. '[HTTP::header X-Forwarded-For]'
-    }
-  }
+   when HTTP_REQUEST {
+      if { [HTTP::header exists "X-Forwarded-For"] } {
+         snat [HTTP::header X-Forwarded-For]
+         log local0. [HTTP::header X-Forwarded-For]
+      }
+   }
 
 .. code-block:: console
 
    curl -k https://10.1.10.30/ -H 'Host: site1.com' 
 
-.. NOTE:: Since we did not define the header, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) 
+.. note:: Since we did not define the header, the firewall will see the RFC-1918 address of the jimp host (10.1.10.199) 
 
 URL: https://site1.com
 

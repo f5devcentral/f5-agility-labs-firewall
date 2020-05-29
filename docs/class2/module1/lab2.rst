@@ -201,7 +201,7 @@ In deployments where there are a large number of VIP's, deploying in Firewall mo
 | **Virtual Server & Self IP Contexts**   | Accept  |
 +-----------------------------------------+---------+
 
-**Navigation** Click **Update*
+**Navigation** Click **Update**
 
 |image251|
 

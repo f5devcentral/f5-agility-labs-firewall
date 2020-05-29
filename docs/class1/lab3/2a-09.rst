@@ -1,7 +1,0 @@
-Remote Triggered Black Holing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The BIG-IP supports the advertisement of bad actor(s) to upstream
-devices via BGP to block malicious traffic closer to the source. This is
-accomplished by publishing a blacklist to an external resource. This is
-not demonstrated in this lab.

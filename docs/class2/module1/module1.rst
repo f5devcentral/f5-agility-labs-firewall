@@ -9,11 +9,11 @@ Estimated completion time: 1 hour
 
 Objective:
 
--  Create multiple internal pools and virtual servers for different applications within your data center. e.g. www, API, /downloads
+-  Inspect multiple internal pools and virtual servers for different applications within your data center. e.g. www, API, /downloads
 
--  Create external hosted virtual server that allows the same IP address to be shared with multiple SSL enabled applications.
+-  Inspect external hosted virtual server that allows the same IP address to be shared with multiple SSL enabled applications.
 
--  Configure LTM policy to direct traffic to appropriate virtual server
+-  Inspect and understand LTM policy to direct traffic to appropriate virtual server
 
 -  Configure local logging; test
 
@@ -35,17 +35,6 @@ proxy such as the BIG-IP for your perimeter security utilizing common
 traffic management techniques and some additional features unique to 
 the BIG-IP as an Application Delivery Controller.
 
-Labs 3 & 4 Breaks out applying differing security policies to the
-multi-tiered application deployment.
-
-Lab 5 Highlights the flexibility of the Multi-Layered Firewall to solve
-common problems for hosting providers.
-
-Lab 6 Applies Layer 7 protocol validation and security for HTTP to the
-existing applications.
-
-Lab 7 Provides a solution for sending decrypted traffic to other
-security devices.
 
 .. WARNING:: IP addresses in screenshots are examples only. Please read the
    step-by-step lab instructions to ensure that you use the correct IP

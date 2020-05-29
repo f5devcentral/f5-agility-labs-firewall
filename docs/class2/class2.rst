@@ -29,13 +29,11 @@ guide assumes that you understand LTM/TMOS basics and are comfortable
 with the process of creating Nodes, Pools, Virtual Servers, Profiles and
 Setting up logging and reporting.
 
-There are three modules detailed in this document.
+There are Two modules detailed in this document.
 
 **Module 1: F5 Multi-layer Firewall**
 
-**Module 2: F5 Dynamic Firewall Rules With iRules LX**
-
-**Module 3: AFM Protocol Inspection IPS**
+**Module 2: AFM Packet Tester, Flow Inspector, Stale Rule Lab**
 
 **Lab Requirements:**
 

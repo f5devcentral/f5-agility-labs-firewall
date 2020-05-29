@@ -1,16 +1,19 @@
-Module 2: F5 Dynamic Firewall Rules With iRules LX
-==================================================
-
-This lab introduces iRules Language eXtensions (LX) or iRulesLX which enables node.js on the BIG-IP platform. The lab uses Tcl iRules and JavaScript code to make a MySQL call to look up a client IP address providing access control in the Multi-Layered Firewall.
-
-This could be useful in developer driven / devops environments where the development team can modify firewall policies simply by updating a database.
-
-.. WARNING:: IP addresses in screenshots are examples only. Please read the
-   step-by-step lab instructions to ensure that you use the correct IP
-   addresses.
+Module 2: AFM Packet Tester, Flow Inspector, Stale Rule Lab
+===========================================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 5
    :glob:
 
    lab*
+
+**Written for TMOS 15.1.0
+
+|image0| |https://www.icsalabs.com/sites/default/files/imagecache/large_logo/ICSA_Cert_Firewall_WEB.gif|
+
+.. |image0| image:: /_static/class2/image401.jpeg
+   :width: 3.27778in
+   :height: 1.14444in
+.. |https://www.icsalabs.com/sites/default/files/imagecache/large_logo/ICSA_Cert_Firewall_WEB.gif| image:: /_static/class1/image2.gif
+   :width: 1.82083in
+   :height: 1.23889in

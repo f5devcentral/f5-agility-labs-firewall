@@ -5,12 +5,13 @@ HTTP security profiles are used to apply basic HTTP security to a
 virtual server. Significantly more advanced HTTP security is available
 by adding ASM (Application Security Manager).
 
-Configure An HTTP Security Profile And Apply It To The External Virtual Server
+Configure An HTTP Security Profile And Apply It To The External Virtual Server.
 ------------------------------------------------------------------------------
 
 On the BIG-IP:
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP,
+confirm that the **Security Profiles** tab is selected
 then click Create.
 
 +---------------------------------+------------------------+
@@ -30,7 +31,7 @@ then click Create.
 
 **Navigation:** Click Request Checks Tab.
 
-.. NOTE::  We will leave the default methods. This allows you to restrict methods used to access the Web Server
+.. NOTE::  Leave the defaut Methods. Changing Methods is a powerful way to protect your web sites
 
 +------------------+--------------+
 | **File Types**   | Select All   |
@@ -38,7 +39,6 @@ then click Create.
 
 |image49|
 
-.. NOTE::  Leave all other fields using the default values.
 
 **Navigation:** Click Blocking Page Tab.
 
@@ -52,7 +52,9 @@ then click Create.
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click Create
+
+.. NOTE:: We did not put the policy in Blocking mode. We will do that after we verify functionality
 
 Apply the HTTP security profile to the external virtual server.
 
@@ -64,6 +66,8 @@ Apply the HTTP security profile to the external virtual server.
 
 +-------------------------+------------------------+------------------------+
 | **Protocol Security**   | Enabled                | demo_http_security     |
++-------------------------+------------------------+------------------------+
+| **Log Profile      **   | selected               | firewall_log_profile   |
 +-------------------------+------------------------+------------------------+
 
 |image51|
@@ -110,7 +114,7 @@ Edit the demo\_http\_security HTTP security profile.
 **Navigation:** Select the Request Checks Tab
 
 +----------------------------+---------------------------------------------------------+
-| **Methods**                | Remove Post Fro the Allowed Group.                      |
+| **Methods**                | Remove Post From the Allowed Group.                     |
 |                            |                                                         |
 |                            | Check “Block”                                           |
 +----------------------------+---------------------------------------------------------+
@@ -123,19 +127,32 @@ Edit the demo\_http\_security HTTP security profile.
 
 On Windows jumpbox
 
+Close the Browser window to dvwa.com
+
 Open a new web browser tab and access the virtual server.
 
 URL: https://dvwa.com
 
 **Credentials: admin\/password**
 
-Select the Command Execution button in the DVWA browser Window
-
-Enter and IP address and press submit.
 
 |image266|
 
 .. ATTENTION:: This action requires a "POST" action and will be blocked because this is not allowed. 
+
+Edit the demo\_http\_security HTTP security profile.
+
+**Navigation:** Security > Protocol Security > Security Profiles > HTTP
+
+**Navigation:** Select the **demo_http_security** profile
+
+**Navigation:** Select the Request Checks Tab
+
++----------------------------+---------------------------------------------------------+
+| **Methods**                | Add Post to the Allowed Group.                          |
+|                            |                                                         |
+|                            | Un-check “Block”                                        |
++----------------------------+---------------------------------------------------------+
 
 .. NOTE:: This is the end of Module 1 - Lab 6
 

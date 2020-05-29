@@ -54,18 +54,18 @@ Create the log profile using the following information:
 | **Network Firewall**    | Checked                  |
 +-------------------------+--------------------------+
 
+|image25|
+
 Modify The Log Profile To Collect Protocol Security Events
 ----------------------------------------------------------
 
-Edit log profile protocol security tab using the following information:
+**Navigation** Click on the Protocol Security tab
 
-**Navigation:** Click on the Protocol Security tab and select the firewall_log_publisher
+**Navigation** HTTP, FTP, SMTP Security
 
-+----------------------------+
-| firewall\_log\_publisher   |
-+----------------------------+
-
-|image25|
++-------------------------+--------------------------+
+| **Publisher*            | firewall\_log\_publisher |
++-------------------------+--------------------------+
 
 .. NOTE:: Leave all other fields using the default values.
 
@@ -98,7 +98,7 @@ Edit log profile network firewall tab using the following information:
 
 .. NOTE:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished
+**Navigation:** Click Create
 
 Apply The Logging Configuration
 -------------------------------
@@ -116,31 +116,17 @@ Apply the newly created log profile to the external virtual server created in th
 +-------------------+--------------------------+
 
 
-|image27|
+|image278|
 
 .. NOTE:: Leave all other fields using the default values.
 
 **Navigation:** Click Update
 
-View empty network firewall logs.
+View network firewall logs.
 
 **Navigation:** Security > Event Logs > Network > Firewall
 
 |image28|
-
-
-Configure BIG-IP Firewall in ADC Mode
--------------------------------------
-
-**Navigation:** Security > Options > Network Firewall 
-
-+-----------------------------------------+---------+
-| **Virtual Server & Self IP Contexts**   | Accept  |
-+-----------------------------------------+---------+
-
-|image251|
-
-Open the Firewall Options tab
 
 
 
@@ -172,7 +158,7 @@ URL: https://site1.com
 .. |image26| image:: /_static/class2/image28.png
    :width: 4.83169in
    :height: 5.41497in
-.. |image27| image:: /_static/class2/image29.png
+.. |image278| image:: /_static/class2/image278.png
    :width: 7.04167in
    :height: 5.88889in
 .. |image28| image:: /_static/class2/image30.png
@@ -181,6 +167,6 @@ URL: https://site1.com
 .. |image29| image:: /_static/class2/image31.jpeg
    :width: 6.73811in
    :height: 1.69444in
-.. |image251| image:: /_static/class2/image251.jpeg
+.. |image251| image:: /_static/class2/image251.png
    :width: 3.73811in
    :height: 1.69444in

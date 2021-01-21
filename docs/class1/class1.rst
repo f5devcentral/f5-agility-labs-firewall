@@ -33,8 +33,12 @@ platform.
 
 **Lab Modules:**
 
+This lab contains two modules:
+
 .. toctree::
    :maxdepth: 1
    :glob:
 
    module*/module*
+
+Please click **Next** to continue.

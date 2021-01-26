@@ -11,11 +11,11 @@ Click the how to join a training class
 
 Click the hyperlink Log in **here** 
 
-|image301|
+|image301| :: /_static/class2/image301.png
 
 Select the course you wnat to take and press **Launch**
 
-|image302|
+|image302| :: /_static/class2/image302.png
 
 Press the blue **Join** button to enter the  class
 
@@ -23,7 +23,7 @@ Review the **Deployment Description**
 
 Select the Deployment Tab at the top of the screen
 
-|image303|
+|image303| :: /_static/class2/image303.png
 
 Wait about 10 minutes for the **F5 Products** and **Systems** to complete Startup
 
@@ -39,7 +39,7 @@ username: external_user
 
 password: P@ssw0rd!
 
-|image304|
+|image304| :: /_static/class2/image304.png
 
 .. note:: Disregard the Licensing Error
 
@@ -102,7 +102,7 @@ Look at the supplemental login instructions for:
 
 * Login IDs and Passwords are subject to change as well.
 
-|image1|
+|image1| :: /_static/class2/image1.png
 
 .. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4 Credentials are displayed in the login screen
 
@@ -157,7 +157,7 @@ By using the term 'internal' we are creating the virtual servers on what is esse
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
-|image163|
+|image163| image:: /_static/class1/image163.png
 
 Inspect the Local Traffic Network Map
 

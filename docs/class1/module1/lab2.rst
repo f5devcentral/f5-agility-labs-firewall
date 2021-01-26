@@ -2,7 +2,7 @@
 Lab 2: Permitting traffic to pass to virtual servers
 ====================================================
 
-Create An ACL to allow web traffic and SSH
+Create an ACL to allow web traffic and SSH
 ------------------------------------------
 
 The rules created in this section allow basic connectivity to the resources.

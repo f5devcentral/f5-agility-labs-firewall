@@ -27,6 +27,7 @@ intelligently to mitigate DDOS attacks and other emerging threats at the
 More information can be found at https://www.f5.com/pdf/products/big-ip-advanced-firewall-manager-datasheet.pdf
 
 Click Next to continue.
+
    class*/class*
    archive/archive*/archive*
 

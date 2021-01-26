@@ -1,15 +1,15 @@
 Getting Started
 ===============
 
-Check your email for an invitation from noreply@registration.udf.f5.com (Check your SPAM folder if you cant locate the email
+Check your email for an invitation from noreply@registration.udf.f5.com. Check your spam folder if you cant locate the email.
 
-The email will contain yur username and temporart Passwords
+The email will contain yur username and temporary password.
 
-Click the how to join a training class 
+Click the **how to join a training class** link.
 
 .. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
 
-Click the hyperlink Log in **here** 
+Click the link **Log in here**.
 
 |image301| :: /_static/class2/image301.png
 
@@ -27,9 +27,9 @@ Select the Deployment Tab at the top of the screen
 
 Wait about 10 minutes for the **F5 Products** and **Systems** to complete Startup
 
-.. Note:: The Windows  Jump host takes a few minutes to complete startup.. Be patient even if it shows a green indication
+.. Note:: The Windows Jump host takes a few minutes to complete startup... Be patient even if it shows a green indication.
 
-Select the **Access** link below the **Windows Jumpbox** and select **RDP** and the correct resolution for your monitor
+Select the **Access** link below the **Windows Jumpbox** and select **RDP**.
 
 Select **More Choices**  / **Use A Different Account** from the RDP login screen
 
@@ -40,8 +40,6 @@ username: external_user
 password: P@ssw0rd!
 
 |image304| :: /_static/class2/image304.png
-
-.. note:: Disregard the Licensing Error
 
 Firewall Rule Hierarchy
 -----------------------
@@ -77,11 +75,11 @@ except management.
 
 .. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
-.. TIP:: Use the Chrome Browser on the Jump Host desktop to configure BIG-IP 1 10.1.1.4. The login credentials are on the BIG-IP login page 
+.. TIP:: Use the Chrome Browser on the Jump Host desktop to configure BIG-IP 1 10.1.1.4. The login credentials are on the BIG-IP login page.
 
-
+=================================================
 Lab 1: Pre-configured  pools and  virtual servers
-===================================================
+=================================================
 
 A virtual server is used by BIG-IP to identify specific types of
 traffic. Other objects such as profiles, policies, pools and iRules are
@@ -92,28 +90,18 @@ server is necessary to accept specific types of traffic.
 The pool is a logical group of hosts that is applied to and will receive
 traffic from a virtual server.
 
-On your personal  device
-
-Look at the supplemental login instructions for:
-
-* External Hostnames
-
-* External IP addressing diagram
-
-* Login IDs and Passwords are subject to change as well.
-
 |image1| :: /_static/class2/image1.png
 
-.. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4 Credentials are displayed in the login screen
+.. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4. Credentials are displayed in the login screen.
 
 Inspect Application Pools
 -------------------------
 
-On BIG-IP
-
-Verify the following pools using the following tabel of pool information.  
+On the BIG-IP, verify the following pools using the following tabel of pool information.  
 
 **Navigation:** Local Traffic > Pools > Pool List
+
+.. Note:: Other pools may exist than the ones in the table below. The pools in this table are the ones relevant to this class.
 
 .. list-table::
    :header-rows: 1
@@ -147,19 +135,28 @@ Verify the following pools using the following tabel of pool information.
      - 10.1.20.17
      - 80
 
+This screenshot shows an example of the pool list in the TMUI:
 
 |image162|
 
 Inspect Application Virtual Servers
 -----------------------------------
 
-By using the term 'internal' we are creating the virtual servers on what is essentially a loopback VLAN which prevents them from being exposed. The EXT_VIP in this exercise is used to forward traffic with specific characteristics to the internal VIP's. This is accomplished by assigning a traffic policy to the VIP. The traffic policy is described and inspected in the next section. For this class, the Wildcard Virtual servers (Blue Square  status indicator)  are not used. 
+By using the term 'internal' we are creating the virtual servers on 
+what is essentially a loopback VLAN which prevents them from being 
+exposed. The EXT_VIP in this exercise is used to forward traffic 
+with specific characteristics to the internal VIP's. This is 
+accomplished by assigning a traffic policy to the VIP. The traffic 
+policy is described and inspected in the next section. For this 
+class, the Wildcard Virtual servers (Blue Square status indicator) 
+are not used. 
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
 |image163| image:: /_static/class1/image163.png
 
 Inspect the Local Traffic Network Map
+-------------------------------------
 
 **Navigation:** Local Traffic > Network Map
 
@@ -167,7 +164,7 @@ Inspect the Local Traffic Network Map
 
 .. NOTE:: The virtual servers should show a green circle for status.
 
-.. NOTE:: This completes Module 1 - Lab 1
+This completes Module 1 - Lab 1. Click **Next** to continue.
 
 .. |image162| image:: /_static/class2/image162.png
 .. |image163| image:: /_static/class2/image163.png

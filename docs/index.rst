@@ -28,6 +28,9 @@ More information can be found at https://www.f5.com/pdf/products/big-ip-advanced
 
 Click Next to continue.
 
+.. toctree::
+   :hidden:
+   
    class*/class*
    archive/archive*/archive*
 

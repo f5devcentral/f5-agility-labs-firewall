@@ -1,54 +1,12 @@
-Lab 2: Leverage LTM Policies To Direct SSL Terminated Applications To Secondary Virtual Servers
-===============================================================================================
-
-What is SNI? Introduced in TLS 1.0 as a TLS extension, Server Name Indication (SNI) allows the client to send the hostname they are trying to connect to in the SSL handshake. This allows the Application Delivery Controllers (ADC) such as the BIG-IP and the Application servers to identify the appropriate application the client is trying to connect to. From this information, the ADC can respond with the proper SSL certificate to the client allowing the ADC to provide SSL enabled services for multiple applications from a single IP address.
-
-LTM policies are another way to programatically modify traffic as it is flowing through the data plane of the BIG-IP. This functionality can also be accomplished with F5 iRules. The advantage this has over iRules is that LTM policies can be modified and appended to the existing configuration without replacing the entire application configuration. This lends itself to being updated through the CLI or via the REST API easily.
-
-If you make a single change to an iRule, the entire iRule needs to be re-uploaded and applied.
-
-The LTM policy is what directs application traffic to flow from the external virtual server to the internal virtual servers based on the Layer 7 request. In this case, since we are using SNI to terminate multiple applications (mysite,yoursite,theirsite, api, downloads) we need to be able to direct that traffic to the appropriate application pools. Some can even come back to the same application pool.
-
-Whether it is based on the hostname or the URI path, the request can be forwarded to a different virtual server or an application pool of servers.
-
-Inspect the LTM Policies
-------------------------
-
-Take a few minutes to open the draft policy and review the iptions. Policy is a very flexible tool to direct traffic based on the packet content. In this use case we distribute traffic to a subset of internal VIP's, Policy can be configured to forward traffic directly to pools or nodes based on the packet content and many other attributes
-
-.. NOTE:: As shown in this diagram, there is an external VIP and internal VIPs.  The external VIP has the local traffic policies on it.  
-
-
-|ltp-diagram|
-
-
-**Navigation:** Local Traffic > Policies : Policy List 
-
-**Navigation:** Select HTTPS_Virtual_Targeting_Policy_L7V3 from the published policies
-
-|image262|
-
-Verify that the  Policy is assigned To The External Virtual Server
-------------------------------------------------------------------
-
-**Navigation:** Local Traffic > Virtual Servers : Virtual Server List
-
-
-**Navigation:** Click the EXT_VIP_10_1_10_30
-
-
-**Navigation:** Click the Resources Tab
-
-|image263|
-
-.. NOTE:: there is a  policy and an iRule  is assigned to the VIP:
-
+====================================================
+Lab 2: Permitting traffic to pass to virtual servers
+====================================================
 
 Create An ACL to allow web traffic and SSH
 ------------------------------------------
 
 The rules created in this section allow basic connectivity to the resources.
-We will add enforcement rules at the Virtual server level to demostrate functionality
+We will add enforcement rules at the virtual server level to demonstrate functionality.
 
 On bigip01.f5demo.com (10.1.1.4) create a rule list to allow
 traffic. A logical container will be created before the individual rules
@@ -60,7 +18,7 @@ Create a container for the rules by going to:
 
 **Navigation:** Security > Network Firewall > Rule Lists
 
-**Navigation:** select Create
+**Navigation:** Click on **Create**.
 
 For the **Name** enter **web_rule_list**, provide an optional description
 
@@ -118,8 +76,6 @@ Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
 **Navigation:** Click **Finished**
 
-
-
 |image272|
 
 **Navigation:** Click Finished
@@ -152,14 +108,12 @@ Domain”, default is 0)**
 
 |image274|
 
-
 You will notice the changes are unsaved and need to be committed to the
 system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
 **Navigation** click **“Commit Changes to System"**
-
 
 Assign the rd_0_policy to Route Domain 0
 ----------------------------------------
@@ -192,8 +146,9 @@ Firewall mode. In **Firewall mode**, a default deny configuration, all
 traffic is blocked through the firewall, and any traffic you want to
 allow through the firewall must be explicitly specified.
 
-
-In deployments where there are a large number of VIP's, deploying in Firewall mode would require significant preperation. Firewall  functionality is easier to introduce in ADC mode. 
+In deployments where there are a large number of VIP's, deploying in 
+Firewall mode would require significant preperation. Firewall 
+functionality is easier to introduce in ADC mode. 
 
 **Navigation:** Security > Options > Network Firewall 
 
@@ -205,7 +160,7 @@ In deployments where there are a large number of VIP's, deploying in Firewall mo
 
 |image251|
 
-Open the Firewall Options tab
+Open the **Firewall Options** tab.
 
 Validate Lab 2 Configuration
 ----------------------------
@@ -248,13 +203,9 @@ validate your configuration.
 
     curl -k https://10.1.10.30 -H Host:site5.com
 
-
 |image264|
- 
 
-.. NOTE:: for site 1 connected to  10.1.20.11, site 2 10.1.20.12  etc:
-
-.. NOTE:: This completes Module 1 - Lab 2:
+This completes Module 1 - Lab 2. Click **Next** to continue.
 
 .. |ltp-diagram| image:: /_static/class2/ltp-diagram.png
 .. |image9| image:: /_static/class2/image11.png
@@ -338,13 +289,3 @@ validate your configuration.
 .. |image251| image:: /_static/class2/image251.png
    :width: 3.05556in
    :height: 2.45833in
-
-
-
-
-
-
-
-
-
-

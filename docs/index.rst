@@ -8,47 +8,29 @@ Welcome to the |classbold| lab at F5 Agility |year|
 
 |repoinfo|
 
-|image1|
+.. |image1| image:: /_static/class1/image1.gif
 
-As headlines continue to lead with DDoS attacks, the reality is
-organizations are being compromised by sophisticated attacks which blend
-techniques with automated tools to cause delay or disruption to
-web-application services. With each news story, IT executives continue
-to ask:
-
--  Is my organization prepared to handle floods of HTP traffic?
-
--  Does my team know vulnerabilities and how to mitigate an attack,
-   while maintaining availability of applications for our customers?
-
-`The DDoS Threat Spectrum <https://www.f5.com/pdf/white-papers/ddos-threat-spectrum-wp.pdf>`__
+F5 BIG-IP Advanced Firewall Manager (AFM) is a high-performance, full-proxy network security
+solution designed to protect networks and data centers against incoming threats that enter
+the network on the most widely deployed protocols. Built on F5’s industry-leading Application
+Delivery Controller (ADC), BIG-IP AFM gives service providers a scalable, subscriber-aware
+platform that delivers the flexibility, performance, and control needed to mitigate aggressive
+distributed denial-of-service (DDoS) and protocol attacks before they overwhelm and
+degrade services. 
 
 F5 offers superior application security with a flexible, ICSA-certified
-network firewall, ICSA-certified web application firewall and a
+etwork firewall, ICSA-certified web application firewall and a
 comprehensive solution that defends against DDoS attacks by scaling
 intelligently to mitigate DDOS attacks and other emerging threats at the
 **network, session, and application** levels.
 
-**Protect your reputation and your bottom line with F5 security
-solutions:**
+More information can be found at https://www.f5.com/pdf/products/big-ip-advanced-firewall-manager-datasheet.pdf
 
--  Defend against sophisticated attacks to secure internal and customer
-   data
-
--  Mitigate security risks instantly with virtual patches.
-
--  Maintain availability in the face of large-scale attacks.
-
--  Monitor continuously for application vulnerabilities.
-
-`*https://www.f5.com/it-management/solutions/ddos-protection/overview* <https://www.f5.com/it-management/solutions/ddos-protection/overview>`__
+Click Next to continue.
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Contents:
-   :glob:
-
+   :hidden:
+   
    class*/class*
    archive/archive*/archive*
 
-.. |image1| image:: /_static/class1/image2.gif

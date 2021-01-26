@@ -1,21 +1,26 @@
-Lab 7: Configure A Clone Pool For SSL Visibility To IDS Sensors Or Other Security Tools
+Lab 7: Configure a Clone Pool for SSL Visibility to IDS Sensors or Other Security Tools
 =======================================================================================
 
-SSL encrypted traffic poses a problem for most security devices. The performance of those devices is significantly impacted when trying to decrypt SSL traffic. Since the BIG-IP is designed to handle SSL traffic with specialized hardware and optimized software libraries, it is in the unique position to 'hand-off' a copy of the decrypted traffic to other devices.
+SSL encrypted traffic poses a problem for most security devices. The performance of those 
+devices is significantly impacted when trying to decrypt SSL traffic. Since the BIG-IP 
+is designed to handle SSL traffic with specialized hardware and optimized software 
+libraries, it is in the unique position to 'hand-off' a copy of the decrypted traffic 
+to other devices.
 
-In this solution, since the BIG-IP is terminating SSL on the external virtual server, when we forward the traffic to the secondary virtual server in clear-text we have an opportunity to make an unencrypted copy of the application traffic and send it to an external sensor such as an IDS for further security assessment.
+In this solution, since the BIG-IP is terminating SSL on the external virtual server, 
+when we forward the traffic to the secondary virtual server in clear-text we have an 
+opportunity to make an unencrypted copy of the application traffic and send it to an 
+external sensor such as an IDS for further security assessment.
 
-On BIG-IP
-
-Inspect the preconfigured  IDS_Pool.
+On the BIG-IP, inspect the preconfigured IDS_Pool.
 
 **Navigation:** Local Traffic > Pools > Pool List > 
 
 **Navigation** Select the IDS_Pool
 
-**Navigation:** Click on the **Members** Tab 
+**Navigation:** Click on the **Members** tab.
 
-.. Note:: Unencrypted traffic will be forwarded to this IP address
+.. Note:: Unencrypted traffic will be forwarded to this IP address.
 
 Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server
 
@@ -23,9 +28,9 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 **Navigation:** Select **Advanced** from the pulldown at the top of the Configuration section
 
-**Navigation:** Scroll to the configuration for Clone Pool (Client)  and select None
+**Navigation:** Scroll to the configuration for Clone Pool (Client) and select **None**.
 
-**Navigation:** Scroll to the configuration for Clone Pool (Server)  and select IDS_pool
+**Navigation:** Scroll to the configuration for Clone Pool (Server) and select **IDS_pool**.
 
 |image60|
 
@@ -33,11 +38,11 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 .. Note:: Leave all other fields using the default values.
 
-Select the Putty application from the desktop on the jump host
+Select the Putty application from the desktop on the jump host.
 
-Load   **Lamp Server**  from the sessions list
+Load **Lamp Server** from the sessions list.
 
-**Open**   **Lamp Server**
+Click **Open**.
 
 Accept the certificate warning
 
@@ -89,7 +94,7 @@ View the tcpdump output on the syslog-webserver.
 
 .. Note:: Inspect the source and destination addresses. This traffic is cloned from the EXT_VIP
 
-.. NOTE:: This is the end of Module 1 - Lab 7.
+This is the end of Module 1. Click **Next** to continue to Module 2.
 
 .. |image58| image:: /_static/class2/image58.png
    :width: 5.65139in

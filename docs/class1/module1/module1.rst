@@ -35,12 +35,7 @@ proxy such as the BIG-IP for your perimeter security utilizing common
 traffic management techniques and some additional features unique to 
 the BIG-IP as an Application Delivery Controller.
 
-.. WARNING:: IP addresses in screenshots are examples only. Please read the
-   step-by-step lab instructions to ensure that you use the correct IP
-   addresses.
-
 .. toctree::
-   :maxdepth: 1
-   :glob:
+   :hidden:
 
    lab*

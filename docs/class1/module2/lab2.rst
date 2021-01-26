@@ -5,10 +5,10 @@ Create and View Packet Tracer Entries
 -------------------------------------
 
 In this section, you will generate various types of traffic as you did
-previously, but now you will view the flow using the network packet
-tracer. Login to bigip01.f5demo.com
+previously, but you will view the flow using the network packet
+tracer. Return to the TMUI in Chrome and log in if necessary.
 
-(10.1.1.4), navigate to **Security > Debug > Packet Tester**.
+**Navigation:** Security > Debug > Packet Tester.
 
 |image441|
 
@@ -32,7 +32,7 @@ Create a packet test with the following parameters:
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-Click Run Trace to view the response. Your output should resmeble the
+Click **Run Trace** to view the response. Your output should resemble the
 allowed flow as shown below:
 
 |image442|
@@ -70,7 +70,8 @@ allowed flow as shown below:
 
 |image444|
 
-Next to the packet Trace button note the Clear Data Check box **Uncheck it**  so you dont hve to input all the fields again
+Next to the packet Trace button note the Clear Data Check 
+box **Uncheck it** so you dont hve to input all the fields again.
 
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
@@ -90,11 +91,11 @@ Next to the packet Trace button note the Clear Data Check box **Uncheck it**  so
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-This traffic will be blocked by the virtual Server rule
+This traffic will be blocked by the virtual Server rule.
 
-**Navigation** Click on the Vitrual Server Rules Icon to get more specific information
+**Navigation** Click on the Virtual Server Rules Icon to get more specific information
 
-This demonstrates the rules built in the first lab
+Click **Next** to continue.
 
 .. |image441| image:: /_static/class2/image441.png
    :width: 6.48958in

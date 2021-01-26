@@ -36,6 +36,8 @@ traffic management techniques and some additional features unique to
 the BIG-IP as an Application Delivery Controller.
 
 .. toctree::
-   :hidden:
+   :maxdepth: 1
+   :caption: Contents:
+   :glob:
 
    lab*

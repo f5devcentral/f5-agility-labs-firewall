@@ -2,7 +2,8 @@ Module 2: AFM Packet Tester, Flow Inspector, Stale Rule Lab
 ===========================================================
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 1
+   :caption: Contents:
    :glob:
 
    lab*

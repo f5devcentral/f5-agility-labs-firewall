@@ -37,6 +37,7 @@ This lab contains two modules:
 
 .. toctree::
    :maxdepth: 1
+   :caption: Contents:
    :glob:
 
    module*/module*

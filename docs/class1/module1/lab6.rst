@@ -10,9 +10,9 @@ Configure An HTTP Security Profile And Apply It To The External Virtual Server
 
 On the BIG-IP:
 
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP,
-confirm that the **Security Profiles** tab is selected
-then click Create.
+**Navigation:** Security > Protocol Security > Security Profiles > HTTP
+
+Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 +---------------------------------+------------------------+
 | **Profile Name**                | demo_http_security     |
@@ -28,7 +28,6 @@ then click Create.
 
 .. NOTE::  Leave all other fields using the default values.
 
-
 **Navigation:** Click Request Checks Tab.
 
 .. NOTE::  Leave the defaut Methods. Changing Methods is a powerful way to protect your web sites
@@ -38,7 +37,6 @@ then click Create.
 +------------------+--------------+
 
 |image49|
-
 
 **Navigation:** Click Blocking Page Tab.
 
@@ -54,7 +52,7 @@ then click Create.
 
 **Navigation:** Click Create
 
-.. NOTE:: We did not put the policy in Blocking mode. We will do that after we verify functionality
+.. NOTE:: We did not put the policy in Blocking mode. We will do that after we verify functionality.
 
 Apply the HTTP security profile to the external virtual server.
 
@@ -95,9 +93,7 @@ Browse the application.
 
 .. NOTE:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
 
-On BIG-IP
-
-Review the log entries created in the previous step.
+On the BIG-IP, review the log entries created in the previous step.
 
 **Navigation:** Security > Event Logs > Protocol > HTTP
 
@@ -125,16 +121,13 @@ Edit the demo\_http\_security HTTP security profile.
 
 **Navigation:** Click Finished.
 
-On Windows jumpbox
+On the jumpbox, close the Browser tab to dvwa.com.
 
-Close the Browser window to dvwa.com
-
-Open a new web browser tab and access the virtual server.
+Open a new web browser tab and access the virtual server again:
 
 URL: https://dvwa.com
 
 **Credentials: admin\/password**
-
 
 |image266|
 
@@ -154,7 +147,7 @@ Edit the demo\_http\_security HTTP security profile.
 |                            | Un-check “Block”                                        |
 +----------------------------+---------------------------------------------------------+
 
-.. NOTE:: This is the end of Module 1 - Lab 6
+This is the end of Module 1 - Lab 6. Click **Next** to continue.
 
 .. |image48| image:: /_static/class2/image49.png
    :width: 5.41503in

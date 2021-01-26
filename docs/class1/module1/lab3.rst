@@ -9,13 +9,13 @@ High Speed Logging for modules such as the firewall module requires three compon
   - A Log Destination (local-db for this lab)
   - A Log Profile
 
-For more detailed information on logging please consult the BIG-IP documentation.
+For more detailed information on logging, please consult the BIG-IP documentation.
 
 https://askf5.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-external-monitoring-implementations-13-0-0/3.html
 
 In this lab, we will configure a local log publisher and log profile. The
-log profile will then be applied to the virtual server and tested.
-
+log profile will then be applied to the virtual server and tested. In production,
+you would be best to log to an external syslog server to reduce load on the device.
 
 Create A Log Publisher
 ----------------------
@@ -25,7 +25,7 @@ This will send the firewall logs to a local database
 Create the log publisher using the following information:
 
 **Navigation:** System > Logs > Configuration > Log Publishers, then click
-Create
+**Create**.
 
 +-------------------------------+----------------------------+
 | **Name**                      | firewall\_log\_publisher   |
@@ -72,7 +72,7 @@ Modify The Log Profile To Collect Protocol Security Events
 Modify The Log Profile To Collect Firewall Security Events
 ----------------------------------------------------------
 
-Edit log profile network firewall tab using the following information:
+Edit the log profile network firewall tab using the following information:
 
 **Navigation:** Click on the Network Firewall tab
 
@@ -115,7 +115,6 @@ Apply the newly created log profile to the external virtual server created in th
 | **Log Profile**   | firewall\_log\_profile   |
 +-------------------+--------------------------+
 
-
 |image278|
 
 .. NOTE:: Leave all other fields using the default values.
@@ -127,8 +126,6 @@ View network firewall logs.
 **Navigation:** Security > Event Logs > Network > Firewall
 
 |image28|
-
-
 
 Validate Lab 3 Configuration
 ----------------------------
@@ -146,8 +143,7 @@ URL: https://site1.com
 
 .. NOTE:: View new network firewall log entries. Examine the data collected there.
 
-.. NOTE:: This completes Module 1 - Lab 3
-
+This completes Module 1 - Lab 3. Click **Next** to continue.
 
 .. |image24| image:: /_static/class2/image26.png
    :width: 7.05278in

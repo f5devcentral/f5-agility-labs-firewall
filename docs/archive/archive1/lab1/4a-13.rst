@@ -1,0 +1,44 @@
+View Firewall Reports
+---------------------
+
+View several of the built-in network firewall reports and graphs on the
+BIG-IP system. Open the **Security >Reporting > Network > Enforced
+Rules** page. The default report shows all the rule contexts that were
+matched in the past hour.
+
+|image35|
+
+The default view gives reports per Context, in the drop-down menu select
+**Enforced Rules**.
+
+|image36|
+
+From the **View By** list, select **Destination Ports (Enforced)**.
+
+|image37|
+
+This redraws the graph to report more detail for all the destination
+ports that matched an ACL.
+
+|image38|
+
+From the **View By** list, select **Source IP Addresses (Enforced)**.
+This shows how source IP addresses matched an ACL clause:
+
+|image39|
+
+.. |image35| image:: /_static/class1/image35.png
+   :width: 6.49097in
+   :height: 2.49097in
+.. |image36| image:: /_static/class1/image36.png
+   :width: 6.5in
+   :height: 2.5in
+.. |image37| image:: /_static/class1/image37.png
+   :width: 2.64727in
+   :height: 1.53731in
+.. |image38| image:: /_static/class1/image38.png
+   :width: 6.5in
+   :height: 2.66667in
+.. |image39| image:: /_static/class1/image39.png
+   :width: 6.5in
+   :height: 2.08333in

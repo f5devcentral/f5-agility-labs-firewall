@@ -38,4 +38,5 @@ the BIG-IP as an Application Delivery Controller.
 .. toctree::
    :hidden:
 
+   access
    lab*

@@ -30,7 +30,7 @@ except management.
 
 |image300|
 
-.. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
+.. tip:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
 =================================================
 Lab 1: Pre-configured  pools and  virtual servers
@@ -64,7 +64,7 @@ Verify the following pools using the following tabel of pool information.
 
 **Navigation:** Local Traffic > Pools > Pool List
 
-.. Note:: Other pools may exist than the ones in the table below. The pools in this table are the ones relevant to this class.
+.. note:: Other pools may exist than the ones in the table below. The pools in this table are the ones relevant to this class.
 
 .. list-table::
    :header-rows: 1
@@ -100,7 +100,7 @@ Verify the following pools using the following tabel of pool information.
 
 This screenshot shows an example of the pool list in the TMUI:
 
-|image162|
+.. image:: _images/class2/image162.png
 
 Inspect Application Virtual Servers
 -----------------------------------
@@ -125,11 +125,10 @@ Inspect the Local Traffic Network Map
 
 |image7|
 
-.. NOTE:: The virtual servers should show a green circle for status.
+.. note:: The virtual servers should show a green circle for status.
 
 This completes Module 1 - Lab 1. Click **Next** to continue.
 
-.. |image162| image:: _images/class2/image162.png
 .. |image163| image:: _images/class2/image163.png
 .. |image1| image:: _images/class2/image3.png
 .. |image2| image:: _images/class2/image4.png

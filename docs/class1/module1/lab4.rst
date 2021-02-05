@@ -57,7 +57,7 @@ Click *Add* to add a rule.
 | **Logging**    | Enabled                                |
 +----------------+----------------------------------------+
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 **Navigation:** Click **Finished**.
 
@@ -76,7 +76,7 @@ Create Permit Log Network Firewall Rule
 | **Logging**   | Enabled       |
 +---------------+---------------+
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Click **Finished**.
 
@@ -136,7 +136,7 @@ Edit the Network Firewall section of the screen:
 
 |image277|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Click **Update**.
 
@@ -238,7 +238,7 @@ Add the following rule at beginning:
 
 |image258|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Click **Done Editing**.
 
@@ -256,7 +256,7 @@ Click **Add Rule** pull down on the upper-right. Add a rule to the end of the po
 | **Logging**   | Enabled (checked)  |
 +---------------+--------------------+
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Click **Done Editing**.
 
@@ -291,7 +291,7 @@ Update the settings to reflect the values below:
 
 |image261|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Click **Update**.
 

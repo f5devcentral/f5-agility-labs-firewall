@@ -10,8 +10,8 @@ We will add enforcement rules at the virtual server level to demonstrate functio
 
 On the BIG-IP, we'll create a rule list to allow traffic. A logical container will be 
 created before the individual rules can be added. You will create a list with rules to 
-allow port 80 (HTTP), 443 (HTTPS), and 22 (SSH)  to servers 10.1.20.11 through 
-10.1.20.17 We will also create a rules which allows HTTPS and SSH traffic to access 
+allow port 80 (HTTP), 443 (HTTPS), and 22  to servers 10.1.20.11 through 
+10.1.20.17 We will also create a rules which allows HTTP and HTTPS traffic to access 
 10.1.10.30.
 
 Create a container for the rules by going to:
@@ -36,7 +36,7 @@ Click the **Add** button in the Rules section.
 
 |image276|
 
-Add a rules into the list to allow HTTP, HTTPS, and SSH traffic as described in the next steps.
+Add a rules into the list to allow HTTP and HTTPS traffic as described in the next steps.
 
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Name**                | allow_http_and_https                                                                            |

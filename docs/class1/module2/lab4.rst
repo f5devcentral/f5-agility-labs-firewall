@@ -18,7 +18,7 @@ under the Network Firewall Rules Section. Please be sure to click
 Refresh the web page we’ve been testing (http://10.1.20.11) 
 several times to see data populate into the rules.
 
-.. NOTE:: It could take 60+ seconds for data to populate after refreshing the page.
+.. note:: It could take 60+ seconds for data to populate after refreshing the page.
 
 |image448|
 

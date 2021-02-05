@@ -96,7 +96,7 @@ Click on the log profile *Network Firewall* tab and configure using the followin
 
 |image26|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 Scroll to the bottom of the screen and click **Create**.
 
@@ -133,7 +133,7 @@ curl statements from the previous sections.
 
 URL: https://site1.com
 
-.. NOTE:: This test generates traffic that creates network firewall log entries.
+.. note:: This test generates traffic that creates network firewall log entries.
 
 In the **Security** > **Event Logs** > **Network** > **Firewall** screen, click the **Search** button to
 refresh the event list. Newest events will appear at the top, as shown below:

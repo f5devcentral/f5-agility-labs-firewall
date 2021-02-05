@@ -77,7 +77,7 @@ Select *EXT_VIP_10.1.10.30*, then select the **Security** drop-down and choose *
 
 .. note:: Leave all other fields using the default values.
 
-**Navigation:** Click Update.
+Click **Update**.
 
 Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
 
@@ -88,6 +88,8 @@ Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
 .. note:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
 Browse the applicationb clicking on various links on the sidebar.
+
+.. warning:: **If you change the admin password in DVWA, make sure you remember it for later!**
 
 |image53|
 
@@ -101,7 +103,7 @@ On the BIG-IP, review the log entries created in the previous step.
 
 .. note::  Your log entries may be different than the example shown above but the concept should be the same.
 
-Edit the *demo\_http\_security* HTTP security profile.
+Edit the *demo_http_security* HTTP security profile.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
@@ -119,7 +121,7 @@ Select the *demo_http_security* profile, then select the **Request Checks** tab.
 
 Click **Finished**.
 
-On the jump box, close the tab to dvwa.com and re-open a new tab. Browse again to dvwa.com and log in.
+On the jump box, Log out of DVWA by selecting Log Out in the menu. Attempt to log back in. **This action requires a POST action and will be blocked because this is not allowed. **
 
 URL: https://dvwa.com
 
@@ -127,15 +129,13 @@ URL: https://dvwa.com
 
 |image266|
 
-.. attention:: This action requires a POST action and will be blocked because this is not allowed. 
+.. attention:: 
 
 Edit the demo\_http\_security HTTP security profile.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
-Select the **demo_http_security** profile
-
-**Navigation:** Select the Request Checks Tab
+Select the *demo_http_security* profile, then select the **Request Checks** tab.
 
 +----------------------------+---------------------------------------------------------+
 | **Methods**                | Add Post to the Allowed Group.                          |

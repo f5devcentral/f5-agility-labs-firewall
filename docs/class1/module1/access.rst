@@ -7,7 +7,7 @@ The email will contain your username and temporary password.
 
 Click the **how to join a training class** link.
 
-.. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host."
+.. note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host."
 
 Click the link **Log in here**.
 
@@ -27,7 +27,7 @@ Select the *Deployment* tab at the top of the screen.
 
 Wait about 10 minutes for the **F5 Products** and **Systems** to finish booting..
 
-.. Note:: The Windows Jump host takes a few minutes to start up... please be patient even if it shows a green indication.
+.. note:: The Windows Jump host takes a few minutes to start up... please be patient even if it shows a green indication.
 
 Select the **Access** link below the **Windows Jumpbox** and select **RDP**.
 

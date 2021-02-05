@@ -3,10 +3,8 @@ Base BIG-IP Configuration
 
 In this lab, the VE has been configured with the basic system settings and the VLAN/self-IP configurations required for the BIG-IP to communicate and pass traffic on the network. We’ll now need to configure the BIG-IP to listen for traffic and pass it to the back end server.
 
-1.	Launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server. The credentials for 
-    the BIG-IP are conveniently displayed in the login banner. Just in case: **admin / f5agility!**
-2.	Navigate to **Local Traffic** > **Nodes** and create a new node with the following settings, leaving unspecified fields 
-    at their default value:
+1.	Launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server. The credentials for the BIG-IP are conveniently displayed in the login banner. Just in case: **admin / f5agility!**
+2.	Navigate to **Local Traffic** > **Nodes** and create a new node with the following settings, leaving unspecified fields at their default value:
     
     a.	**Name**: *lab-server-10.1.20.6*
     b.	**Address**: *10.1.20.6*

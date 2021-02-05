@@ -30,14 +30,14 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 #. Click on the *udp_dns_VS* virtual server name.
 #. In the Configuration section, change the view to **Advanced**.
 #. Set the **DNS Profile** to *dns-block-mx*.
-#. Click **Update**to save your settings.
+#. Click **Update** to save your settings.
 #. Navigate to **Security** > **Event Logs** **Logging Profiles**.
 #. Click on the *dns-dos-profile-logging* logging profile name.
 #. Check *Enabled* next to **Protocol Security**.
 #. In the **Protocol Security** tab, set the DNS Security Publisher to *local-db-publisher* and check all five of the request log types.
-#. Make sure that you click **Update**to save your settings.
+#. Make sure that you click **Update** to save your settings.
 #. Return to the Attack Server SSH session and re-issue the MX query command: 
-   - ``dig @10.1.10.6 MX example.com``
+    - ``dig @10.1.10.6 MX example.com``
 #. The query hangs as the BIG-IP is blocking the MX lookup.
 #. Navigate to **Security** > **Event Logs** > **Protocol** > **DNS**. Observer the MX query drops.
 

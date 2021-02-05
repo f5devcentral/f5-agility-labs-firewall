@@ -1,4 +1,5 @@
-Welcome to the AFM DNS DoS and DDoS Protections lab at F5 Agility 2021.
+AFM DNS DoS and DDoS Protections Lab
+====================================
 
 Lab Requirements:
 -----------------

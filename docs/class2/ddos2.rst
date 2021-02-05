@@ -20,8 +20,8 @@ Initiate the Attack
 
 We’ll use the hping utility to send 25,000 packets to our server, with random source IPs to simulate a DDoS attack where multiple hosts are attacking our server. We’ll set the SYN, ACK, FIN, RST, URG, PUSH, Xmas and Ymas TCP flags.
 
-#.  In the BIG-IP web UI, navigate to **Security** > **DoS Protection** > **Device Configuration** > **Network Security**.
-#.Expand the *Bad-Header-TCP* category in the vectors list.
+#. In the BIG-IP web UI, navigate to **Security** > **DoS Protection** > **Device Configuration** > **Network Security**.
+#. Expand the *Bad-Header-TCP* category in the vectors list.
 #. Click on the **Bad TCP Flags (All Flags Set)** vector name.
 #. Configure the vector with the following parameters:
     - **State**: *Mitigate*

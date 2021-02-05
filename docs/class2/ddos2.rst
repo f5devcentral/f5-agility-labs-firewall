@@ -32,7 +32,7 @@ e.	**Mitigation Threshold EPS**: *Specify 100*
 5.	Click **Update** to save your changes.
 6.	Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: ``tail -f /var/log/ltm``
 7.	On the attack host, launch the attack by issuing the following command on the BASH prompt: 
-``sudo hping3 10.20.0.10 --flood --rand-source --destport 80 -c 25000 --syn --ack --fin --rst --push --urg --xmas --ymas``
+``sudo hping3 10.1.10.6 --flood --rand-source --destport 80 -c 25000 --syn --ack --fin --rst --push --urg --xmas --ymas``
 8.	You’ll see the BIG-IP ltm log show that the attack has been detected:
 9.	After approximately 60 seconds, press CTRL+C to stop the attack.
 10.	Return to the BIG-IP web UI. Navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observer the log entries showing the details surrounding the attack detection and mitigation.

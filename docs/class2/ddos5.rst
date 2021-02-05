@@ -20,7 +20,7 @@ i.	Packet Type: Move Any ICMP (IPv4) to Selected
 6.	Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: tail -f /var/log/ltm
 7.	We’ll run a packet capture on the victim server to gauge the incoming traffic. On the victim server, issue the following command: sudo tcpdump -nn not port 22
 8.	On the attack host, launch the attack by issuing the following command on the BASH prompt: 
-sudo hping3 10.20.0.10 --faster -c 25000 --icmp
+sudo hping3 10.1.10.6 --faster -c 25000 --icmp
 9.	The attack host will begin flooding the victim server with ICMP packets. However, you will notice that the traffic to the server stops after a short time (10 seconds, the configured sustained attack detection time.) 
 10.	After approximately 60 seconds, run the attack again. ICMP traffic will return to the host. This is because the IP Intelligence categorization of the attack host has expired.
 11.	Return to the BIG-IP web UI.

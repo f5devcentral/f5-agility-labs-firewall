@@ -42,7 +42,7 @@ c.	Log Blacklist Category Matches: Yes
 13.	Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: tail -f /var/log/ltm
 14.	On the victim server, start a packet capture with an SSH filter by issuing sudo tcpdump -nn not port 22
 15.	On the attack host, launch the attack by issuing the following command on the BASH prompt: 
-sudo hping3 10.20.0.10 --flood --scan 1-65535 -d 128 -w 64 --syn 
+sudo hping3 10.1.10.6 --flood --scan 1-65535 -d 128 -w 64 --syn 
 16.	You will see the scan find a few open ports on the server, and the server will show the inbound sweep traffic. However, you will notice that the traffic to the server stops after a short time (10 seconds, the configured sustained attack detection time.) Leave the test running.
 17.	After approximately 60 seconds, sweep traffic will return to the host. This is because the IP Intelligence categorization of the attack host has expired. After 10 seconds of traffic, the bad actor is again blacklisted for another 60 seconds. 
 18.	Stop the sweep attack on the attack host by pressing CTRL + C.

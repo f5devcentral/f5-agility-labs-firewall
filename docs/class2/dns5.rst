@@ -60,7 +60,7 @@ i.	Create a new blacklist matching policy:
 
 21.	Bring into view the Victim Server SSH session running the top utility to monitor CPU utilization.
 22.	On the Attack Server host, launch the DNS attack once again using the following syntax:
-dnsperf -s 10.20.0.10 -d queryfile-example-current -c 20 -T 20 -l 30 -q 10000 -Q 10000
+dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 10000 -Q 10000
 23.	You’ll notice CPU utilization on the victim server begin to climb, but slowly drop. The attack host will show that queries are timing out as shown below. This is due to the BIG-IP blacklisting the bad actor.
 
 24.	Navigate to Security > Event Logs > Network > IP Intelligence. Observe the bad actor blocking mitigation logs.

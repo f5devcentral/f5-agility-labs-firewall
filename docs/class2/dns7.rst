@@ -14,7 +14,7 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 
 1.	Open the SSH session to the attack host.
 2.	Perform an MX record lookup by issuing the following command:
-dig @10.20.0.10 MX example.com
+dig @10.1.10.6 MX example.com
 3.	The server doesn’t have a record for this domain. This server doesn’t have MX records, so those requests should be filtered
 4.	Navigate to Security > Protocol Security > Security Profiles > DNS and create a new DNS security profile with the following values, leaving unspecified attributes at their default value:
 a.	Name: dns-block-mx-query
@@ -36,7 +36,7 @@ ii.	DNS Security Profile Name: dns-block-mx-query
 15.	In the Protocol Security tab, set the DNS Security Publisher to local-db-publisher and check all five of the request log types.
 16.	Make sure that you click Update to save your settings.
 17.	Return to the Attack Server SSH session and re-issue the MX query command: 
-dig @10.20.0.10 MX example.com
+dig @10.1.10.6 MX example.com
 18.	The query hangs as the BIG-IP is blocking the MX lookup.
 19.	Navigate to Security > Event Logs > Protocol > DNS. Observer the MX query drops.
 

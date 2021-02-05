@@ -40,3 +40,5 @@ username: external_user
 password: P@ssw0rd!
 
 .. image:: _images/class2/image304.png
+
+Click **Next** to continue.

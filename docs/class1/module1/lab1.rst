@@ -32,8 +32,6 @@ except management.
 
 .. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
-.. TIP:: Use the Chrome Browser on the Jump Host desktop to configure BIG-IP 1 10.1.1.4. The login credentials are on the BIG-IP login page.
-
 =================================================
 Lab 1: Pre-configured  pools and  virtual servers
 =================================================
@@ -49,10 +47,16 @@ traffic from a virtual server.
 
 |image1| :: _images/class2/image1.png
 
-.. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4. Credentials are displayed in the login screen.
-
 Inspect Application Pools
 -------------------------
+
+After connecting to the jump host via RDP, click on the Chrome shortcut on the desktop or task bar.
+
+.. image:: _images/desktop.png
+
+The BIG-IP login screen should open in the first tab. 
+
+.. image:: _images/bigip_login.png
 
 On the BIG-IP, verify the following pools using the following tabel of pool information.  
 

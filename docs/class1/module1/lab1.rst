@@ -45,7 +45,7 @@ server is necessary to accept specific types of traffic.
 The pool is a logical group of hosts that is applied to and will receive
 traffic from a virtual server.
 
-|image1| :: _images/class2/image1.png
+|image1|
 
 Inspect Application Pools
 -------------------------
@@ -58,7 +58,9 @@ The BIG-IP login screen should open in the first tab.
 
 .. image:: _images/bigip_login.png
 
-On the BIG-IP, verify the following pools using the following tabel of pool information.  
+Enter the credentials shown in the welcome message and click **Log In**.
+
+Verify the following pools using the following tabel of pool information.  
 
 **Navigation:** Local Traffic > Pools > Pool List
 
@@ -114,7 +116,7 @@ are not used.
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
-|image163| image:: _images/class1/image163.png
+|image163|
 
 Inspect the Local Traffic Network Map
 -------------------------------------

@@ -5,8 +5,6 @@ This module has seven labs in configuring an Advanced Multi-layer firewall appli
 
 In this module, you will build a perimeter firewall with advanced Layer 7 security mitigations.
 
-Estimated completion time: 1 hour
-
 Objective:
 
 -  Inspect multiple internal pools and virtual servers for different applications within your data center. e.g. www, API, /downloads

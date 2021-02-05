@@ -8,34 +8,35 @@ Create an ACL to allow web traffic and SSH
 The rules created in this section allow basic connectivity to the resources.
 We will add enforcement rules at the virtual server level to demonstrate functionality.
 
-On bigip01.f5demo.com (10.1.1.4) create a rule list to allow
-traffic. A logical container will be created before the individual rules
-can be added. You will create a list with rules to allow port 80
-(HTTP), 443 (HTTPS), and 22 (SSH)  to servers 10.1.20.11 through 10.1.20.17 We will
-also create a rules which allows HTTPS and SSH traffic to access 10.1.10.30
+On the BIG-IP, we'll create a rule list to allow traffic. A logical container will be 
+created before the individual rules can be added. You will create a list with rules to 
+allow port 80 (HTTP), 443 (HTTPS), and 22 (SSH)  to servers 10.1.20.11 through 
+10.1.20.17 We will also create a rules which allows HTTPS and SSH traffic to access 
+10.1.10.30.
 
 Create a container for the rules by going to:
 
 **Navigation:** Security > Network Firewall > Rule Lists
 
-**Navigation:** Click on **Create**.
+Click on **Create**.
 
-For the **Name** enter **web_rule_list**, provide an optional description
+For the **Name** enter *web_rule_list*.
 
-**Navigation** click **Finished**
+Click **Finished**.
 
 |image270|
 
+Your list of *rule lists* should appear similar to below: 
+
 |image269|
 
-**Navigation** Select  the **web_rule_list** by clicking on it in the Rule Lists table
+**Navigation** Select the *web_rule_list* by clicking on it in the Rule Lists table
 
-**Navigation** click the **Add** button in the Rules section. 
-
-Add a rules into the list to allow HTTP, HTTPS, and SSH  traffic as described in the next steps
-
+Click the **Add** button in the Rules section. 
 
 |image276|
+
+Add a rules into the list to allow HTTP, HTTPS, and SSH traffic as described in the next steps.
 
 +-------------------------+-------------------------------------------------------------------------------------------------+
 | **Name**                | allow_http_and_https                                                                            |
@@ -53,8 +54,7 @@ Add a rules into the list to allow HTTP, HTTPS, and SSH  traffic as described in
 | **Logging**             | Enabled                                                                                         |
 +-------------------------+-------------------------------------------------------------------------------------------------+
 
-
-**Navigation:** Click Repeat
+Click **Repeat**.
 
 Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
@@ -67,68 +67,65 @@ Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 +-------------------------+-----------------------------------------------------------+
 | **Destination Address** | Pulldown **Specify...**\ 10.1.10.30 then click **Add**    |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Port**    | Pulldown **Specify…** Port **Any**, then click **Add**    |
+| **Destination Port**    | Leave at Default of **Any**                               |
 +-------------------------+-----------------------------------------------------------+
 | **Action**              | **Accept**                                                |
 +-------------------------+-----------------------------------------------------------+
 | **Logging**             | Enabled                                                   |
 +-------------------------+-----------------------------------------------------------+
 
-**Navigation:** Click **Finished**
+Click **Finished**. Your rules list should appear as shown below:
 
 |image272|
-
-**Navigation:** Click Finished
 
 Assign the Rule List to a Policy 
 --------------------------------
 
+Now we will assign this rule list to a policy. 
+
 **Navigation:** Security > Network Firewall > Policies
 
-**Navigation** Click Create
+Click **Create**.
 
-For the **Name** enter **rd_0_policy**, provide an optional description
-
-**Navigation** click **Finished**.
-
-(Note: We commonly use “RD” in our rules to help reference the “Route
-Domain”, default is 0)**
+For the **Name** enter *rd_0_policy*.
 
 |image273|
 
+Click **Finished**.
+
+.. note:: We commonly use “RD” in our rules to help reference the “Route Domain”, default is 0.
+
 **Navigation** Edit the **rd_0_policy** by clicking on it in the Policy Lists table, 
 
-**Navigation** click the **Add Rule List** button. 
+Click the **Add Rule List** button. 
 
-**Navigation** For the **Name,** start typing **web_rule_list**, you will notice the name will auto complete, 
+For the **Name**, start typing *web_rule_list*. You will notice the name will auto complete, making it easy to reference the existing object.
 
-**Navigation** select the rule list **/Common/web_rule_list**, provide an optional description
-
-**Navigation** click **Done Editing.**
+Select the rule list */Common/web_rule_list*. Ensure that *enabled* is selected under **State**.
 
 |image274|
+
+Finally, click **Done Editing**.
 
 You will notice the changes are unsaved and need to be committed to the
 system. This is a nice feature to have enabled to verify you want to
 commit the changes you’ve just made without a change automatically being
 implemented.
 
-**Navigation** click **“Commit Changes to System"**
+Click **“Commit Changes to System"** to commit your changes.
 
 Assign the rd_0_policy to Route Domain 0
 ----------------------------------------
 
 **Navigation:** Network > Route Domains
 
-**Navigation:** Click on the "0" to select Route Domain 0
+Click on the *0* to select Route Domain 0. This is similar to selecting a default VRF on an IP router.
 
-**Navigation:** Select the Security Tab
-
-Set **Enforcement** to **Enable** and select the **rd_0_policy** 
-
-**Navigation** Click Update
+Select the **Security** tab. Set **Enforcement** to *Enable* and select the *rd_0_policy*.
 
 |Image275|
+
+Finally, click **Update**.
 
 Configure BIG-IP Firewall in ADC Mode
 -------------------------------------
@@ -152,26 +149,22 @@ functionality is easier to introduce in ADC mode.
 
 **Navigation:** Security > Options > Network Firewall 
 
-+-----------------------------------------+---------+
-| **Virtual Server & Self IP Contexts**   | Accept  |
-+-----------------------------------------+---------+
+Open the **Firewall Options** tab.
 
-**Navigation** Click **Update**
+Set the **Virtual Server & Self IP Contexts** setting to *Accept*.
+
+Your screen should appear similar to below:
 
 |image251|
 
-Open the **Firewall Options** tab.
+Finally, click **Update**.
 
 Validate Lab 2 Configuration
 ----------------------------
 
-.. Note:: Open a tab on the Chrome Browser to test access to the URL's below
+In Chrome, refresh the web sites in tabs 2-7. You should encounter a web site for each.
 
-**Validation:** This lab is using self-signed certificates. You can
-either open a web browser on the test client or run CURL from the CLI to
-validate your configuration.
-
-**You will need to accept the certificate to proceed to the application sites**
+**You may need to accept the certificate to proceed to the application sites**.
 
 .. code-block:: console
 
@@ -189,7 +182,8 @@ validate your configuration.
 
 **With curl you need to use the -k option to ignore certificate validation**
 
-.. Note:: From a terminal window (use Cygwin on Win7 Client Desktop). Curl will let us do some of the additional testing in later sections. If you scroll up to the text immediately following the command you will see the IP address of the pool member you connected to.
+Minimize all windows so that the desktop is shown. Open a terminal window by launching Cygwin from the
+shortcut. Curl will let us do some of the additional testing in later sections. 
 
 .. code-block:: console
 
@@ -202,6 +196,10 @@ validate your configuration.
     curl -k https://10.1.10.30 -H Host:site4.com
 
     curl -k https://10.1.10.30 -H Host:site5.com
+
+If you scroll up to the 
+text immediately following the command you will see the 
+IP address of the pool member to which you are connected.
 
 |image264|
 

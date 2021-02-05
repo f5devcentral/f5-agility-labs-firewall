@@ -1,14 +1,21 @@
 Lab 6: Configure HTTP security
 ==============================
 
-HTTP security profiles are used to apply basic HTTP security to a
-virtual server. Significantly more advanced HTTP security is available
-by adding ASM (Application Security Manager).
+You can secure HTTP traffic by using a default configuration or by customizing the configuration. You can adjust the following security checks in an HTTP security profile:
+
+- HTTP protocol compliance validation
+- Evasion technique detection
+- Length checking to help avoid buffer overflow attacks
+- HTTP method validation
+- Inclusion or exclusion of certain files by type
+- Mandatory header enforcement
+
+.. warning:: HTTP protocol security does not offer the dynamic, constantly-updated security that a web application firewall (WAF) offers. HTTP protocol security in AFM should be complimented by a WAF solution, such as F5's Advanced WAF, when comprehensive web security is required.
 
 Configure An HTTP Security Profile And Apply It To The External Virtual Server
 ------------------------------------------------------------------------------
 
-On the BIG-IP:
+Return to the BIG-IP TMUI in Chrome.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
@@ -26,11 +33,11 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 |image48|
 
-.. NOTE::  Leave all other fields using the default values.
+.. note::  Leave all other fields using the default values.
 
-**Navigation:** Click Request Checks Tab.
+Click the **Request Checks** tab. Change the **Response Type** drop-down to *Custom Response*.
 
-.. NOTE::  Leave the defaut Methods. Changing Methods is a powerful way to protect your web sites
+.. tip:: We're going to allow the default HTTP methods. Restricting the methods allowed to reach production servers is a great way to shrink the attack surface.
 
 +------------------+--------------+
 | **File Types**   | Select All   |
@@ -38,7 +45,7 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 |image49|
 
-**Navigation:** Click Blocking Page Tab.
+Click the **Blocking Page** tab.
 
 +---------------------+----------------------------------------------------------------+
 | **Response Type**   | Custom Response                                                |
@@ -48,19 +55,17 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 |image50|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
-**Navigation:** Click Create
+Click **Create**.
 
-.. NOTE:: We did not put the policy in Blocking mode. We will do that after we verify functionality.
+.. warning:: We did not put the policy in Blocking mode. We will do that after we verify functionality.
 
-Apply the HTTP security profile to the external virtual server.
+Now, let's apply the HTTP security profile to the external virtual server.
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List >
+**Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
-**Navigation:** Select EXT_VIP_10.1.10.30
-
-**Navigation:** Select the Security tab
+Select *EXT_VIP_10.1.10.30*, then select the **Security** drop-down and choose **Policies**.
 
 +-------------------------+------------------------+------------------------+
 | **Protocol Security**   | Enabled                | demo_http_security     |
@@ -70,28 +75,23 @@ Apply the HTTP security profile to the external virtual server.
 
 |image51|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
 **Navigation:** Click Update.
 
-Open a new web browser tab, access the virtual server and log into the
-application.
-
-URL: https://dvwa.com
+Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
 
 **Credentials: admin\/password**
 
 |image52|
 
-.. NOTE:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
+.. note:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
-Browse the application.
-
-**Navigation:** Click on various links on the sidebar.
+Browse the applicationb clicking on various links on the sidebar.
 
 |image53|
 
-.. NOTE:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
+.. note:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
 
 On the BIG-IP, review the log entries created in the previous step.
 
@@ -99,15 +99,13 @@ On the BIG-IP, review the log entries created in the previous step.
 
 |image54|
 
-.. NOTE::  Your log entries may be different than the example shown above but the concept should be the same.
+.. note::  Your log entries may be different than the example shown above but the concept should be the same.
 
-Edit the demo\_http\_security HTTP security profile.
+Edit the *demo\_http\_security* HTTP security profile.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
-**Navigation:** Select the **demo_http_security** profile
-
-**Navigation:** Select the Request Checks Tab
+Select the *demo_http_security* profile, then select the **Request Checks** tab.
 
 +----------------------------+---------------------------------------------------------+
 | **Methods**                | Remove Post From the Allowed Group.                     |
@@ -117,13 +115,11 @@ Edit the demo\_http\_security HTTP security profile.
 
 |image55|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished.
+Click **Finished**.
 
-On the jumpbox, close the Browser tab to dvwa.com.
-
-Open a new web browser tab and access the virtual server again:
+On the jump box, close the tab to dvwa.com and re-open a new tab. Browse again to dvwa.com and log in.
 
 URL: https://dvwa.com
 
@@ -131,13 +127,13 @@ URL: https://dvwa.com
 
 |image266|
 
-.. ATTENTION:: This action requires a "POST" action and will be blocked because this is not allowed. 
+.. attention:: This action requires a POST action and will be blocked because this is not allowed. 
 
 Edit the demo\_http\_security HTTP security profile.
 
 **Navigation:** Security > Protocol Security > Security Profiles > HTTP
 
-**Navigation:** Select the **demo_http_security** profile
+Select the **demo_http_security** profile
 
 **Navigation:** Select the Request Checks Tab
 

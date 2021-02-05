@@ -1,13 +1,12 @@
-
 Configuring a DoS Logging Profile
 ---------------------------------
 
 We’ll create a DoS logging profile so that we can see event logs in the BIG-IP UI during attack mitigation.
 
 #. On the BIG-IP web UI, navigate to **Security** > **Event Logs** **Logging Profiles** and create a new profile with the following values, leaving unspecified attributes at their default value:
-a. Profile Name: *dns-dos-profile-logging*
-b. DoS Protection: *Enabled*
-c. DNS DoS Protection Publisher: local-db-publisher
+   - **Profile Name**: *dns-dos-profile-logging*
+   - **DoS Protection**: *Enabled*
+   - **DNS DoS Protection Publisher**: *local-db-publisher*
 
 About profiles for DoS and protocol service attacks
 ---------------------------------------------------
@@ -32,7 +31,7 @@ We’ll now create a DoS profile with manually configured thresholds to limit th
 #. Navigate to **Security** > **DoS Protection** > **DoS Profiles** and create a new DoS profile with the name *dns-dos-profile*.
 #. The UI will return to the **DoS Profiles** list. Click the *dns-dos-profile* name.
 #. Click the **Protocol Security** tab and select **DNS Security** from the drop-down.
-#. Click the *DNS A Query* vector from the Attack Type list.
+#. Click the *DNS A Query* vector from the **Attack Type** list.
 #. Modify the *DNS A Query* vector configuration to match the following values, leaving unspecified attributes with their default value:
      - **State**: *Mitigate*
      - **Threshold Mode**: *Fully Manual*

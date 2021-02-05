@@ -149,33 +149,33 @@ Edit the demo\_http\_security HTTP security profile.
 
 This is the end of Module 1 - Lab 6. Click **Next** to continue.
 
-.. |image48| image:: /_static/class2/image49.png
+.. |image48| image:: _images/class2/image49.png
    :width: 5.41503in
    :height: 5.23780in
-.. |image49| image:: /_static/class2/image50.png
+.. |image49| image:: _images/class2/image50.png
    :width: 5.25667in
    :height: 6.99992in
-.. |image50| image:: /_static/class2/image51.png
+.. |image50| image:: _images/class2/image51.png
    :width: 7.04444in
    :height: 7.07986in
-.. |image51| image:: /_static/class2/image52.png
+.. |image51| image:: _images/class2/image52.png
    :width: 7.04167in
    :height: 6.19444in
-.. |image52| image:: /_static/class2/image53.png
+.. |image52| image:: _images/class2/image53.png
    :width: 3.27502in
    :height: 2.37667in
-.. |image53| image:: /_static/class2/image54.png
+.. |image53| image:: _images/class2/image54.png
    :width: 3.84750in
    :height: 3.25278in
-.. |image54| image:: /_static/class2/image55.png
+.. |image54| image:: _images/class2/image55.png
    :width: 7.04444in
    :height: 1.56667in
-.. |image55| image:: /_static/class2/image56.png
+.. |image55| image:: _images/class2/image56.png
    :width: 4.52592in
    :height: 4.53707in
-.. |image266| image:: /_static/class2/image266.png
+.. |image266| image:: _images/class2/image266.png
    :width: 5.16503in
    :height: 1.12839in
-.. |image57| image:: /_static/class2/image53.png
+.. |image57| image:: _images/class2/image53.png
    :width: 3.27502in
    :height: 2.37667in

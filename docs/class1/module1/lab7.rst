@@ -96,15 +96,15 @@ View the tcpdump output on the syslog-webserver.
 
 This is the end of Module 1. Click **Next** to continue to Module 2.
 
-.. |image58| image:: /_static/class2/image58.png
+.. |image58| image:: _images/class2/image58.png
    :width: 5.65139in
    :height: 5.75556in
-.. |image59| image:: /_static/class2/image59.png
+.. |image59| image:: _images/class2/image59.png
    :width: 4.66626in
    :height: 4.24264in
-.. |image60| image:: /_static/class2/image60.png
+.. |image60| image:: _images/class2/image60.png
    :width: 4.83440in
    :height: 2.18569in
-.. |image280| image:: /_static/class2/image280.png
+.. |image280| image:: _images/class2/image280.png
    :width: 4.83440in
    :height: 2.18569in

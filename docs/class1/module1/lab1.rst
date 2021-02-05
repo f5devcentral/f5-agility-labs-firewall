@@ -47,7 +47,7 @@ server is necessary to accept specific types of traffic.
 The pool is a logical group of hosts that is applied to and will receive
 traffic from a virtual server.
 
-|image1| :: /_static/class2/image1.png
+|image1| :: _images/class2/image1.png
 
 .. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4. Credentials are displayed in the login screen.
 
@@ -110,7 +110,7 @@ are not used.
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
-|image163| image:: /_static/class1/image163.png
+|image163| image:: _images/class1/image163.png
 
 Inspect the Local Traffic Network Map
 -------------------------------------
@@ -123,41 +123,41 @@ Inspect the Local Traffic Network Map
 
 This completes Module 1 - Lab 1. Click **Next** to continue.
 
-.. |image162| image:: /_static/class2/image162.png
-.. |image163| image:: /_static/class2/image163.png
-.. |image1| image:: /_static/class2/image3.png
-.. |image2| image:: /_static/class2/image4.png
+.. |image162| image:: _images/class2/image162.png
+.. |image163| image:: _images/class2/image163.png
+.. |image1| image:: _images/class2/image3.png
+.. |image2| image:: _images/class2/image4.png
    :width: 6.74931in
    :height: 5.88401in
-.. |image3| image:: /_static/class2/image5.png
+.. |image3| image:: _images/class2/image5.png
    :width: 7.05556in
    :height: 1.33333in
-.. |image4| image:: /_static/class2/image6.png
+.. |image4| image:: _images/class2/image6.png
    :width: 7.05556in
    :height: 3.22222in
-.. |image5| image:: /_static/class2/image7.png
+.. |image5| image:: _images/class2/image7.png
    :width: 7.05556in
    :height: 7.31944in
-.. |image6| image:: /_static/class2/image8.png
+.. |image6| image:: _images/class2/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: /_static/class2/image7.png
+.. |image7| image:: _images/class2/image7.png
    :width: 7.05000in
    :height: 5.46949in
-.. |image8| image:: /_static/class2/image10.png
+.. |image8| image:: _images/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in
-.. |image9| image:: /_static/class2/image11.png
+.. |image9| image:: _images/class2/image11.png
    :width: 7.05556in
-.. |image10| image:: /_static/class2/image12.png
+.. |image10| image:: _images/class2/image12.png
    :width: 7.05556in
-.. |image300| image:: /_static/class2/image300.png
+.. |image300| image:: _images/class2/image300.png
    :width: 7.05556in
-.. |image301| image:: /_static/class2/image301.png
+.. |image301| image:: _images/class2/image301.png
    :width: 7.05556in
-.. |image302| image:: /_static/class2/image302.png
+.. |image302| image:: _images/class2/image302.png
    :width: 7.05556in
-.. |image303| image:: /_static/class2/image303.png
+.. |image303| image:: _images/class2/image303.png
    :width: 7.05556in
-.. |image304| image:: /_static/class2/image304.png
+.. |image304| image:: _images/class2/image304.png
    :width: 7.05556in

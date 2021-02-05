@@ -129,12 +129,12 @@ of humor.
 
 This concludes Module 1 - Lab 5. Click **Next** to continue.
 
-.. |image45| image:: /_static/class2/image46.png
+.. |image45| image:: _images/class2/image46.png
    :width: 7.04167in
    :height: 4.25000in
-.. |image46| image:: /_static/class2/image47.png
+.. |image46| image:: _images/class2/image47.png
    :width: 7.04167in
    :height: 2.81944in
-.. |image47| image:: /_static/class2/image48.png
+.. |image47| image:: _images/class2/image48.png
    :width: 7.04167in
    :height: 6.97222in

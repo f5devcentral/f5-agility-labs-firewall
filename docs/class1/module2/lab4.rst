@@ -31,9 +31,9 @@ Take a few minutes to inspect the other reports. Only the Enforced Rules will co
 This concludes the Advanced Multilayer Firewall Protection Lab. We hope you found this information
 valuable.
 
-.. |image447| image:: /_static/class2/image447.png
+.. |image447| image:: _images/class2/image447.png
    :width: 3.55556in
    :height: 3.70347in
-.. |image448| image:: /_static/class1/image448.png
+.. |image448| image:: _images/class1/image448.png
    :width: 6.49722in
    :height: 1in

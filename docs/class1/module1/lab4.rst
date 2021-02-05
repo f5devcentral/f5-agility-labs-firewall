@@ -327,81 +327,81 @@ X-Forwarded-For header. This iRule is applied to *EXT_VIP_10_1_10_30*.
    
 This concludes Module 1 - Lab 4. Click **Next** to continue.
 
-.. |image256| image:: /_static/class2/image256.png
+.. |image256| image:: _images/class2/image256.png
    :width: 7.04167in
    :height: 1.70833in
-.. |image31| image:: /_static/class2/image33.png
+.. |image31| image:: _images/class2/image33.png
    :width: 7.04167in
    :height: 2.33333in
-.. |image3200| image:: /_static/class2/image34.png
+.. |image3200| image:: _images/class2/image34.png
    :width: 7.05556in
    :height: 6.47222in
-.. |image33| image:: /_static/class2/image35.png
+.. |image33| image:: _images/class2/image35.png
    :width: 7.04167in
    :height: 5.02778in
-.. |image34| image:: /_static/class2/image36.png
+.. |image34| image:: _images/class2/image36.png
    :width: 7.04167in
    :height: 2.45833in
-.. |image35| image:: /_static/class2/image37.png
+.. |image35| image:: _images/class2/image37.png
    :width: 7.05556in
    :height: 3.30556in
-.. |image36| image:: /_static/class2/image38.png
+.. |image36| image:: _images/class2/image38.png
    :width: 7.05556in
    :height: 6.91667in
-.. |image37| image:: /_static/class2/image37.png
+.. |image37| image:: _images/class2/image37.png
    :width: 7.05000in
    :height: 3.30295in
-.. |image38| image:: /_static/class2/image39.png
+.. |image38| image:: _images/class2/image39.png
    :width: 7.04167in
    :height: 1.75000in
-.. |image39| image:: /_static/class2/image40.png
+.. |image39| image:: _images/class2/image40.png
    :width: 7.04167in
    :height: 2.50000in
-.. |image40| image:: /_static/class2/image41.png
+.. |image40| image:: _images/class2/image41.png
    :width: 7.05556in
    :height: 6.86111in
-.. |image41| image:: /_static/class2/image42.png
+.. |image41| image:: _images/class2/image42.png
    :width: 7.04167in
    :height: 5.04167in
-.. |image42| image:: /_static/class2/image43.png
+.. |image42| image:: _images/class2/image43.png
    :width: 7.04167in
    :height: 6.33333in
-.. |image43| image:: /_static/class2/image44.png
+.. |image43| image:: _images/class2/image44.png
    :width: 7.04167in
    :height: 4.19444in
-.. |image44| image:: /_static/class2/image45.png
+.. |image44| image:: _images/class2/image45.png
    :width: 7.04167in
    :height: 0.63889in
-.. |image252| image:: /_static/class2/image252.png
+.. |image252| image:: _images/class2/image252.png
    :width: 7.04167in
    :height: 1.70833in
-.. |image253| image:: /_static/class2/image253.png
+.. |image253| image:: _images/class2/image253.png
    :width: 7.04167in
    :height: 1.70833in
-.. |image254| image:: /_static/class2/image254.png
+.. |image254| image:: _images/class2/image254.png
    :width: 6.04167in
    :height: 7.63889in
-.. |image255| image:: /_static/class2/image255.png
+.. |image255| image:: _images/class2/image255.png
    :width: 7.04167in
    :height: 3.63889in
-.. |image257| image:: /_static/class2/image257.png
+.. |image257| image:: _images/class2/image257.png
    :width: 7.04167in
    :height: 1.70833in
-.. |image258| image:: /_static/class2/image258.png
+.. |image258| image:: _images/class2/image258.png
    :width: 7.04167in
    :height: 2.70833in
-.. |image259| image:: /_static/class2/image259.png
+.. |image259| image:: _images/class2/image259.png
    :width: 7.04167in
    :height: 3.70833in
-.. |image260| image:: /_static/class2/image260.png
+.. |image260| image:: _images/class2/image260.png
    :width: 7.04167in
    :height: 3.70833in
-.. |image261| image:: /_static/class2/image261.png
+.. |image261| image:: _images/class2/image261.png
    :width: 7.04167in
    :height: 7.70833in
-.. |image265| image:: /_static/class2/image265.png
+.. |image265| image:: _images/class2/image265.png
    :width: 6
    :height: 1.25
-.. |image277| image:: /_static/class2/image277.png
+.. |image277| image:: _images/class2/image277.png
    :width: 7.04167in
    :height: 7.70833in

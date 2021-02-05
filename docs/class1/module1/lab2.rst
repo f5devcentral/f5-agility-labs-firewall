@@ -207,85 +207,85 @@ validate your configuration.
 
 This completes Module 1 - Lab 2. Click **Next** to continue.
 
-.. |ltp-diagram| image:: /_static/class2/ltp-diagram.png
-.. |image9| image:: /_static/class2/image11.png
+.. |ltp-diagram| image:: _images/class2/ltp-diagram.png
+.. |image9| image:: _images/class2/image11.png
    :width: 7.05556in
    :height: 6.20833in
-.. |image10| image:: /_static/class2/image12.png
+.. |image10| image:: _images/class2/image12.png
    :width: 7.05556in
    :height: 3.45833in
-.. |image11| image:: /_static/class2/image13.png
+.. |image11| image:: _images/class2/image13.png
    :width: 7.08611in
    :height: 1.97069in
-.. |image12| image:: /_static/class2/image14.png
+.. |image12| image:: _images/class2/image14.png
    :width: 7.04167in
    :height: 2.62500in
-.. |image13| image:: /_static/class2/policy_shot.png
+.. |image13| image:: _images/class2/policy_shot.png
    :width: 7.04167in
    :height: 4.02500in
-.. |image14| image:: /_static/class2/policy2.png
+.. |image14| image:: _images/class2/policy2.png
    :width: 7.05000in
    :height: 4.29861in
-.. |image15| image:: /_static/class2/image17.png
+.. |image15| image:: _images/class2/image17.png
    :width: 7.05556in
    :height: 1.68056in
-.. |image16| image:: /_static/class2/image18.png
+.. |image16| image:: _images/class2/image18.png
    :width: 7.05000in
    :height: 2.35764in
-.. |image17| image:: /_static/class2/image19.png
+.. |image17| image:: _images/class2/image19.png
    :width: 7.04167in
    :height: 2.25000in
-.. |image18| image:: /_static/class2/image20.png
+.. |image18| image:: _images/class2/image20.png
    :width: 7.05556in
    :height: 0.80556in
-.. |image19| image:: /_static/class2/image21.png
+.. |image19| image:: _images/class2/image21.png
    :width: 7.05556in
    :height: 3.34722in
-.. |image20| image:: /_static/class2/image22.png
+.. |image20| image:: _images/class2/image22.png
    :width: 7.04167in
    :height: 2.56944in
-.. |image21| image:: /_static/class2/image23.png
+.. |image21| image:: _images/class2/image23.png
    :width: 7.04167in
    :height: 2.59722in
-.. |image22| image:: /_static/class2/image24.png
+.. |image22| image:: _images/class2/image24.png
    :width: 7.04167in
    :height: 4.31944in
-.. |image23| image:: /_static/class2/image25.png
+.. |image23| image:: _images/class2/image25.png
    :width: 7.05000in
    :height: 1.60208in
-.. |image262| image:: /_static/class2/image262.png
+.. |image262| image:: _images/class2/image262.png
    :width: 7.05000in
    :height: 5.60208in
-.. |image263| image:: /_static/class2/image263.png
+.. |image263| image:: _images/class2/image263.png
    :width: 7.05000in
    :height: 4.60208in
-.. |image264| image:: /_static/class2/image264.png
+.. |image264| image:: _images/class2/image264.png
    :width: 7.05000in
    :height: 3.60208in
-.. |image269| image:: /_static/class2/image269.png
+.. |image269| image:: _images/class2/image269.png
    :width: 7.05000in
    :height: 3.60208in
-.. |image270| image:: /_static/class2/image270.png
+.. |image270| image:: _images/class2/image270.png
    :width: 6.05000in
    :height: 2.60208in
-.. |image271| image:: /_static/class2/image271.png
+.. |image271| image:: _images/class2/image271.png
    :width: 7in
    :height: 7in
-.. |image272| image:: /_static/class2/image272.PNG
+.. |image272| image:: _images/class2/image272.PNG
    :width: 7in
    :height: 7in
-.. |image273| image:: /_static/class2/image273.PNG
+.. |image273| image:: _images/class2/image273.PNG
    :width: 6.05000in
    :height: 2.60208in
-.. |image274| image:: /_static/class2/image274.png
+.. |image274| image:: _images/class2/image274.png
    :width: 7.05000in
    :height: 2.90208in
-.. |image275| image:: /_static/class2/image275.png
+.. |image275| image:: _images/class2/image275.png
    :width: 6.05000in
    :height: 3.60208in
-.. |image276| image:: /_static/class2/image276.png
+.. |image276| image:: _images/class2/image276.png
    :width: 7.05556in
    :height: 3.45833in
-.. |image251| image:: /_static/class2/image251.png
+.. |image251| image:: _images/class2/image251.png
    :width: 3.05556in
    :height: 2.45833in

@@ -28,10 +28,10 @@ Select a flow and click on the pop-out arrow for additional data.
 
 Click **Next** to continue.
 
-.. |image450| image:: /_static/class2/image450.png
+.. |image450| image:: _images/class2/image450.png
    :width: 6.48542in
    :height: 1.34653in
-.. |image451| image:: /_static/class2/image451.png
+.. |image451| image:: _images/class2/image451.png
    :width: 6.49167in
    :height: 0.68819in
 

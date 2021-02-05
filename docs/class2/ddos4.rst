@@ -35,8 +35,9 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
    - **Action**: *drop*
    - **Log Blacklist Category Matches**: *Yes*
 #. Click **Add** to add the new **Blacklist Matching Policy**. 
-#. Click **Update**to save changes to the *ip-intelligence* policy.
-#. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: ``tail -f /var/log/ltm``
+#. Click **Update** to save changes to the *ip-intelligence* policy.
+#. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: 
+    - ``tail -f /var/log/ltm``
 #. On the victim server, start a packet capture with an SSH filter by issuing 
     - ``sudo tcpdump -nn not port 22``
 #. On the attack host, launch the attack by issuing the following command on the BASH prompt: 

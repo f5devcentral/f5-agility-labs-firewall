@@ -7,11 +7,11 @@ In the last example, we crafted a packet that is easily identified as malicious,
 #. Expand the **Flood** category in the vectors list.
 #. Click on **TCP Syn Flood** vector name.
 #. Configure the vector with the following parameters:
-   - State: Mitigate
-   - Threshold Mode: Fully Manual
-   - Detection Threshold EPS: 400
-   - Detection Threshold Percent: 500
-   - Mitigation Threshold EPS: 500
+    - State: Mitigate
+    - Threshold Mode: Fully Manual
+    - Detection Threshold EPS: 400
+    - Detection Threshold Percent: 500
+    - Mitigation Threshold EPS: 500
 #. Click **Update** to save your changes.
 #. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: ``tail -f /var/log/ltm``
 #. On the attack host, launch the attack by issuing the following command on the BASH prompt: ``sudo hping3 10.1.10.6 --flood --rand-source --destport 80 --syn -d 120 -w 64``

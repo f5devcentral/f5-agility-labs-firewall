@@ -11,11 +11,11 @@ Click the **how to join a training class** link.
 
 Click the link **Log in here**.
 
-|image301| :: _images/class2/image301.png
+.. image:: _images/class2/image301.png
 
 Select the course you wnat to take and press **Launch**
 
-|image302| :: _images/class2/image302.png
+.. image:: _images/class2/image302.png
 
 Press the blue **Join** button to enter the class.
 
@@ -23,7 +23,7 @@ Review the **Deployment Description**
 
 Select the *Deployment* tab at the top of the screen.
 
-|image303| :: _images/class2/image303.png
+.. image:: _images/class2/image303.png
 
 Wait about 10 minutes for the **F5 Products** and **Systems** to finish booting..
 
@@ -39,4 +39,4 @@ username: external_user
 
 password: P@ssw0rd!
 
-|image304| :: _images/class2/image304.png
+.. image:: _images/class2/image304.png

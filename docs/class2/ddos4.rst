@@ -21,12 +21,12 @@ b.	Threshold Mode: Fully Manual
 c.	Detection Threshold EPS: 150
 d.	Mitigation Threshold EPS: 200
 e.	Add Source Address to Category: Checked
-f.	Category Name: *denial_of_service*
+f.	**Category Name**: *denial_of_service*
 g.	Sustained Attack Detection Time: 10 seconds
 h.	Category Duration Time: 60 seconds
 i.	Packet Type: Move All IPv4 to Selected
 
-5.	Click Update to save your changes.
+5.	Click **Update**to save your changes.
 6.	Navigate to **Security** > **Network Firewall** > **IP Intelligence** >> **Policies**.
 7.	In the Global Policy section, change the IP Intelligence Policy to ip-intelligence.
 
@@ -38,7 +38,7 @@ b.	Action: drop
 c.	Log Blacklist Category Matches: Yes
 11.	Click Add to add the new Blacklist Matching Policy. 
 
-12.	Click Update to save changes to the ip-intelligence policy.
+12.	Click **Update**to save changes to the ip-intelligence policy.
 13.	Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: tail -f /var/log/ltm
 14.	On the victim server, start a packet capture with an SSH filter by issuing sudo tcpdump -nn not port 22
 15.	On the attack host, launch the attack by issuing the following command on the BASH prompt: 

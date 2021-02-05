@@ -5,7 +5,7 @@ Configuring a DoS Logging Profile
 We’ll create a DoS logging profile so that we can see event logs in the BIG-IP UI during attack mitigation.
 
 1.	On the BIG-IP web UI, navigate to **Security** > **Event Logs** **Logging Profiles** and create a new profile with the following values, leaving unspecified attributes at their default value:
-a.	Profile Name: dns-dos-profile-logging
+a.	Profile Name: *dns-dos-profile-logging*
 b.	DoS Protection: *Enabled*
 c.	DNS DoS Protection Publisher: local-db-publisher
 

@@ -34,7 +34,7 @@ Attach the *IDS\_Pool* as a clone pool to the server side of the external virtua
 
 |image60|
 
-**Navigation:** Click on update at the bottom of the page.
+**Navigation:** Click on **Update**at the bottom of the page.
 
 .. Note:: Leave all other fields using the default values.
 

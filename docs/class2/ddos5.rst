@@ -11,12 +11,12 @@ b.	Threshold Mode: Fully Manual
 c.	Detection Threshold EPS: 150
 d.	Mitigation Threshold EPS: 200
 e.	Add Destination Address to Category: Checked
-f.	Category Name: *denial_of_service*
+f.	**Category Name**: *denial_of_service*
 g.	Sustained Attack Detection Time: 10 seconds
 h.	Category Duration Time: 60 seconds
 i.	Packet Type: Move Any ICMP (IPv4) to Selected
 
-5.	Click Update to save your changes.
+5.	Click **Update**to save your changes.
 6.	Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: tail -f /var/log/ltm
 7.	We’ll run a packet capture on the victim server to gauge the incoming traffic. On the victim server, issue the following command: sudo tcpdump -nn not port 22
 8.	On the attack host, launch the attack by issuing the following command on the BASH prompt: 

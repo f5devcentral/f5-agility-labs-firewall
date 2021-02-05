@@ -13,7 +13,7 @@ c.	Detection Threshold EPS: 400
 d.	Detection Threshold Percent: 500
 e.	Mitigation Threshold EPS: 500
 
-5.	Click Update to save your changes.
+5.	Click **Update**to save your changes.
 6.	Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: tail -f /var/log/ltm
 7.	On the attack host, launch the attack by issuing the following command on the BASH prompt: 
 sudo hping3 10.1.10.6 --flood --rand-source --destport 80 --syn -d 120 -w 64

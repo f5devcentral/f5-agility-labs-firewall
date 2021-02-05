@@ -28,12 +28,12 @@ Bad actor detection allows us to completely block communications from malicious 
       - **Per Source IP Detection Threshold EPS**: *80*
       - **Per Source IP Mitigation Threshold EPS**: *100*
       - Add Source Address to Category: *Checked*
-      - Category Name: *denial_of_service*
+      - **Category Name**: *denial_of_service*
       - Sustained Attack Detection Time: 15 seconds
       - Category Duration Time: 60 seconds
-#.	Make sure you click Update to save your changes.
+#.	Make sure you click **Update**to save your changes.
 #.	Navigate to **Security** > **Network Firewall** > **IP Intelligence** >> **Policies** and create a new IP Intelligence policy with the following values, leaving unspecified attributes at their default values:
-      - Name: dns-bad-actor-blocking
+      - **Name**: dns-bad-actor-blocking
       - Default Log Actions section:
       - Log Blacklist Category Matches: Yes
       - Blacklist Matching Policy
@@ -43,14 +43,14 @@ Bad actor detection allows us to completely block communications from malicious 
 #.	Click **Finished**.
 #.	Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 #.	Click on the *udp_dns_VS* virtual server name.
-#.	Click on the Security tab and select Policies.
-#.	Enable IP Intelligence and choose the dns-bad-actor-blocking policy.
-#.	Make sure you click Update to save your changes.
+#.	Click on the **Security** tab and select **Policies**.
+#.	Enable IP Intelligence and choose the *dns-bad-actor-blocking* policy.
+#.	Make sure you click **Update**to save your changes.
 #.	Navigate to **Security** > **Event Logs** **Logging Profiles**.
 #.	Click the global-network logging profile name.
 #.	Under the Network Firewall tab, set the IP Intelligence Publisher to local-db-publisher and check Log Shun Events.
-#.	Click Update to save your changes.
-#.	Click the dns-dos-profile-logging logging profile name.
+#.	Click **Update**to save your changes.
+#.	Click the *dns-dos-profile-logging* logging profile name.
 #.	Check *Enabled* next to Network Firewall.
 #.	Under the Network Firewall tab, change the Network Firewall and IP Intelligence Publisher to local-db-publisher and click Update.
 #.	Bring into view the Victim Server SSH session running the top utility to monitor CPU utilization.

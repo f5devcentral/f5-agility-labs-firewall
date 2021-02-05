@@ -5,9 +5,9 @@ Stale Rule Report
 AFM also can list out stale rules within the device its self. You must
 first enable the feature. 
 
-**Navigation:** Security >Reporting > Settings > Report Settings
+**Navigation:** Security > Reporting > Settings > Reporting Settings
 
-You will then need to check **Collect Stale Rules Statistics** found 
+You will then need to ensure **Collect Stale Rules Statistics** is checked 
 under the Network Firewall Rules Section. Please be sure to click 
 **Save** before proceeding.
 

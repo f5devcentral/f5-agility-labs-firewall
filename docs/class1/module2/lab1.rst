@@ -6,7 +6,7 @@ insert a packet trace into the internal flow so you can analyze what component
 within the system is allowing or blocking packets based on your configuration 
 of features and rule sets.
 
-|image440|
+.. image:: _images/class2/image440.png
 
 The packet tracing is inserted at L3 immediately prior to the Global IP
 intelligence. Because it is after the L2 section, this means that:
@@ -20,6 +20,3 @@ packets through. You can insert tcp, udp, sctp, and icmp packets, with a
 limited set of (appropriate to each protocol) attributes for each.
 
 Click **Next** to continue.
-.. |image440| image:: _images/class2/image440.png
-   :width: 6.5in
-   :height: 3.44792in

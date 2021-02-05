@@ -10,19 +10,19 @@ flow table.
 
 Refresh the web page we’ve been using for testing (http://10.1.20.11).
 
-**Navigation** Security > Debug > Flow Inspector. Click **Get Flows**.
+**Navigation** Security > Debug > Flow Inspector
+
+Click **Get Flows**.
 
 |image450|
 
 Select a flow and click on the pop-out arrow for additional data.
 
-**Navigation** Uncheck **Clear Data**.
+Uncheck **Clear Data**, then click **New Flow Parameters**.
 
-**Navigation** Click **New Flow Parameters**.
+Input **10.1.20.11** in the Client Side Destination IP Address field.
 
-**Navigation** Input **10.1.20.11** in the Client Side Destination IP Address field.
-
-**Navigation** Click **Get Flows**.
+Click **Get Flows**.
 
 |image451|
 

@@ -5,7 +5,9 @@ Lab Requirements:
 -----------------
 
 - Internet Connectivity
-- Remote Desktop Protocol (RDP) client utility (You may use your webbrowser for console access if necessary but screen resolution may not be optimal.)
+- Remote Desktop Protocol (RDP) client utility 
+
+.. note:: You may use your web browser for console access if necessary but screen resolution may not be optimal.
 
 Lab Hosts
 ---------

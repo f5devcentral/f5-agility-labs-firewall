@@ -7,12 +7,11 @@ In this lab, the VE has been configured with the basic system settings and the V
 #. Navigate to **Local Traffic** > **Nodes** and create a new node with the following settings, leaving unspecified fields at their default value:
      - **Name**: *lab-server-10.1.20.6*
      - **Address**: *10.1.20.6*
-#. Click Finished to add the new node.
+#. Click **Finished** to add the new node.
 #. Navigate to **Local Traffic** > **Pools** and create a new pool with the following settings, leaving unspecified attributes at their default value:
      - **Name**: *lab-server-pool*
      - **Health Monitors**: *gateway_icmp*
-     - **New Members**: **Node List**
-#. Create a single node with the following settings:        
+     - **New Members**: *Node List* and create a single node with the following settings:        
      - **Address**: *lab-server-10.1.20.6*
      - **Service Port**: ** (All Ports)*
 #. Click **Add** to add the new member to the member list. 

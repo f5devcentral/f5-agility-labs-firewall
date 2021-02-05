@@ -5,8 +5,8 @@ In this lab, the VE has been configured with the basic system settings and the V
 
 1.	Launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server. The credentials for the BIG-IP are conveniently displayed in the login banner. Just in case: **admin / f5agility!**
 2.	Navigate to **Local Traffic** > **Nodes** and create a new node with the following settings, leaving unspecified fields at their default value:
-a.	**Name**: *lab-server-10.1.20.6*
-b.	**Address**: *10.1.20.6*
+  a.	**Name**: *lab-server-10.1.20.6*
+  b.	**Address**: *10.1.20.6*
 3.	Click Finished to add the new node.
 4.	Navigate to Local Traffic > Pools and create a new pool with the following settings, leaving unspecified attributes at their default value:
     a.	**Name**: *lab-server-pool*

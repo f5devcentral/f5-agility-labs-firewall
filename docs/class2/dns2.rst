@@ -1,4 +1,4 @@
-nsDetecting and Preventing DNS DoS Attacks on a Virtual Server
+Detecting and Preventing DNS DoS Attacks on a Virtual Server
 ============================================================
 
 Establishing a DNS server baseline

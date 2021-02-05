@@ -12,25 +12,26 @@ Lab Hosts
 +----------------+------------------------------+------------------------------------------+
 | **Host**       |  **IP Address(es)**          | **Description**                          |
 +----------------+------------------------------+------------------------------------------+
-| Jump Host      |  mgmt: 10.1.1.4              | Windows jump host for GUI/CLI access     |
+| Jump Host      |  - mgmt: 10.1.1.4            | Windows jump host for GUI/CLI access     |
 +----------------+------------------------------+------------------------------------------+
-| Attack VM      |  mgmt: 10.1.1.7              | virtual server running Ubuntu with tools |
-|                |  external: 10.1.10.7         | installed to generate requests           |
+| Attack VM      |  - mgmt: 10.1.1.7            | virtual server running Ubuntu with tools |
+|                |  - external: 10.1.10.7       | installed to generate requests           |
 +----------------+------------------------------+------------------------------------------+
-| DNS Server     |  mgmt: 10.1.1.6              | virtual server running Ubuntu 17.10 with |
-|                |  internal: 10.1.20.6         | BIND9 installed and pre-configured       |
+| DNS Server     |  - mgmt: 10.1.1.6            | virtual server running Ubuntu 17.10 with |
+|                |  - internal: 10.1.20.6       | BIND9 installed and pre-configured       |
 +----------------+------------------------------+------------------------------------------+
-| BIG-IP         |  mgmt: 10.1.1.5              | BIG-IP v 15.1                            |
-|                |  external: 10.1.10.5         | Provisioned with LTM, AFM and AVR        |
-|                |  internal: 10.1.20.5         |                                          |
+| BIG-IP         |  - mgmt: 10.1.1.5            | - BIG-IP v 15.1                          |
+|                |  - external: 10.1.10.5       | - Provisioned with LTM, AFM and AVR      |
+|                |  - internal: 10.1.20.5       |                                          |
 +----------------+------------------------------+------------------------------------------+
 
 Lab Pre-configuration
 ---------------------
 
-For the lab today, the following items have been completed for you:
+For the lab today, the following items have been completed:
+
 - Victim host BIND9 installation and configuration
-- Attack tool installations on the attack host
+- DNS tool installations on the attack host
 - basic management/VLAN/self-IP configuration on the BIG-IP
 - AFM, LTM and AVR provisioning on the VE
 - admin/root credentials on VMs and VE configured
@@ -38,11 +39,11 @@ For the lab today, the following items have been completed for you:
 Lab Connectivity
 ----------------
 
-While working in the lab, you’ll likely find it easiest to have the BIG-IP web UI open
-in a browser and an SSH session open to the BIG-IP, the attack host and the victim server. 
-You will be switching between sessions frequently. On the BIG-IP SSH session, having 
-tail -f /var/log/ltm running helps immensely as you can see attack detection log 
-messages in real-time.
+- While working in the lab, you’ll likely find it easiest to have the BIG-IP web UI open 
+  in a browser and an SSH session open to the BIG-IP, the attack host and the victim server. 
+- You will be switching between sessions frequently. On the BIG-IP SSH session, having 
+  tail -f /var/log/ltm running helps immensely as you can see attack detection log 
+  messages in real-time.
 
 .. tip:: There is a text file on the desktop of the jump host with all of the CLI commands used in the lab for cut/paste use.
 

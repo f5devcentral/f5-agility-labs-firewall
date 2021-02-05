@@ -13,10 +13,8 @@ Any other products, services, or company names referenced herein may be
 trademarks of their respective owners with no endorsement or
 affiliation, express or implied, claimed by F5.
 
-Lab Modules
------------
-
-This lab contains two modules:
+Table of Contents
+-----------------
 
 .. toctree::
    :maxdepth: 1

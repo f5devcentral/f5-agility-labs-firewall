@@ -4,7 +4,7 @@ Configuring a DoS Logging Profile
 
 We’ll create a DoS logging profile so that we can see event logs in the BIG-IP UI during attack mitigation.
 
-1.	On the BIG-IP web UI, navigate to **Security** > **Event Logs** **Logging Profiles** and create a new profile with the following values, leaving unspecified attributes at their default value:
+#.	On the BIG-IP web UI, navigate to **Security** > **Event Logs** **Logging Profiles** and create a new profile with the following values, leaving unspecified attributes at their default value:
 a.	Profile Name: *dns-dos-profile-logging*
 b.	DoS Protection: *Enabled*
 c.	DNS DoS Protection Publisher: local-db-publisher
@@ -45,11 +45,11 @@ Attaching a DoS Profile
 
 We’ll attach the DoS profile to the virtual server that we configured to manage DNS traffic.
 
-1.	Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
-2.	Click on the *udp_dns_VS* name.
-3.	Click on the **Security** tab and select **Policies**.
-4.	In the **DoS Protection Profile** field, select *Enabled* and choose the *dns-dos-profile*.
-5.	In the **Log Profile**, select *Enabled* and move the *dns-dos-profile-logging* profile from **Available** to **Selected**.
-6.	Click **Update**.
+#.	Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
+#.	Click on the *udp_dns_VS* name.
+#.	Click on the **Security** tab and select **Policies**.
+#.	In the **DoS Protection Profile** field, select *Enabled* and choose the *dns-dos-profile*.
+#.	In the **Log Profile**, select *Enabled* and move the *dns-dos-profile-logging* profile from **Available** to **Selected**.
+#.	Click **Update**.
 
 Click **Next** to continue. 

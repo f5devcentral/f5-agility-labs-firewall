@@ -32,7 +32,7 @@ Bad actor detection allows us to completely block communications from malicious 
       - Sustained Attack Detection Time: 15 seconds
       - Category Duration Time: 60 seconds
 #.	Make sure you click **Update**to save your changes.
-#.	Navigate to **Security** > **Network Firewall** > **IP Intelligence** >> **Policies** and create a new IP Intelligence policy with the following values, leaving unspecified attributes at their default values:
+#.	Navigate to **Security** > **Network Firewall** > **IP Intelligence** > **Policies** and create a new IP Intelligence policy with the following values, leaving unspecified attributes at their default values:
       - **Name**: dns-bad-actor-blocking
       - Default Log Actions section:
       - Log Blacklist Category Matches: Yes
@@ -48,19 +48,19 @@ Bad actor detection allows us to completely block communications from malicious 
 #.	Make sure you click **Update**to save your changes.
 #.	Navigate to **Security** > **Event Logs** **Logging Profiles**.
 #.	Click the global-network logging profile name.
-#.	Under the Network Firewall tab, set the IP Intelligence Publisher to local-db-publisher and check Log Shun Events.
+#.	Under the Network Firewall tab, set the IP Intelligence Publisher to *local-db-publisher* and check Log Shun Events.
 #.	Click **Update**to save your changes.
 #.	Click the *dns-dos-profile-logging* logging profile name.
 #.	Check *Enabled* next to Network Firewall.
-#.	Under the Network Firewall tab, change the Network Firewall and IP Intelligence Publisher to local-db-publisher and click Update.
+#.	Under the Network Firewall tab, change the Network Firewall and IP Intelligence Publisher to *local-db-publisher* and click **Update**.
 #.	Bring into view the Victim Server SSH session running the top utility to monitor CPU utilization.
-#.	On the Attack Server host, launch the DNS attack once again using the following syntax: `dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 10000 -Q 10000`
+#.	On the Attack Server host, launch the DNS attack once again using the following syntax: ``dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 10000 -Q 10000``
 #.	You’ll notice CPU utilization on the victim server begin to climb, but slowly drop. The attack host will show that queries are timing out as shown below. This is due to the BIG-IP blacklisting the bad actor.
-#.	Navigate to **Security** > **Event Logs**  > **Network** > **IP Intelligence**. Observe the bad actor blocking mitigation logs.
-#.	Navigate to **Security** > **Event Logs**  > **Network**> **Shun**. This screen shows the bad actor being added to (and later deleted from) the shun category.
-#.	Navigate to **Security**  > **Reporting** > **Protocol** > **DNS**. Change the View By drop-down to view various statistics around the DNS traffic and attacks.
-#.	Navigate to **Security** > **Reporting**  > **Network** > **IP Intelligence**. The default view may be blank. Change the View By drop-down to view various statistics around the IP Intelligence handling of the attack traffic.
-#.	Navigate to **Security**  > **Reporting** > **DoS**> **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight specific attacks.
-#.	Finally, navigate to **Security**  > **Reporting** > **DoS** > **Analysis**. View detailed statistics around each attack.
+#.	Navigate to **Security** > **Event Logs** > **Network** > **IP Intelligence**. Observe the bad actor blocking mitigation logs.
+#.	Navigate to **Security** > **Event Logs** > **Network** > **Shun**. This screen shows the bad actor being added to (and later deleted from) the shun category.
+#.	Navigate to **Security** > **Reporting** > **Protocol** > **DNS**. Change the View By drop-down to view various statistics around the DNS traffic and attacks.
+#.	Navigate to **Security** > **Reporting** > **Network** > **IP Intelligence**. The default view may be blank. Change the View By drop-down to view various statistics around the IP Intelligence handling of the attack traffic.
+#.	Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight specific attacks.
+#.	Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around each attack.
 
 Click **Next** to continue.

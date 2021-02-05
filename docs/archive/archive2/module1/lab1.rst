@@ -449,7 +449,7 @@ queries from our DNS server.
 14. Check **Enabled** next to **Protocol Security**.
 
 15. | In the **Protocol Security** tab, set the **DNS Security
-      Publisher** to local-db-publisher and check all five of the
+      Publisher** to *local-db-publisher* and check all five of the
       request log types.
     | |image28|
 

@@ -8,7 +8,7 @@ In this lab, the VE has been configured with the basic system settings and the V
      - **Name**: *lab-server-10.1.20.6*
      - **Address**: *10.1.20.6*
 #. Click Finished to add the new node.
-#. Navigate to **Local Traffic** >> **Pools** and create a new pool with the following settings, leaving unspecified attributes at their default value:
+#. Navigate to **Local Traffic** > **Pools** and create a new pool with the following settings, leaving unspecified attributes at their default value:
      - **Name**: *lab-server-pool*
      - **Health Monitors**: *gateway_icmp*
      - **New Members**: **Node List**
@@ -17,7 +17,7 @@ In this lab, the VE has been configured with the basic system settings and the V
      - **Service Port**: ** (All Ports)*
 #. Click **Add** to add the new member to the member list. 
 #. Click **Finished** to create the new pool.
-#. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. Navigate to Local Traffic > Address Translation > SNAT Pool List and create a new SNAT pool with the following attributes:
+#. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. Navigate to **Local Traffic** > **Address Translation** > **Snat Pool List** and create a new SNAT pool with the following attributes:
      - **Name**: *inside_snat_pool*
      - **Member List**: *10.1.20.125, 10.1.20.126, 10.1.20.127, 10.1.20.128, 10.1.20.129, 10.1.20.130*
 #. Click **Finished** to commit your changes.

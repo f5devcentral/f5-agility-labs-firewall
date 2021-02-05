@@ -25,7 +25,7 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
     - **Sustained Attack Detection Time**: *10 seconds*
     - **Category Duration Time**: *60 seconds*
     - **Packet Type**: *Move All IPv4 to Selected*
-#. Click **Update**to save your changes.
+#. Click **Update** to save your changes.
 #. Navigate to **Security** > **Network Firewall** > **IP Intelligence** > **Policies**.
 #. In the **Global Policy** section, change the **IP Intelligence Policy** to *ip-intelligence*.
 #. Click **Update**.
@@ -35,20 +35,20 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
    - **Action**: *drop*
    - **Log Blacklist Category Matches**: *Yes*
 #. Click **Add** to add the new **Blacklist Matching Policy**. 
-12. Click **Update**to save changes to the *ip-intelligence* policy.
-13. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: ``tail -f /var/log/ltm``
-14. On the victim server, start a packet capture with an SSH filter by issuing 
+#. Click **Update**to save changes to the *ip-intelligence* policy.
+#. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: ``tail -f /var/log/ltm``
+#. On the victim server, start a packet capture with an SSH filter by issuing 
     - ``sudo tcpdump -nn not port 22``
-15. On the attack host, launch the attack by issuing the following command on the BASH prompt: 
+#. On the attack host, launch the attack by issuing the following command on the BASH prompt: 
     - ``sudo hping3 10.1.10.6 --flood --scan 1-65535 -d 128 -w 64 --syn``
-16. You will see the scan find a few open ports on the server, and the server will show the inbound sweep traffic. However, you will notice that the traffic to the server stops after a short time (10 seconds, the configured sustained attack detection time.) Leave the test running.
-17. After approximately 60 seconds, sweep traffic will return to the host. This is because the IP Intelligence categorization of the attack host has expired. After 10 seconds of traffic, the bad actor is again blacklisted for another 60 seconds. 
-18. Stop the sweep attack on the attack host by pressing **CTRL+C**.
-19. Return to the BIG-IP web UI and navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observe the log entries showing the details surrounding the attack detection and mitigation.
-20. Navigate to **Security** > **Event Logs** > **Network** > **IP Intelligence**. Observe the log entries showing the mitigation of the sweep attack via the ip-intelligence policy.
-21. Navigate to **Security** > **Event Logs** > **Network** > **Shun**. Observe the log entries showing the blacklist adds and deletes.
-22. Navigate to **Security** > **Reporting** > **Network** > **IP Intelligence**. Observe the statistics showing the sweep attack and mitigation. Change the View By drop-down to view the varying statistics.
-23. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight the specific attack.
-24. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around the attack.
+#. You will see the scan find a few open ports on the server, and the server will show the inbound sweep traffic. However, you will notice that the traffic to the server stops after a short time (10 seconds, the configured sustained attack detection time.) Leave the test running.
+#. After approximately 60 seconds, sweep traffic will return to the host. This is because the IP Intelligence categorization of the attack host has expired. After 10 seconds of traffic, the bad actor is again blacklisted for another 60 seconds. 
+#. Stop the sweep attack on the attack host by pressing **CTRL+C**.
+#. Return to the BIG-IP web UI and navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observe the log entries showing the details surrounding the attack detection and mitigation.
+#. Navigate to **Security** > **Event Logs** > **Network** > **IP Intelligence**. Observe the log entries showing the mitigation of the sweep attack via the ip-intelligence policy.
+#. Navigate to **Security** > **Event Logs** > **Network** > **Shun**. Observe the log entries showing the blacklist adds and deletes.
+#. Navigate to **Security** > **Reporting** > **Network** > **IP Intelligence**. Observe the statistics showing the sweep attack and mitigation. Change the View By drop-down to view the varying statistics.
+#. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight the specific attack.
+#. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around the attack.
 
 Click **Next** to continue.

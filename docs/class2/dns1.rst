@@ -45,12 +45,15 @@ In this lab, the VE has been configured with the basic system settings and the V
 
 .. image:: _images/image007.png
 
-8. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. 
-   Navigate to **Local Traffic** > **Address Translation** > **Snat Pool List** and create a new SNAT pool with the following attributes:
+8. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. Navigate to **Local Traffic** > **Address Translation** > **SNAT Pool List** and create a new SNAT pool with the following attributes:
      - **Name**: *inside_snat_pool*
      - **Member List**: *10.1.20.125, 10.1.20.126, 10.1.20.127, 10.1.20.128, 10.1.20.129, 10.1.20.130*
 
+.. image:: _images/image008.png
+
 9. Click **Finished** to commit your changes.
+
+.. image:: _images/image009.png
 
 10. Navigate to **Local Traffic** > **Virtual Servers** and create a new virtual server with the following settings, leaving unspecified fields at their default value:
      - **Name**: *udp_dns_VS*

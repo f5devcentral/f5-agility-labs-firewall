@@ -35,7 +35,6 @@ In this lab, the VE has been configured with the basic system settings and the V
 
 .. image:: _images/image005.png
   :alt:  lab screenshot
-  :width:  50%
 
 6. Click **Add** to add the new member to the member list. You will see the new member populate in the node list. 
 
@@ -44,7 +43,10 @@ In this lab, the VE has been configured with the basic system settings and the V
 
 7. Click **Finished** to create the new pool.
 
-8. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. Navigate to **Local Traffic** > **Address Translation** > **Snat Pool List** and create a new SNAT pool with the following attributes:
+.. image:: _images/image007.png
+
+8. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. 
+   Navigate to **Local Traffic** > **Address Translation** > **Snat Pool List** and create a new SNAT pool with the following attributes:
      - **Name**: *inside_snat_pool*
      - **Member List**: *10.1.20.125, 10.1.20.126, 10.1.20.127, 10.1.20.128, 10.1.20.129, 10.1.20.130*
 

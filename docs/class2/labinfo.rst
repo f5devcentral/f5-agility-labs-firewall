@@ -18,26 +18,15 @@ Lab Hosts
 | Jump Host      |  - mgmt: 10.1.1.4            | Windows jump host for GUI/CLI access     |
 +----------------+------------------------------+------------------------------------------+
 | Attack VM      |  - mgmt: 10.1.1.7            | virtual server running Ubuntu with tools |
-|                |  - external: 10.1.10.7       | installed to generate requests           |
+|                |  - external: 10.1.10.7       | installed to generate traffic            |
 +----------------+------------------------------+------------------------------------------+
 | DNS Server     |  - mgmt: 10.1.1.6            | virtual server running Ubuntu 17.10 with |
 |                |  - internal: 10.1.20.6       | BIND9 installed and pre-configured       |
 +----------------+------------------------------+------------------------------------------+
 | BIG-IP         |  - mgmt: 10.1.1.5            | - BIG-IP v 15.1                          |
 |                |  - external: 10.1.10.5       | - Provisioned with LTM, AFM and AVR      |
-|                |  - internal: 10.1.20.5       |                                          |
+|                |  - internal: 10.1.20.5       | - VLANs, self-IPs configured             |
 +----------------+------------------------------+------------------------------------------+
-
-Lab Pre-configuration
----------------------
-
-For the lab today, the following items have been completed:
-
-- Victim host BIND9 installation and configuration
-- DNS tool installations on the attack host
-- basic management/VLAN/self-IP configuration on the BIG-IP
-- AFM, LTM and AVR provisioning on the VE
-- user credentials on VMs and VE configured
 
 Lab Connectivity
 ----------------
@@ -53,7 +42,7 @@ Lab Connectivity
 Lab Considerations
 ------------------
 
-- The lab environment has very limited resources, thus you will see very low values for attack detection and mitigation thresholds.
+- The lab environment has limited resources, thus you will see very low values for attack detection and mitigation thresholds.
 - When viewing logs, there maybe a delay between an action/trigger and the display of logs shown in the UI. Monitoring the BIG-IP LTM logs in the SSH session real-time is helpful for immediate validation. If the UI is not showing logs, re-run the last attack/test and wait for a minute before refreshing the logging/reporting screen.
 
 Click **Next** to continue.

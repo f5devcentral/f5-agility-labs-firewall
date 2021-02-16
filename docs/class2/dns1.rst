@@ -3,17 +3,24 @@ Base BIG-IP Configuration
 
 In this lab, the VE has been configured with the basic system settings and the VLAN/self-IP configurations required for the BIG-IP to communicate and pass traffic on the network. We’ll now need to configure the BIG-IP to listen for traffic and pass it to the back end server.
 
-#. Launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server. The credentials for the BIG-IP are conveniently displayed in the login banner. Just in case: **admin / f5agility!**
+#. Connect to the Jump Host desktop and launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server.
+.. image:: _images/image001.png
+:alt: Screenshot
+#. The credentials for the BIG-IP are conveniently displayed in the login banner. Just in case: **admin / f5agility!**
+.. image:: _images/image002.png
+:alt: Screenshot
 #. Navigate to **Local Traffic** > **Nodes** and create a new node with the following settings, leaving unspecified fields at their default value:
-     - **Name**: *lab-server-10.1.20.6*
-     - **Address**: *10.1.20.6*
+- **Name**: *lab-server-10.1.20.6*
+- **Address**: *10.1.20.6*
+.. image:: _images/image003.png
+:alt: Screenshot
 #. Click **Finished** to add the new node.
 #. Navigate to **Local Traffic** > **Pools** and create a new pool with the following settings, leaving unspecified attributes at their default value:
      - **Name**: *lab-server-pool*
      - **Health Monitors**: *gateway_icmp*
      - **New Members**: *Node List* and create a single node with the following settings:        
      - **Address**: *lab-server-10.1.20.6*
-     - **Service Port**: ** (All Ports)*
+     - **Service Port**: *\* (All Ports)* 
 #. Click **Add** to add the new member to the member list. 
 #. Click **Finished** to create the new pool.
 #. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. Navigate to **Local Traffic** > **Address Translation** > **Snat Pool List** and create a new SNAT pool with the following attributes:

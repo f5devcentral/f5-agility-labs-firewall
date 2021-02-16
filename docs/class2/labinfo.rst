@@ -37,14 +37,14 @@ For the lab today, the following items have been completed:
 - DNS tool installations on the attack host
 - basic management/VLAN/self-IP configuration on the BIG-IP
 - AFM, LTM and AVR provisioning on the VE
-- admin/root credentials on VMs and VE configured
+- user credentials on VMs and VE configured
 
 Lab Connectivity
 ----------------
 
 - While working in the lab, you’ll likely find it easiest to have the BIG-IP web UI open 
   in a browser and an SSH session open to the BIG-IP, the attack host and the victim server. 
-- You will be switching between sessions frequently. On the BIG-IP SSH session, having 
+- You will be switching between sessions frequently. Within the BIG-IP SSH session, having 
   tail -f /var/log/ltm running helps immensely as you can see attack detection log 
   messages in real-time.
 

@@ -30,7 +30,8 @@ We’ll use the hping utility to send 25,000 packets to our server, with random 
     - **Detection Threshold Percent**: *Specify 200*
     - **Mitigation Threshold EPS**: *Specify 100*
 #. Click **Update** to save your changes.
-#. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: 
+#. Minimize Firefox and click the BIG-IP shortcut. You will automatically be logged in as admin.
+#. Scroll the ltm log in real time with the following command: 
     - ``tail -f /var/log/ltm``
 #. On the attack host, launch the attack by issuing the following command on the BASH prompt: 
     - ``sudo hping3 10.1.10.6 --flood --rand-source --destport 80 -c 25000 --syn --ack --fin --rst --push --urg --xmas --ymas``

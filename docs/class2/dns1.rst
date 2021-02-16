@@ -44,16 +44,19 @@ In this lab, the VE has been configured with the basic system settings and the V
 7. Click **Finished** to create the new pool.
 
 .. image:: _images/image007.png
+  :alt:  lab screenshot
 
 8. Because the attack server will be sending a huge amount of traffic, we’ll need a fairly large SNAT pool. Navigate to **Local Traffic** > **Address Translation** > **SNAT Pool List** and create a new SNAT pool with the following attributes:
      - **Name**: *inside_snat_pool*
      - **Member List**: *10.1.20.125, 10.1.20.126, 10.1.20.127, 10.1.20.128, 10.1.20.129, 10.1.20.130*
 
 .. image:: _images/image008.png
+  :alt:  lab screenshot
 
 9. Click **Finished** to commit your changes.
 
 .. image:: _images/image009.png
+  :alt:  lab screenshot
 
 10. Navigate to **Local Traffic** > **Virtual Servers** and create a new virtual server with the following settings, leaving unspecified fields at their default value:
      - **Name**: *udp_dns_VS*
@@ -63,8 +66,21 @@ In this lab, the VE has been configured with the basic system settings and the V
      - **Source Address Translation**: *SNAT*
      - **SNAT Pool**: *inside_snat_pool*
      - **Default Pool**: *lab-server-pool*
-  
+
+.. image:: _images/image010.png 
+  :alt:  lab screenshot
+
+.. image:: _images/image010.png 
+  :alt:  lab screenshot
+
+.. image:: _images/image010.png 
+  :alt:  lab screenshot
+
 11. Click **Finished**.
+
+.. image:: _images/image011.png 
+  :alt:  lab screenshot
+
 12. We’ll now test the new DNS virtual server. SSH into the attack host by clicking the **Attack Host (Ubuntu)** icon on the jump host desktop. 
 13. Issue the ``dig @10.1.10.6 www.example.com +short`` command on the BASH CLI of the attack host. This verifies that DNS traffic is passing through the BIG-IP.
 14. Return to the BIG-IP and navigate to **Local Traffic** > **Virtual Servers** and create a new virtual server with the following settings, leaving unspecified fields at their default value:

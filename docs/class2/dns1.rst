@@ -70,15 +70,15 @@ In this lab, the VE has been configured with the basic system settings and the V
 .. image:: _images/image010.png 
   :alt:  lab screenshot
 
-.. image:: _images/image010.png 
+.. image:: _images/image011.png 
   :alt:  lab screenshot
 
-.. image:: _images/image010.png 
+.. image:: _images/image012.png 
   :alt:  lab screenshot
 
 11. Click **Finished**.
 
-.. image:: _images/image011.png 
+.. image:: _images/image013.png 
   :alt:  lab screenshot
 
 12. We’ll now test the new DNS virtual server. SSH into the attack host by clicking the **Attack Host (Ubuntu)** icon on the jump host desktop. 

@@ -2,7 +2,7 @@ Preventing Global DoS Sweep and Flood Attacks
 =============================================
 
 DoS Protection profile
----------------------
+----------------------
 
 In the last section, the focus was on attacks originating from various hosts. In this section, we will 
 focus on mitigating flood and sweep attacks from a single host. 

@@ -1,5 +1,5 @@
 Base BIG-IP Configuration
-=========================
+============================
 
 In this lab, the VE has been configured with the basic system settings and the VLAN/self-IP configurations required for the BIG-IP to communicate and pass traffic on the network. We’ll now need to configure the BIG-IP to listen for traffic and pass it to the back end server.
 
@@ -11,6 +11,7 @@ In this lab, the VE has been configured with the basic system settings and the V
 2. The credentials for the BIG-IP are conveniently displayed in the login banner. Just in case: **admin / f5agility!**
 
 .. image:: _images/image002.png
+  :alt:  lab screenshot
 
 3. Navigate to **Local Traffic** > **Nodes** and create a new node with the following settings, leaving unspecified fields at their default value:
 
@@ -19,7 +20,6 @@ In this lab, the VE has been configured with the basic system settings and the V
 
 .. image:: _images/image003.png
   :alt:  lab screenshot
-
 
 4. Click **Finished** to add the new node.
 

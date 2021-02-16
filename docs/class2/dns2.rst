@@ -16,7 +16,7 @@ Before we can attack our DNS server, we should establish a baseline for how many
 .. image:: _images/image021.png
   :alt: screenshot
 
-3. You will see a list of running processes sorted by CPU utilization, like the output below.
+3. You will see a list of running processes sorted by CPU utilization, like the output below. Observe the values under the ``%CPU`` column. The DNS daemon will appear in this list as ``named`` and may not be visible until the test begins.
 
 .. image:: _images/image022.png
   :alt: screenshot

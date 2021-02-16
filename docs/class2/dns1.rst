@@ -81,11 +81,17 @@ In this lab, the VE has been configured with the basic system settings and the V
 .. image:: _images/image013.png 
   :alt:  lab screenshot
 
-12. We’ll now test the new DNS virtual server. SSH into the attack host by clicking the **Attack Host (Ubuntu)** icon 
-    on the jump host desktop. 
+12. We’ll now test the new DNS virtual server. Minimize Firefox, then SSH into the attack host by clicking 
+    the **Attack Host (Ubuntu)** icon on the jump host desktop. 
 
-13. Issue the ``dig @10.1.10.6 www.example.com +short`` command on the BASH CLI of the attack host. This verifies 
-    that DNS traffic is passing through the BIG-IP.
+.. image:: _images/image014.png
+  :alt:  lab screenshot
+
+13. Issue the ``dig @10.1.10.6 www.example.com +short`` command on the BASH CLI of the attack host. You should see
+    a response of 10.1.10.5. This verifies that DNS traffic is passing through the BIG-IP.
+
+.. image:: _images/image015.png
+  :alt:  lab screenshot
 
 14. Return to the BIG-IP and navigate to **Local Traffic** > **Virtual Servers** and create a new virtual server with the following settings, leaving unspecified fields at their default value:
      - **Name**: *other_protocols_VS*
@@ -96,6 +102,15 @@ In this lab, the VE has been configured with the basic system settings and the V
      - **Source Address Translation**: *SNAT*
      - **SNAT Pool**: *inside_snat_pool*
      - **Default Pool**: *lab-server-pool*
+
+.. image:: _images/image016.png
+  :alt:  lab screenshot
+
+.. image:: _images/image017.png
+  :alt:  lab screenshot
+
+.. image:: _images/image018.png
+  :alt:  lab screenshot
 
 15. Return to the Attack Host SSH session and attempt to SSH to the server using ``SSH 10.1.10.6``. Simply verify that you are prompted for credentials and press CTRL+C to cancel the session. This verifies that non-DNS traffic is now flowing through the BIG-IP.
 

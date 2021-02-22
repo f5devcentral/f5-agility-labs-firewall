@@ -1,7 +1,7 @@
 Simulating a TCP SYN DDoS Attack
 ================================
 
-In the last example, we crafted a packet that is easily identified as malicious, as its invalid. We’ll now simulate an attack with traffic that could be normal, acceptable traffic. The TCP SYN flood attack will attempt to DDoS a host by sending valid TCP traffic to a host from multiple source hosts. 
+In the last example, we generated traffic that is somewhat easily identified as malicious, as its doesn't look like normal user traffic. We’ll now simulate an attack with traffic that could be normal, acceptable traffic. The TCP SYN flood attack will attempt to DDoS a host by sending valid TCP traffic to a host from multiple source hosts. This will generate a flood of traffic that could be a surge in site visits or malicious.
 
 1. In the BIG-IP web UI, navigate to **Security** > **DoS Protection** > **Device Protection**.
 2. Expand the **Network** section header in the vectors list to expand the view.
@@ -17,6 +17,10 @@ In the last example, we crafted a packet that is easily identified as malicious,
     - **Detection Threshold Percent**: *200*
     - **Mitigation Threshold EPS**: *200*
     - **Simulate Auto Threshold**: Checked
+
+.. image:: _images/image063b.png
+    :alt:  screenshot
+
 5. Scroll to the top of the page and click **Commit Changes to System**.
 6. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: 
     - ``tail -f /var/log/ltm``

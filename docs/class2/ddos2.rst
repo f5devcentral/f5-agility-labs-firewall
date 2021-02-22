@@ -58,7 +58,8 @@ We’ll use the hping utility to send 25,000 packets to our server, with random 
     :alt:  screenshot
 
 8. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard**. View the various statistics surrounding the attack.
-9. Navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View additional statistics surrounding the attack.
 
 .. image:: _images/image062.png
     :alt:  screenshot
+
+9. Navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View additional statistics surrounding the attack.

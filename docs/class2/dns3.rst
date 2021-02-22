@@ -32,8 +32,32 @@ Configuring a DoS Profile
 We’ll now create a DoS profile with manually configured thresholds to limit the attack’s effect on our server.
 
 1. Navigate to **Security** > **DoS Protection** > **Protection Profiles**. 
-2. Create a new DoS profile with the name *dns-dos-profile*.
+
+.. image:: _images/image029.png
+    :alt:  screenshot
+   
+2. Click **Create** to create a new profile.
+
+3. Enter the name *dns-dos-profile* into the form. Set the **Threshold Sensitivity** to *high* and check the box next to **DNS**.
+
+.. image:: _images/image030.png
+    :alt:  screenshot
+
+4. Click on the DNS section title in the vector list at the bottom of the screen as shown below.
+
+.. image:: _images/image031.png
+    :alt:  screenshot
+
+5. In this list, check the **DNS A Query** vector in the list to open the vector configuration menu.
+
+.. image:: _images/image032.png
+    :alt:  screenshot
+
+6. 
+
 3. The UI will return to the **DoS Profiles** list. Click the *dns-dos-profile* name.
+
+
 4. Click the **Protocol Security** tab and select **DNS Security** from the drop-down.
 5. Click the *DNS A Query* vector from the **Attack Type** list.
 6. Modify the *DNS A Query* vector configuration to match the following values, leaving unspecified attributes with their default value:

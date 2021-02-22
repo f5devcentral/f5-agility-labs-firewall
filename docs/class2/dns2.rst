@@ -60,5 +60,3 @@ Before we can attack our DNS server, we should establish a baseline for how many
 
 .. image:: _images/image027b.png
   :alt:  screenshot
-
-Click **Next** to continue.

@@ -3,21 +3,17 @@ Single Endpoint Flood
 
 The single endpoint flood attack is an attempt for an attacker to send a flood of traffic to a host in hopes of overwhelming a service to a point of failure. In this example, we’ll flood the target server with ICMP packets.
 
-#. In the BIG-IP web UI, navigate to **Security** > **DoS Protection** > **Device Configuration** > **Network Security**.
-#. Expand the **Single-Endpoint** category in the vectors list.
-#. Click on **Single Endpoint Flood** vector name.
-#. Configure the vector with the following parameters:
+1. In the BIG-IP web UI, navigate to **Security** > **DoS Protection** > **Device Protection**.
+2. Click on the **Network** section header to expand the view and scroll to the bottom of the page.
+3. Click on **Single Endpoint Flood** vector name.
+4. Configure the vector with the following parameters:
      - **State**: *Mitigate*
      - **Threshold Mode**: *Fully Manual*
      - **Detection Threshold EPS**: *150*
      - **Mitigation Threshold EPS**: *200*
-     - **Add Destination Address to Category**: *Checked*
-     - **Category Name**: *denial_of_service*
-     - **Sustained Attack Detection Time**: *10 seconds*
-     - **Category Duration Time**: *60 seconds*
      - **Packet Type**: *Move Any ICMP (IPv4) to Selected*
-#. Click **Update** to save your changes.
-#. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: 
+5. Scroll to the top of the page and click **Commit Changes to System**.
+6. Open the BIG-IP SSH session and ensure the ltm log file is still being monitored:
     - ``tail -f /var/log/ltm``
 #. We’ll run a packet capture on the victim server to gauge the incoming traffic. On the victim server, issue the following command: 
     - ``sudo tcpdump -nn not port 22``

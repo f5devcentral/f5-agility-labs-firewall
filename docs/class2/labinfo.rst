@@ -36,7 +36,7 @@ Lab Connectivity
 - While working in the lab, you’ll likely find it easiest to have the BIG-IP web UI open 
   in a browser and an SSH session open to the BIG-IP, the attack host and the victim server. 
 - You will be switching between sessions frequently. Within the BIG-IP SSH session, having 
-  tail -f /var/log/ltm running helps immensely as you can see attack detection log 
+  ``tail -f /var/log/ltm`` running helps immensely as you can see attack detection log 
   messages in real-time.
 
 .. tip:: There is a text file on the desktop of the jump host with all of the CLI commands used in the lab for cut/paste use.

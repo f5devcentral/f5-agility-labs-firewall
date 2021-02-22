@@ -22,7 +22,7 @@ In the last example, we generated traffic that is somewhat easily identified as 
     :alt:  screenshot
 
 5. Scroll to the top of the page and click **Commit Changes to System**.
-6. Open the BIG-IP SSH session and scroll the ltm log in real time with the following command: 
+6. Open the BIG-IP SSH session and ensure the ltm log file is still being monitored:
     - ``tail -f /var/log/ltm``
 7. On the attack host, launch the attack by issuing the following command on the BASH prompt: 
     - ``sudo hping3 10.1.10.6 --flood --rand-source --destport 80 --syn``

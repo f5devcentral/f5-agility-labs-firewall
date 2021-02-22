@@ -30,10 +30,10 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
     :alt:  screenshot
 
 5. Scroll to the top of the page and click **Commit Changes to System**.
-6. Open the BIG-IP SSH session window and ensure the log file is still being monitored:
-    - ``tail -f /var/log/ltm``
+6. Open the BIG-IP SSH session and ensure the ltm log file is still being monitored:
+     - ``tail -f /var/log/ltm``
 7. On the victim server, start a packet capture with an SSH filter by issuing 
-    - ``sudo tcpdump -nn not port 22``
+     - ``sudo tcpdump -nn not port 22``
 
 .. image:: _images/image069.png
     :alt:  screenshot

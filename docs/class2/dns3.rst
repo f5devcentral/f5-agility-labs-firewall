@@ -53,29 +53,46 @@ We’ll now create a DoS profile with manually configured thresholds to limit th
 .. image:: _images/image032.png
     :alt:  screenshot
 
-6. 
+6. Set the **State** to *Mitigate*. Choose *Fully Manual* as the **Threshold Mode**. Set the **Detection Threshold EPS** to 80%-ish of the safe QPS value you determined earlier in the lab. Set the **Detection Threshold %** to *Infinite*. Set the **Mitigation Threshold EPS** to the safe QPS value. Check the box for **Simulate Auto Threshold**.
 
-3. The UI will return to the **DoS Profiles** list. Click the *dns-dos-profile* name.
+.. image:: _images/image033.png
+    :alt:  screenshot
 
+7. Scroll to the top of the screen and click **Commit Changes to System**.
 
-4. Click the **Protocol Security** tab and select **DNS Security** from the drop-down.
-5. Click the *DNS A Query* vector from the **Attack Type** list.
-6. Modify the *DNS A Query* vector configuration to match the following values, leaving unspecified attributes with their default value:
-     - **State**: *Mitigate*
-     - **Threshold Mode**: *Fully Manual*
-     - **Detection Threshold EPS**: (Set this at 80% of your safe QPS value)
-     - **Mitigation Threshold EPS**: (Set this to your safe QPS value)
-7. Make sure that you click **Update** to save your changes.
+.. image:: _images/image034.png
+    :alt:  screenshot
 
 Attaching a DoS Profile
 -----------------------
 
 We’ll attach the DoS profile to the virtual server that we configured to manage DNS traffic.
 
-1. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
-2. Click on the *udp_dns_VS* name.
-3. Click on the **Security** tab and select **Policies**.
-4. In the **DoS Protection Profile** field, select *Enabled* and choose the *dns-dos-profile*.
-5. In the **Log Profile**, select *Enabled* and move the *dns-dos-profile-logging* profile from **Available** to **Selected**.
-6. Click **Update**.
-   
+1. Navigate to **Security** > **DoS Protection** > **Protected Objects** > **Protected Objects List**.
+
+.. image:: _images/image035.png
+    :alt:  screenshot
+
+2. Click on the *udp_dns_VS* virtual server name. The properties configuration menu should appear on the right. If the statistics dashboard appears below, click again directly on the object name in the menu.
+
+.. image:: _images/image036.png
+    :alt:  screenshot
+
+3. Change the **Service Profile** to *dns*. 
+
+.. image:: _images/image037.png
+    :alt:  screenshot
+
+4. Expand **Network & General** and add the *dns-dos-logging-profile* logging profile from the **Available** to **Selected** column.
+
+.. image:: _images/image036.png
+    :alt:  screenshot
+
+5. Expand **Protection Settings** and set the **Protection Profile** to *dns-dos-profile*.
+
+.. image:: _images/image036.png
+    :alt:  screenshot
+
+6. Click **Save**. 
+
+

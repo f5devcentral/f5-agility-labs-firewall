@@ -10,8 +10,21 @@ overwhelm a system using a particular DNS query type or protocol extension,
 or a particular SIP request type. The BIG-IP system allows you to track such 
 attacks, using the DoS Protection profile.
 
-#. Open the SSH session to the victim server and ensure the ``top`` utility is running.
-#. Once again, attack your DNS server from the attack host using the attack volume Q value (double your baseline QPS): 
-    - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 100000 -Q 36000``
-#. On the server SSH session running the top utility, notice the CPU utilization on your server remains in a range that ensures the DNS server is not overwhelmed. 
-#. After the attack, navigate to **Security** > **Event Logs** > **DoS** > **DNS Protocol**. Observe the logs to see the mitigation actions taken by the BIG-IP.
+1. Restore the SSH session to the victim server and ensure the ``top`` utility is running.
+2. Now we're going to run a longer attack against the DNS server from the attack host using the attack volume of 10x the safe QPS level: 
+    - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -b 8192000 -c 60 -t 30 -T 20 -l 90 -q 1000000 -Q 1500000``.
+3. While the attack is running, navigate to **Security** > **Overview** > **DoS Protection** > **DoS Overview (Non-HTTP)**. You will see that the attack status has changed to detected/mitigated, with current attack events per second (EPS) and drops EPS values. Click **Refresh** to update these values on demand.
+
+.. image:: _images/image040.png
+    :alt:  screenshot
+
+4. After the attack, navigate to **Security** > **Event Logs** > **DoS** > **DNS Protocol**. Observe the logs to see the mitigation actions taken by the BIG-IP.
+
+.. image:: _images/image042.png
+    :alt:  screenshot
+
+5. Under the **Statistics** > **Analytics** > **DNS**, you can see graphs surrounding the traffic and attack details. Change between the *Domain Names*, *Query Types*, *Attack IDs*, *Transaction Outcomes* and other values in the **View By** drop-down to view various states. Observe the table holding TopN values below the chart.
+
+.. image:: _images/image041.png
+    :alt:  screenshot
+

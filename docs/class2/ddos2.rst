@@ -1,5 +1,5 @@
-Simulating a Christmas Tree Packet Attack
-=========================================
+Simulating a ICMPv4 Flood Attack
+================================
 
 In this example, we’ll set the BIG-IP to detect and mitigate an ICMPv4 flood attack. This type
 of attack attempts disrupt a network host with a flood of traffic from a seemingly harmless protocol.
@@ -57,7 +57,8 @@ We’ll use the hping utility to send 25,000 packets to our server, with random 
 .. image:: _images/image061.png
     :alt:  screenshot
 
-8. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard**. 
+8. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard**. View the various statistics surrounding the attack.
+9. Navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View additional statistics surrounding the attack.
 
 .. image:: _images/image062.png
     :alt:  screenshot

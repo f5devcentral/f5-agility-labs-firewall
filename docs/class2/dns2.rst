@@ -42,12 +42,13 @@ Before we can attack our DNS server, we should establish a baseline for how many
 8. Record the QPS required to achieve a sustained CPU utilization of approximately 50%. Consider this the QPS that the server can safely sustain for demonstration purposes. In this example, 18,000 QPS achieves 50% CPU on the attack victim as shown below.
 
 9. Now, attack the DNS server with double your baseline QPS using the following syntax (modify the -Q value): 
-    - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 100000 -Q 30000``
+    - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 100000 -Q 36000``
+   
+   You’ll notice that the CPU utilization on the victim server skyrockets. 
 
 .. image:: _images/image026.png
   :alt: screenshot
 
-10. You’ll notice that the CPU utilization on the victim server skyrockets. 
 11. You will also likely see DNS query timeout errors appearing on the attack server’s SSH session. This shows your DNS server is overwhelmed.
 
 .. image:: _images/image027.png

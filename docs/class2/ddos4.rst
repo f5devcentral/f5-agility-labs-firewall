@@ -46,19 +46,18 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
 .. image:: _images/image071.png
     :alt:  screenshot
 
-10. After approximately 60 seconds, sweep traffic will return to the host. This is because the IP Intelligence categorization of the attack host has expired. After 10 seconds of traffic, the bad actor is again blacklisted for another 60 seconds. 
-11. Stop the sweep attack on the attack host by pressing **CTRL+C**.
-12. Return to the BIG-IP web UI and navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observe the log entries showing the details surrounding the attack detection and mitigation.
+10. Stop the sweep attack on the attack host by pressing **CTRL+C**.
+11. Return to the BIG-IP web UI and navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observe the log entries showing the details surrounding the attack detection and mitigation.
 
 .. image:: _images/image072.png
     :alt:  screenshot
 
-16. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight the specific attack.
+12. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight the specific attack.
 
 .. image:: _images/image073.png
     :alt:  screenshot
 
-17. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around the attack.
+13. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around the attack.
 
 .. image:: _images/image074.png
     :alt:  screenshot

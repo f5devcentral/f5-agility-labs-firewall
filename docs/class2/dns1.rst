@@ -112,7 +112,12 @@ In this lab, the VE has been configured with the basic system settings and the V
 .. image:: _images/image018.png
   :alt:  lab screenshot
 
-15. Return to the Attack Host SSH session and attempt to SSH to the server using ``SSH 10.1.10.6``. Simply verify that you are prompted for credentials and press CTRL+C to cancel the session. This verifies that non-DNS traffic is now flowing through the BIG-IP.
+15. Click **Finish** to create the virtual server. 
+
+.. image:: _images/image018b.png
+  :alt:  lab screenshot
+
+16.  Return to the Attack Host SSH session and attempt to SSH to the server using ``SSH 10.1.10.6``. Simply verify that you are prompted for credentials and press CTRL+C to cancel the session. This verifies that non-DNS traffic is now flowing through the BIG-IP.
 
 .. image:: _images/image019.png
   :alt:  lab screenshot

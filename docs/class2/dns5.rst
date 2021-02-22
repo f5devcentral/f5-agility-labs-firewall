@@ -63,5 +63,3 @@ Bad actor detection allows us to completely block communications from malicious 
 #. Navigate to **Security** > **Reporting** > **Network** > **IP Intelligence**. The default view may be blank. Change the View By drop-down to view various statistics around the IP Intelligence handling of the attack traffic.
 #. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight specific attacks.
 #. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around each attack.
-
-Click **Next** to continue.

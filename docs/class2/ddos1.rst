@@ -15,5 +15,3 @@ DoS Profile, you can:
 - Configure identification, rate limiting, and automatic blacklisting of Bad Actors for supported attack vectors, according to various detection criteria.
 - Offload blacklisting of Bad Actor IP addresses to edge routers using BGP.
 - Configure identification, rate limiting, and classification of attacked destinations.
-
-Click **Next** to continue.

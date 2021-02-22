@@ -118,5 +118,3 @@ In this lab, the VE has been configured with the basic system settings and the V
   :alt:  lab screenshot
 
 .. note:: At this point, you have a functional DNS server, an attack host with tools needed to simulate DoS/DNS attacks, and a BIG-IP with a base configuration that allows the attack host to reach the victim server.
-
-Please click **Next** to continue.

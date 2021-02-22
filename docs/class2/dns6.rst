@@ -11,5 +11,3 @@ Silverline Mitigation
 F5's cloud-based Silverline solution offers “always on” and “on demand” DDoS scrubbing that could assist in this scenario as well. This is not demonstrated in this lab.
 
 More information about Silverline DDoS protection can be found at https://www.f5.com/products/security/silverline/ddos-protection. 
- 
-Click **Next** to continue.

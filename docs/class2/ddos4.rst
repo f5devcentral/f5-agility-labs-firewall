@@ -51,5 +51,3 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
 #. Navigate to **Security** > **Reporting** > **Network** > **IP Intelligence**. Observe the statistics showing the sweep attack and mitigation. Change the View By drop-down to view the varying statistics.
 #. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight the specific attack.
 #. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around the attack.
-
-Click **Next** to continue.

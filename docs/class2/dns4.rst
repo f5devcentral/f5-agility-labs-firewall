@@ -15,5 +15,3 @@ attacks, using the DoS Protection profile.
     - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -c 20 -T 20 -l 30 -q 100000 -Q 36000``
 #. On the server SSH session running the top utility, notice the CPU utilization on your server remains in a range that ensures the DNS server is not overwhelmed. 
 #. After the attack, navigate to **Security** > **Event Logs** > **DoS** > **DNS Protocol**. Observe the logs to see the mitigation actions taken by the BIG-IP.
-
-Click **Next** to continue.

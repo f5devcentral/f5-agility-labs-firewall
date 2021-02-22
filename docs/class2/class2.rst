@@ -24,5 +24,3 @@ Table of Contents
    labinfo
    dns*
    ddos*
-
-Please click **Next** to continue.

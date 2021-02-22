@@ -42,5 +42,3 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 #. Navigate to **Security** > **Event Logs** > **Protocol** > **DNS**. Observer the MX query drops.
 
 This concludes the DNS portion of the lab. On the victim server, stop the top utility by pressing CTRL + C.
-
-Click **Next** to continue.

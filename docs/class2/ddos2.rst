@@ -39,5 +39,3 @@ We’ll use the hping utility to send 25,000 packets to our server, with random 
 #. After approximately 60 seconds, press **CTRL+C** to stop the attack.
 #. Return to the BIG-IP web UI. Navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observer the log entries showing the details surrounding the attack detection and mitigation.
 #. Navigate to **Security** > **Reporting** > **DoS** > **Analysis**. Single-click on the attack ID in the filter list to the right of the charts and observe the various statistics around the attack.
-
-Click **Next** to continue.

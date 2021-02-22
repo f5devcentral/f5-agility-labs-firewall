@@ -54,5 +54,4 @@ We’ll attach the DoS profile to the virtual server that we configured to manag
 4. In the **DoS Protection Profile** field, select *Enabled* and choose the *dns-dos-profile*.
 5. In the **Log Profile**, select *Enabled* and move the *dns-dos-profile-logging* profile from **Available** to **Selected**.
 6. Click **Update**.
-
-Click **Next** to continue. 
+   

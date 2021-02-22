@@ -12,6 +12,8 @@ Lab Requirements:
 Lab Hosts
 ---------
 
+.. note:: Credentials, when required, will be provided in the documentation.
+
 +----------------+------------------------------+------------------------------------------+
 | **Host**       |  **IP Address(es)**          | **Description**                          |
 +----------------+------------------------------+------------------------------------------+

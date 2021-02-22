@@ -57,9 +57,9 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 
 17. Make sure that you click **Update** to save your settings.
 18. Return to the Attack Server SSH session and re-issue the MX query command: 
-    - ``dig @10.1.10.6 MX example.com``
+      - ``dig @10.1.10.6 MX example.com``
 19. The query hangs as the BIG-IP is blocking the MX lookup.
-20. Navigate to **Security** > **Event Logs** > **Protocol** > **DNS**. Observer the MX query drops.
+20. Navigate to **Security** > **Event Logs** > **Protocol** > **DNS**. Observe the MX query drops.
 
 .. image:: _images/image055.png
     :alt: screenshot

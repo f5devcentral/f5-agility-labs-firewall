@@ -44,3 +44,5 @@ In the last example, we generated traffic that is somewhat easily identified as 
 
 11. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around the attack.
 
+.. image:: _images/image066b.png
+    :alt:  screenshot

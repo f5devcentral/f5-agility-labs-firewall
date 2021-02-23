@@ -12,50 +12,46 @@ when we forward the traffic to the secondary virtual server in clear-text so tha
 opportunity to make an unencrypted copy of the application traffic and send it to an 
 external sensor such as an IDS for further security assessment.
 
-Return to the BIG-IP TMUI in Chrome and inspect the preconfigured IDS_Pool.
+1. Return to the BIG-IP TMUI in Chrome and inspect the preconfigured IDS_Pool.
 
-**Navigation:** Local Traffic > Pools > Pool List
+2. Navigate to **Local Traffic** > **Pools** > **Pool List**.
 
-Select the *IDS_Pool*, then click on the **Members** tab.
+3. Select the *IDS_Pool*, then click on the **Members** tab.
 
 .. Note:: Unencrypted traffic will be forwarded to this IP address.
 
-Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server.
+4. Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server by navigating to 
+   **Local Traffic** > **Virtual Servers** > V**irtual Server List** and clicking on *EXT\_VIP\_10_1_10_30*.
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List > *EXT\_VIP\_10_1_10_30*.
-
-Select **Advanced** from the pulldown at the top of the Configuration section to view advanced configuration options.
+5. Select **Advanced** from the pulldown at the top of the Configuration section to view advanced configuration options.
 
 .. image:: _images/advanced_options_dropdown.png
 
-Scroll to the configuration for Clone Pool (Client) and select **None**.
+6. Scroll to the configuration for Clone Pool (Client) and select **None**.
 
-Scroll to the configuration for Clone Pool (Server) and select **IDS_pool**.
+7. Scroll to the configuration for Clone Pool (Server) and select **IDS_pool**.
 
 |image60|
 
-Scroll to the bottom of the screen and click **Update**.
-
 .. Note:: Leave all other fields using the default values.
 
-Select the Putty application from the desktop on the jump host.
+8. Scroll to the bottom of the screen and click **Update**.
 
-Load **Lamp Server** from the sessions list.
+9. Select the Putty application from the desktop on the jump host.
 
-Click **Open**.
+10. Load **Lamp Server** from the sessions list.
 
-Accept the certificate warning, if presented.
+11. Click **Open**. Accept the certificate warning, if presented. You should be automatically logged in as the F5 user with certificate authentication.
 
-You should be automatically logged in as the F5 user with certificate authentication.
-
-Input the TCPDUMP command to start capturing traffic:
+12. Input the TCPDUMP command to start capturing traffic:
 
 .. code-block:: console
 
     sudo tcpdump -n –i eth1 -c 200 port 8081
 
-Initiate another attempt to connect to the website via curl using the Cygwin application on the desktop. 
-Position the windows on the desktop side-by-side so that you can see both the Putty session and the Cygwin session.
+13. Initiate another attempt to connect to the website via curl using the Cygwin application on the desktop. It 
+    may be helpful to position the windows on the desktop side-by-side so that you can see both the Putty session 
+    and the Cygwin session.
 
 .. code-block:: console
 
@@ -63,8 +59,8 @@ Position the windows on the desktop side-by-side so that you can see both the Pu
 
    curl -k https://10.1.10.30:8081 -H 'Host:site3.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-Initiate another attempt to connect to the websites using the browser. These sites should be loaded in tabs 3 and 5, but notice
-that we're using a different destination port.
+Initiate another attempt to connect to the websites using the browser. These sites should be loaded in tabs 3 
+and 5, but notice that we're using a different destination port.
 
 .. code-block:: console
 

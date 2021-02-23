@@ -118,15 +118,13 @@ Now, let's apply the HTTP security profile to the external virtual server.
 
 15. Click **Finished**.
 
-16. On the jump box, Log out of DVWA by selecting Log Out in the menu. Attempt to log back in. **This action requires a POST action and will be blocked because this is not allowed. **
+16. On the jump box, Log out of DVWA by selecting Log Out in the menu. Attempt to log back in. **This action requires a POST action and will be blocked because this is not allowed.**
 
 URL: https://dvwa.com
 
 **Credentials: admin\/password**
 
 |image266|
-
-.. attention:: 
 
 17. Edit the *demo_http_security* HTTP security profile at **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 

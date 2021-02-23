@@ -25,7 +25,7 @@ external sensor such as an IDS for further security assessment.
 
 5. Select **Advanced** from the pulldown at the top of the Configuration section to view advanced configuration options.
 
-   .. image:: _images/advanced_options_dropdown.png
+   .. image:: ../images/advanced_options_dropdown.png
 
 6. Scroll to the configuration for Clone Pool (Client) and select **None**. For the Clone Pool (Server), select **IDS_pool**.
 
@@ -88,15 +88,15 @@ View the tcpdump output on the syslog-webserver.
 
 This is the end of Module 1. Click **Next** to continue to Module 2.
 
-.. |image58| image:: _images/class2/image58.png
+.. |image58| image:: ../images/image58.png
    :width: 5.65139in
    :height: 5.75556in
-.. |image59| image:: _images/class2/image59.png
+.. |image59| image:: ../images/image59.png
    :width: 4.66626in
    :height: 4.24264in
-.. |image60| image:: _images/class2/image60.png
+.. |image60| image:: ../images/image60.png
    :width: 4.83440in
    :height: 2.18569in
-.. |image280| image:: _images/class2/image280.png
+.. |image280| image:: ../images/image280.png
    :width: 4.83440in
    :height: 2.18569in

@@ -97,12 +97,12 @@ ports.
 24. Finally, navigate to **Security** > **Reporting** > **DoS** >
     **Analysis**. View detailed statistics around the attack.
 
-.. |image86| image:: /_static/class1/image84.png
+.. |image86| image:: ../images/image84.png
    :width: 2.7954in
    :height: 6.25166in
-.. |image87| image:: /_static/class1/image85.png
+.. |image87| image:: ../images/image85.png
    :width: 2.56954in
    :height: 0.91286in
-.. |image88| image:: /_static/class1/image86.png
+.. |image88| image:: ../images/image86.png
    :width: 6.49097in
    :height: 3.32431in

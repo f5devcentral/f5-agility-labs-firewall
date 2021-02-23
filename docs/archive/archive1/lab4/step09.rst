@@ -23,16 +23,16 @@ Workflow 2: Interacting with the data in the dashboards
      elapse before this option becomes available)
    | |image107|
 
-.. |image104| image:: /_static/class1/image101.png
+.. |image104| image:: ../images/image101.png
    :width: 2.04653in
    :height: 1.5in
-.. |image105| image:: /_static/class1/image102.png
+.. |image105| image:: ../images/image102.png
    :width: 4.91605in
    :height: 1.91643in
-.. |image106| image:: /_static/class1/image103.png
+.. |image106| image:: ../images/image103.png
    :width: 4.48902in
    :height: 0.91655in
-.. |image107| image:: /_static/class1/image104.png
+.. |image107| image:: ../images/image104.png
    :width: 2.40595in
    :height: 2.81215in
 

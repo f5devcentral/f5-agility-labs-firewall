@@ -13,6 +13,6 @@ reporting.
 3. | Click the **Commit Changes to System** button.
    | |image79|
 
-.. |image79| image:: /_static/class1/image77.png
+.. |image79| image:: ../images/image77.png
    :width: 2.98013in
    :height: 1.62914in

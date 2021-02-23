@@ -192,69 +192,69 @@ Lastly, in your web browser, verify you can no longer access the web
 pages http://10.30.0.50 and http://10.40.0.50 as well as no longer being
 able to SSH to any of the devices.
 
-.. |image126| image:: /_static/class1/image121.png
+.. |image126| image:: ../images/image121.png
    :width: 6.5in
    :height: 4.08333in
-.. |image127| image:: /_static/class1/image122.png
+.. |image127| image:: ../images/image122.png
    :width: 3.86458in
    :height: 2.13542in
-.. |image128| image:: /_static/class1/image123.png
+.. |image128| image:: ../images/image123.png
    :width: 2.50278in
    :height: 4.31042in
-.. |image129| image:: /_static/class1/image124.png
+.. |image129| image:: ../images/image124.png
    :width: 6.49722in
    :height: 0.83056in
-.. |image130| image:: /_static/class1/image78.png
+.. |image130| image:: ../images/image78.png
    :width: 2.43392in
    :height: 2.49669in
-.. |image131| image:: /_static/class1/image79.png
+.. |image131| image:: ../images/image79.png
    :width: 4.48611in
    :height: 0.38889in
-.. |image132| image:: /_static/class1/image80.png
+.. |image132| image:: ../images/image80.png
    :width: 4.43056in
    :height: 0.97222in
-.. |image133| image:: /_static/class1/image81.png
+.. |image133| image:: ../images/image81.png
    :width: 6.49097in
    :height: 1.10208in
-.. |image134| image:: /_static/class1/image82.png
+.. |image134| image:: ../images/image82.png
    :width: 5in
    :height: 1.70833in
-.. |image135| image:: /_static/class1/image125.png
+.. |image135| image:: ../images/image125.png
    :width: 6.49097in
    :height: 1.82708in
-.. |image136| image:: /_static/class1/image126.png
+.. |image136| image:: ../images/image126.png
    :width: 3.81806in
    :height: 3.66389in
-.. |image137| image:: /_static/class1/image127.png
+.. |image137| image:: ../images/image127.png
    :width: 5.99097in
    :height: 6.22708in
-.. |image138| image:: /_static/class1/image128.png
+.. |image138| image:: ../images/image128.png
    :width: 6.49097in
    :height: 1.31806in
-.. |image139| image:: /_static/class1/image129.png
+.. |image139| image:: ../images/image129.png
    :width: 5.98194in
    :height: 6.18194in
-.. |image140| image:: /_static/class1/image130.png
+.. |image140| image:: ../images/image130.png
    :width: 6.5in
    :height: 4.83333in
-.. |image141| image:: /_static/class1/image131.png
+.. |image141| image:: ../images/image131.png
    :width: 6.49097in
    :height: 3.15486in
-.. |image142| image:: /_static/class1/image132.png
+.. |image142| image:: ../images/image132.png
    :width: 6in
    :height: 3.33333in
-.. |image143| image:: /_static/class1/image133.png
+.. |image143| image:: ../images/image133.png
    :width: 6.49097in
    :height: 1.87292in
-.. |image144| image:: /_static/class1/image134.png
+.. |image144| image:: ../images/image134.png
    :width: 6.5in
    :height: 1.69097in
-.. |image145| image:: /_static/class1/image135.png
+.. |image145| image:: ../images/image135.png
    :width: 6.5in
    :height: 1.27292in
-.. |image146| image:: /_static/class1/image136.png
+.. |image146| image:: ../images/image136.png
    :width: 6in
    :height: 3.33333in
-.. |image147| image:: /_static/class1/image137.png
+.. |image147| image:: ../images/image137.png
    :width: 6.5in
    :height: 3.23611in

@@ -74,18 +74,18 @@ queries from our DNS server.
 This concludes the DNS portion of the lab. On the Victim Server, stop
 the top utility by pressing **CTRL + C**. No mail for you Joanna!!
 
-.. |image74| image:: /_static/class1/image72.png
+.. |image74| image:: ../images/image72.png
    :width: 3.89968in
    :height: 3.43639in
-.. |image75| image:: /_static/class1/image73.png
+.. |image75| image:: ../images/image73.png
    :width: 2.60017in
    :height: 6.93378in
-.. |image76| image:: /_static/class1/image74.png
+.. |image76| image:: ../images/image74.png
    :width: 3.02244in
    :height: 2.63576in
-.. |image77| image:: /_static/class1/image75.png
+.. |image77| image:: ../images/image75.png
    :width: 3.19205in
    :height: 5.75689in
-.. |image78| image:: /_static/class1/image76.png
+.. |image78| image:: ../images/image76.png
    :width: 3.80132in
    :height: 1.11928in

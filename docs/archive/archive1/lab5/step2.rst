@@ -100,21 +100,21 @@ you tuned and defended against several DoS attacks, you then configured
 BIG-IQ for central device management and monitoring and lastly, you’re
 now managing AFM within BIG-IQ. I think you deserve Friday off!!
 
-.. |image123| image:: /_static/class1/image119.png
+.. |image123| image:: ../images/image119.png
    :width: 6.49097in
    :height: 2.7in
-.. |image124| image:: /_static/class1/image120.png
+.. |image124| image:: ../images/image120.png
    :width: 6.5in
    :height: 3.6in
-.. |image122| image:: /_static/class1/image118.png
+.. |image122| image:: ../images/image118.png
    :width: 6.5in
    :height: 2.59097in
-.. |image119| image:: /_static/class1/image115.png
+.. |image119| image:: ../images/image115.png
    :width: 6.49097in
    :height: 2.19097in
-.. |image120| image:: /_static/class1/image116.png
+.. |image120| image:: ../images/image116.png
    :width: 5.24514in
    :height: 2.43611in
-.. |image121| image:: /_static/class1/image117.png
+.. |image121| image:: ../images/image117.png
    :width: 6.5in
    :height: 3.25486in

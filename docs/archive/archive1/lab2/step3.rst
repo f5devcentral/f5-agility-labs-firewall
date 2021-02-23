@@ -28,10 +28,10 @@ It is also worth noting you can click directly on the IP address of a
 flow to pre-populate the data in the packet tester for validating access
 and/or where the flow is permitted.
 
-.. |image46| image:: /_static/class1/image45.png
+.. |image46| image:: ../images/image45.png
    :width: 6.48542in
    :height: 1.34653in
-.. |image47| image:: /_static/class1/image46.png
+.. |image47| image:: ../images/image46.png
    :width: 6.49167in
    :height: 0.68819in
 

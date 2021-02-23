@@ -39,10 +39,10 @@ Route Domain Screen.
 
 |image212|
 
-.. |image215| image:: /_static/class1/image215.png
+.. |image215| image:: ../images/image215.png
    :width: 6.5in
    :height: 2.66667in
 
-.. |image212| image:: /_static/class1/image210.png
+.. |image212| image:: ../images/image210.png
    :width: 6.5in
    :height: 3in

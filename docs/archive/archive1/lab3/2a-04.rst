@@ -31,9 +31,9 @@ limit the attack’s effect on our server.
 
 8. Make sure that you click **Update** to save your changes.
 
-.. |image59| image:: /_static/class1/image57.png
+.. |image59| image:: ../images/image57.png
    :width: 4.94444in
    :height: 2.29167in
-.. |image60| image:: /_static/class1/image58.png
+.. |image60| image:: ../images/image58.png
    :width: 3.54305in
    :height: 4.68726in

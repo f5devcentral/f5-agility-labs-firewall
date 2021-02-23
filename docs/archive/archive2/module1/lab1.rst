@@ -467,81 +467,81 @@ queries from our DNS server.
 
 .. ATTENTION:: This concludes the DNS portion of the lab. On the victim server, stop the top utility by pressing **CTRL + C**.
     
-.. |image4| image:: _images/image6.png
+.. |image4| image:: ../images/image6.png
    :width: 3.94702in
    :height: 3.80739in
-.. |image5| image:: _images/image7.png
+.. |image5| image:: ../images/image7.png
    :width: 4.75828in
    :height: 4.42937in
-.. |image6| image:: _images/image8.png
+.. |image6| image:: ../images/image8.png
    :width: 4.72535in
    :height: 3.47384in
-.. |image7| image:: _images/image9.png
+.. |image7| image:: ../images/image9.png
    :width: 3.80731in
    :height: 8.22517in
-.. |image8| image:: _images/image10.png
+.. |image8| image:: ../images/image10.png
    :width: 6.16667in
    :height: 0.44444in
-.. |image9| image:: _images/image11.png
+.. |image9| image:: ../images/image11.png
    :width: 4.73472in
    :height: 6.05700in
-.. |image10| image:: _images/image12.png
+.. |image10| image:: ../images/image12.png
    :width: 5.60000in
    :height: 3.53333in
-.. |image11| image:: _images/image13.png
+.. |image11| image:: ../images/image13.png
    :width: 4.04500in
    :height: 5.58775in
-.. |image12| image:: _images/image14.png
+.. |image12| image:: ../images/image14.png
    :width: 4.94444in
    :height: 2.29167in
-.. |image13| image:: _images/image15.png
+.. |image13| image:: ../images/image15.png
    :width: 3.54305in
    :height: 4.68726in
-.. |image14| image:: _images/image16.png
+.. |image14| image:: ../images/image16.png
    :width: 6.50000in
    :height: 2.78542in
-.. |image15| image:: _images/image17.png
+.. |image15| image:: ../images/image17.png
    :width: 2.67129in
    :height: 5.81457in
-.. |image16| image:: _images/image18.png
+.. |image16| image:: ../images/image18.png
    :width: 6.22083in
    :height: 3.67500in
-.. |image17| image:: _images/image19.png
+.. |image17| image:: ../images/image19.png
    :width: 3.81074in
    :height: 5.31788in
-.. |image18| image:: _images/image20.png
+.. |image18| image:: ../images/image20.png
    :width: 4.17881in
    :height: 2.18072in
-.. |image19| image:: _images/image21.png
+.. |image19| image:: ../images/image21.png
    :width: 3.40297in
    :height: 3.22001in
-.. |image20| image:: _images/image22.png
+.. |image20| image:: ../images/image22.png
    :width: 3.15278in
    :height: 3.98611in
-.. |image21| image:: _images/image23.png
+.. |image21| image:: ../images/image23.png
    :width: 2.36111in
    :height: 0.68056in
-.. |image22| image:: _images/image24.png
+.. |image22| image:: ../images/image24.png
    :width: 4.87500in
    :height: 1.68056in
-.. |image23| image:: _images/image25.png
+.. |image23| image:: ../images/image25.png
    :width: 4.32450in
    :height: 3.69594in
-.. |image24| image:: _images/image26.png
+.. |image24| image:: ../images/image26.png
    :width: 5.00000in
    :height: 4.06944in
-.. |image25| image:: _images/image27.png
+.. |image25| image:: ../images/image27.png
    :width: 3.89968in
    :height: 3.43639in
-.. |image26| image:: _images/image28.png
+.. |image26| image:: ../images/image28.png
    :width: 2.60017in
    :height: 6.93378in
-.. |image27| image:: _images/image29.png
+.. |image27| image:: ../images/image29.png
    :width: 3.02244in
    :height: 2.63576in
-.. |image28| image:: _images/image30.png
+.. |image28| image:: ../images/image30.png
    :width: 3.19205in
    :height: 5.75689in
-.. |image29| image:: _images/image31.png
+.. |image29| image:: ../images/image31.png
    :width: 3.80132in
    :height: 1.11928in

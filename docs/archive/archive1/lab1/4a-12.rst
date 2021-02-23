@@ -31,14 +31,14 @@ Delivery Controller/Load Balancer. For these environments additional granularity
 East - West traffic control can be implemented by applying Ruls/Rule Lists to specific
 Virtual Servers or Self-IP's
 
-.. |image31| image:: /_static/class1/image32.png
+.. |image31| image:: ../images/image32.png
    :width: 6.5in
    :height: 0.5in
-.. |image32| image:: /_static/class1/image32.png
+.. |image32| image:: ../images/image32.png
    :width: 6.5in
    :height: 0.5in
-.. |image33| image:: /_static/class1/image33.png
+.. |image33| image:: ../images/image33.png
    :width: 6.5in
-.. |image34| image:: /_static/class1/image34.png
+.. |image34| image:: ../images/image34.png
    :width: 6.49097in
    :height: 0.59236in

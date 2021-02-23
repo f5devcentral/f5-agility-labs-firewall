@@ -44,7 +44,7 @@ utilization on the BIND process.
    attack server’s SSH session. This shows your DNS server is
    overwhelmed.
 
-.. |image57| image:: /_static/class1/image55.png
+.. |image57| image:: ../images/image55.png
    :width: 5.6in
    :height: 3.53333in
 

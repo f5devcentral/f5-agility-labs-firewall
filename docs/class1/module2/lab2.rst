@@ -99,16 +99,16 @@ This traffic will be blocked by the virtual Server rule.
 
 9. Click **Next** to continue.
 
-.. |image441| image:: _images/class2/image441.png
+.. |image441| image:: ../images/image441.png
    :width: 6.48958in
    :height: 3.44792in
-.. |image442| image:: _images/class2/image442.png
+.. |image442| image:: ../images/image442.png
    :width: 6.47361in
    :height: 2.94722in
-.. |image443| image:: _images/class2/image443.png
+.. |image443| image:: ../images/image443.png
    :width: 6.5in
    :height: 2.66667in
-.. |image444| image:: _images/class2/image444.png
+.. |image444| image:: ../images/image444.png
    :width: 6.49722in
    :height: 2.97708in
 

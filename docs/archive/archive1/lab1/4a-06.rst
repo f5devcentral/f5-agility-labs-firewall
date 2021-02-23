@@ -38,9 +38,9 @@ The sceen should look similar to the below screen shot.
 
 |image205|
 
-.. |image18| image:: /_static/class1/image19.png
+.. |image18| image:: ../images/image19.png
    :width: 6.5in
    :height: 1.25in
-.. |image205| image:: /_static/class1/image205.png
+.. |image205| image:: ../images/image205.png
    :width: 6.49514in
    :height: 1.37014in

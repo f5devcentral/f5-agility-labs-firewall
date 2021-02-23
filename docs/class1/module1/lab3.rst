@@ -122,24 +122,24 @@ refresh the event list. Newest events will appear at the top, as shown below:
 
 This completes Module 1 - Lab 3. Click **Next** to continue.
 
-.. |image24| image:: _images/class2/image26.png
+.. |image24| image:: ../images/image26.png
    :width: 7.05278in
    :height: 2.93819in
-.. |image25| image:: _images/class2/image27.png
+.. |image25| image:: ../images/image27.png
    :width: 7.04444in
    :height: 2.53958in
-.. |image26| image:: _images/class2/image28.png
+.. |image26| image:: ../images/image28.png
    :width: 4.83169in
    :height: 5.41497in
-.. |image278| image:: _images/class2/image278.png
+.. |image278| image:: ../images/image278.png
    :width: 7.04167in
    :height: 5.88889in
-.. |image28| image:: _images/class2/image30.png
+.. |image28| image:: ../images/image30.png
    :width: 7.25278in
    :height: 1.01170in
-.. |image29| image:: _images/class2/image31.jpeg
+.. |image29| image:: ../images/image31.jpeg
    :width: 6.73811in
    :height: 1.69444in
-.. |image251| image:: _images/class2/image251.png
+.. |image251| image:: ../images/image251.png
    :width: 3.73811in
    :height: 1.69444in

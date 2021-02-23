@@ -28,10 +28,10 @@ flow table.
 
 8. Click **Next** to continue.
 
-.. |image450| image:: _images/class2/image450.png
+.. |image450| image:: ../images/image450.png
    :width: 6.48542in
    :height: 1.34653in
-.. |image451| image:: _images/class2/image451.png
+.. |image451| image:: ../images/image451.png
    :width: 6.49167in
    :height: 0.68819in
 

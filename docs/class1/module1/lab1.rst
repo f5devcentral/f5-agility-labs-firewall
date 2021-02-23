@@ -46,11 +46,11 @@ Inspect Application Pools
 
 After connecting to the jump host via RDP, click on the Chrome shortcut on the desktop or task bar.
 
-.. image:: _images/desktop.png
+.. image:: ../images/desktop.png
 
 The BIG-IP login screen should open in the first tab. 
 
-.. image:: _images/bigip_login.png
+.. image:: ../images/bigip_login.png
 
 Enter the credentials shown in the welcome message and click **Log In**.
 
@@ -96,7 +96,7 @@ Navigate to **Local Traffic** > **Pools** > **Pool List**.
 
 This screenshot shows an example of the pool list in the TMUI:
 
-.. image:: _images/class2/image162.png
+.. image:: ../images/image162.png
 
 Inspect Application Virtual Servers
 -----------------------------------
@@ -129,40 +129,40 @@ To view the network map, navigate to **Local Traffic** > **Network Map**.
 
 This completes Module 1 - Lab 1. Click **Next** to continue.
 
-.. |image163| image:: _images/class2/image163.png
-.. |image1| image:: _images/class2/image3.png
-.. |image2| image:: _images/class2/image4.png
+.. |image163| image:: ../images/image163.png
+.. |image1| image:: ../images/image3.png
+.. |image2| image:: ../images/image4.png
    :width: 6.74931in
    :height: 5.88401in
-.. |image3| image:: _images/class2/image5.png
+.. |image3| image:: ../images/image5.png
    :width: 7.05556in
    :height: 1.33333in
-.. |image4| image:: _images/class2/image6.png
+.. |image4| image:: ../images/image6.png
    :width: 7.05556in
    :height: 3.22222in
-.. |image5| image:: _images/class2/image7.png
+.. |image5| image:: ../images/image7.png
    :width: 7.05556in
    :height: 7.31944in
-.. |image6| image:: _images/class2/image8.png
+.. |image6| image:: ../images/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: _images/class2/image7.png
+.. |image7| image:: ../images/image7.png
    :width: 7.05000in
    :height: 5.46949in
-.. |image8| image:: _images/class2/image10.png
+.. |image8| image:: ../images/image10.png
    :width: 7.05556in
    :height: 2.63889in
-.. |image9| image:: _images/class2/image11.png
+.. |image9| image:: ../images/image11.png
    :width: 7.05556in
-.. |image10| image:: _images/class2/image12.png
+.. |image10| image:: ../images/image12.png
    :width: 7.05556in
-.. |image300| image:: _images/class2/image300.png
+.. |image300| image:: ../images/image300.png
    :width: 7.05556in
-.. |image301| image:: _images/class2/image301.png
+.. |image301| image:: ../images/image301.png
    :width: 7.05556in
-.. |image302| image:: _images/class2/image302.png
+.. |image302| image:: ../images/image302.png
    :width: 7.05556in
-.. |image303| image:: _images/class2/image303.png
+.. |image303| image:: ../images/image303.png
    :width: 7.05556in
-.. |image304| image:: _images/class2/image304.png
+.. |image304| image:: ../images/image304.png
    :width: 7.05556in

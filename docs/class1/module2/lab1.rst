@@ -6,7 +6,7 @@ insert a packet trace into the internal flow so you can analyze what component
 within the system is allowing or blocking packets based on your configuration 
 of features and rule sets.
 
-.. image:: _images/class2/image440.png
+.. image:: ../images/image440.png
 
 The packet tracing is inserted at L3 immediately prior to the Global IP
 intelligence. Because it is after the L2 section, this means that:

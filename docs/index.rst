@@ -8,8 +8,6 @@ Welcome to the |classbold| lab at F5 Agility |year|
 
 |repoinfo|
 
-.. |image1| image:: /_static/class1/image1.gif
-
 F5 BIG-IP Advanced Firewall Manager (AFM) is a high-performance, full-proxy network security
 solution designed to protect networks and data centers against incoming threats that enter
 the network on the most widely deployed protocols. Built on F5’s industry-leading Application

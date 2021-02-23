@@ -29,9 +29,9 @@ AFM also can list out stale rules within the device its self. You must first ena
 This concludes the Advanced Multilayer Firewall Protection Lab. We hope you found this information
 valuable.
 
-.. |image447| image:: _images/class2/image447.png
+.. |image447| image:: ../images/image447.png
    :width: 3.55556in
    :height: 3.70347in
-.. |image448| image:: _images/class1/image448.png
+.. |image448| image:: ../images/image448.png
    :width: 6.49722in
    :height: 1in

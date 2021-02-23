@@ -49,17 +49,25 @@ Logging profiles specify which data/events should be logged and how that data sh
 
    **Network Firewall**: *Checked*
 
-|image25|
-
 3. Click on the **Protocol Security** tab.
 4. Set the **HTTP, FTP, SMTP Security** log publisher to *firewall_log_publisher*. Leave all other fields using the default values.
+
+|image25|
+
 5. Click on the log profile **Network Firewall** tab and configure using the following information:
+
      **Network Firewall Publisher**: *firewall_log_profile*
+
      **Log Rule Matches**: Check *Accept*, *Drop* and *Reject*
+
      **Log IP Errors**: *Checked*
+
      **Log TCP Errors**: *Checked*
+
      **Log TCP Events**: *Checked*
+
      **Log Translation Fields**: *Checked*
+
      **Storage Format**: *Field-List* (Move all to Selected Items)
 
 |image26|

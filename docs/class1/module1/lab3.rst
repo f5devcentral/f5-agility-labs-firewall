@@ -70,9 +70,9 @@ Logging profiles specify which data/events should be logged and how that data sh
 
    **Storage Format**: *Field-List* (Move all to Selected Items)
 
-|image26|
+   |image26|
 
-.. note:: Leave all other fields using the default values.
+   .. note:: Leave all other fields using the default values.
 
 6. Scroll to the bottom of the screen and click **Create**.
 
@@ -82,19 +82,36 @@ Apply The Logging Configuration
 Apply the newly created log profile to the external virtual server created in the previous lab.
 
 1. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
+
 2. Click on *EXT_VIP_10.1.10.30* virtual server.
+
 3. Click on the **Security** down-drop from the top menu bar and select **Policies**.
+
 4. Change the **Log Profiles** field to *Enabled* and select the *firewall_log_profile* profile.
-6. Leave all other fields using the default values. Your screen should appear as below:
+
+5. Leave all other fields using the default values. Your screen should appear as below:
 
 |image278|
 
-7. Click **Update**.
+6. Click **Update**.
 
 Validate Lab 3 Configuration
 ----------------------------
 
 Refresh the app sites' browser tabs to access the virtual server or repeat the curl statements from the previous sections.
+
+.. code-block:: console
+
+    curl -k https://10.1.10.30 -H Host:site1.com
+
+    curl -k https://10.1.10.30 -H Host:site2.com
+
+    curl -k https://10.1.10.30 -H Host:site3.com
+
+    curl -k https://10.1.10.30 -H Host:site4.com
+
+    curl -k https://10.1.10.30 -H Host:site5.com
+
 
 .. note:: This test generates traffic that creates network firewall log entries.
 

@@ -6,9 +6,11 @@ Create and View Packet Tracer Entries
 
 In this section, you will generate various types of traffic as you did
 previously, but you will view the flow using the network packet
-tracer. Return to the TMUI in Chrome and log in if necessary.
+tracer. 
 
-**Navigation:** Security > Debug > Packet Tester.
+1. Return to the TMUI in Chrome and log in if necessary.
+
+2. Navigate to **Security** > **Debug** > **Packet Tester**.
 
 |image441|
 
@@ -32,7 +34,7 @@ Create a packet test with the following parameters:
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-Click **Run Trace** to view the response. Your output should resemble the
+3. Click **Run Trace** to view the response. Your output should resemble the
 allowed flow as shown below:
 
 |image442|
@@ -42,10 +44,10 @@ which rule is permitting the traffic.
 
 |image443|
 
-Click **New Packet Trace** (optionally do not clear the existing data –
+4. Click **New Packet Trace** (optionally do not clear the existing data –
 aka leave checked).
 
-Create a packet test with the following parameters:
+5. Create a packet test with the following parameters:
 
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
@@ -65,12 +67,12 @@ Create a packet test with the following parameters:
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-Click Run Trace to view the response. Your output should resemble the
+6. Click Run Trace to view the response. Your output should resemble the
 allowed flow as shown below:
 
 |image444|
 
-Next to the **New Packet Trace** button, note the Clear Data checkbox.
+7. Next to the **New Packet Trace** button, note the Clear Data checkbox.
 Uncheck it, so you won't have to input all the fields again.
 
 +-------------------+------------------------+
@@ -93,9 +95,9 @@ Uncheck it, so you won't have to input all the fields again.
 
 This traffic will be blocked by the virtual Server rule.
 
-Click on the Virtual Server Rules Icon to get more specific information.
+8. Click on the Virtual Server Rules Icon to get more specific information.
 
-Click **Next** to continue.
+9. Click **Next** to continue.
 
 .. |image441| image:: _images/class2/image441.png
    :width: 6.48958in

@@ -16,6 +16,7 @@ We will also create a rules which allows HTTP and HTTPS traffic to access 10.1.1
 1. On the BIG-IP UI, navigate to **Security** > **Network Firewall** > **Rule Lists**.
 2. Click **Create** and use the following parameters to create a rule list.
     **Name**: *web_rule_list*.
+    
     |image270|
 3. Click **Finished**.
 

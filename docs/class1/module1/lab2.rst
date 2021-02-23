@@ -10,53 +10,42 @@ We will add enforcement rules at the virtual server level to demonstrate functio
 
 On the BIG-IP, we'll create a rule list to allow traffic. A logical container will be 
 created before the individual rules can be added. You will create a list with rules to 
-allow port 80 (HTTP), 443 (HTTPS), and 22  to servers 10.1.20.11 through 
-10.1.20.17 We will also create a rules which allows HTTP and HTTPS traffic to access 
-10.1.10.30.
+allow port 80 (HTTP), 443 (HTTPS), and 22 to servers 10.1.20.11 through 10.1.20.17.
+We will also create a rules which allows HTTP and HTTPS traffic to access 10.1.10.30.
 
-Create a container for the rules by going to:
+1. On the BIG-IP UI, navigate to **Security** > **Network Firewall** > **Rule Lists**.
+2. Click **Create** and use the following parameters to create a rule list.
+    **Name**: *web_rule_list*.
+    |image270|
+3. Click **Finished**.
 
-**Navigation:** Security > Network Firewall > Rule Lists
-
-Click on **Create**.
-
-For the **Name** enter *web_rule_list*.
-
-Click **Finished**.
-
-|image270|
-
-Your list of *rule lists* should appear similar to below: 
+Your list of *rule lists* should appear similar to below.
 
 |image269|
 
-**Navigation** Select the *web_rule_list* by clicking on it in the Rule Lists table
+Next, we'll add rules to the rule list we just created.
 
-Click the **Add** button in the Rules section. 
-
-|image276|
-
-Add a rules into the list to allow HTTP and HTTPS traffic as described in the next steps.
-
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Name**                | allow_http_and_https                                                                            |
-+=========================+=================================================================================================+
-| **Protocol**            | TCP                                                                                             |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Source**              | Leave at Default of **Any**                                                                     |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Address** | Pulldown **Specify Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                 |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Destination Port**    | Pulldown **Specify…** Port **80**, click **Add**  **Specify…** Port **443**, click **Add**      |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Action**              | **Accept**                                                                                      |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| **Logging**             | Enabled                                                                                         |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-
-Click **Repeat**.
-
-Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
+1. Select the *web_rule_list* by clicking on it in the Rule Lists table.
+2. Click the **Add** button in the Rules section. 
+    |image276|
+3. Add a rules into the list to allow HTTP and HTTPS traffic as described in the next steps.
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | **Name**                | allow_http_and_https                                                                            |
+   +=========================+=================================================================================================+
+   | **Protocol**            | TCP                                                                                             |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | **Source**              | Leave at Default of **Any**                                                                     |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | **Destination Address** | Pulldown **Specify Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                 |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | **Destination Port**    | Pulldown **Specify…** Port **80**, click **Add**  **Specify…** Port **443**, click **Add**      |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | **Action**              | **Accept**                                                                                      |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | **Logging**             | Enabled                                                                                         |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+4. Click **Repeat**.
+5. Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
 
 +-------------------------+-----------------------------------------------------------+
 | **Name**                | allow_any_10_1_10_30                                      |

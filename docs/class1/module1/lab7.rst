@@ -27,9 +27,7 @@ external sensor such as an IDS for further security assessment.
 
    .. image:: _images/advanced_options_dropdown.png
 
-6. Scroll to the configuration for Clone Pool (Client) and select **None**.
-
-7. Scroll to the configuration for Clone Pool (Server) and select **IDS_pool**.
+6. Scroll to the configuration for Clone Pool (Client) and select **None**. For the Clone Pool (Server), select **IDS_pool**.
 
    |image60|
 

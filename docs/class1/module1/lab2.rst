@@ -15,9 +15,10 @@ We will also create a rules which allows HTTP and HTTPS traffic to access 10.1.1
 
 1. On the BIG-IP UI, navigate to **Security** > **Network Firewall** > **Rule Lists**.
 2. Click **Create** and use the following parameters to create a rule list.
-   **Name**: *web_rule_list*.
+    **Name**: *web_rule_list*.
     
-   |image270|
+|image270|
+
 3. Click **Finished**.
 
 Your list of *rule lists* should appear similar to below.
@@ -30,6 +31,7 @@ Next, we'll add rules to the rule list we just created.
 2. Click the **Add** button in the Rules section. 
 
    |image276|
+
 3. Add a rules into the list to allow HTTP and HTTPS traffic as described in the next steps.
 
 +-------------------------+-------------------------------------------------------------------------------------------------+
@@ -88,14 +90,20 @@ Now we will assign this rule list to a policy.
 1. Navigate to **Security** > **Network Firewall** > **Policies**.
 2. Click **Create**.
 3. For the **Name** enter *rd_0_policy*.
+
 |image273|
+
 4.Click **Finished**.
+
 .. note:: We commonly use “RD” in our rules to help reference the “Route Domain”, default is 0.
+
 5. Edit the **rd_0_policy** by clicking on it in the Policy Lists table.
 6. Click the **Add Rule List** button. 
 7. For the **Name**, start typing *web_rule_list*. You will notice the name will auto complete, making it easy to reference the existing object.
 8. Select the rule list */Common/web_rule_list*. Ensure that *enabled* is selected under **State**.
+
 |image274|
+
 9. Click **Done Editing**. You will notice the changes are unsaved and need to be committed to the system. This is a nice feature to have enabled to verify you want to commit the changes you’ve just made without a change automatically being implemented.
 10. Click **Commit Changes to System** to commit your changes.
 
@@ -105,7 +113,9 @@ Assign the rd_0_policy to Route Domain 0
 1. Navigate to **Network** > **Route Domains**.
 2. Click on the *0* to select route domain 0. A route domain is similar to selecting a default VRF on an IP router, and 0 is the default.
 3. Select the **Security** tab. Set **Enforcement** to *Enable* and select the *rd_0_policy*.
+
 |Image275|
+
 4. Finally, click **Update**.
 
 Configure BIG-IP Firewall in ADC Mode

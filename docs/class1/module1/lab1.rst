@@ -1,46 +1,3 @@
-Getting Started
-===============
-
-Check your email for an invitation from noreply@registration.udf.f5.com. Check your spam folder if you cant locate the email.
-
-The email will contain yur username and temporary password.
-
-Click the **how to join a training class** link.
-
-.. Note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host"
-
-Click the link **Log in here**.
-
-|image301| :: /_static/class2/image301.png
-
-Select the course you wnat to take and press **Launch**
-
-|image302| :: /_static/class2/image302.png
-
-Press the blue **Join** button to enter the  class
-
-Review the **Deployment Description**
-
-Select the Deployment Tab at the top of the screen
-
-|image303| :: /_static/class2/image303.png
-
-Wait about 10 minutes for the **F5 Products** and **Systems** to complete Startup
-
-.. Note:: The Windows Jump host takes a few minutes to complete startup... Be patient even if it shows a green indication.
-
-Select the **Access** link below the **Windows Jumpbox** and select **RDP**.
-
-Select **More Choices**  / **Use A Different Account** from the RDP login screen
-
-**Credentials**
-
-username: external_user
-
-password: P@ssw0rd!
-
-|image304| :: /_static/class2/image304.png
-
 Firewall Rule Hierarchy
 -----------------------
 
@@ -73,9 +30,7 @@ except management.
 
 |image300|
 
-.. TIP:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
-
-.. TIP:: Use the Chrome Browser on the Jump Host desktop to configure BIG-IP 1 10.1.1.4. The login credentials are on the BIG-IP login page.
+.. tip:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
 =================================================
 Lab 1: Pre-configured  pools and  virtual servers
@@ -90,18 +45,26 @@ server is necessary to accept specific types of traffic.
 The pool is a logical group of hosts that is applied to and will receive
 traffic from a virtual server.
 
-|image1| :: /_static/class2/image1.png
-
-.. Note:: Use the Chrome Browser to Connect to BIG-IP01--- https://10.1.1.4. Credentials are displayed in the login screen.
+|image1|
 
 Inspect Application Pools
 -------------------------
 
-On the BIG-IP, verify the following pools using the following tabel of pool information.  
+After connecting to the jump host via RDP, click on the Chrome shortcut on the desktop or task bar.
+
+.. image:: _images/desktop.png
+
+The BIG-IP login screen should open in the first tab. 
+
+.. image:: _images/bigip_login.png
+
+Enter the credentials shown in the welcome message and click **Log In**.
+
+Verify the following pools using the following tabel of pool information.  
 
 **Navigation:** Local Traffic > Pools > Pool List
 
-.. Note:: Other pools may exist than the ones in the table below. The pools in this table are the ones relevant to this class.
+.. note:: Other pools may exist than the ones in the table below. The pools in this table are the ones relevant to this class.
 
 .. list-table::
    :header-rows: 1
@@ -137,7 +100,7 @@ On the BIG-IP, verify the following pools using the following tabel of pool info
 
 This screenshot shows an example of the pool list in the TMUI:
 
-|image162|
+.. image:: _images/class2/image162.png
 
 Inspect Application Virtual Servers
 -----------------------------------
@@ -153,7 +116,7 @@ are not used.
 
 **Navigation:** Local Traffic > Virtual Servers > Virtual Server List
 
-|image163| image:: /_static/class1/image163.png
+|image163|
 
 Inspect the Local Traffic Network Map
 -------------------------------------
@@ -162,45 +125,44 @@ Inspect the Local Traffic Network Map
 
 |image7|
 
-.. NOTE:: The virtual servers should show a green circle for status.
+.. note:: The virtual servers should show a green circle for status.
 
 This completes Module 1 - Lab 1. Click **Next** to continue.
 
-.. |image162| image:: /_static/class2/image162.png
-.. |image163| image:: /_static/class2/image163.png
-.. |image1| image:: /_static/class2/image3.png
-.. |image2| image:: /_static/class2/image4.png
+.. |image163| image:: _images/class2/image163.png
+.. |image1| image:: _images/class2/image3.png
+.. |image2| image:: _images/class2/image4.png
    :width: 6.74931in
    :height: 5.88401in
-.. |image3| image:: /_static/class2/image5.png
+.. |image3| image:: _images/class2/image5.png
    :width: 7.05556in
    :height: 1.33333in
-.. |image4| image:: /_static/class2/image6.png
+.. |image4| image:: _images/class2/image6.png
    :width: 7.05556in
    :height: 3.22222in
-.. |image5| image:: /_static/class2/image7.png
+.. |image5| image:: _images/class2/image7.png
    :width: 7.05556in
    :height: 7.31944in
-.. |image6| image:: /_static/class2/image8.png
+.. |image6| image:: _images/class2/image8.png
    :width: 7.05000in
    :height: 3.46949in
-.. |image7| image:: /_static/class2/image7.png
+.. |image7| image:: _images/class2/image7.png
    :width: 7.05000in
    :height: 5.46949in
-.. |image8| image:: /_static/class2/image10.png
+.. |image8| image:: _images/class2/image10.png
    :width: 7.05556in
    :height: 2.63889in
-.. |image9| image:: /_static/class2/image11.png
+.. |image9| image:: _images/class2/image11.png
    :width: 7.05556in
-.. |image10| image:: /_static/class2/image12.png
+.. |image10| image:: _images/class2/image12.png
    :width: 7.05556in
-.. |image300| image:: /_static/class2/image300.png
+.. |image300| image:: _images/class2/image300.png
    :width: 7.05556in
-.. |image301| image:: /_static/class2/image301.png
+.. |image301| image:: _images/class2/image301.png
    :width: 7.05556in
-.. |image302| image:: /_static/class2/image302.png
+.. |image302| image:: _images/class2/image302.png
    :width: 7.05556in
-.. |image303| image:: /_static/class2/image303.png
+.. |image303| image:: _images/class2/image303.png
    :width: 7.05556in
-.. |image304| image:: /_static/class2/image304.png
+.. |image304| image:: _images/class2/image304.png
    :width: 7.05556in

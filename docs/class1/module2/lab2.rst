@@ -70,8 +70,8 @@ allowed flow as shown below:
 
 |image444|
 
-Next to the packet Trace button note the Clear Data Check 
-box **Uncheck it** so you dont hve to input all the fields again.
+Next to the **New Packet Trace** button, note the Clear Data checkbox.
+Uncheck it, so you won't have to input all the fields again.
 
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
@@ -93,20 +93,20 @@ box **Uncheck it** so you dont hve to input all the fields again.
 
 This traffic will be blocked by the virtual Server rule.
 
-**Navigation** Click on the Virtual Server Rules Icon to get more specific information
+Click on the Virtual Server Rules Icon to get more specific information.
 
 Click **Next** to continue.
 
-.. |image441| image:: /_static/class2/image441.png
+.. |image441| image:: _images/class2/image441.png
    :width: 6.48958in
    :height: 3.44792in
-.. |image442| image:: /_static/class2/image442.png
+.. |image442| image:: _images/class2/image442.png
    :width: 6.47361in
    :height: 2.94722in
-.. |image443| image:: /_static/class2/image443.png
+.. |image443| image:: _images/class2/image443.png
    :width: 6.5in
    :height: 2.66667in
-.. |image444| image:: /_static/class2/image444.png
+.. |image444| image:: _images/class2/image444.png
    :width: 6.49722in
    :height: 2.97708in
 

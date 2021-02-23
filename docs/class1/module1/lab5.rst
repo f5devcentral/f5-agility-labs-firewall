@@ -36,9 +36,7 @@ Verify that the iRule is assigned to the Virtual Server
 
 **Navigation:** Local Traffic > Virtual Servers
 
-**Navigation:** Click on the ``EXT_VIP_10.1.10.30`` virtual server
-
-**Navigation:** Click on the **Resources** tab.
+Click on the *EXT_VIP_10.1.10.30* virtual server, then click on the **Resources** tab.
 
 |image45|
 
@@ -46,32 +44,29 @@ Verify that the iRule is assigned to the Virtual Server
 
 This is where you assign iRules.
 
-**Navigation:** Click on the Cancel button since the iRule is already assigned
+**Navigation:** Click on the Cancel button since the iRule is already assigned.
 
 |image46|
 
 Validate SNAT Function
 ----------------------
 
-We tested functionality in prior exercises with the commands below. 
-Leverage curl from the Cygwin Terminal to insert the 
+Let's once again leverage curl from the Cygwin Terminal to insert the 
 X-Forwarded-For header in to the request.
 
 .. code-block:: console
 
    curl -k https://10.1.10.30 -H 'Host: site1.com' -H 'X-Forwarded-For: 1.202.2.1'
 
-**Expected Result:** The site should be blocked by the geo_restrict_rule_list and generate a 403 Forbidden response.
+**Expected Result:** The site should be blocked by the geo_restrict_rule_list.
 
-.. NOTE:: Optionally you can log into the CLI on the BIG-IP. Putty BIGIP_A --Uersname: root  Password: f5DEMOs4u Then tail -f /var/log/ltm. The iRule logs the SIP
-
-Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 allowed.
+Now, validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.5 are allowed.
 
 .. code-block:: console
 
    curl -k https://10.1.10.30 -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-**Expected Result:** Page will work
+**Expected Result:** Site's main page is retrieved.
 
 .. code-block:: console
 
@@ -85,17 +80,23 @@ Validate that requests sourced from the X-Forwarded-For IP address of 172.16.99.
 Solve For TCP Issues With CDN Networks
 --------------------------------------
 
-The next step is to solve for the TCP connection issue with CDN providers. While we are provided the originating client IP address, dropping or reseting the connection can be problematic for other users of the application. This solution is accomplished via AFM iRules. The iRule is already provided for you. We need to apply it to the Network Firewall downloads\_policy Policy. It still is logged as a drop or reset in the firewall logs. We allow it to be processed slightly further so that a Layer 7 response can be provided.
+The next step is to solve for the TCP connection issue with CDN providers. While we 
+are provided the originating client IP address to allow/drop traffic, simply dropping 
+or reseting the connection can be problematic for other users of the application. 
+
+Instead of dropping the connection immediately, we can send an HTTP 403 response. This 
+more graceful solution is accomplished via AFM iRules. The iRule has already been created. 
+We need to apply it to the *downloads\_policy* policy. It still is logged as a drop or reset 
+in the firewall logs. We allow it to be processed slightly further so that a Layer 7 
+response can be provided.
+
+Return to the BIG-IP TMUI in Chrome.
 
 **Navigation:** Security > Network Firewall > Rule Lists
 
-**Navigation:** Select **geo_restrict_rule_list**
+Select *geo_restrict_rule_list*, then select *block_AF_CN_CA*.
 
-**Navigation:** Select **block_AF_CN_CA**
-
-**Navigation:** Add the AFM_403_Downloads iRule to the rule list.
-
-**Navigation** Click **Update**.
+Add the *AFM_403_Downloads* iRule to the rule list, then click **Update**.
 
 |image47|
 
@@ -119,22 +120,14 @@ should be returned.
      </body>
    </html>
 
-.. ATTENTION:: Since a TCP solution could cause users to be blocked without 
-   explanation , the HTML error response will traverse the CDN network back 
-   only to the originating client. Using a unique error code such as 418 (I 
-   Am A Teapot) would allow you to determine that the webserver is likely 
-   not the source of the response. It would also allow the CDN network 
-   providers to track these error codes. Try to find one that has a sense 
-   of humor.
-
 This concludes Module 1 - Lab 5. Click **Next** to continue.
 
-.. |image45| image:: /_static/class2/image46.png
+.. |image45| image:: _images/class2/image46.png
    :width: 7.04167in
    :height: 4.25000in
-.. |image46| image:: /_static/class2/image47.png
+.. |image46| image:: _images/class2/image47.png
    :width: 7.04167in
    :height: 2.81944in
-.. |image47| image:: /_static/class2/image48.png
+.. |image47| image:: _images/class2/image48.png
    :width: 7.04167in
    :height: 6.97222in

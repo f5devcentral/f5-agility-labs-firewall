@@ -29,9 +29,9 @@ A log publisher defines an end point for logging.
 
    **Destinations (Selected)**: *local-db*
 
-|image24|
+   |image24|
 
-.. note:: Leave all other fields to their default values.
+   .. note:: Leave all other fields to their default values.
 
 4. Click **Finished**.
 

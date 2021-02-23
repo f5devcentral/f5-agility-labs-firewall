@@ -25,9 +25,9 @@ A log publisher defines an end point for logging.
 2. Navigate to **System** > **Logs** > **Configuration** > **Log Publishers**.
 3. Click **Create**. Use the values below to create a log publisher.
 
-    **Name**: *firewall_log_publisher*
+   **Name**: *firewall_log_publisher*
 
-    **Destinations (Selected)**: *local-db*
+   **Destinations (Selected)**: *local-db*
 
 |image24|
 

@@ -1,7 +1,8 @@
 Lab 6: Configure HTTP security
 ==============================
 
-You can secure HTTP traffic by using a default configuration or by customizing the configuration. You can adjust the following security checks in an HTTP security profile:
+You can secure HTTP traffic by using a default configuration or by customizing the configuration. You can 
+adjust the following security checks in an HTTP security profile:
 
 - HTTP protocol compliance validation
 - Evasion technique detection
@@ -15,11 +16,11 @@ You can secure HTTP traffic by using a default configuration or by customizing t
 Configure An HTTP Security Profile And Apply It To The External Virtual Server
 ------------------------------------------------------------------------------
 
-Return to the BIG-IP TMUI in Chrome.
+1. Return to the BIG-IP TMUI in Chrome.
 
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP
+2. Navigate to **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 
-Confirm that the **Security Profiles** tab is selected, then click **Create**.
+3. Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 +---------------------------------+------------------------+
 | **Profile Name**                | demo_http_security     |
@@ -35,7 +36,7 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 .. note::  Leave all other fields using the default values.
 
-Click the **Request Checks** tab. Change the **Response Type** drop-down to *Custom Response*.
+4. Click the **Request Checks** tab. Change the **Response Type** drop-down to *Custom Response*.
 
 .. tip:: We're going to allow the default HTTP methods. Restricting the methods allowed to reach production servers is a great way to shrink the attack surface.
 
@@ -45,7 +46,7 @@ Click the **Request Checks** tab. Change the **Response Type** drop-down to *Cus
 
 |image49|
 
-Click the **Blocking Page** tab.
+5. Click the **Blocking Page** tab.
 
 +---------------------+----------------------------------------------------------------+
 | **Response Type**   | Custom Response                                                |
@@ -57,15 +58,15 @@ Click the **Blocking Page** tab.
 
 .. note:: Leave all other fields using the default values.
 
-Click **Create**.
+6. Click **Create**.
 
 .. warning:: We did not put the policy in Blocking mode. We will do that after we verify functionality.
 
 Now, let's apply the HTTP security profile to the external virtual server.
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List
+7. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 
-Select *EXT_VIP_10.1.10.30*, then select the **Security** drop-down and choose **Policies**.
+8. Select *EXT_VIP_10.1.10.30*, then select the **Security** drop-down and choose **Policies**.
 
 +-------------------------+------------------------+------------------------+
 | **Protocol Security**   | Enabled                | demo_http_security     |
@@ -77,9 +78,9 @@ Select *EXT_VIP_10.1.10.30*, then select the **Security** drop-down and choose *
 
 .. note:: Leave all other fields using the default values.
 
-Click **Update**.
+9. Click **Update**.
 
-Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
+10. Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
 
 **Credentials: admin\/password**
 
@@ -87,7 +88,7 @@ Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
 
 .. note:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
-Browse the applicationb clicking on various links on the sidebar.
+11. Browse the applicationb clicking on various links on the sidebar.
 
 .. warning:: **If you change the admin password in DVWA, make sure you remember it for later!**
 
@@ -95,19 +96,15 @@ Browse the applicationb clicking on various links on the sidebar.
 
 .. note:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
 
-On the BIG-IP, review the log entries created in the previous step.
-
-**Navigation:** Security > Event Logs > Protocol > HTTP
+12. On the BIG-IP, review the log entries created in the previous step by navigating to **Security** > **Event Logs** > **Protocol** > **HTTP**.
 
 |image54|
 
 .. note::  Your log entries may be different than the example shown above but the concept should be the same.
 
-Edit the *demo_http_security* HTTP security profile.
+13. Edit the *demo_http_security* HTTP security profile by navigating to **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP
-
-Select the *demo_http_security* profile, then select the **Request Checks** tab.
+14. Select the *demo_http_security* profile, then select the **Request Checks** tab.
 
 +----------------------------+---------------------------------------------------------+
 | **Methods**                | Remove Post From the Allowed Group.                     |
@@ -119,9 +116,9 @@ Select the *demo_http_security* profile, then select the **Request Checks** tab.
 
 .. note:: Leave all other fields using the default values.
 
-Click **Finished**.
+15. Click **Finished**.
 
-On the jump box, Log out of DVWA by selecting Log Out in the menu. Attempt to log back in. **This action requires a POST action and will be blocked because this is not allowed. **
+16. On the jump box, Log out of DVWA by selecting Log Out in the menu. Attempt to log back in. **This action requires a POST action and will be blocked because this is not allowed. **
 
 URL: https://dvwa.com
 
@@ -131,16 +128,13 @@ URL: https://dvwa.com
 
 .. attention:: 
 
-Edit the demo\_http\_security HTTP security profile.
+17. Edit the *demo_http_security* HTTP security profile at **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP
-
-Select the *demo_http_security* profile, then select the **Request Checks** tab.
+18. Select the *demo_http_security* profile, then undo the POST block in the **Request Checks** tab.
 
 +----------------------------+---------------------------------------------------------+
-| **Methods**                | Add Post to the Allowed Group.                          |
-|                            |                                                         |
-|                            | Un-check “Block”                                        |
+| **Methods**                | - Add Post to the Allowed Group.                        |
+|                            | - Un-check “Block”                                      |
 +----------------------------+---------------------------------------------------------+
 
 This is the end of Module 1 - Lab 6. Click **Next** to continue.

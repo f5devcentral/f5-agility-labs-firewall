@@ -14,34 +14,26 @@ example of this would be with companies hosting cryptographic software which is 
 restrictions. In this case we will use the Geolocation feature to block access from a couple countries 
 only and only on the site1.com application.
 
-**Navigation:** Security > Network Firewall > Policies
+1. Navigate to **Security** > **Network Firewall** > **Policies**.
 
-Click **Create**. Enter the name *site1\_policy*.
-
-Leave all other fields using the default values.
+2. Click **Create**. Enter the name *site1_policy*. Leave all other fields using the default values.
 
 |image256|
 
-Click **Finished**.
+3. Click **Finished**.
 
-Create a *geo\_restrict\_rule\_list* Rule List
+Create a *geo_restrict_rule_list* Rule List
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Rules can also be created directly inside of policies. Creating rule lists allow for a set of rules to be reused in multiple policies.
+1. Navigate to **Security** > **Network Firewall** > **Rule Lists**.
 
-**Navigation:** Security > Network Firewall > Rule Lists
-
-Click **Create**.
-
-+------------+-------------------------+
-| **Name**   | geo_restrict_rule_list  |
-+------------+-------------------------+
+2. Click **Create**. Specify the name of *geo_restrict_rule_list*.
 
 |image253|
 
-Click **Finished**, then click on the *geo_restrict_rule_list* you just created.
+3. Click **Finished**, then click on the *geo_restrict_rule_list* you just created.
 
-Click *Add* to add a rule.
+4. Click *Add* to add a rule.
 
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA                         |
@@ -59,12 +51,14 @@ Click *Add* to add a rule.
 
 .. note:: Leave all other fields using the default values.
 
-**Navigation:** Click **Finished**.
+5.  Click **Finished**.
 
 Create Permit Log Network Firewall Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Navigation:** Click Add
+1. Once again, click **Add**.
+
+2. Create another firewall rule using the following values. 
 
 +---------------+---------------+
 | **Name**      | permit\_log   |
@@ -78,20 +72,20 @@ Create Permit Log Network Firewall Rule
 
 .. note:: Leave all other fields using the default values.
 
-Click **Finished**.
+3. Click **Finished**.
 
 |image252|
 
-Assign the geo_restrict_rule_list to the site1_policy
------------------------------------------------------
+Assign the *geo_restrict_rule_list* to the *site1_policy*
+---------------------------------------------------------
 
-**Navigation:** Security > Network Firewall > Policies
+1. Navigate to **Security** > **Network Firewall** > **Policies**.
 
-Click on **site1_policy**, then click **Add Rule List**.
+2. Click on *site1_policy*, then click **Add Rule List**.
 
-In the name field, start typing *geo* in the rule list field. Select **geo_restrict_rule_list**.
+3. In the name field, start typing *geo* in the rule list field. The name will autocomplete. Select *geo_restrict_rule_list* when shown.
 
-Click **Done Editing**, then **Commit Changes to System**.
+4. Click **Done Editing**, then **Commit Changes to System**.
 
 Validate the site is available before and after applying the Network Firewall
 Policy. From the second Chrome tab, try to connect again to the application site https://site1.com. 
@@ -104,23 +98,23 @@ From the desktop, launch the Cywin Terminal.
 
 |image255|
 
-.. note:: This step validates the site is available before applying the Network Firewall Policy.
-
 Assign The Policy To The Virtual Server
 ---------------------------------------
 
-A unique feature of the BIG-IP Firewall Module allows L3-4 security policies to be assigned specifically to an application i.e. Virtual Server. So each application can have its own firewall policy separate from other application virtual servers.
+A unique feature of the BIG-IP Firewall Module allows L3-4 security policies to be assigned specifically 
+to an application i.e. Virtual Server. So each application can have its own firewall policy separate from 
+other application virtual servers.
 
 Apply the Network Firewall Policy to Virtual Server
 ---------------------------------------------------
 
-**Navigation:** Local Traffic > Virtual Servers
+1. Navigate to **Local Traffic** > **Virtual Servers**.
 
-Click *int_vip_www.site1.com_1.1.1.1*.
+2. Click *int_vip_www.site1.com_1.1.1.1*.
 
-**Navigation:** Click on the **Security** drop-down and select **Policies**.
+3. Click on the **Security** drop-down and select **Policies**.
 
-Edit the Network Firewall section of the screen:
+4. Edit the Network Firewall section of the screen:
 
 +----------------------+-----------------------------------------------+
 | **Virtual Server**   | int_vip_www.site1.com_1.1.1.1                 |
@@ -138,7 +132,7 @@ Edit the Network Firewall section of the screen:
 
 .. note:: Leave all other fields using the default values.
 
-Click **Update**.
+5. Click **Update**.
 
 In order to test this geo-ip based rule, we need to simulate a connection from a prohibited country.
 
@@ -151,7 +145,7 @@ XFF to the source IP address.
 
 There is an iRule applied to EXT_VIP_10_1_10_30 which SNAT's the source IP to match the X-Forwarded-For header.
 
-**XFF-SNAT iRule**
+*XFF-SNAT iRule* syntax: 
 
 .. code-block:: tcl
 
@@ -178,7 +172,7 @@ External VIP to simulate specific IP addresses in the header
 
    curl -k https://10.1.10.30/ -H 'Host:site1.com' -H 'X-Forwarded-For: 172.16.99.5'
 
-Return to the firewall events (**Security** > **Event Logs** > **Network** > **Firewall**) log viewer and click **Search** to refresh. Observe the new entries
+Return to the firewall events (**Security** > **Event Logs** > **Network** > **Firewall**) log viewer and click **Search** to refresh. Observe the new entries.
 
 Next, we will simulate a connection an IP address in Bejing, China. Browse to 
 https://whatismyipaddress.com/ip/1.202.2.1 ... this site shows that this IP address 
@@ -186,7 +180,7 @@ is most likely in Beijing, China.
 
 .. tip:: You can check the geo classification of an address from the BIG-IP CLI using the command *geoip_lookup 1.202.2.1*
 
-Now issue the curl command and specify the source IP address.
+Now, issue the curl command and specify the source IP address with the following command:
 
 .. code-block:: console
 
@@ -198,29 +192,27 @@ This connection attempt will fail. Return to the BIG-IP GUI and refresh the fire
 
 |image265|
 
-Create A Separate Policy For The site2 Virtual Server
+Create A Separate Policy For the site2 Virtual Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now we want to create a second policy to restrict access to site2.
 
-**Navigation:** Security > Network Firewall > Policies
+1. Navigate to **Security** > **Network Firewall** > **Policies**.
 
-Click **Create**. Specify the **Name** of *site2\_policy*.
+2. Click **Create**. Specify the **Name** of *site2_policy*.
 
 |image257|
 
 .. note:: Leave all other fields using the default values.
 
-Click **Finished**.
+3. Click **Finished**.
 
-Modify the policy with rules to allow TCP port 80 from host 
-172.16.99.5 and deny all other adresses. This time we will 
-build the rules directly into the policy instead of using 
-a rule list.
+Modify the policy with rules to allow TCP port 80 from host 172.16.99.5 and deny all other adresses. This 
+time we will build the rules directly into the policy instead of using a rule list.
 
-Click on the *site2_policy* you just created, then click the **Add Rule** pull down on the upper right.
+4. Click on the *site2_policy* you just created, then click the **Add Rule** pull down on the upper right.
 
-Add the following rule at beginning:
+5. Add the following rule at beginning:
 
 +----------------+----------------------------+
 | **Name**       | allow_site_172.16.99.5     |
@@ -240,13 +232,13 @@ Add the following rule at beginning:
 
 .. note:: Leave all other fields using the default values.
 
-Click **Done Editing**.
+6. Click **Done Editing**.
 
 Now, create a Deny Log Network Firewall Rule.
 
 .. note:: As we are deployed in “ADC Mode” where the default action on a virtual server is ‘Accept’, we must also create a default deny rule. For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation at https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html.
 
-Click **Add Rule** pull down on the upper-right. Add a rule to the end of the policy.
+7. Click **Add Rule** pull down on the upper-right. Add a rule to the end of the policy.
 
 +---------------+--------------------+
 | **Name**      | deny_log           |
@@ -258,22 +250,24 @@ Click **Add Rule** pull down on the upper-right. Add a rule to the end of the po
 
 .. note:: Leave all other fields using the default values.
 
-Click **Done Editing**.
+8. Click **Done Editing**.
 
 |image259|
 
-Click **Commit Changes To System**.
+9. Click **Commit Changes To System**.
 
 |image260|
 
-Click **Finished**.
+10. Click **Finished**.
 
 Apply the site2_policy policy to Virtual Server
 -----------------------------------------------
 
-**Navigation:** Local Traffic > Virtual Servers
+1. Navigate to **Local Traffic** > **Virtual Servers**.
 
-Click on *int_vip_www.site2.com_2.2.2.2*. Select the **Security** drop-down and select **Policies**.
+2. Click on *int_vip_www.site2.com_2.2.2.2*. 
+
+3. Select the **Security** drop-down and select **Policies**.
 
 Update the settings to reflect the values below:
 
@@ -293,7 +287,7 @@ Update the settings to reflect the values below:
 
 .. note:: Leave all other fields using the default values.
 
-Click **Update**.
+4. Click **Update**.
 
 From the jump host, we will now validate the behavior of the policy and the associated rule list.
 

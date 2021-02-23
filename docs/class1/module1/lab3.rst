@@ -56,19 +56,19 @@ Logging profiles specify which data/events should be logged and how that data sh
 
 5. Click on the log profile **Network Firewall** tab and configure using the following information:
 
-     **Network Firewall Publisher**: *firewall_log_profile*
+   **Network Firewall Publisher**: *firewall_log_profile*
 
-     **Log Rule Matches**: Check *Accept*, *Drop* and *Reject*
+   **Log Rule Matches**: Check *Accept*, *Drop* and *Reject*
 
-     **Log IP Errors**: *Checked*
+   **Log IP Errors**: *Checked*
 
-     **Log TCP Errors**: *Checked*
+   **Log TCP Errors**: *Checked*
 
-     **Log TCP Events**: *Checked*
+   **Log TCP Events**: *Checked*
 
-     **Log Translation Fields**: *Checked*
+   **Log Translation Fields**: *Checked*
 
-     **Storage Format**: *Field-List* (Move all to Selected Items)
+   **Storage Format**: *Field-List* (Move all to Selected Items)
 
 |image26|
 

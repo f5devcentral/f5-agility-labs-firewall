@@ -42,9 +42,12 @@ Logging profiles specify which data/events should be logged and how that data sh
 
 1. Navigate to **Security** > **Event Logs** > **Logging Profiles**.
 2. Click **Create**. Use the values below to create the logging profile.
-    **Name**: *firewall_log_profile*
-    **Protocol Security**: *Checked*
-    **Network Firewall**: *Checked*
+
+   **Name**: *firewall_log_profile*
+
+   **Protocol Security**: *Checked*
+
+   **Network Firewall**: *Checked*
 
 |image25|
 

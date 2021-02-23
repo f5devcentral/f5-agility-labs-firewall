@@ -18,22 +18,22 @@ external sensor such as an IDS for further security assessment.
 
 3. Select the *IDS_Pool*, then click on the **Members** tab.
 
-.. Note:: Unencrypted traffic will be forwarded to this IP address.
+   .. Note:: Unencrypted traffic will be forwarded to this IP address.
 
 4. Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server by navigating to 
    **Local Traffic** > **Virtual Servers** > V**irtual Server List** and clicking on *EXT\_VIP\_10_1_10_30*.
 
 5. Select **Advanced** from the pulldown at the top of the Configuration section to view advanced configuration options.
 
-.. image:: _images/advanced_options_dropdown.png
+   .. image:: _images/advanced_options_dropdown.png
 
 6. Scroll to the configuration for Clone Pool (Client) and select **None**.
 
 7. Scroll to the configuration for Clone Pool (Server) and select **IDS_pool**.
 
-|image60|
+   |image60|
 
-.. Note:: Leave all other fields using the default values.
+   .. Note:: Leave all other fields using the default values.
 
 8. Scroll to the bottom of the screen and click **Update**.
 

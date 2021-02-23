@@ -1,22 +1,16 @@
 Firewall Rule Hierarchy
 -----------------------
 
-With the BIG-IP\ :sup:`®` Network Firewall, you use a context to
-configure the level of specificity of a firewall rule or policy. For
-example, you might make a global context rule to block ICMP ping
-messages, and you might make a virtual server context rule to allow only
-a specific network to access an application.
+With the BIG-IP\ :sup:`®` Advanced Firewall Manager (AFM), you can apply network ACLs to several different contexts to
+configure the level of specificity of a firewall rule or policy. For example, you might make a global context rule to block ICMP ping
+messages, and you might make a virtual server context rule to allow only a specific network to access an application.
 
 Context is processed in this order:
 
 -  Global
-
 -  Route domain
-
 -  Virtual server / self IP
-
 -  Management port\*
-
 -  Global drop\*
 
 The firewall processes policies and rules in order, progressing from the
@@ -32,9 +26,9 @@ except management.
 
 .. tip:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
 
-=================================================
-Lab 1: Pre-configured  pools and  virtual servers
-=================================================
+===============================================
+Lab 1: Pre-configured pools and virtual servers
+===============================================
 
 A virtual server is used by BIG-IP to identify specific types of
 traffic. Other objects such as profiles, policies, pools and iRules are
@@ -62,9 +56,7 @@ Enter the credentials shown in the welcome message and click **Log In**.
 
 Verify the following pools using the following tabel of pool information.  
 
-**Navigation:** Local Traffic > Pools > Pool List
-
-.. note:: Other pools may exist than the ones in the table below. The pools in this table are the ones relevant to this class.
+Navigate to **Local Traffic** > **Pools** > **Pool List**.
 
 .. list-table::
    :header-rows: 1
@@ -97,6 +89,9 @@ Verify the following pools using the following tabel of pool information.
      - tcp\_half\_open
      - 10.1.20.17
      - 80
+   * - IDS\_pool
+     - gateway_icmp
+     - 10.1.20.
 
 This screenshot shows an example of the pool list in the TMUI:
 
@@ -105,23 +100,27 @@ This screenshot shows an example of the pool list in the TMUI:
 Inspect Application Virtual Servers
 -----------------------------------
 
-By using the term 'internal' we are creating the virtual servers on 
-what is essentially a loopback VLAN which prevents them from being 
-exposed. The EXT_VIP in this exercise is used to forward traffic 
+This lab uses the term "internal" to refer to the network and hosts
+protected by the firewall. "External" refers to the network and hosts
+that are exposed to the public/internet. The EXT_VIP in this exercise is used to forward traffic 
 with specific characteristics to the internal VIP's. This is 
 accomplished by assigning a traffic policy to the VIP. The traffic 
 policy is described and inspected in the next section. For this 
 class, the Wildcard Virtual servers (Blue Square status indicator) 
 are not used. 
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List
+Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 
 |image163|
 
 Inspect the Local Traffic Network Map
 -------------------------------------
 
-**Navigation:** Local Traffic > Network Map
+The Network Map page in the Configuration utility provides a hierarchical view of BIG-IP local traffic objects, such as virtual servers, pools, and iRules. It displays the status for each component and the relationships between components, and it provides additional component information on the accompanying panels.
+
+Starting in BIG-IP 14.1.0, you can use the Network Map page for a variety or administrative tasks. You can view the status of the object, such as a pool member that may be marked offline, or view statistical information for the object, such as the current connection count for a virtual server. You can also view the relationship of one object to another, such as the parent-child relationship between a virtual server and a pool.
+
+To view the network map, navigate to **Local Traffic** > **Network Map**.
 
 |image7|
 

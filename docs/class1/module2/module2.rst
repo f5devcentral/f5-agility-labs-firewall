@@ -18,7 +18,7 @@ to make reviews and cleanups easier.
 Click **Next** to get started.
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 1
    :glob:
 
    lab*

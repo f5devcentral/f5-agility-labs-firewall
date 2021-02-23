@@ -29,7 +29,7 @@ Next, we'll add rules to the rule list we just created.
 1. Select the *web_rule_list* by clicking on it in the Rule Lists table.
 2. Click the **Add** button in the Rules section. 
 
-    |image276|
+   |image276|
 3. Add a rules into the list to allow HTTP and HTTPS traffic as described in the next steps.
 
 +-------------------------+-------------------------------------------------------------------------------------------------+

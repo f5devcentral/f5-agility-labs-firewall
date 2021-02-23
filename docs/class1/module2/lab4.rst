@@ -2,31 +2,29 @@
 Stale Rule Report
 =================
 
-AFM also can list out stale rules within the device its self. You must
-first enable the feature. 
+AFM also can list out stale rules within the device its self. You must first enable the feature. 
 
-**Navigation:** Security > Reporting > Settings > Reporting Settings
+1. Navigate to **Security** > **Reporting** > **Settings** > **Reporting Settings**.
 
-You will then need to ensure **Collect Stale Rules Statistics** is checked 
-under the Network Firewall Rules Section. Please be sure to click 
-**Save** before proceeding.
+2. Ensure **Collect Stale Rules Statistics** is checked under the Network Firewall Rules Section. 
+
+3. Click **Save** before proceeding.
 
 |image447|
 
-**Navigation:** Security > Reporting > Network > Stale Rules
+4. Navigate to **Security** > **Reporting** > **Network** > **Stale Rules**.
 
-Refresh the web page we’ve been testing (http://10.1.20.11) 
-several times to see data populate into the rules.
+5. Refresh the web page we’ve been testing (http://10.1.20.11) several times to see data populate into the rules.
 
-.. note:: It could take 60+ seconds for data to populate after refreshing the page.
+   .. note:: It could take 60+ seconds for data to populate after refreshing the page.
 
-|image448|
+   |image448|
 
-This information is quite useful for keeping a rule base tidy and optimized.
+   This information is quite useful for keeping a rule base tidy and optimized.
 
-Take a few minutes to inspect the other reports. Only the Enforced Rules will contain data.
-
-**Navigation** Security > Reporting > Network 
+6. Take a few minutes to inspect the other reports. (**Security** > **Reporting** > **Network**)
+ 
+   .. note:: Only the Enforced Rules will contain data. 
 
 This concludes the Advanced Multilayer Firewall Protection Lab. We hope you found this information
 valuable.

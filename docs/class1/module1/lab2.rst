@@ -29,41 +29,52 @@ Next, we'll add rules to the rule list we just created.
 2. Click the **Add** button in the Rules section. 
     |image276|
 3. Add a rules into the list to allow HTTP and HTTPS traffic as described in the next steps.
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-   | **Name**                | allow_http_and_https                                                                            |
-   +=========================+=================================================================================================+
-   | **Protocol**            | TCP                                                                                             |
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-   | **Source**              | Leave at Default of **Any**                                                                     |
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-   | **Destination Address** | Pulldown **Specify Address Range** 10.1.20.11 to 10.1.20.17, then click **Add**                 |
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-   | **Destination Port**    | Pulldown **Specify…** Port **80**, click **Add**  **Specify…** Port **443**, click **Add**      |
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-   | **Action**              | **Accept**                                                                                      |
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-   | **Logging**             | Enabled                                                                                         |
-   +-------------------------+-------------------------------------------------------------------------------------------------+
-4. Click **Repeat**.
-5. Add a rule into the list to allow HTTPS to Virtual Server 10_1_10_30.
+
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Name**                | *allow_http_and_https*                                                                          |
++=========================+=================================================================================================+
+| **Protocol**            | *TCP*                                                                                           |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Source**              | Leave at Default of *Any*                                                                       |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Destination Address** | Pulldown **Specify Address Range** *10.1.20.11* to *10.1.20.17*, then click **Add**             |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Destination Port**    | Pulldown **Specify…** Port *80*, click **Add**, **Specify…** Port *443*, click **Add**          |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Action**              | *Accept*                                                                                        |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| **Logging**             | *Enabled*                                                                                       |
++-------------------------+-------------------------------------------------------------------------------------------------+
+
+Your screen should appear as such:
+
+.. image:: _images/allow_http_and_https_rule.png
+  :alt:  screenshot
+
+4. Click **Finished**, then add another rule by clicking **Add** again.
 
 +-------------------------+-----------------------------------------------------------+
 | **Name**                | allow_any_10_1_10_30                                      |
 +=========================+===========================================================+
-| **Protocol**            | TCP                                                       |
+| **Order**               | *Last*                                                    |
 +-------------------------+-----------------------------------------------------------+
-| **Source**              | Leave at Default of **Any**                               |
+| **Protocol**            | *TCP*                                                     |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Address** | Pulldown **Specify...**\ 10.1.10.30 then click **Add**    |
+| **Source**              | Leave at Default of *Any*                                 |
 +-------------------------+-----------------------------------------------------------+
-| **Destination Port**    | Leave at Default of **Any**                               |
+| **Destination Address** | Pulldown **Specify...**\ *10.1.10.30* then click **Add**  |
 +-------------------------+-----------------------------------------------------------+
-| **Action**              | **Accept**                                                |
+| **Destination Port**    | Leave at Default of *Any*                                 |
 +-------------------------+-----------------------------------------------------------+
-| **Logging**             | Enabled                                                   |
+| **Action**              | *Accept*                                                  |
++-------------------------+-----------------------------------------------------------+
+| **Logging**             | *Enabled*                                                 |
 +-------------------------+-----------------------------------------------------------+
 
-Click **Finished**. Your rules list should appear as shown below:
+.. image:: _images/allow_any_10_1_10_30_rule.png
+  :alt:  screenshot
+
+5. Click **Finished**. Your rules list should appear as shown below:
 
 |image272|
 
@@ -72,107 +83,71 @@ Assign the Rule List to a Policy
 
 Now we will assign this rule list to a policy. 
 
-**Navigation:** Security > Network Firewall > Policies
-
-Click **Create**.
-
-For the **Name** enter *rd_0_policy*.
-
+1. Navigate to **Security** > **Network Firewall** > **Policies**.
+2. Click **Create**.
+3. For the **Name** enter *rd_0_policy*.
 |image273|
-
-Click **Finished**.
-
+4.Click **Finished**.
 .. note:: We commonly use “RD” in our rules to help reference the “Route Domain”, default is 0.
-
-**Navigation** Edit the **rd_0_policy** by clicking on it in the Policy Lists table, 
-
-Click the **Add Rule List** button. 
-
-For the **Name**, start typing *web_rule_list*. You will notice the name will auto complete, making it easy to reference the existing object.
-
-Select the rule list */Common/web_rule_list*. Ensure that *enabled* is selected under **State**.
-
+5. Edit the **rd_0_policy** by clicking on it in the Policy Lists table.
+6. Click the **Add Rule List** button. 
+7. For the **Name**, start typing *web_rule_list*. You will notice the name will auto complete, making it easy to reference the existing object.
+8. Select the rule list */Common/web_rule_list*. Ensure that *enabled* is selected under **State**.
 |image274|
-
-Finally, click **Done Editing**.
-
-You will notice the changes are unsaved and need to be committed to the
-system. This is a nice feature to have enabled to verify you want to
-commit the changes you’ve just made without a change automatically being
-implemented.
-
-Click **“Commit Changes to System"** to commit your changes.
+9. Click **Done Editing**. You will notice the changes are unsaved and need to be committed to the system. This is a nice feature to have enabled to verify you want to commit the changes you’ve just made without a change automatically being implemented.
+10. Click **Commit Changes to System** to commit your changes.
 
 Assign the rd_0_policy to Route Domain 0
 ----------------------------------------
 
-**Navigation:** Network > Route Domains
-
-Click on the *0* to select Route Domain 0. This is similar to selecting a default VRF on an IP router.
-
-Select the **Security** tab. Set **Enforcement** to *Enable* and select the *rd_0_policy*.
-
+1. Navigate to **Network** > **Route Domains**.
+2. Click on the *0* to select route domain 0. A route domain is similar to selecting a default VRF on an IP router, and 0 is the default.
+3. Select the **Security** tab. Set **Enforcement** to *Enable* and select the *rd_0_policy*.
 |Image275|
-
-Finally, click **Update**.
+4. Finally, click **Update**.
 
 Configure BIG-IP Firewall in ADC Mode
 -------------------------------------
 
-By default, the Network Firewall is configured in **ADC mode**, a
-default allow configuration, in which all traffic is allowed through the
-firewall, and any traffic you want to block must be explicitly
-specified.
+By default, the Network Firewall is configured in **ADC mode**, a default allow configuration, in which 
+all traffic is allowed through the firewall, and any traffic you want to block must be explicitly specified. 
 
-The system is configured in this mode by default so all traffic on your
-system continues to pass after you provision the Advanced Firewall
-Manager. You should create appropriate firewall rules to allow necessary
-traffic to pass before you switch the Advanced Firewall Manager to
-Firewall mode. In **Firewall mode**, a default deny configuration, all
-traffic is blocked through the firewall, and any traffic you want to
+The system is configured in this mode by default so all traffic on your system continues to pass after you 
+provision the Advanced Firewall Manager. You should create appropriate firewall rules to allow necessary
+traffic to pass before you switch the Advanced Firewall Manager to Firewall mode. In **Firewall mode**, a 
+default deny configuration, all traffic is blocked through the firewall, and any traffic you want to
 allow through the firewall must be explicitly specified.
 
-In deployments where there are a large number of VIP's, deploying in 
-Firewall mode would require significant preperation. Firewall 
-functionality is easier to introduce in ADC mode. 
+In exising deployments where there are a large number of VIP's, adding AFM in Firewall mode would require 
+significant preperation. Firewall functionality is easier to introduce in ADC mode. 
 
-**Navigation:** Security > Options > Network Firewall 
-
-Open the **Firewall Options** tab.
-
-Set the **Virtual Server & Self IP Contexts** setting to *Accept*.
+1. Navigate to **Security** > **Options** > **Network Firewall** > **Firewall Options**.
+2. Change the **Virtual Server & Self IP Contexts** context setting to *Accept*.
 
 Your screen should appear similar to below:
 
 |image251|
 
-Finally, click **Update**.
+3. Click **Update** if you changed this setting.
 
 Validate Lab 2 Configuration
 ----------------------------
 
-In Chrome, refresh the web sites in tabs 2-7. You should encounter a web site for each.
+In Chrome, refresh the web sites in tabs 2-7. A web page should pull up for each tab.
 
-**You may need to accept the certificate to proceed to the application sites**.
+.. note:: You may need to accept the certificate to proceed to the application sites.
 
-.. code-block:: console
-
-    URL: https://site1.com
-
-    URL: https://site2.com
-
-    URL: https://site3.com
-
-    URL: https://site4.com
-
-    URL: https://site5.com
-
-    URL: https://dvwa.com    Username:  admin    Password: password
-
-**With curl you need to use the -k option to ignore certificate validation**
+- URL: https://site1.com
+- URL: https://site2.com
+- URL: https://site3.com
+- URL: https://site4.com
+- URL: https://site5.com
+- URL: https://dvwa.com    Username:  admin    Password: password
 
 Minimize all windows so that the desktop is shown. Open a terminal window by launching Cygwin from the
-shortcut. Curl will let us do some of the additional testing in later sections. 
+shortcut. Use the curl utility to test connectivity. 
+
+.. tip:: The -k argument ignores certificate warnings.
 
 .. code-block:: console
 
@@ -186,9 +161,7 @@ shortcut. Curl will let us do some of the additional testing in later sections.
 
     curl -k https://10.1.10.30 -H Host:site5.com
 
-If you scroll up to the 
-text immediately following the command you will see the 
-IP address of the pool member to which you are connected.
+You should see a response containing the HTML of the web page.
 
 |image264|
 

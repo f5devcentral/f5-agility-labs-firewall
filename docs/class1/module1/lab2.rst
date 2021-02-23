@@ -179,7 +179,6 @@ You should see a response containing the HTML of the web page.
 
 This completes Module 1 - Lab 2. Click **Next** to continue.
 
-.. |ltp-diagram| image:: ../images/ltp-diagram.png
 .. |image9| image:: ../images/image11.png
    :width: 7.05556in
    :height: 6.20833in
@@ -192,12 +191,6 @@ This completes Module 1 - Lab 2. Click **Next** to continue.
 .. |image12| image:: ../images/image14.png
    :width: 7.04167in
    :height: 2.62500in
-.. |image13| image:: ../images/policy_shot.png
-   :width: 7.04167in
-   :height: 4.02500in
-.. |image14| image:: ../images/policy2.png
-   :width: 7.05000in
-   :height: 4.29861in
 .. |image15| image:: ../images/image17.png
    :width: 7.05556in
    :height: 1.68056in

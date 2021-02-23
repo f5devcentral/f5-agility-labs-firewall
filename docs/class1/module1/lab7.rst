@@ -97,6 +97,3 @@ This is the end of Module 1. Click **Next** to continue to Module 2.
 .. |image60| image:: ../images/image60.png
    :width: 4.83440in
    :height: 2.18569in
-.. |image280| image:: ../images/image280.png
-   :width: 4.83440in
-   :height: 2.18569in

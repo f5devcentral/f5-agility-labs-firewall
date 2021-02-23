@@ -18,10 +18,7 @@ Objective:
 -  Configure HTTP protocol security; test
 -  Configure SSL Visibility to external security devices e.g. IDS; test
 
-Labs 1 & 2 highlight the flexibility of leveraging an application
-proxy such as the BIG-IP for your perimeter security utilizing common
-traffic management techniques and some additional features unique to 
-the BIG-IP as an Application Delivery Controller.
+Labs 1 & 2 highlight the flexibility of leveraging an application proxy such as the BIG-IP for your perimeter security utilizing common traffic management techniques and some additional features unique to the BIG-IP as an Application Delivery Controller.
 
 .. toctree::
    :hidden:

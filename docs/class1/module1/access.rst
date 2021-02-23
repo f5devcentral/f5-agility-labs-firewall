@@ -1,44 +1,29 @@
 Getting Started
 ===============
 
-Check your email for an invitation from noreply@registration.udf.f5.com. Check your spam folder if you cant locate the email.
+Lab Components
+--------------
 
-The email will contain your username and temporary password.
++----------------+-----------------+----------------------------+--------------------+
+|  Host          |  OS             |  IP Configuration          | Credentials        |
++----------------+-----------------+----------------------------+--------------------+
+|  BIG-IP (AFM)  |  TMOS 15.1.0.4  |  Mgmt: 10.1.1.4/24         |  u: admin          |
+|                |                 |  External: 10.1.10.245/24  |  p: f5DEMOs4u      |
+|                |                 |  Internal: 10.1.20.245/24  |                    |
+|                |                 |  VIP: 10.1.10.30/24        |                    |
++----------------+-----------------+----------------------------+--------------------+
+|  LAMP Server   |  Ubuntu 14.04   |  Mgmt: 10.1.1.252/24       |  not required      | 
+|                |                 |  Internal: 10.1.20.252/24  |                    |
++----------------+-----------------+----------------------------+--------------------+
+|  Jump Host     |  Windows 10     |  Mgmt: 10.1.1.6/24         |  u: external_user  |
+|                |                 |  External: 10.1.10.6/24    |  p: P@ssw0rd!      |
++----------------+-----------------+----------------------------+--------------------+
 
-Click the **how to join a training class** link.
+Connection
+----------
 
-.. note:: You will not need to generate an SSH key for this course. All connectivity will be done from the "Jump Host."
+All tasks in this lab will be performed via Remote Desktop Protocol (RDP) connection to the Jump Host. Log in using the external_user credentials listed above. 
 
-Click the link **Log in here**.
-
-.. image:: _images/class2/image301.png
-
-Select the course you wnat to take and press **Launch**
-
-.. image:: _images/class2/image302.png
-
-Press the blue **Join** button to enter the class.
-
-Review the **Deployment Description**
-
-Select the *Deployment* tab at the top of the screen.
-
-.. image:: _images/class2/image303.png
-
-Wait about 10 minutes for the **F5 Products** and **Systems** to finish booting..
-
-.. note:: The Windows Jump host takes a few minutes to start up... please be patient even if it shows a green indication.
-
-Select the **Access** link below the **Windows Jumpbox** and select **RDP**.
-
-Select **More Choices** / **Use A Different Account** from the RDP login screen.
-
-**Credentials**
-
-username: external_user
-
-password: P@ssw0rd!
-
-.. image:: _images/class2/image304.png
+Where possible, you will be automatically logged into devices or credentials will be displayed or documented when you require.
 
 Click **Next** to continue.

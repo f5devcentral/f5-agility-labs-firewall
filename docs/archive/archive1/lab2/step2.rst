@@ -94,16 +94,16 @@ This shows there is no rule associated with the route domain or a
 virtual server which would permit the traffic. As such, the traffic
 would be dropped/rejected.
 
-.. |image42| image:: /_static/class1/image41.png
+.. |image42| image:: ../images/image41.png
    :width: 6.48958in
    :height: 3.44792in
-.. |image43| image:: /_static/class1/image42.png
+.. |image43| image:: ../images/image42.png
    :width: 6.47361in
    :height: 2.94722in
-.. |image44| image:: /_static/class1/image43.png
+.. |image44| image:: ../images/image43.png
    :width: 6.5in
    :height: 2.66667in
-.. |image45| image:: /_static/class1/image44.png
+.. |image45| image:: ../images/image44.png
    :width: 6.49722in
    :height: 2.97708in
 

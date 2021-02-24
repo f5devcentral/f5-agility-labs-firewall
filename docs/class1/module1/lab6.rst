@@ -1,18 +1,26 @@
 Lab 6: Configure HTTP security
 ==============================
 
-HTTP security profiles are used to apply basic HTTP security to a
-virtual server. Significantly more advanced HTTP security is available
-by adding ASM (Application Security Manager).
+You can secure HTTP traffic by using a default configuration or by customizing the configuration. You can 
+adjust the following security checks in an HTTP security profile:
+
+- HTTP protocol compliance validation
+- Evasion technique detection
+- Length checking to help avoid buffer overflow attacks
+- HTTP method validation
+- Inclusion or exclusion of certain files by type
+- Mandatory header enforcement
+
+.. warning:: HTTP protocol security does not offer the dynamic, constantly-updated security that a web application firewall (WAF) offers. HTTP protocol security in AFM should be complimented by a WAF solution, such as F5's Advanced WAF, when comprehensive web security is required.
 
 Configure An HTTP Security Profile And Apply It To The External Virtual Server
 ------------------------------------------------------------------------------
 
-On the BIG-IP:
+1. Return to the BIG-IP TMUI in Chrome.
 
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP
+2. Navigate to **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 
-Confirm that the **Security Profiles** tab is selected, then click **Create**.
+3. Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 +---------------------------------+------------------------+
 | **Profile Name**                | demo_http_security     |
@@ -26,11 +34,11 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 |image48|
 
-.. NOTE::  Leave all other fields using the default values.
+.. note::  Leave all other fields using the default values.
 
-**Navigation:** Click Request Checks Tab.
+4. Click the **Request Checks** tab. Change the **Response Type** drop-down to *Custom Response*.
 
-.. NOTE::  Leave the defaut Methods. Changing Methods is a powerful way to protect your web sites
+.. tip:: We're going to allow the default HTTP methods. Restricting the methods allowed to reach production servers is a great way to shrink the attack surface.
 
 +------------------+--------------+
 | **File Types**   | Select All   |
@@ -38,7 +46,7 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 |image49|
 
-**Navigation:** Click Blocking Page Tab.
+5. Click the **Blocking Page** tab.
 
 +---------------------+----------------------------------------------------------------+
 | **Response Type**   | Custom Response                                                |
@@ -48,19 +56,17 @@ Confirm that the **Security Profiles** tab is selected, then click **Create**.
 
 |image50|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
-**Navigation:** Click Create
+6. Click **Create**.
 
-.. NOTE:: We did not put the policy in Blocking mode. We will do that after we verify functionality.
+.. warning:: We did not put the policy in Blocking mode. We will do that after we verify functionality.
 
-Apply the HTTP security profile to the external virtual server.
+Now, let's apply the HTTP security profile to the external virtual server.
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List >
+7. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 
-**Navigation:** Select EXT_VIP_10.1.10.30
-
-**Navigation:** Select the Security tab
+8. Select *EXT_VIP_10.1.10.30*, then select the **Security** drop-down and choose **Policies**.
 
 +-------------------------+------------------------+------------------------+
 | **Protocol Security**   | Enabled                | demo_http_security     |
@@ -70,44 +76,35 @@ Apply the HTTP security profile to the external virtual server.
 
 |image51|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
-**Navigation:** Click Update.
+9. Click **Update**.
 
-Open a new web browser tab, access the virtual server and log into the
-application.
-
-URL: https://dvwa.com
+10. Return to tab #7 in Chrome and refresh the DVWA app at https://dvwa.com.
 
 **Credentials: admin\/password**
 
 |image52|
 
-.. NOTE:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
+.. note:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
-Browse the application.
+11. Browse the applicationb clicking on various links on the sidebar.
 
-**Navigation:** Click on various links on the sidebar.
+.. warning:: **If you change the admin password in DVWA, make sure you remember it for later!**
 
 |image53|
 
-.. NOTE:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
+.. note:: This traffic will generate network firewall log entries because the Alarm option in the HTTP security policy is selected.
 
-On the BIG-IP, review the log entries created in the previous step.
-
-**Navigation:** Security > Event Logs > Protocol > HTTP
+12. On the BIG-IP, review the log entries created in the previous step by navigating to **Security** > **Event Logs** > **Protocol** > **HTTP**.
 
 |image54|
 
-.. NOTE::  Your log entries may be different than the example shown above but the concept should be the same.
+.. note::  Your log entries may be different than the example shown above but the concept should be the same.
 
-Edit the demo\_http\_security HTTP security profile.
+13. Edit the *demo_http_security* HTTP security profile by navigating to **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP
-
-**Navigation:** Select the **demo_http_security** profile
-
-**Navigation:** Select the Request Checks Tab
+14. Select the *demo_http_security* profile, then select the **Request Checks** tab.
 
 +----------------------------+---------------------------------------------------------+
 | **Methods**                | Remove Post From the Allowed Group.                     |
@@ -117,13 +114,11 @@ Edit the demo\_http\_security HTTP security profile.
 
 |image55|
 
-.. NOTE:: Leave all other fields using the default values.
+.. note:: Leave all other fields using the default values.
 
-**Navigation:** Click Finished.
+15. Click **Finished**.
 
-On the jumpbox, close the Browser tab to dvwa.com.
-
-Open a new web browser tab and access the virtual server again:
+16. On the jump box, Log out of DVWA by selecting Log Out in the menu. Attempt to log back in. **This action requires a POST action and will be blocked because this is not allowed.**
 
 URL: https://dvwa.com
 
@@ -131,51 +126,44 @@ URL: https://dvwa.com
 
 |image266|
 
-.. ATTENTION:: This action requires a "POST" action and will be blocked because this is not allowed. 
+17. Edit the *demo_http_security* HTTP security profile at **Security** > **Protocol Security** > **Security Profiles** > **HTTP**.
 
-Edit the demo\_http\_security HTTP security profile.
-
-**Navigation:** Security > Protocol Security > Security Profiles > HTTP
-
-**Navigation:** Select the **demo_http_security** profile
-
-**Navigation:** Select the Request Checks Tab
+18. Select the *demo_http_security* profile, then undo the POST block in the **Request Checks** tab.
 
 +----------------------------+---------------------------------------------------------+
-| **Methods**                | Add Post to the Allowed Group.                          |
-|                            |                                                         |
-|                            | Un-check “Block”                                        |
+| **Methods**                | - Add Post to the Allowed Group.                        |
+|                            | - Un-check “Block”                                      |
 +----------------------------+---------------------------------------------------------+
 
 This is the end of Module 1 - Lab 6. Click **Next** to continue.
 
-.. |image48| image:: /_static/class2/image49.png
+.. |image48| image:: ../images/image49.png
    :width: 5.41503in
    :height: 5.23780in
-.. |image49| image:: /_static/class2/image50.png
+.. |image49| image:: ../images/image50.png
    :width: 5.25667in
    :height: 6.99992in
-.. |image50| image:: /_static/class2/image51.png
+.. |image50| image:: ../images/image51.png
    :width: 7.04444in
    :height: 7.07986in
-.. |image51| image:: /_static/class2/image52.png
+.. |image51| image:: ../images/image52.png
    :width: 7.04167in
    :height: 6.19444in
-.. |image52| image:: /_static/class2/image53.png
+.. |image52| image:: ../images/image53.png
    :width: 3.27502in
    :height: 2.37667in
-.. |image53| image:: /_static/class2/image54.png
+.. |image53| image:: ../images/image54.png
    :width: 3.84750in
    :height: 3.25278in
-.. |image54| image:: /_static/class2/image55.png
+.. |image54| image:: ../images/image55.png
    :width: 7.04444in
    :height: 1.56667in
-.. |image55| image:: /_static/class2/image56.png
+.. |image55| image:: ../images/image56.png
    :width: 4.52592in
    :height: 4.53707in
-.. |image266| image:: /_static/class2/image266.png
+.. |image266| image:: ../images/image266.png
    :width: 5.16503in
    :height: 1.12839in
-.. |image57| image:: /_static/class2/image53.png
+.. |image57| image:: ../images/image53.png
    :width: 3.27502in
    :height: 2.37667in

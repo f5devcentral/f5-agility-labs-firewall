@@ -5,164 +5,141 @@ Security logging needs to be configured separately from LTM logging.
 
 High Speed Logging for modules such as the firewall module requires three componenets.
 
-  - A Log Publisher
-  - A Log Destination (local-db for this lab)
-  - A Log Profile
+- A Log Publisher
+- A Log Destination (local-db for this lab)
+- A Log Profile
 
-For more detailed information on logging, please consult the BIG-IP documentation.
-
-https://askf5.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-external-monitoring-implementations-13-0-0/3.html
+For more detailed information on logging, please consult the BIG-IP documentation: https://techdocs.f5.com/en-us/bigip-15-0-0/external-monitoring-of-big-ip-systems-implementations.html
 
 In this lab, we will configure a local log publisher and log profile. The
-log profile will then be applied to the virtual server and tested. In production,
-you would be best to log to an external syslog server to reduce load on the device.
+log profile will then be applied to the virtual server and tested. 
+
+.. warning:: Logging locally on a BIG-IP increases resource utilization and overall load. In production, it is a best practice to log to an external syslog server to reduce load on the device.
 
 Create A Log Publisher
 ----------------------
 
-This will send the firewall logs to a local database
+A log publisher defines an end point for logging. 
 
-Create the log publisher using the following information:
+1. Return to Chrome and the BIG-IP TMUI in the first tab.
+2. Navigate to **System** > **Logs** > **Configuration** > **Log Publishers**.
+3. Click **Create**. Use the values below to create a log publisher.
 
-**Navigation:** System > Logs > Configuration > Log Publishers, then click
-**Create**.
+   **Name**: *firewall_log_publisher*
 
-+-------------------------------+----------------------------+
-| **Name**                      | firewall\_log\_publisher   |
-+===============================+============================+
-| Destinations (Selected)       | local-db                   |
-+-------------------------------+----------------------------+
+   **Destinations (Selected)**: *local-db*
 
-|image24|
+   |image24|
 
-.. NOTE:: Leave all other fields using the default values.
+   .. note:: Leave all other fields to their default values.
 
-**Navigation:** Click Finished
+4. Click **Finished**.
 
 Create A Log Profile
 --------------------
 
-Create the log profile using the following information:
+Logging profiles specify which data/events should be logged and how that data should be formatted.
 
-**Navigation:** Security > Event Logs > Logging Profiles, then click Create
+1. Navigate to **Security** > **Event Logs** > **Logging Profiles**.
+2. Click **Create**. Use the values below to create the logging profile.
 
-+-------------------------+--------------------------+
-| **Name**                | firewall\_log\_profile   |
-+=========================+==========================+
-| **Protocol Security**   | Checked                  |
-+-------------------------+--------------------------+
-| **Network Firewall**    | Checked                  |
-+-------------------------+--------------------------+
+   **Name**: *firewall_log_profile*
+
+   **Protocol Security**: *Checked*
+
+   **Network Firewall**: *Checked*
+
+3. Click on the **Protocol Security** tab.
+4. Set the **HTTP, FTP, SMTP Security** log publisher to *firewall_log_publisher*. Leave all other fields using the default values.
 
 |image25|
 
-Modify The Log Profile To Collect Protocol Security Events
-----------------------------------------------------------
+5. Click on the log profile **Network Firewall** tab and configure using the following information:
 
-**Navigation** Click on the Protocol Security tab
+   **Network Firewall Publisher**: *firewall_log_profile*
 
-**Navigation** HTTP, FTP, SMTP Security
+   **Log Rule Matches**: Check *Accept*, *Drop* and *Reject*
 
-+-------------------------+--------------------------+
-| **Publisher**           | firewall\_log\_publisher |
-+-------------------------+--------------------------+
+   **Log IP Errors**: *Checked*
 
-.. note:: Leave all other fields using the default values.
+   **Log TCP Errors**: *Checked*
 
-Modify The Log Profile To Collect Firewall Security Events
-----------------------------------------------------------
+   **Log TCP Events**: *Checked*
 
-Edit the log profile network firewall tab using the following information:
+   **Log Translation Fields**: *Checked*
 
-**Navigation:** Click on the Network Firewall tab
+   **Storage Format**: *Field-List* (Move all to Selected Items)
 
-+----------------------------------+-------------------------------------------+
-| **Network Firewall Publisher**   | firewall\_log\_profile                    |
-+==================================+===========================================+
-| **Log Rule Matches**             | Check Accept                              |
-|                                  | Check Drop                                |
-|                                  | Check Reject                              |
-+----------------------------------+-------------------------------------------+
-| **Log IP Errors**                | Checked                                   |
-+----------------------------------+-------------------------------------------+
-| **Log TCP Errors**               | Checked                                   |
-+----------------------------------+-------------------------------------------+
-| **Log TCP Events**               | Checked                                   |
-+----------------------------------+-------------------------------------------+
-| **Log Translation Fields**       | Checked                                   |
-+----------------------------------+-------------------------------------------+
-| **Storage Format**               | Field-List (Move all to Selected Items)   |
-+----------------------------------+-------------------------------------------+
+   |image26|
 
-|image26|
+   .. note:: Leave all other fields using the default values.
 
-.. NOTE:: Leave all other fields using the default values.
-
-**Navigation:** Click Create
+6. Scroll to the bottom of the screen and click **Create**.
 
 Apply The Logging Configuration
 -------------------------------
 
 Apply the newly created log profile to the external virtual server created in the previous lab.
 
-**Navigation:** Local Traffic > Virtual Servers > Virtual Server List
+1. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 
-**Navigation:** Click on EXT_VIP_10.1.10.30
+2. Click on *EXT_VIP_10.1.10.30* virtual server.
 
-**Navigation:** Security tab > Policies
+3. Click on the **Security** down-drop from the top menu bar and select **Policies**.
 
-+-------------------+--------------------------+
-| **Log Profile**   | firewall\_log\_profile   |
-+-------------------+--------------------------+
+4. Change the **Log Profiles** field to *Enabled* and select the *firewall_log_profile* profile.
+
+5. Leave all other fields using the default values. Your screen should appear as below:
 
 |image278|
 
-.. NOTE:: Leave all other fields using the default values.
-
-**Navigation:** Click Update
-
-View network firewall logs.
-
-**Navigation:** Security > Event Logs > Network > Firewall
-
-|image28|
+6. Click **Update**.
 
 Validate Lab 3 Configuration
 ----------------------------
 
-Open a new web browser tab and access the virtual server or repeat the
-curl statements from the previous sections.
+Refresh the app sites' browser tabs to access the virtual server or repeat the curl statements from the previous sections.
 
-URL: https://site1.com
+.. code-block:: console
 
-.. NOTE:: This test generates traffic that creates network firewall log entries.
+    curl -k https://10.1.10.30 -H Host:site1.com
 
-**Navigation:** Security > Event Logs > Network > Firewall
+    curl -k https://10.1.10.30 -H Host:site2.com
+
+    curl -k https://10.1.10.30 -H Host:site3.com
+
+    curl -k https://10.1.10.30 -H Host:site4.com
+
+    curl -k https://10.1.10.30 -H Host:site5.com
+
+
+.. note:: This test generates traffic that creates network firewall log entries.
+
+In the **Security** > **Event Logs** > **Network** > **Firewall** screen, click the **Search** button to
+refresh the event list. Newest events will appear at the top, as shown below:
 
 |image29|
 
-.. NOTE:: View new network firewall log entries. Examine the data collected there.
-
 This completes Module 1 - Lab 3. Click **Next** to continue.
 
-.. |image24| image:: /_static/class2/image26.png
+.. |image24| image:: ../images/image26.png
    :width: 7.05278in
    :height: 2.93819in
-.. |image25| image:: /_static/class2/image27.png
+.. |image25| image:: ../images/image27.png
    :width: 7.04444in
    :height: 2.53958in
-.. |image26| image:: /_static/class2/image28.png
+.. |image26| image:: ../images/image28.png
    :width: 4.83169in
    :height: 5.41497in
-.. |image278| image:: /_static/class2/image278.png
+.. |image278| image:: ../images/image278.png
    :width: 7.04167in
    :height: 5.88889in
-.. |image28| image:: /_static/class2/image30.png
+.. |image28| image:: ../images/image30.png
    :width: 7.25278in
    :height: 1.01170in
-.. |image29| image:: /_static/class2/image31.jpeg
+.. |image29| image:: ../images/image31.jpeg
    :width: 6.73811in
    :height: 1.69444in
-.. |image251| image:: /_static/class2/image251.png
+.. |image251| image:: ../images/image251.png
    :width: 3.73811in
    :height: 1.69444in

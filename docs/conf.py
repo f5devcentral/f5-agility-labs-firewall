@@ -17,7 +17,6 @@ github_repo = "https://github.com/f5devcentral/f5-agility-labs-firewall"
 # END CONFIG
 # ----------
 
-
 import os
 import sys
 import time

@@ -64,18 +64,18 @@ and Ymas TCP flags.
     charts and observe the various statistics around the attack.
     
     
-.. |image80| image:: /_static/class1/image78.png
+.. |image80| image:: ../images/image78.png
    :width: 2.43392in
    :height: 2.49669in
-.. |image81| image:: /_static/class1/image79.png
+.. |image81| image:: ../images/image79.png
    :width: 4.48611in
    :height: 0.38889in
-.. |image82| image:: /_static/class1/image80.png
+.. |image82| image:: ../images/image80.png
    :width: 4.43056in
    :height: 0.97222in
-.. |image83| image:: /_static/class1/image81.png
+.. |image83| image:: ../images/image81.png
    :width: 6.49097in
    :height: 1.10208in
-.. |image84| image:: /_static/class1/image82.png
+.. |image84| image:: ../images/image82.png
    :width: 5in
    :height: 1.70833in

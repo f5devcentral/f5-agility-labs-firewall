@@ -52,15 +52,15 @@ Verify that Virtual Server matching Attack ID has been removed
 Congratulations! You have successfully completed the lab!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. |image19| image:: images/image19.png
+.. |image19| image:: ../images/image19.png
    :scale: 50%
-.. |image20| image:: images/image20.png
+.. |image20| image:: ../images/image20.png
    :scale: 60%
-.. |image21| image:: images/image21.png
+.. |image21| image:: ../images/image21.png
    :scale: 60%
-.. |image22| image:: images/image22.png
-.. |image23| image:: images/image23.png
-.. |image24| image:: images/image24.png
+.. |image22| image:: ../images/image22.png
+.. |image23| image:: ../images/image23.png
+.. |image24| image:: ../images/image24.png
    :scale: 60%
-.. |image25| image:: images/image25.png
+.. |image25| image:: ../images/image25.png
    :scale: 60%

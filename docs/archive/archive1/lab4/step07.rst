@@ -26,10 +26,10 @@ follow the steps below
 
 |image102|
 
-.. |image101| image:: /_static/class1/image98.png
+.. |image101| image:: ../images/image98.png
    :width: 6.5in
    :height: 1.12986in
-.. |image102| image:: /_static/class1/image99.png
+.. |image102| image:: ../images/image99.png
    :width: 6.5in
    :height: 1.16667in
 

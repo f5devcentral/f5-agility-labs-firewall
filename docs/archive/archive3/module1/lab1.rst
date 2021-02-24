@@ -44,7 +44,7 @@ Other considerations
 
     https://sflow.org
 
-.. |image1| image:: images/image1.png
+.. |image1| image:: ../images/image1.png
    :scale: 75%
-.. |image2| image:: images/image2.png
+.. |image2| image:: ../images/image2.png
    :scale: 85%

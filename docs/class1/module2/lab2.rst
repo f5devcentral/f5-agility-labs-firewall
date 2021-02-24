@@ -6,9 +6,11 @@ Create and View Packet Tracer Entries
 
 In this section, you will generate various types of traffic as you did
 previously, but you will view the flow using the network packet
-tracer. Return to the TMUI in Chrome and log in if necessary.
+tracer. 
 
-**Navigation:** Security > Debug > Packet Tester.
+1. Return to the TMUI in Chrome and log in if necessary.
+
+2. Navigate to **Security** > **Debug** > **Packet Tester**.
 
 |image441|
 
@@ -32,7 +34,7 @@ Create a packet test with the following parameters:
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-Click **Run Trace** to view the response. Your output should resemble the
+3. Click **Run Trace** to view the response. Your output should resemble the
 allowed flow as shown below:
 
 |image442|
@@ -42,10 +44,10 @@ which rule is permitting the traffic.
 
 |image443|
 
-Click **New Packet Trace** (optionally do not clear the existing data –
+4. Click **New Packet Trace** (optionally do not clear the existing data –
 aka leave checked).
 
-Create a packet test with the following parameters:
+5. Create a packet test with the following parameters:
 
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
@@ -65,13 +67,13 @@ Create a packet test with the following parameters:
 |                   | Trigger Log - no       |
 +-------------------+------------------------+
 
-Click Run Trace to view the response. Your output should resemble the
+6. Click Run Trace to view the response. Your output should resemble the
 allowed flow as shown below:
 
 |image444|
 
-Next to the packet Trace button note the Clear Data Check 
-box **Uncheck it** so you dont hve to input all the fields again.
+7. Next to the **New Packet Trace** button, note the Clear Data checkbox.
+Uncheck it, so you won't have to input all the fields again.
 
 +-------------------+------------------------+
 | **Protocol**      | TCP                    |
@@ -93,20 +95,20 @@ box **Uncheck it** so you dont hve to input all the fields again.
 
 This traffic will be blocked by the virtual Server rule.
 
-**Navigation** Click on the Virtual Server Rules Icon to get more specific information
+8. Click on the Virtual Server Rules Icon to get more specific information.
 
-Click **Next** to continue.
+9. Click **Next** to continue.
 
-.. |image441| image:: /_static/class2/image441.png
+.. |image441| image:: ../images/image441.png
    :width: 6.48958in
    :height: 3.44792in
-.. |image442| image:: /_static/class2/image442.png
+.. |image442| image:: ../images/image442.png
    :width: 6.47361in
    :height: 2.94722in
-.. |image443| image:: /_static/class2/image443.png
+.. |image443| image:: ../images/image443.png
    :width: 6.5in
    :height: 2.66667in
-.. |image444| image:: /_static/class2/image444.png
+.. |image444| image:: ../images/image444.png
    :width: 6.49722in
    :height: 2.97708in
 

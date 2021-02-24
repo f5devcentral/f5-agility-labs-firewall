@@ -46,6 +46,6 @@ multiple source hosts.
 11. Finally, navigate to **Security** > **Reporting** > **DoS** >
     **Analysis**. View detailed statistics around the attack.
 
-.. |image85| image:: /_static/class1/image83.png
+.. |image85| image:: ../images/image83.png
    :width: 2.45542in
    :height: 3.49669in

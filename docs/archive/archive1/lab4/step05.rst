@@ -35,12 +35,12 @@ following steps.
    - Click **Start**
    - When completed the backups will be listed under the Backup Files section
 
-.. |image94| image:: /_static/class1/image91.png
+.. |image94| image:: ../images/image91.png
    :width: 2.28056in
    :height: 1.23889in
-.. |image95| image:: /_static/class1/image92.png
+.. |image95| image:: ../images/image92.png
    :width: 2in
    :height: 1.47917in
-.. |image96| image:: /_static/class1/image93.png
+.. |image96| image:: ../images/image93.png
    :width: 6.49097in
    :height: 2.98125in

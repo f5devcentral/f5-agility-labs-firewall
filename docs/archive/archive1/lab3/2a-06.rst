@@ -18,6 +18,6 @@ Simulate a DNS DDoS Attack
 
    |image61|
 
-.. |image61| image:: /_static/class1/image59.png
+.. |image61| image:: ../images/image59.png
    :width: 6.5in
    :height: 2.78542in

@@ -57,16 +57,16 @@ You will now have a fresh set of QKView in iHealth every Sunday morning.
 This is extremely useful for when new cases are opened, one less step
 you’ll need for support to engage quicker.
 
-.. |image97| image:: /_static/class1/image94.png
+.. |image97| image:: ../images/image94.png
    :width: 6.5in
    :height: 2.7in
-.. |image98| image:: /_static/class1/image95.png
+.. |image98| image:: ../images/image95.png
    :width: 1.88472in
    :height: 0.92639in
-.. |image99| image:: /_static/class1/image96.png
+.. |image99| image:: ../images/image96.png
    :width: 3.37624in
    :height: 2.14141in
-.. |image100| image:: /_static/class1/image97.png
+.. |image100| image:: ../images/image97.png
    :width: 5.13861in
    :height: 2.70482in
 

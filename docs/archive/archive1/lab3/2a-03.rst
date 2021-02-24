@@ -10,9 +10,9 @@ BIG-IP UI during attack mitigation.
 
    - Profile Name: dns-dos-profile-logging
    - DoS Protection: Enabled
-   -  | DNS DoS Protection Publisher: local-db-publisher and click **Finish.**
+   -  | DNS DoS Protection Publisher: *local-db-publisher* and click **Finish.**
       | |image58|
 
-.. |image58| image:: /_static/class1/image56.png
+.. |image58| image:: ../images/image56.png
    :width: 4.045in
    :height: 5.58775in

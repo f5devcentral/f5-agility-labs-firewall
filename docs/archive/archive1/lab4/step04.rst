@@ -46,9 +46,9 @@ After you log into BIG-IQ, you will notice:
 -  Applications – Build, deploy, monitor service catalog-based
    applications centrally.
    
-.. |image92| image:: /_static/class1/image89.png
+.. |image92| image:: ../images/image89.png
    :width: 6.5in
    :height: 0.91667in
-.. |image93| image:: /_static/class1/image90.png
+.. |image93| image:: ../images/image90.png
    :width: 6.49097in
    :height: 2.67569in

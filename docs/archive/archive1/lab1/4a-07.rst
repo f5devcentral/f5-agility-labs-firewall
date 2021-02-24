@@ -37,12 +37,12 @@ time each rule was matched: (Investigating Counter behavior)
 
 |image23|
 
-.. |image206| image:: /_static/class1/image206.png
+.. |image206| image:: ../images/image206.png
    :width: 6.49097in
    :height: 3in
-.. |image21| image:: /_static/class1/image22.png
+.. |image21| image:: ../images/image22.png
    :width: 6.48125in
    :height: 0.60208in
-.. |image23| image:: /_static/class1/image23.png
+.. |image23| image:: ../images/image23.png
    :width: 6.49097in
    :height: 1.76875in

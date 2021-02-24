@@ -74,6 +74,6 @@ defeated Joanna, she has decided a career at Chotchkie’s is more
 prosperous than nefarious internet activities, even with the new flair
 requirements. Well done!
 
-.. |image89| image:: /_static/class1/image87.png
+.. |image89| image:: ../images/image87.png
    :width: 2.41144in
    :height: 5.43046in

@@ -82,12 +82,12 @@ Route Domain Screen.
 
 |image211|
 
-.. |image211| image:: /_static/class1/image211.png
+.. |image211| image:: ../images/image211.png
    :width: 6.5in
    :height: 2.5in
-.. |image29| image:: /_static/class1/image30.png
+.. |image29| image:: ../images/image30.png
    :width: 6.49097in
    :height: 1.01875in
-.. |image30| image:: /_static/class1/image31.png
+.. |image30| image:: ../images/image31.png
    :width: 6.5in
    :height: 1.14792in

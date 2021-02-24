@@ -52,18 +52,18 @@ previous commit warning is removed.
 
 |image17|
 
-.. |image13| image:: /_static/class1/image14.png
+.. |image13| image:: ../images/image14.png
    :width: 4.92847in
    :height: 1.35694in
-.. |image14| image:: /_static/class1/image15.png
+.. |image14| image:: ../images/image15.png
    :width: 6.5in
    :height: 0.60208in
-.. |image15| image:: /_static/class1/image16.png
+.. |image15| image:: ../images/image16.png
    :width: 6.5in
    :height: 1.29653in
-.. |image16| image:: /_static/class1/image17.png
+.. |image16| image:: ../images/image17.png
    :width: 6.49097in
    :height: 0.47222in
-.. |image17| image:: /_static/class1/image18.png
+.. |image17| image:: ../images/image18.png
    :width: 6.5in
    :height: 1in

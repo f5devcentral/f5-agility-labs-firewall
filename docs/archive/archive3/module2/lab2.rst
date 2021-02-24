@@ -73,21 +73,21 @@ It may take up to ~5 minutes for DoS Visibility Dashboard to show our simulated 
 
 |image26|
 
-.. |image10| image:: images/image10.png
+.. |image10| image:: ../images/image10.png
    :scale: 75%
-.. |image11| image:: images/image11.png
+.. |image11| image:: ../images/image11.png
    :scale: 35%
-.. |image12| image:: images/image12.png
+.. |image12| image:: ../images/image12.png
    :scale: 60%
-.. |image13| image:: images/image13.png
-.. |image14| image:: images/image14.png
-.. |image15| image:: images/image15.png
+.. |image13| image:: ../images/image13.png
+.. |image14| image:: ../images/image14.png
+.. |image15| image:: ../images/image15.png
    :scale: 60%
-.. |image16| image:: images/image16.png
+.. |image16| image:: ../images/image16.png
    :scale: 50%
-.. |image17| image:: images/image17.png
+.. |image17| image:: ../images/image17.png
    :scale: 50%
-.. |image18| image:: images/image18.png
+.. |image18| image:: ../images/image18.png
    :scale: 60%
-.. |image26| image:: images/image26.png
+.. |image26| image:: ../images/image26.png
    :scale: 85%

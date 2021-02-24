@@ -23,9 +23,9 @@ optimized.
 
 **Anyone can create a firewall rule, but who is the person that removes the unneccesary ones?**
 
-.. |image48| image:: /_static/class1/image47.png
+.. |image48| image:: ../images/image47.png
    :width: 3.55556in
    :height: 3.70347in
-.. |image49| image:: /_static/class1/image48.png
+.. |image49| image:: ../images/image48.png
    :width: 6.49722in
    :height: 1in

@@ -331,34 +331,34 @@ This concludes the DoS/DDoS portion of the lab. You may now close all sessions, 
 
 Thank you for your time.
 
-.. |image30| image:: _images/image32.png
+.. |image30| image:: ../images/image32.png
    :width: 2.98013in
    :height: 1.62914in
-.. |image31| image:: _images/image33.png
+.. |image31| image:: ../images/image33.png
    :width: 2.43392in
    :height: 2.49669in
-.. |image32| image:: _images/image34.png
+.. |image32| image:: ../images/image34.png
    :width: 4.48611in
    :height: 0.38889in
-.. |image33| image:: _images/image35.png
+.. |image33| image:: ../images/image35.png
    :width: 4.43056in
    :height: 0.97222in
-.. |image34| image:: _images/image36.png
+.. |image34| image:: ../images/image36.png
    :width: 5.00000in
    :height: 1.70833in
-.. |image35| image:: _images/image37.png
+.. |image35| image:: ../images/image37.png
    :width: 2.45542in
    :height: 3.49669in
-.. |image36| image:: _images/image38.png
+.. |image36| image:: ../images/image38.png
    :width: 2.79540in
    :height: 6.25166in
-.. |image37| image:: _images/image39.png
+.. |image37| image:: ../images/image39.png
    :width: 2.56954in
    :height: 0.91286in
-.. |image38| image:: _images/image40.png
+.. |image38| image:: ../images/image40.png
    :width: 6.17881in
    :height: 3.91721in
-.. |image39| image:: _images/image41.png
+.. |image39| image:: ../images/image41.png
    :width: 2.41144in
    :height: 5.43046in
 

@@ -125,39 +125,39 @@ those hosts from reaching the back-end servers. To demonstrate:
 
 |image73|
 
-.. |image62| image:: /_static/class1/image60.png
+.. |image62| image:: ../images/image60.png
    :width: 2.67129in
    :height: 5.81457in
-.. |image63| image:: /_static/class1/image61.png
+.. |image63| image:: ../images/image61.png
    :width: 6.22083in
    :height: 3.675in
-.. |image64| image:: /_static/class1/image62.png
+.. |image64| image:: ../images/image62.png
    :width: 3.81074in
    :height: 5.31788in
-.. |image65| image:: /_static/class1/image63.png
+.. |image65| image:: ../images/image63.png
    :width: 4.17881in
    :height: 2.18072in
-.. |image66| image:: /_static/class1/image64.png
+.. |image66| image:: ../images/image64.png
    :width: 3.40297in
    :height: 3.22001in
-.. |image67| image:: /_static/class1/image65.png
+.. |image67| image:: ../images/image65.png
    :width: 2.96026in
    :height: 1.54149in
-.. |image68| image:: /_static/class1/image66.png
+.. |image68| image:: ../images/image66.png
    :width: 2.36111in
    :height: 0.68056in
-.. |image69| image:: /_static/class1/image67.png
+.. |image69| image:: ../images/image67.png
    :width: 4.875in
    :height: 1.68056in
-.. |image70| image:: /_static/class1/image68.png
+.. |image70| image:: ../images/image68.png
    :width: 6.69121in
    :height: 3.10185in
-.. |image71| image:: /_static/class1/image69.png
+.. |image71| image:: ../images/image69.png
    :width: 4.3245in
    :height: 3.69594in
-.. |image72| image:: /_static/class1/image70.png
+.. |image72| image:: ../images/image70.png
    :width: 5in
    :height: 4.06944in
-.. |image73| image:: /_static/class1/image71.png
+.. |image73| image:: ../images/image71.png
    :width: 6.49097in
    :height: 2.17569in

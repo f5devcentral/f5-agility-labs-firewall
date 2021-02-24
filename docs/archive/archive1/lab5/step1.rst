@@ -216,34 +216,34 @@ The history within the tool makes Root Cause Analysis (RCA) reports very
 easy, this allows the security team to show a denied flow and subsequent
 permitted flow.
 
-.. |image117| image:: /_static/class1/image113.png
+.. |image117| image:: ../images/image113.png
    :width: 6.49097in
    :height: 0.85486in
-.. |image118| image:: /_static/class1/image114.png
+.. |image118| image:: ../images/image114.png
    :width: 6.49097in
    :height: 3.13611in
-.. |image113| image:: /_static/class1/image109.png
+.. |image113| image:: ../images/image109.png
    :width: 4.65486in
    :height: 3.92708in
-.. |image114| image:: /_static/class1/image110.png
+.. |image114| image:: ../images/image110.png
    :width: 6.5in
    :height: 2.40903in
-.. |image115| image:: /_static/class1/image111.png
+.. |image115| image:: ../images/image111.png
    :width: 6.48194in
    :height: 1.71806in
-.. |image116| image:: /_static/class1/image112.png
+.. |image116| image:: ../images/image112.png
    :width: 4.34028in
    :height: 2.38194in
-.. |image109| image:: /_static/class1/image105.png
+.. |image109| image:: ../images/image105.png
    :width: 4.54514in
    :height: 4.10903in
-.. |image110| image:: /_static/class1/image106.png
+.. |image110| image:: ../images/image106.png
    :width: 6.49097in
    :height: 3.76389in
-.. |image111| image:: /_static/class1/image107.png
+.. |image111| image:: ../images/image107.png
    :width: 5.91089in
    :height: 3.67852in
-.. |image112| image:: /_static/class1/image108.png
+.. |image112| image:: ../images/image108.png
    :width: 6.5in
    :height: 3.18194in
 

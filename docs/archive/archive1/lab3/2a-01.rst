@@ -89,21 +89,21 @@ server.
     credentials and press CTRL+C to cancel the session. This verifies
     that non-DNS traffic is now flowing through the BIG-IP.
     
-.. |image51| image:: /_static/class1/image49.png
+.. |image51| image:: ../images/image49.png
    :width: 3.94702in
    :height: 3.80739in
-.. |image52| image:: /_static/class1/image50.png
+.. |image52| image:: ../images/image50.png
    :width: 4.75828in
    :height: 4.42937in
-.. |image53| image:: /_static/class1/image51.png
+.. |image53| image:: ../images/image51.png
    :width: 4.72535in
    :height: 3.47384in
-.. |image54| image:: /_static/class1/image52.png
+.. |image54| image:: ../images/image52.png
    :width: 3.80731in
    :height: 8.22517in
-.. |image55| image:: /_static/class1/image53.png
+.. |image55| image:: ../images/image53.png
    :width: 6.16667in
    :height: 0.44444in
-.. |image56| image:: /_static/class1/image54.png
+.. |image56| image:: ../images/image54.png
    :width: 4.73472in
    :height: 6.057in

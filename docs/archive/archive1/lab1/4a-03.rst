@@ -20,7 +20,7 @@ formats including **SevOne**, **Splunk** and **ArcSight**.
 
 
 
-.. |image6| image:: /_static/class1/image7.png
+.. |image6| image:: ../images/image7.png
    :width: 6.49097in
    :height: 1in
 
@@ -53,10 +53,10 @@ Review the configuration. The Storage Format section allows you to select the va
 
 |image268|
 
-.. |image267| image:: /_static/class2/image267.png
+.. |image267| image:: ../images/image267.png
    :width: 6.49097in
    :height: 7in 
-.. |image268| image:: /_static/class2/image268.png
+.. |image268| image:: ../images/image268.png
    :width: 6.49097in
    :height: 7in 
 

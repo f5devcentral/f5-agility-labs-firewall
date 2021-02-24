@@ -8,30 +8,30 @@ Also introduced in BIG-IP TMOS version 13 is the flow inspector. This tool is
 useful to view statistical information about existing flows within the
 flow table. 
 
-Refresh the web page we’ve been using for testing (http://10.1.20.11).
+1. Refresh the web page we’ve been using for testing (http://10.1.20.11).
 
-**Navigation** Security > Debug > Flow Inspector. Click **Get Flows**.
+2. Navigate to **Security** > **Debug** > **Flow Inspector**.
+
+3. Click **Get Flows**.
 
 |image450|
 
-Select a flow and click on the pop-out arrow for additional data.
+4. Select a flow and click on the pop-out arrow for additional data.
 
-**Navigation** Uncheck **Clear Data**.
+5. Uncheck **Clear Data**, then click **New Flow Parameters**.
 
-**Navigation** Click **New Flow Parameters**.
+6. Input **10.1.20.11** in the Client Side Destination IP Address field.
 
-**Navigation** Input **10.1.20.11** in the Client Side Destination IP Address field.
-
-**Navigation** Click **Get Flows**.
+7. Click **Get Flows**.
 
 |image451|
 
-Click **Next** to continue.
+8. Click **Next** to continue.
 
-.. |image450| image:: /_static/class2/image450.png
+.. |image450| image:: ../images/image450.png
    :width: 6.48542in
    :height: 1.34653in
-.. |image451| image:: /_static/class2/image451.png
+.. |image451| image:: ../images/image451.png
    :width: 6.49167in
    :height: 0.68819in
 

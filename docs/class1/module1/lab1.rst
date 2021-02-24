@@ -1,5 +1,17 @@
-Lab Overview
-============
+Lab 1: Pre-configured pools and virtual servers
+===============================================
+
+A virtual server is used by BIG-IP to identify specific types of
+traffic. Other objects such as profiles, policies, pools and iRules are
+applied to the virtual server to add features and functionality. In the
+context of security, since BIG-IP is a default-deny device, a virtual
+server is necessary to accept specific types of traffic.
+
+The pool is a logical group of hosts that is applied to and will receive
+traffic from a virtual server.
+
+|image1|
+
 
 Firewall Rule Hierarchy
 -----------------------
@@ -28,21 +40,6 @@ except management.
 |image300|
 
 .. tip:: You cannot configure or change the Global Drop context. The Global Drop context is the final context for traffic. Note that even though it is a global context, it is not processed first, like the main global context, but last. If a packet matches no rule in any previous context, the Global Drop rule drops the traffic.
-
-===============================================
-Lab 1: Pre-configured pools and virtual servers
-===============================================
-
-A virtual server is used by BIG-IP to identify specific types of
-traffic. Other objects such as profiles, policies, pools and iRules are
-applied to the virtual server to add features and functionality. In the
-context of security, since BIG-IP is a default-deny device, a virtual
-server is necessary to accept specific types of traffic.
-
-The pool is a logical group of hosts that is applied to and will receive
-traffic from a virtual server.
-
-|image1|
 
 Inspect Application Pools
 -------------------------

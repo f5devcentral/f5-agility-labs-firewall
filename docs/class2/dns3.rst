@@ -11,6 +11,8 @@ We’ll create a DoS logging profile so that we can see event logs in the BIG-IP
 .. image:: _images/image028.png
   :alt: screenshot
 
+2. Click **Create** to finish the configuration.
+
 About profiles for DoS and protocol service attacks
 ---------------------------------------------------
 
@@ -85,12 +87,12 @@ We’ll attach the DoS profile to the virtual server that we configured to manag
 
 4. Expand **Network & General** and add the *dns-dos-logging-profile* logging profile from the **Available** to **Selected** column.
 
-.. image:: _images/image036.png
+.. image:: _images/image037g.png
     :alt:  screenshot
 
 5. Expand **Protection Settings** and set the **Protection Profile** to *dns-dos-profile*.
 
-.. image:: _images/image036.png
+.. image:: _images/image038g.png
     :alt:  screenshot
 
 6. Click **Save**. 

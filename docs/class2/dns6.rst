@@ -10,6 +10,6 @@ Silverline DDoS Protection
 
 Silverline DDoS Protection is a managed, cloud-delivered protection service that detects and mitigates large-scale, SSL, or application-targeted attacks in real time—defending your business from even those attacks that exceed hundreds of gigabits per second.
 
-More information about Silverline DDoS protection can be found at https://www.f5.com/products/security/silverline/ddos-protection.
-
 .. image:: _images/silverline-ddos-highlights.png
+
+More information about Silverline DDoS protection can be found at https://www.f5.com/products/security/silverline/ddos-protection.

@@ -173,7 +173,7 @@ External VIP to simulate specific IP addresses in the header
 
 Return to the firewall events (**Security** > **Event Logs** > **Network** > **Firewall**) log viewer and click **Search** to refresh. Observe the new entries.
 
-Next, we will simulate a connection an IP address in Bejing, China. Browse to 
+Next, we will simulate a connection an IP address in Beijing, China. Browse to 
 https://whatismyipaddress.com/ip/1.202.2.1 ... this site shows that this IP address 
 is most likely in Beijing, China.
 

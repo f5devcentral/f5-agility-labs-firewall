@@ -85,7 +85,7 @@ Navigate to **Local Traffic** > **Pools** > **Pool List**.
      - http
      - 10.1.20.15
      - 80
-   * - pool\_www.dvwa.com
+   * - pool\_dvwa.com
      - tcp\_half\_open
      - 10.1.20.17
      - 80

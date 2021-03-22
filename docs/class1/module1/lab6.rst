@@ -36,7 +36,7 @@ Configure An HTTP Security Profile And Apply It To The External Virtual Server
 
 .. note::  Leave all other fields using the default values.
 
-4. Click the **Request Checks** tab. Change the **Response Type** drop-down to *Custom Response*.
+4. Click the **Request Checks** tab. 
 
 .. tip:: We're going to allow the default HTTP methods. Restricting the methods allowed to reach production servers is a great way to shrink the attack surface.
 
@@ -46,7 +46,7 @@ Configure An HTTP Security Profile And Apply It To The External Virtual Server
 
 |image49|
 
-5. Click the **Blocking Page** tab.
+5. Click the **Blocking Page** tab. Change the **Response Type** drop-down to *Custom Response*.
 
 +---------------------+----------------------------------------------------------------+
 | **Response Type**   | Custom Response                                                |

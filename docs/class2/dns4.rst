@@ -11,8 +11,9 @@ Denial-of-service (DoS) or flood attacks attempt to overwhelm a system by sendin
 .. image:: _images/sshwindows.png
 
 2. Now we're going to run a longer attack against the DNS server from the attack host using the attack volume of 10x the safe QPS level: 
-    - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -b 8192000 -c 60 -t 30 -T 20 -l 90 -q 1000000 -Q 1500000``.
-3. While the attack is running, navigate to **Security** > **Overview** > **DoS Protection** > **DoS Overview (Non-HTTP)**. You will see that the attack status has changed to detected/mitigated, with current attack events per second (EPS) and drops EPS values. Click **Refresh** to update these values on demand.
+    - ``dnsperf -s 10.1.10.6 -d queryfile-example-current -b 8192 -c 100 -T 20 -l 60 -q 1000000 -Q 180000``
+
+3. While the attack is running, navigate to **Security** > **Reporting** > **DoS** > **Dashboard**. You will see the attack appear in the dashboard once the detection/mitigation threshold is exceeded.
 
 .. image:: _images/image040.png
     :alt:  screenshot

@@ -87,5 +87,15 @@ Bad actor detection allows us to completely block communications from malicious 
     :alt:  screenshot
 
 25. Navigate to **Security** > **Reporting** > **Protocol** > **DNS**. Change the View By drop-down to view various statistics around the DNS traffic and attacks.
+
+.. image:: _images/analytics.png
+
 26. Navigate to **Security** > **Reporting** > **DoS** > **Dashboard** to view an overview of the DoS attacks and timeline. You can select filters in the filter pane to highlight specific attacks.
+
+.. image:: _images/dashboard.png
+
 27. Finally, navigate to **Security** > **Reporting** > **DoS** > **Analysis**. View detailed statistics around each attack.
+
+.. image:: _images/analysis.png
+
+Click **Next** to continue.

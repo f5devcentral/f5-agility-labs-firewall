@@ -3,7 +3,7 @@ Base BIG-IP Configuration
 
 In this lab, the VE has been configured with the basic system settings and the VLAN/self-IP configurations required for the BIG-IP to communicate and pass traffic on the network. We’ll now need to configure the BIG-IP to listen for traffic and pass it to the back end server.
 
-1. Connect to the Jump Host desktop and launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server.
+1. Connect to the Jump Host (credentials are **user**/**user**) desktop and launch the Firefox shortcut titled **Launch BIG-IP Web UI** on the desktop of your lab jump server.
 
 .. image:: _images/image001.png
   :alt:  lab screenshot

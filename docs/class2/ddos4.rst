@@ -62,3 +62,4 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
 .. image:: _images/image074.png
     :alt:  screenshot
 
+This concludes our lab. 

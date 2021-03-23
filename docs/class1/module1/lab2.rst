@@ -8,7 +8,7 @@ The rules created in this section allow basic connectivity to the resources.
 We will add enforcement rules at the virtual server level to demonstrate functionality.
 
 On the BIG-IP, we'll create a rule list to allow traffic. A logical container will be 
-created before the individual rules can be added. You will create a list with rules to 
+created before the individual rules can be added. You will create a list with rule to 
 allow port 80 (HTTP), 443 (HTTPS), and 22 to servers 10.1.20.11 through 10.1.20.17.
 We will also create a rules which allows HTTP and HTTPS traffic to access 10.1.10.30.
 

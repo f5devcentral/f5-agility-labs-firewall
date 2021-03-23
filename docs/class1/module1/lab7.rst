@@ -7,10 +7,7 @@ is designed to efficiently handle SSL traffic using specialized hardware and opt
 libraries, it is in the unique position to 'hand-off' a copy of the decrypted traffic 
 to other devices.
 
-In this solution, since the BIG-IP is terminating SSL on the external virtual server, 
-when we forward the traffic to the secondary virtual server in clear-text so that we have an 
-opportunity to make an unencrypted copy of the application traffic and send it to an 
-external sensor such as an IDS for further security assessment.
+In this solution, since the BIG-IP is terminating SSL, traffic is forwarded to the secondary virtual server in clear-text so that an unencrypted copy of the application traffic is sent to an external sensor such as an IDS for further security assessment.
 
 1. Return to the BIG-IP TMUI in Chrome and inspect the preconfigured IDS_Pool.
 

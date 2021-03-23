@@ -36,7 +36,7 @@ Configure An HTTP Security Profile And Apply It To The External Virtual Server
 
 .. note::  Leave all other fields using the default values.
 
-4. Click the **Request Checks** tab. Change the **Response Type** drop-down to *Custom Response*.
+4. Click the **Request Checks** tab. 
 
 .. tip:: We're going to allow the default HTTP methods. Restricting the methods allowed to reach production servers is a great way to shrink the attack surface.
 
@@ -46,7 +46,7 @@ Configure An HTTP Security Profile And Apply It To The External Virtual Server
 
 |image49|
 
-5. Click the **Blocking Page** tab.
+5. Click the **Blocking Page** tab. Change the **Response Type** drop-down to *Custom Response*.
 
 +---------------------+----------------------------------------------------------------+
 | **Response Type**   | Custom Response                                                |
@@ -88,7 +88,7 @@ Now, let's apply the HTTP security profile to the external virtual server.
 
 .. note:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
-11. Browse the applicationb clicking on various links on the sidebar.
+11. Browse the application clicking on various links on the sidebar.
 
 .. warning:: **If you change the admin password in DVWA, make sure you remember it for later!**
 

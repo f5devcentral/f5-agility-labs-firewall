@@ -41,12 +41,12 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
 8. On the attack host, launch the attack by issuing the following command on the BASH prompt: 
     - ``sudo hping3 10.1.10.6 --flood --scan 1-65535 -d 128 -w 64 --syn``
 
-9. You will see the scan find a few open ports on the server, and the server will show the inbound sweep traffic. However, you will notice that the traffic to the server stops after a short time (10 seconds, the configured sustained attack detection time.) Leave the test running.
+9. You will see the scan find a few open ports on the server, and the server will show the inbound sweep traffic. However, you will notice that the traffic to the server stops after a short time (10 seconds, the configured sustained attack detection time.) Don't stop the test.
 
 .. image:: _images/image071.png
     :alt:  screenshot
 
-10. Stop the sweep attack on the attack host by pressing **CTRL+C**.
+10. After a few minutes, stop the sweep attack on the attack host by pressing **CTRL+C**.
 11. Return to the BIG-IP web UI and navigate to **Security** > **Event Logs** > **DoS** > **Network** > **Events**. Observe the log entries showing the details surrounding the attack detection and mitigation.
 
 .. image:: _images/image072.png
@@ -62,4 +62,4 @@ The single endpoint sweep is an attempt for an attacker to send traffic across a
 .. image:: _images/image074.png
     :alt:  screenshot
 
-This concludes the lab. We hope you found this information valuable.
+This concludes our lab. 

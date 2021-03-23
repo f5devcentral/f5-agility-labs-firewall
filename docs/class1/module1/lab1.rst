@@ -48,7 +48,7 @@ After connecting to the jump host via RDP, click on the Chrome shortcut on the d
 
 .. image:: ../images/desktop.png
 
-The BIG-IP login screen should open in the first tab. 
+The BIG-IP login screen should open in the first tab. Other tabs will open with links to applications that we will test later in the lab.
 
 .. image:: ../images/bigip_login.png
 
@@ -85,13 +85,13 @@ Navigate to **Local Traffic** > **Pools** > **Pool List**.
      - http
      - 10.1.20.15
      - 80
-   * - pool\_www.dvwa.com
+   * - pool\_dvwa.com
      - tcp\_half\_open
      - 10.1.20.17
      - 80
    * - IDS\_pool
      - gateway_icmp
-     - 10.1.20.
+     - 10.1.20.252
      - 
 
 This screenshot shows an example of the pool list in the TMUI:

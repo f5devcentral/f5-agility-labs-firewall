@@ -137,7 +137,7 @@ This completes Module 1 - Lab 3. Click **Next** to continue.
 .. |image28| image:: ../images/image30.png
    :width: 7.25278in
    :height: 1.01170in
-.. |image29| image:: ../images/image31.jpeg
+.. |image29| image:: ../images/image31.png
    :width: 6.73811in
    :height: 1.69444in
 .. |image251| image:: ../images/image251.png

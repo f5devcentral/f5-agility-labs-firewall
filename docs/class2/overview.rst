@@ -12,10 +12,13 @@ Firewall Manager™ is licensed and provisioned.
 DoS and DDoS attacks
 --------------------
 
-Denial-of-service (DoS) and distributed denial-of-service (DDoS) attacks attempt 
-to render a machine or network resource unavailable to users. DoS attacks involve 
-the efforts of one or more sources to disrupt the services of one or more hosts 
-connected to the Internet.
+A DoS attack is a denial of service attack where a computer is used to flood a 
+server, usually with TCP and UDP packets. A DDoS attack is where multiple 
+systems target a single system with a DoS attack. The targeted network is 
+then bombarded with packets from multiple locations. While DoS attacks are
+usually only effective when packets are malicious or attack services that are
+easily overwhelmed. DDoS attacks can be disastrous simply from the volume of 
+traffic.
 
 With Advanced Firewall Manager, you can configure the system to automatically 
 track traffic and CPU usage patterns over time and adapt automatically to 

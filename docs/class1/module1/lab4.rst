@@ -32,7 +32,7 @@ Create a *geo_restrict_rule_list* Rule List
 
 3. Click **Finished**, then click on the *geo_restrict_rule_list* you just created.
 
-4. Click *Add* to add a rule.
+4. Click *Add* to add a rule to block traffic from Afghanistan, China and Canada.
 
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA                         |
@@ -173,7 +173,7 @@ External VIP to simulate specific IP addresses in the header
 
 Return to the firewall events (**Security** > **Event Logs** > **Network** > **Firewall**) log viewer and click **Search** to refresh. Observe the new entries.
 
-Next, we will simulate a connection an IP address in Bejing, China. Browse to 
+Next, we will simulate a connection an IP address in Beijing, China. Browse to 
 https://whatismyipaddress.com/ip/1.202.2.1 ... this site shows that this IP address 
 is most likely in Beijing, China.
 
@@ -235,7 +235,7 @@ time we will build the rules directly into the policy instead of using a rule li
 
 Now, create a Deny Log Network Firewall Rule.
 
-.. note:: As we are deployed in “ADC Mode” where the default action on a virtual server is ‘Accept’, we must also create a default deny rule. For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation at https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html.
+.. note:: As we are deployed in “ADC Mode” where the default action on a virtual server is ‘Accept’, we must also create a default deny rule. For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation at https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-network-firewall-policies-and-implementations/deploying-the-big-ip-network-firewall-in-adc-mode.html.
 
 7. Click **Add Rule** pull down on the upper-right. Add a rule to the end of the policy.
 

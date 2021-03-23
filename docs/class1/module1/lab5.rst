@@ -68,7 +68,7 @@ Solve For TCP Issues With CDN Networks
 
 The next step is to solve for the TCP connection issue with CDN providers. While we 
 are provided the originating client IP address to allow/drop traffic, simply dropping 
-or reseting the connection can be problematic for other users of the application. 
+or resetting the connection can be problematic for other users of the application. 
 
 Instead of dropping the connection immediately, we can send an HTTP 403 response. This 
 more graceful solution is accomplished via AFM iRules. The iRule has already been created. 

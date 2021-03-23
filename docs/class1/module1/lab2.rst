@@ -8,7 +8,7 @@ The rules created in this section allow basic connectivity to the resources.
 We will add enforcement rules at the virtual server level to demonstrate functionality.
 
 On the BIG-IP, we'll create a rule list to allow traffic. A logical container will be 
-created before the individual rules can be added. You will create a list with rules to 
+created before the individual rules can be added. You will create a list with rule to 
 allow port 80 (HTTP), 443 (HTTPS), and 22 to servers 10.1.20.11 through 10.1.20.17.
 We will also create a rules which allows HTTP and HTTPS traffic to access 10.1.10.30.
 
@@ -129,7 +129,7 @@ traffic to pass before you switch the Advanced Firewall Manager to Firewall mode
 default deny configuration, all traffic is blocked through the firewall, and any traffic you want to
 allow through the firewall must be explicitly specified.
 
-In exising deployments where there are a large number of VIP's, adding AFM in Firewall mode would require 
+In existing deployments with a large number of VIP's, adding AFM in Firewall mode would require 
 significant preperation. Firewall functionality is easier to introduce in ADC mode. 
 
 1. Navigate to **Security** > **Options** > **Network Firewall** > **Firewall Options**.

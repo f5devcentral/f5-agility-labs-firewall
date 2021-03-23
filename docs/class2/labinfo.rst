@@ -25,7 +25,7 @@ Lab Hosts
 | DNS Server     |  - mgmt: 10.1.1.6            | virtual server running Ubuntu 17.10 with |
 |                |  - internal: 10.1.20.6       | BIND9 installed and pre-configured       |
 +----------------+------------------------------+------------------------------------------+
-| BIG-IP         |  - mgmt: 10.1.1.5            | - BIG-IP v 15.1                          |
+| BIG-IP         |  - mgmt: 10.1.1.5            | - BIG-IP v 15.1.0.2                      |
 |                |  - external: 10.1.10.5       | - Provisioned with LTM, AFM and AVR      |
 |                |  - internal: 10.1.20.5       | - VLANs, self-IPs configured             |
 +----------------+------------------------------+------------------------------------------+

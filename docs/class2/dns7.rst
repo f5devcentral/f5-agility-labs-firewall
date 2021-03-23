@@ -23,7 +23,7 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 4. Navigate to **Security** > **Protocol** **Security** > **Security Profiles** > **DNS** and create a new DNS security profile with the following values, leaving unspecified attributes at their default value:
      - **Name**: *dns-block-mx*-query
      - **Query Type Filter**: move *mx* from **Available** to **Active**
-5. Navigate to **Local Traffic** > **Profiles** > **Services** > **DNS**.  
+5. Click **Save**, then navigate to **Local Traffic** > **Profiles** > **Services** > **DNS**.  
     .. note:: If you are mousing over the services, DNS may not show up on the list.  Select Services and then use the pulldown menu on services to select DNS.
 6. Create a new DNS services profile with the following values, leaving unspecified values at their default values:
     - **Name**: *dns-block-mx*
@@ -33,10 +33,10 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 .. image:: _images/image053.png
     :alt:  screenshot
 
-7. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
+7. Click **Save**, then navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 8. Click on the *udp_dns_VS* virtual server name.
 9. In the Configuration section, change the view to **Advanced**.
-10. Set the **DNS Profile** to *dns-block-mx*.
+10. Set the **DNS Profile** to *dns-block-mx*, then click **Finished**.
 
 .. image:: _images/image054.png
     :alt:  screenshot

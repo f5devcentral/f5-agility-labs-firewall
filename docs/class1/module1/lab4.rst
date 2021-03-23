@@ -32,7 +32,7 @@ Create a *geo_restrict_rule_list* Rule List
 
 3. Click **Finished**, then click on the *geo_restrict_rule_list* you just created.
 
-4. Click *Add* to add a rule.
+4. Click *Add* to add a rule to block traffic from Afghanistan, China and Canada.
 
 +----------------+----------------------------------------+
 | **Name**       | block_AF_CN_CA                         |

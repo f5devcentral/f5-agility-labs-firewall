@@ -91,7 +91,7 @@ Navigate to **Local Traffic** > **Pools** > **Pool List**.
      - 80
    * - IDS\_pool
      - gateway_icmp
-     - 10.1.20.
+     - 10.1.20.252
      - 
 
 This screenshot shows an example of the pool list in the TMUI:

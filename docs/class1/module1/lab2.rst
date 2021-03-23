@@ -129,7 +129,7 @@ traffic to pass before you switch the Advanced Firewall Manager to Firewall mode
 default deny configuration, all traffic is blocked through the firewall, and any traffic you want to
 allow through the firewall must be explicitly specified.
 
-In exising deployments where there are a large number of VIP's, adding AFM in Firewall mode would require 
+In existing deployments with a large number of VIP's, adding AFM in Firewall mode would require 
 significant preperation. Firewall functionality is easier to introduce in ADC mode. 
 
 1. Navigate to **Security** > **Options** > **Network Firewall** > **Firewall Options**.

@@ -36,7 +36,7 @@ To demonstrate, we will block MX queries from reaching our DNS server.
 7. Click **Save**, then navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 8. Click on the *udp_dns_VS* virtual server name.
 9. In the Configuration section, change the view to **Advanced**.
-10. Set the **DNS Profile** to *dns-block-mx*.
+10. Set the **DNS Profile** to *dns-block-mx*, then click **Finished**.
 
 .. image:: _images/image054.png
     :alt:  screenshot

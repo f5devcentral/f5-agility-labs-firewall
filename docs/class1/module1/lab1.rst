@@ -48,7 +48,7 @@ After connecting to the jump host via RDP, click on the Chrome shortcut on the d
 
 .. image:: ../images/desktop.png
 
-The BIG-IP login screen should open in the first tab. 
+The BIG-IP login screen should open in the first tab. Other tabs will open with links to applications that we will test later in the lab.
 
 .. image:: ../images/bigip_login.png
 

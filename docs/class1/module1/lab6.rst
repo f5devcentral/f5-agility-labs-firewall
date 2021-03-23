@@ -88,7 +88,7 @@ Now, let's apply the HTTP security profile to the external virtual server.
 
 .. note:: This application is accessible, even though there are policy violations, because the “Block” option in the HTTP security policy is not selected.
 
-11. Browse the applicationb clicking on various links on the sidebar.
+11. Browse the application clicking on various links on the sidebar.
 
 .. warning:: **If you change the admin password in DVWA, make sure you remember it for later!**
 

@@ -42,7 +42,7 @@ In this solution, since the BIG-IP is terminating SSL, traffic is forwarded to t
 
 .. code-block:: console
 
-    sudo tcpdump -n –i eth1 -c 200 port 8081
+    sudo tcpdump -n -i eth1 -c 200 port 8081
 
 13. Initiate another attempt to connect to the website via curl using the Cygwin application on the desktop. It 
     may be helpful to position the windows on the desktop side-by-side so that you can see both the Putty session 

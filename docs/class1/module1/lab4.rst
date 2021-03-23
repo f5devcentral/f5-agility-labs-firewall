@@ -235,7 +235,7 @@ time we will build the rules directly into the policy instead of using a rule li
 
 Now, create a Deny Log Network Firewall Rule.
 
-.. note:: As we are deployed in “ADC Mode” where the default action on a virtual server is ‘Accept’, we must also create a default deny rule. For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation at https://support.f5.com/kb/en-us/products/big-ip-afm/manuals/product/network-firewall-policies-implementations-13-0-0/8.html.
+.. note:: As we are deployed in “ADC Mode” where the default action on a virtual server is ‘Accept’, we must also create a default deny rule. For further discussion of Firewall vs ADC modes, please consult the F5 BIG-IP documentation at https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-network-firewall-policies-and-implementations/deploying-the-big-ip-network-firewall-in-adc-mode.html.
 
 7. Click **Add Rule** pull down on the upper-right. Add a rule to the end of the policy.
 

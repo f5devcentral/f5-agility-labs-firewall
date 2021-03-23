@@ -18,7 +18,7 @@ In this solution, since the BIG-IP is terminating SSL, traffic is forwarded to t
    .. Note:: Unencrypted traffic will be forwarded to this IP address.
 
 4. Attach the *IDS\_Pool* as a clone pool to the server side of the external virtual server by navigating to 
-   **Local Traffic** > **Virtual Servers** > V**irtual Server List** and clicking on *EXT\_VIP\_10_1_10_30*.
+   **Local Traffic** > **Virtual Servers** > **Virtual Server List** and clicking on *EXT\_VIP\_10_1_10_30*.
 
 5. Select **Advanced** from the pulldown at the top of the Configuration section to view advanced configuration options.
 

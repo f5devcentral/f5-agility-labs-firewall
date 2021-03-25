@@ -83,7 +83,7 @@ Apply the newly created log profile to the external virtual server created in th
 
 1. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 
-2. Click on *EXT_VIP_10.1.10.30* virtual server.
+2. Click on *EXT_VIP_10_1_10_30* virtual server.
 
 3. Click on the **Security** down-drop from the top menu bar and select **Policies**.
 
@@ -118,28 +118,26 @@ Refresh the app sites' browser tabs to access the virtual server or repeat the c
 In the **Security** > **Event Logs** > **Network** > **Firewall** screen, click the **Search** button to
 refresh the event list. Newest events will appear at the top, as shown below:
 
-|image29|
+|event-log|
 
 This completes Module 1 - Lab 3. Click **Next** to continue.
 
-.. |image24| image:: ../images/image26.png
+.. |image24| image:: /class1/images/image26.png
    :width: 7.05278in
    :height: 2.93819in
-.. |image25| image:: ../images/image27.png
+.. |image25| image:: /class1/images/image27.png
    :width: 7.04444in
    :height: 2.53958in
-.. |image26| image:: ../images/image28.png
+.. |image26| image:: /class1/images/image28.png
    :width: 4.83169in
    :height: 5.41497in
-.. |image278| image:: ../images/image278.png
+.. |image278| image:: /class1/images/image278.png
    :width: 7.04167in
    :height: 5.88889in
-.. |image28| image:: ../images/image30.png
-   :width: 7.25278in
-   :height: 1.01170in
-.. |image29| image:: ../images/image31.png
+.. |event-log| image:: /class1/images/event-log.jpg
+.. |image31| image:: /class1/images/image31.png
    :width: 6.73811in
    :height: 1.69444in
-.. |image251| image:: ../images/image251.png
+.. |image251| image:: /class1/images/image251.png
    :width: 3.73811in
    :height: 1.69444in

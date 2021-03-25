@@ -83,7 +83,7 @@ Apply the newly created log profile to the external virtual server created in th
 
 1. Navigate to **Local Traffic** > **Virtual Servers** > **Virtual Server List**.
 
-2. Click on *EXT_VIP_10.1.10.30* virtual server.
+2. Click on *EXT_VIP_10_1_10_30* virtual server.
 
 3. Click on the **Security** down-drop from the top menu bar and select **Policies**.
 
